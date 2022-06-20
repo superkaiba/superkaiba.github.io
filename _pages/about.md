@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle:  McGill University - Joint Honours Mathematics and Computer Science - 4th Year
 
 profile:
   align: right
