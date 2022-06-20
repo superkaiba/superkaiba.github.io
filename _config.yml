@@ -107,12 +107,12 @@ external_sources:
 # Collections
 # -----------------------------------------------------------------------------
 collections:
-  News:
+  news:
     defaults:
       layout: post
     output: false
     permalink: /news/:path/
-  Projects:
+  projects:
     output: true
     permalink: /projects/:path/
 

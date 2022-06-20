@@ -1,8 +1,8 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle:  McGill University - Joint Honours Mathematics and Computer Science - 4th Year Undergraduate Student
+subtitle: 4th Year Undergraduate Student in Honours Mathematics and Computer Science at McGill University
 
 profile:
   align: right
