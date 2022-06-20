@@ -14,8 +14,11 @@ Since September 2021, I have been a Technical Project Manager for the McGill A.I
 
 The syllabus from Winter 2022 can be found [here](https://docs.google.com/document/d/1YvcDkclmCaJTe8noQ255nguuGGZlP4eL-jUryjiw8Ug/edit#heading=h.y1ncjdpj4e3b) and final projects from students I supervised can be found [here](https://w2020-mais-202-bootcamp.devpost.com/project-gallery) and [here](https://mais202-fall2021.devpost.com/project-gallery).
 
+Applications to participate in the course usually begin in September for the Fall semester and in January for the Winter
+semester. The application process includes a coding challenge as well as a technical interview. Follow the McGill A.I. Society's [facebook page](https://www.facebook.com/McGillAI) to be notified when applications open.
+
 ### COMP 206 (Software Systems)
-#####Teaching Assistant
+##### Teaching Assistant
 
 From September 2021 to May 2022, I was a Teaching Assistant for COMP 206 (Software Systems). This required me to hold weekly office hours, give weekly tutorials, and grade assignments related to Unix, Bash, and C.
 
