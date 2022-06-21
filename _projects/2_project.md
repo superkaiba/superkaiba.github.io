@@ -5,6 +5,7 @@ description: Implementation of Deep Q-Networks from scratch
 img: 
 importance: 2
 redirect: https://github.com/superkaiba/dqn-implementation/tree/main
+github: https://github.com/superkaiba/dqn-implementation/tree/main
 category: Machine Learning
 ---
 
