@@ -22,4 +22,4 @@ I currently hold the following positions:
 - __Undergraduate researcher at McGill/Mila with Professor Doina Precup__ (since January 2022), where I conduct deep reinforcement learning research on combining options with affordances in a MiniGrid environment
 - __Technical Project Manager for the McGill A.I. Society__ (since April 2021), where I help to organize, run, and teach the Accelerated Introduction to ML Bootcamp every semester (~30 students), and perform administrative tasks for the club
 
-I previously completed internships at __Expedia__ and __Square Enix__ and was a Teaching Assistant for COMP206 (Software Systems) at McGill.
+I previously did research on statistical modelling with Professor Christian Genest from the McGill Department of Mathematics and Statistics, completed internships at __Expedia__ and __Square Enix__,  and was a Teaching Assistant for COMP206 (Software Systems) at McGill.
