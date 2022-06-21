@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Lost in Space
-description: Procedurally generated space platformer made using Unity/C# where you play as an astronaut wandering through the depths of space
-img: assets/img/lost-in-space.png
+title: CNN to Learn the Regulatory Code of the Accessible Genome
+description: Reimplementation of the Basset CNN using PyTorch
+img: assets/img/basset.jpg
 importance: 3
-redirect: https://thomasjiralerspong.itch.io/lost-in-space-2
+redirect: https://github.com/superkaiba/rep-learning-projects/blob/main/basset-cnn.py
 category: Machine Learning
 ---
 
