@@ -1,6 +1,6 @@
 ---
 layout: page
-title: DQN
+title: DQN Implementation
 description: Implementation of Deep Q-Networks from scratch
 img: assets/img/dqn.png 
 importance: 2
