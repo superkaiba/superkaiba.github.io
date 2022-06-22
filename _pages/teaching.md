@@ -2,13 +2,13 @@
 layout: page
 permalink: /teaching/
 title: Teaching
-description: Courses I Helped Instruct
+description: _Courses I Helped Instruct_
 nav: true
 nav_order: 2
 ---
 
-### MAIS 202 (Intro to ML)
-##### Technical Project Manager
+### __MAIS 202 (Intro to ML)__
+##### _Technical Project Manager_
 
 Since September 2021, I have been a Technical Project Manager for the McGill A.I. Society's Accelerated Introduction to Machine Learning Bootcamp. 
 
@@ -19,8 +19,8 @@ The syllabus from Winter 2022 can be found [here](https://docs.google.com/docume
 Applications to participate in the course usually begin in September for the Fall semester and in January for the Winter
 semester. The application process includes a coding challenge as well as a technical interview. Follow the McGill A.I. Society's [facebook page](https://www.facebook.com/McGillAI) to be notified when applications open.
 
-### COMP 206 (Software Systems)
-##### Teaching Assistant
+### __COMP 206 (Software Systems)__
+##### _Teaching Assistant_
 
 From September 2021 to May 2022, I was a Teaching Assistant for COMP 206 (Software Systems). This required me to hold weekly office hours, give weekly tutorials, and grade assignments related to Unix, Bash, and C.
 
