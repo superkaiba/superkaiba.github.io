@@ -1,13 +1,14 @@
 ---
 layout: page
-title: submenus
-nav: false
-nav_order: 3
+title: links
+nav: true
+nav_order: 7
 dropdown: true
 children: 
-    - title: publications
-      permalink: /publications/
-    - title: divider
-    - title: projects
-      permalink: /projects/
+    - title: Google Scholar
+      permalink: https://scholar.google.ca/citations?user=ifQsJnIAAAAJ&hl=en&oi=sra
+    - title: LinkedIn
+      permalink: https://www.linkedin.com/in/thomas-jiralerspong/
+    - title: GitHub
+      permalink: https://github.com/superkaiba
 ---
