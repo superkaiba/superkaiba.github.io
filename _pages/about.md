@@ -14,7 +14,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am an undergraduate student in my last year at __McGill University__ in the Joint Honours Mathematics and Computer Science program! My research interests include reinforcement learning, the creative powers of neural networks, and natural language processing. I am also passionate about game development, and have developed multiple games which can be found in the "Projects" tab.
+I am an undergraduate student in my last year at __McGill University__ in the Joint Honours Mathematics and Computer Science program! My research interests include deep reinforcement learning, the creative powers of neural networks, and brain inspired A.I. I am also passionate about game development, and have developed multiple games which can be found in the "Projects" tab.
 
 I currently hold the following positions:
 - __Machine Learning Intern at the Vector Institute__ (since September 2022), where I am developing a reinforcement learning system for energy efficient data center HVAC control
