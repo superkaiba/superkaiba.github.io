@@ -2,7 +2,7 @@
 layout: page
 title: CV
 nav: true
-nav_order: 8
+nav_order: 0
 dropdown: true
 children: 
     - title: Complete
