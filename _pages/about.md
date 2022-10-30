@@ -14,9 +14,9 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am an undergraduate student in my last year at __McGill University__ in the Joint Honours Mathematics and Computer Science program! My research interests include deep reinforcement learning, the creative powers of neural networks, and brain inspired A.I. I am also passionate about game development, and have developed multiple games which can be found in the "Projects" tab.
+I am an undergraduate student in my last year at __McGill University__ in the Honours Computer Science progam! My primary research goal is to take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society. I currently think that the best way to do this is by using deep reinforcement learning agents which develop human-like intelligence in the pursuit of reward maximization, so this is the currentfocus of my research.
 
-I currently hold the following positions:
+I presently hold the following positions:
 - __Machine Learning Intern at the Vector Institute__ (since September 2022), where I am developing a reinforcement learning system for energy efficient data center HVAC control
 - __Undergraduate researcher at Mila ([LiNC lab](https://linclab.mila.quebec/home)) with Professor Blake Richards__ (since September 2022), where I conduct deep reinforcement learning research on learning in environments with sparse rewards
 - __Undergraduate researcher at Mila ([Reasoning and Learning Lab](http://rl.cs.mcgill.ca/)) with Professor Doina Precup__ (since January 2022), where I conduct deep reinforcement learning research on temporally extended models and planning using option models
