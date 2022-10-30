@@ -21,7 +21,7 @@ My primary research goal is to take inspiration from human cognition to develop 
 I currently think that the best way to do this is by using __deep reinforcement learning__ agents which develop human-like intelligence in the pursuit of reward maximization, so this is the current focus of my research.
 
 I presently hold the following positions:
-- __Machine Learning Intern at the Vector Institute__ (since September 2022), where I am developing a reinforcement learning system for energy efficient data center HVAC control
+- __Machine Learning Intern at the Vector Institute for Artificial Intelligence__ (since September 2022), where I am developing a reinforcement learning system for energy efficient data center HVAC control
 - __Undergraduate researcher at Mila ([LiNC lab](https://linclab.mila.quebec/home)) with Professor Blake Richards__ (since September 2022), where I conduct deep reinforcement learning research on learning in environments with sparse rewards
 - __Undergraduate researcher at Mila ([Reasoning and Learning Lab](http://rl.cs.mcgill.ca/)) with Professor Doina Precup__ (since January 2022), where I conduct deep reinforcement learning research on temporally extended models and planning using option models
 - __Technical Project Manager for the McGill A.I. Society__ (since April 2021), where I help to organize, run, and teach the Accelerated Introduction to ML Bootcamp every semester (~30 students), and perform administrative tasks for the club
