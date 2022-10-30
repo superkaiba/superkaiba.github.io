@@ -14,7 +14,9 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am an undergraduate student in my last year at __McGill University__ in the __Honours Computer Science__ progam! My primary research goal is to take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.
+I am an undergraduate student in my last year at __McGill University__ in the __Honours Computer Science__ progam! 
+
+My primary research goal is to take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.
 
 I currently think that the best way to do this is by using __deep reinforcement learning__ agents which develop human-like intelligence in the pursuit of reward maximization, so this is the current focus of my research.
 
