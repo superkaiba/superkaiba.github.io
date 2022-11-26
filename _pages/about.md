@@ -18,7 +18,15 @@ I am an undergraduate student in my last year at __McGill University__ in the __
 
 My primary research goal is to take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.
 
-I currently think that the best way to do this is by using __deep reinforcement learning__ agents which develop human-like intelligence in the pursuit of reward maximization, so this is the current focus of my research.
+I currently think that the best way to do this is by using __deep reinforcement learning__ agents which develop human-like intelligence in the pursuit of reward maximization. 
+
+The current research questions which I am focused on in pursuit of this overarching goal are:
+
+- How can we develop reinforcement learning agents which are able to plan far ahead into the future in complex environments?
+
+- How can we develop reinforcement learning argents which generalize well from one complex environment/task to another?
+
+- How can we apply the reinforcement learning agents we develop to important real-world societal tasks?
 
 I presently hold the following positions:
 - __Machine Learning Intern at the Vector Institute for Artificial Intelligence__ (since September 2022), where I am developing a reinforcement learning system for energy efficient data center HVAC control
