@@ -22,11 +22,11 @@ I currently think that the best way to do this is by using __deep reinforcement 
 
 The current research questions which I am focused on in pursuit of this overarching goal are:
 
-- __How can we develop reinforcement learning agents which are able to plan far ahead into the future in complex environments?__
+- __How can we develop artificial intelligence systems which are able to plan far ahead into the future in complex environments?__
 
-- __How can we develop reinforcement learning argents which generalize well from one complex environment/task to another?__
+- __How can we develop artificial intelligence systems which generalize well from one complex environment/task to another?__
 
-- __How can we apply the reinforcement learning agents we develop to important real-world societal tasks?__
+- __How can we apply the artificial intelligence systems we develop to important real-world societal tasks?__
 
 I presently hold the following positions:
 - __Machine Learning Intern at the Vector Institute for Artificial Intelligence__ (since September 2022), where I am developing a reinforcement learning system for energy efficient data center HVAC control
