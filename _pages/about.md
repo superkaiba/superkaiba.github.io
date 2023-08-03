@@ -14,7 +14,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a first year Master's student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at Mila/Université de Montréal. 
+I am a first year Master's student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at Mila and Université de Montréal. 
 
 I am also currently completing a research internship at __[Waabi](https://waabi.ai/)__, where I am working with __[Kelvin Wong](http://www.cs.toronto.edu/~kelvinwong/)__ and __[Chris Zhang](https://www.cs.toronto.edu/~cjhzhang/)__ on developing a realistic probabilistic traffic simulation using deep generative models.
 
