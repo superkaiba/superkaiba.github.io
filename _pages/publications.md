@@ -1,9 +1,10 @@
 ---
 layout: page
 title: Publications
-description:
-years: [2023]
-permalink: https://scholar.google.com/citations?user=ifQsJnIAAAAJ
+dropdown: true
+children: 
+    - title: Google Scholar
+      permalink: https://scholar.google.ca/citations?user=ifQsJnIAAAAJ&hl=en&oi=sra
 nav: true
 nav_order: 2
 ---
