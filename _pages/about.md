@@ -16,9 +16,9 @@ social: true  # includes social icons at the bottom of the page
 
 I am a first year Master's student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. 
 
-I am also currently completing a research internship at __[Waabi](https://waabi.ai/)__, where I am working with __[Kelvin Wong](http://www.cs.toronto.edu/~kelvinwong/)__ and __[Chris Zhang](https://www.cs.toronto.edu/~cjhzhang/)__ on developing a realistic probabilistic traffic simulation using deep generative models.
+My primary research interest is to __take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.__
 
-I am interested in taking inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.
+I currently completing a research internship at __[Waabi](https://waabi.ai/)__, where I am working with __[Kelvin Wong](http://www.cs.toronto.edu/~kelvinwong/)__ and __[Chris Zhang](https://www.cs.toronto.edu/~cjhzhang/)__ on developing a realistic probabilistic traffic simulation using deep generative models.
 
 I completed my Bachelor's in Honours Computer Science at __[McGill University](https://www.mcgill.ca/)__ where I worked with __[Professor Blake Richards](https://www.mcgill.ca/neuro/blake-richards-phd)__ and __[Dr. Chen Sun](https://linclab.mila.quebec/team/chen)__ in the __[LiNC lab](https://linclab.mila.quebec/home)__ on identifying important states for reinforcement learning in sparse reward environments, as well as with __[Professor Doina Precup](https://mila.quebec/en/person/doina-precup/)__ and __[Dr. Khimya Khetarpal](https://kkhetarpal.github.io/)__ in the __[Reasoning and Learning Lab](http://rl.cs.mcgill.ca/)__ on temporally extended models and planning using option models in pixel environments.
 
