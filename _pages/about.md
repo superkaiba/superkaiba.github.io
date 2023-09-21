@@ -16,7 +16,11 @@ social: true  # includes social icons at the bottom of the page
 
 I am a first year Master's student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. 
 
-My primary research interest is to __take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.__
+My primary research interests are:
+- Incorporating __inductive biases__ from __cognitive science__ and __neuroscience__ into our AI models in order to give them more human-like capabilities such as out-of-distribution generalization and long-term planning
+- Applying AI to have a __concrete positive impact on society__, by tackling problems related to drug discovery, healthcare, climate change, autonomous driving, etc.
+
+<!-- - is to __take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.__ -->
 
 I completed my Bachelor's in Honours Computer Science at __[McGill University](https://www.mcgill.ca/)__ where I worked with __[Professor Blake Richards](https://www.mcgill.ca/neuro/blake-richards-phd)__ and __[Dr. Chen Sun](https://linclab.mila.quebec/team/chen)__ on identifying important states for reinforcement learning in sparse reward environments, as well as with __[Professor Doina Precup](https://mila.quebec/en/person/doina-precup/)__ and __[Dr. Khimya Khetarpal](https://kkhetarpal.github.io/)__ on temporally extended models and planning using option models in pixel environments.
 
