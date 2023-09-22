@@ -18,7 +18,7 @@ I am a first year Master's student in computer science co-supervised by __[Yoshu
 
 My primary research interests are:
 - Incorporating __inductive biases__ from __cognitive science__ and __neuroscience__ into our AI models in order to give them more human-like capabilities such as __out-of-distribution generalization__ and __long-term planning__
-- Applying AI to have a __concrete positive impact on society__, by tackling problems related to __drug discovery__, __healthcare__, __climate change__, __autonomous driving__, etc.
+- Applying AI to projects that have a __concrete positive impact on society__, by tackling problems related to __drug discovery__, __healthcare__, __climate change__, __autonomous driving__, etc.
 
 <!-- - is to __take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.__ -->
 
