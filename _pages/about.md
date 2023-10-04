@@ -26,7 +26,9 @@ I completed my Bachelor's in Honours Computer Science at __[McGill University](h
 
 I was also previously an intern at __[Expedia](https://www.expedia.ca/)__, __[Square Enix](https://www.square-enix.com/)__, __[Amazon](https://www.amazon.ca/)__, the __[Vector Institute](https://vectorinstitute.ai/)__ and __[Waabi](https://waabi.ai/)__, as well as a __Technical Project Manager for the [McGill A.I. Society](https://mcgillai.com/)__, where I helped to organize, run, and teach __[MAIS 202](https://mcgillai.com/mais202)__, the Accelerated Introduction to ML Bootcamp every semester.
 
-Reach out at __thomas.jiralerspong@mila.quebec__ if there is anything you want to discuss!
+I was also selected to participate in the [10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html).
+
+Reach out at __thomas.jiralerspong@mila.quebec__ if there is anything you want to discuss, I'm always happy to talk!
 
 <!-- I am currently completing a research internship at __[Waabi](https://waabi.ai/)__, where I am working with __[Kelvin Wong](http://www.cs.toronto.edu/~kelvinwong/)__ and __[Chris Zhang](https://www.cs.toronto.edu/~cjhzhang/)__ on developing a realistic probabilistic traffic simulation using deep generative models.
 
