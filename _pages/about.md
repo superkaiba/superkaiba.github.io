@@ -26,7 +26,9 @@ I completed my Bachelor's in Honours Computer Science at __[McGill University](h
 
 I was also previously an intern at __[Expedia](https://www.expedia.ca/)__, __[Square Enix](https://www.square-enix.com/)__, __[Amazon](https://www.amazon.ca/)__, the __[Vector Institute](https://vectorinstitute.ai/)__ and __[Waabi](https://waabi.ai/)__, as well as a __Technical Project Manager for the [McGill A.I. Society](https://mcgillai.com/)__, where I helped to organize, run, and teach __[MAIS 202](https://mcgillai.com/mais202)__, the Accelerated Introduction to ML Bootcamp every semester.
 
-I was also selected to participate in the [10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html).
+In 2022, I was a part of McGill's team in __[Project X](https://www.uoft.ai/projectx)__, a machine learning research competition organized by the University of Toronto. Our paper on using deep conservative reinforcement learning for mechanical ventilation treatment (which I co-first authored) received the highest score out of all 25 papers submitted to the competition, winning in the clinical practice category. 
+
+I was also fortunate to be selected to participate in the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__.
 
 Reach out at __thomas.jiralerspong@mila.quebec__ if there is anything you want to discuss, I'm always happy to talk!
 
