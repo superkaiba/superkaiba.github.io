@@ -19,7 +19,7 @@ I am a first year Master's student in computer science co-supervised by __[Yoshu
 My primary research interests are:
 - Incorporating ideas from causality, neuroscience and cognitive science into our AI models/RL agents in order to give them more human-like capabilities such as __out-of-distribution generalization__ and __long-term planning/reasoning__
 
-- LLMs as well as how their common sense capabilities can be exploited to train other AI models 
+- __LLMs__ as well as how their common sense capabilities can be exploited to train other AI models 
 
 - Applying AI to projects that have a __concrete positive impact on society__, by tackling problems related to __drug discovery__, __healthcare__, __climate change__, __autonomous driving__, etc.
 
