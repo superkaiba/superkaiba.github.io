@@ -3,7 +3,7 @@ layout: page
 title: Projects
 permalink: /projects/
 description:
-nav: true
+nav: false
 nav_order: 10
 display_categories: [Machine Learning, Videogames]
 horizontal: false

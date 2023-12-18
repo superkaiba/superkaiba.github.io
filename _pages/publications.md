@@ -1,21 +1,5 @@
 ---
 layout: page
-permalink: /publications/
-title: Publications
-description: 
-nav: true
-nav_order: 1
----
-<!-- _pages/publications.md -->
-<div class="publications">
-
-{% bibliography -f {{ site.scholar.bibliography }} %}
-
-</div>
-
-<!-- 
----
-layout: page
 title: Publications
 dropdown: true
 children: 
@@ -24,4 +8,19 @@ children:
 nav: true
 nav_order: 2
 ---
+<!-- 
+---
+layout: page
+permalink: /publications/
+title: Publications
+description: 
+nav: true
+nav_order: 1
+---
+<div class="publications">
+
+{% bibliography -f {{ site.scholar.bibliography }} %}
+
+</div>
+
  -->

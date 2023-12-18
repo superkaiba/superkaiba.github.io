@@ -9,8 +9,8 @@ profile:
   image: prof_pic.jpg
   address: >
 
-news: true  # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+news: false  # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
@@ -30,9 +30,9 @@ I am currently:
 <!-- - is to __take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.__ -->
 
 I have previously been:
-- Undergraduate researcher with Professor Blake Richards and Professor Doina Precup
 - Research intern at __[Waabi](https://waabi.ai/)__ and the __[Vector Institute](https://vectorinstitute.ai/)__
 - Software development intern at __[Amazon](https://www.amazon.ca/)__, __[Square Enix](https://www.square-enix.com/)__, and __[Expedia](https://www.expedia.ca/)__
+- Undergraduate researcher with __[Professor Blake Richards](https://www.mcgill.ca/neuro/blake-richards-phd)__ and __[Professor Doina Precup](https://mila.quebec/en/person/doina-precup/)__
 - Chosen to attend the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__ 
 - Co-leader of McGill's team for __[Project X](https://www.uoft.ai/projectx)__, where we received the highest score out of 25 submitted papers
 - Co-organizer and teaching assistant for the __[McGill A.I. Society's Accelerated Introduction to ML Bootcamp](https://mcgillai.com/mais202)__
