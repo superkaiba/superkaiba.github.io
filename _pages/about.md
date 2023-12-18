@@ -24,15 +24,15 @@ My primary research interests are:
 - Applying AI to projects that have a __concrete positive impact on society__, by tackling problems related to __drug discovery__, __healthcare__, __climate change__, __autonomous driving__, etc.
 
 I am currently:
-- __[Lab representative](https://mila.quebec/en/mila-lab-reps/)__ at Mila
+- __[Lab representative](https://mila.quebec/en/mila-lab-reps/)__ at __[Mila](https://mila.quebec/en/)__
 - Teaching assistant for __[Representation Learning (IFT6135)](https://sites.google.com/mila.quebec/ift6135-a2023/course-description)__ at Université de Montréal
 - Senior advisor for the __[McGill A.I. Society](https://mcgillai.com/)__
 <!-- - is to __take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.__ -->
 
 I have previously been:
-- Research intern at __[Waabi](https://waabi.ai/)__ and the __[Vector Institute](https://vectorinstitute.ai/)__
+- Research intern at __[Waabi](https://waabi.ai/)__ and the __[Vector Institute](https://vectorinstitute.ai/)__ working with __[Kelvin Wong](https://www.cs.toronto.edu/~kelvinwong/)__ and __[Chris Zhang](https://www.cs.toronto.edu/~cjhzhang/)__
 - Software development intern at __[Amazon](https://www.amazon.ca/)__, __[Square Enix](https://www.square-enix.com/)__, and __[Expedia](https://www.expedia.ca/)__
-- Undergraduate researcher with __[Professor Blake Richards](https://www.mcgill.ca/neuro/blake-richards-phd)__ and __[Professor Doina Precup](https://mila.quebec/en/person/doina-precup/)__
+- Undergraduate researcher with __[Blake Richards](https://www.mcgill.ca/neuro/blake-richards-phd)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ working with __[Khimya Khetarpal](https://kkhetarpal.github.io/)__ and __[Chen Sun](https://scholar.google.com/citations?user=Xvl3OLEAAAAJ&hl=en)__
 - Chosen to attend the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__ 
 - Co-leader of McGill's team for __[Project X](https://www.uoft.ai/projectx)__, where we received the highest score out of 25 submitted papers
 - Co-organizer and teaching assistant for the __[McGill A.I. Society's Accelerated Introduction to ML Bootcamp](https://mcgillai.com/mais202)__
