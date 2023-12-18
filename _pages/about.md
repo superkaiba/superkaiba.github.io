@@ -28,6 +28,7 @@ I am currently:
 - Teaching assistant for __[Representation Learning (IFT6135)](https://sites.google.com/mila.quebec/ift6135-a2023/course-description)__ at Université de Montréal
 - Senior advisor for the __[McGill A.I. Society](https://mcgillai.com/)__
 <!-- - is to __take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.__ -->
+
 I have previously been:
 - Undergraduate researcher with Professor Blake Richards and Professor Doina Precup
 - Research intern at __[Waabi](https://waabi.ai/)__ and the __[Vector Institute](https://vectorinstitute.ai/)__
