@@ -14,7 +14,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a first year Master's student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. 
+I am a first year Master's student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Professor Blake Richards](https://www.mcgill.ca/neuro/blake-richards-phd)__ and __[Professor Doina Precup](https://mila.quebec/en/person/doina-precup/)__.
 
 My primary research interests are:
 - Incorporating ideas from causality, neuroscience and cognitive science into our AI models/RL agents in order to give them more human-like capabilities such as __out-of-distribution generalization__ and __long-term planning/reasoning__
@@ -23,15 +23,29 @@ My primary research interests are:
 
 - Applying AI to projects that have a __concrete positive impact on society__, by tackling problems related to __drug discovery__, __healthcare__, __climate change__, __autonomous driving__, etc.
 
+I am currently:
+- __[Lab representative](https://mila.quebec/en/mila-lab-reps/)__ at Mila
+- Teaching assistant for __[Representation Learning (IFT6135)](https://sites.google.com/mila.quebec/ift6135-a2023/course-description)__ at Université de Montréal
+- Senior advisor for the __[McGill A.I. Society](https://mcgillai.com/)__
 <!-- - is to __take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.__ -->
+I have previously been:
+- Undergraduate researcher with Professor Blake Richards and Professor Doina Precup
+- Research intern at __[Waabi](https://waabi.ai/)__ and the __[Vector Institute](https://vectorinstitute.ai/)__
+- Software development intern at __[Amazon](https://www.amazon.ca/)__, __[Square Enix](https://www.square-enix.com/)__, and __[Expedia](https://www.expedia.ca/)__
+- Chosen to attend the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__ 
+- Co-leader of McGill's team for __[Project X](https://www.uoft.ai/projectx)__, where we received the highest score out of 25 submitted papers
+- Co-organizer and teaching assistant for the __[McGill A.I. Society's Accelerated Introduction to ML Bootcamp](https://mcgillai.com/mais202)__
+- Teaching assistant for Software Systems (COMP206) at McGill
 
+
+<!-- 
 I completed my Bachelor's in Honours Computer Science at __[McGill University](https://www.mcgill.ca/)__ where I worked with __[Professor Blake Richards](https://www.mcgill.ca/neuro/blake-richards-phd)__ and __[Dr. Chen Sun](https://linclab.mila.quebec/team/chen)__ on identifying important states for reinforcement learning in sparse reward environments, as well as with __[Professor Doina Precup](https://mila.quebec/en/person/doina-precup/)__ and __[Dr. Khimya Khetarpal](https://kkhetarpal.github.io/)__ on temporally extended models and planning using option models in pixel environments.
 
 I was also previously an intern at __[Expedia](https://www.expedia.ca/)__, __[Square Enix](https://www.square-enix.com/)__, __[Amazon](https://www.amazon.ca/)__, the __[Vector Institute](https://vectorinstitute.ai/)__ and __[Waabi](https://waabi.ai/)__, as well as a __Technical Project Manager for the [McGill A.I. Society](https://mcgillai.com/)__, where I helped to organize, run, and teach __[MAIS 202](https://mcgillai.com/mais202)__, the Accelerated Introduction to ML Bootcamp every semester.
 
 In 2022, I was a part of McGill's team in __[Project X](https://www.uoft.ai/projectx)__, a machine learning research competition organized by the University of Toronto. Our paper on using deep conservative reinforcement learning for mechanical ventilation treatment (which I co-first authored) received the highest score out of all 25 papers submitted to the competition, winning in the clinical practice category. 
 
-I was also fortunate to be selected to participate in the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__.
+I was also fortunate to be selected to participate in the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__. -->
 
 Reach out at __thomas.jiralerspong@mila.quebec__ if there is anything you want to discuss, I'm always happy to talk!
 
