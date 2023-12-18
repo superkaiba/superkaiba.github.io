@@ -14,7 +14,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a first year Master's student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Professor Blake Richards](https://www.mcgill.ca/neuro/blake-richards-phd)__ and __[Professor Doina Precup](https://mila.quebec/en/person/doina-precup/)__.
+I am a first year Master's student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Professor Blake Richards](https://www.mcgill.ca/neuro/blake-richards-phd)__ and __[Professor Doina Precup](https://mila.quebec/en/person/doina-precup/)__.
 
 My primary research interests are:
 - Incorporating ideas from causality, neuroscience and cognitive science into our AI models/RL agents in order to give them more human-like capabilities such as __out-of-distribution generalization__ and __long-term planning/reasoning__
