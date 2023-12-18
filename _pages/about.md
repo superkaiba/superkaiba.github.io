@@ -14,7 +14,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a first year Master's student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Blake Richards](https://www.mcgill.ca/neuro/blake-richards-phd)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__.
+I am a first year Master's student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__.
 
 My primary research interests are:
 - Incorporating ideas from causality, neuroscience and cognitive science into our AI models/RL agents in order to give them more human-like capabilities such as __out-of-distribution generalization__ and __long-term planning/reasoning__
@@ -32,7 +32,7 @@ I am currently:
 I have previously been:
 - Research intern at __[Waabi](https://waabi.ai/)__ and the __[Vector Institute](https://vectorinstitute.ai/)__ working with __[Kelvin Wong](https://www.cs.toronto.edu/~kelvinwong/)__ and __[Chris Zhang](https://www.cs.toronto.edu/~cjhzhang/)__
 - Software development intern at __[Amazon](https://www.amazon.ca/)__, __[Square Enix](https://www.square-enix.com/)__, and __[Expedia](https://www.expedia.ca/)__
-- Undergraduate researcher with __[Blake Richards](https://www.mcgill.ca/neuro/blake-richards-phd)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ working with __[Khimya Khetarpal](https://kkhetarpal.github.io/)__ and __[Chen Sun](https://scholar.google.com/citations?user=Xvl3OLEAAAAJ&hl=en)__
+- Undergraduate researcher with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__ working with __[Khimya Khetarpal](https://kkhetarpal.github.io/)__ and __[Chen Sun](https://scholar.google.com/citations?user=Xvl3OLEAAAAJ&hl=en)__
 - Chosen to attend the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__ 
 - Co-leader of McGill's team for __[Project X](https://www.uoft.ai/projectx)__, where we received the highest score out of 25 submitted papers
 - Co-organizer and teaching assistant for the __[McGill A.I. Society's Accelerated Introduction to ML Bootcamp](https://mcgillai.com/mais202)__
