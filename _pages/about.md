@@ -30,7 +30,7 @@ I am currently:
 <!-- - is to __take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.__ -->
 
 I have previously been:
-- Research intern at __[Waabi](https://waabi.ai/)__ and the __[Vector Institute](https://vectorinstitute.ai/)__ working with __[Kelvin Wong](https://www.cs.toronto.edu/~kelvinwong/)__ and __[Chris Zhang](https://www.cs.toronto.edu/~cjhzhang/)__
+- Research intern at __[Waabi](https://waabi.ai/)__ working with __[Kelvin Wong](https://www.cs.toronto.edu/~kelvinwong/)__ and __[Chris Zhang](https://www.cs.toronto.edu/~cjhzhang/)__ and at the __[Vector Institute](https://vectorinstitute.ai/)__ working with __[John Willes](https://www.linkedin.com/in/johnwilles/)__ and __[Marshall Wang](https://www.linkedin.com/in/marshall-xuekun-wang/)__
 - Software development intern at __[Amazon](https://www.amazon.ca/)__, __[Square Enix](https://www.square-enix.com/)__, and __[Expedia](https://www.expedia.ca/)__
 - Undergraduate researcher with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__ working with __[Khimya Khetarpal](https://kkhetarpal.github.io/)__ and __[Chen Sun](https://scholar.google.com/citations?user=Xvl3OLEAAAAJ&hl=en)__
 - Chosen to attend the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__ 
