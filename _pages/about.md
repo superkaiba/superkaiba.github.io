@@ -19,7 +19,7 @@ I am a Master's student in computer science co-supervised by __[Yoshua Bengio](h
 My primary research interests are:
 - Incorporating ideas from cognitive science, neuroscience, and causality into our AI models/RL agents in order to give them more human-like capabilities such as __out-of-distribution generalization__, __compositional reasoning__, and __long-term planning__
 
-- __LLMs__ as well as how their common sense capabilities can be exploited to train other AI models 
+- Understanding the capabilities and limitations of __LLMs__ as well as developing new LLM architectures/training paradigms
 
 - Applying AI to projects that have a __concrete positive impact on society__, by tackling problems related to __drug discovery__, __healthcare__, __climate change__, __autonomous driving__, etc.
 
