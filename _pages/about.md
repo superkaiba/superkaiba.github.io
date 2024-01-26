@@ -17,7 +17,7 @@ social: true  # includes social icons at the bottom of the page
 I am a Master's student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__.
 
 My primary research interests are:
-- Incorporating ideas from cognitive science, neuroscience, and causality into our artificial intelligence models/reinforcement learning agents in order to give them more human-like capabilities such as __out-of-distribution generalization__, __compositional reasoning__, and __long-term planning__
+- Incorporating ideas from __cognitive science__, __neuroscience__, and __causality__ into our artificial intelligence models/reinforcement learning agents in order to give them more human-like capabilities such as __out-of-distribution generalization__, __compositional reasoning__, and __long-term planning__
 
 <!-- - Understanding the capabilities and limitations of __LLMs__/__diffusion models__ as well as developing new LLM/diffusion model architectures/training paradigms -->
 
