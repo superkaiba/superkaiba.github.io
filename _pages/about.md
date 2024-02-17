@@ -16,14 +16,24 @@ social: true  # includes social icons at the bottom of the page
 
 I am a Master's student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__.
 
+I am broadly interested in __building AI systems that have more human-like capabilities such as out-of-distribution generalization, compositional reasoning, long-term planning, and efficient learning__, as well as __applying AI to projects that have a concrete positive impact on society__.
+
+To this end, my current research directions include:
+- Incorporating ideas from __cognitive science__, __neuroscience__, __psychology__, and __causality__ into our AI models (__[example](https://proceedings.neurips.cc/paper_files/paper/2023/file/6357d6d068622c962391081d296bed69-Paper-Conference.pdf)__)
+
+- Exploiting the common-sense/world-knowledge capabilities of __LLMs__ and __VLMs__ to train/improve our AI models (__[example](https://arxiv.org/pdf/2402.01207.pdf)__)
+
+- Applying AI to projects related to __healthcare__, __drug discovery__, __climate change__, and __autonomous driving__ (__[example](https://ojs.aaai.org/index.php/AAAI/article/view/26862)__)
+
+<!-- 
 My primary research interests are:
 - Incorporating ideas from __cognitive science__, __neuroscience__, and __causality__ into our AI models/RL agents in order to give them more human-like capabilities such as __out-of-distribution generalization__, __compositional reasoning__, and __long-term planning__
 
 - Exploiting the capabilities of __LLMs__ to help train/improve our AI models/RL agents
 
 <!-- - Understanding the capabilities and limitations of __LLMs__/__diffusion models__ as well as developing new LLM/diffusion model architectures/training paradigms -->
-
-- Applying artificial intelligence to projects that have a __concrete positive impact on society__, by tackling problems related to __drug discovery__, __healthcare__, __climate change__, __autonomous driving__, etc.
+<!-- 
+- Applying artificial intelligence to projects that have a __concrete positive impact on society__, by tackling problems related to __drug discovery__, __healthcare__, __climate change__, __autonomous driving__, etc. --> 
 
 I am currently:
 - __[Lab representative](https://mila.quebec/en/mila-lab-reps/)__ at __[Mila](https://mila.quebec/en/)__
@@ -35,7 +45,7 @@ I have previously been:
 - Research intern at __[Waabi](https://waabi.ai/)__ working with __[Kelvin Wong](https://www.cs.toronto.edu/~kelvinwong/)__ and __[Chris Zhang](https://www.cs.toronto.edu/~cjhzhang/)__ and at the __[Vector Institute](https://vectorinstitute.ai/)__ working with __[John Willes](https://www.linkedin.com/in/johnwilles/)__ and __[Marshall Wang](https://www.linkedin.com/in/marshall-xuekun-wang/)__
 - Software development intern at __[Amazon](https://www.amazon.ca/)__, __[Square Enix](https://www.square-enix.com/)__, and __[Expedia](https://www.expedia.ca/)__
 - Undergraduate researcher with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__ working with __[Khimya Khetarpal](https://kkhetarpal.github.io/)__ and __[Chen Sun](https://scholar.google.com/citations?user=Xvl3OLEAAAAJ&hl=en)__
-- Chosen to attend the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__ 
+- Selected to attend the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__ 
 - Co-leader of McGill's team for __[Project X](https://www.uoft.ai/projectx)__, where we received the highest score out of 25 submitted papers
 - Co-organizer and teaching assistant for the __[McGill A.I. Society's Accelerated Introduction to ML Bootcamp](https://mcgillai.com/mais202)__
 - Teaching assistant for Software Systems (COMP206) at McGill
