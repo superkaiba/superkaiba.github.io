@@ -59,7 +59,7 @@ I was also previously an intern at __[Expedia](https://www.expedia.ca/)__, __[Sq
 In 2022, I was a part of McGill's team in __[Project X](https://www.uoft.ai/projectx)__, a machine learning research competition organized by the University of Toronto. Our paper on using deep conservative reinforcement learning for mechanical ventilation treatment (which I co-first authored) received the highest score out of all 25 papers submitted to the competition, winning in the clinical practice category. 
 
 I was also fortunate to be selected to participate in the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__. -->
-In my free time, writing sad songs (check out my (very) amateur music __[here](https://soundcloud.com/jirato/tracks)__), traveling, and watching/analyzing good movies! 
+In my free time, I enjoy traveling, watching/analyzing good movies, and writing sad songs (check out my (very) amateur music __[here](https://soundcloud.com/jirato/tracks)__), ! 
 
 Reach out at __thomas.jiralerspong@mila.quebec__ if there is anything you want to discuss, I'm always happy to talk!
 
