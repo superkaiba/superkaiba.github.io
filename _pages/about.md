@@ -16,7 +16,7 @@ social: true  # includes social icons at the bottom of the page
 
 I am a Master's student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__.
 
-__I am broadly interested in building AI systems that have more human-like capabilities such as out-of-distribution generalization, compositional reasoning, long-term planning, and efficient learning, as well as applying AI to projects that have a concrete positive impact on society__.
+__I am broadly interested in building AI systems that have more human-like capabilities such as system 2 thinking, out-of-distribution generalization, compositional reasoning, long-term planning, and efficient learning, as well as applying AI to projects that have a concrete positive impact on society__.
 
 To this end, my current research directions include:
 - Incorporating ideas from __cognitive science__, __neuroscience__, __psychology__, and __causality__ into our AI models (__[example](https://proceedings.neurips.cc/paper_files/paper/2023/file/6357d6d068622c962391081d296bed69-Paper-Conference.pdf)__)
