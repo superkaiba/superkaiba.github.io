@@ -19,7 +19,7 @@ I am a Master's student in computer science co-supervised by __[Yoshua Bengio](h
 __I am broadly interested in building AI systems that have more human-like capabilities such as system 2 thinking, out-of-distribution generalization, compositional reasoning, long-term planning, and efficient learning, as well as applying AI to projects that have a concrete positive impact on society__.
 
 To this end, my current research directions include:
-- Incorporating ideas from __cognitive science__, __neuroscience__, __psychology__, and __causality__ into our AI models (__[example](https://proceedings.neurips.cc/paper_files/paper/2023/file/6357d6d068622c962391081d296bed69-Paper-Conference.pdf)__)
+- Incorporating ideas from __cognitive science__, __neuroscience__, __psychology__, and __causality__ into our AI models (__[example](https://arxiv.org/pdf/2210.05845.pdf)__)
 
 - Exploiting the common-sense/world-knowledge capabilities of __LLMs__ and __VLMs__ to train/improve our AI models (__[example](https://arxiv.org/pdf/2402.01207.pdf)__)
 
