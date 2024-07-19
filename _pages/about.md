@@ -14,7 +14,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a Master's student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__.
+I am a graduate student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__.
 
 __I am broadly interested in building AI systems that have more human-like capabilities such as system 2 thinking, out-of-distribution generalization, compositional reasoning, long-term planning, and efficient learning, as well as applying AI to projects that have a concrete positive impact on society__.
 
