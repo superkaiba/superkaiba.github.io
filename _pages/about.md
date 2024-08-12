@@ -14,7 +14,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a graduate student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__.
+I am a graduate student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I also work closely with __[Guillaume Lajoie](https://www.guillaumelajoie.com/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__.
 
 __I am broadly interested in building AI systems that have more human-like capabilities such as system 2 thinking, out-of-distribution generalization, compositional reasoning, long-term planning, and efficient learning, as well as applying AI to projects that have a concrete positive impact on society__.
 
@@ -42,11 +42,12 @@ I am currently:
 <!-- - is to __take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.__ -->
 
 I have previously been:
-- Research intern at __[Waabi](https://waabi.ai/)__ working with __[Kelvin Wong](https://www.cs.toronto.edu/~kelvinwong/)__ and __[Chris Zhang](https://www.cs.toronto.edu/~cjhzhang/)__ and at the __[Vector Institute](https://vectorinstitute.ai/)__ working with __[John Willes](https://www.linkedin.com/in/johnwilles/)__ and __[Marshall Wang](https://www.linkedin.com/in/marshall-xuekun-wang/)__
+- Research intern at __[Waabi](https://waabi.ai/)__ working on __variational autoencoders for controllable traffic simulation__ and at the __[Vector Institute](https://vectorinstitute.ai/)__ working on __[reinforcement learning for HVAC control](https://arxiv.org/abs/2308.05711)__
 - Software development intern at __[Amazon](https://www.amazon.ca/)__, __[Square Enix](https://www.square-enix.com/)__, and __[Expedia](https://www.expedia.ca/)__
-- Undergraduate researcher with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__ working with __[Khimya Khetarpal](https://kkhetarpal.github.io/)__ and __[Chen Sun](https://scholar.google.com/citations?user=Xvl3OLEAAAAJ&hl=en)__
+- Undergraduate researcher with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__, working on __[discovering important states for reinforcement learning in sparse reward environments](https://arxiv.org/abs/2210.05845)__ and with __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__, working on __[model-based reinforcement learning in pixel environments](https://arxiv.org/abs/2310.09997)__
+- Selected to be a part of the __[MIT Brains Minds and Machines Summer Course](https://cbmm.mit.edu/summer-school)__
 - Selected to attend the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__ 
-- Co-leader of McGill's team for __[Project X](https://www.uoft.ai/projectx)__, where we received the highest score out of 25 submitted papers
+- Co-leader of McGill's team for __[Project X](https://www.uoft.ai/projectx)__, where we received the highest score out of 25 submitted papers for our work on __[deep reinforcement learning for mechanical ventilation](https://ojs.aaai.org/index.php/AAAI/article/view/26862)__
 - Co-organizer and teaching assistant for the __[McGill A.I. Society's Accelerated Introduction to ML Bootcamp](https://mcgillai.com/mais202)__
 - Teaching assistant for Software Systems (COMP206) at McGill
 
