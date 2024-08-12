@@ -36,20 +36,28 @@ My primary research interests are:
 - Applying artificial intelligence to projects that have a __concrete positive impact on society__, by tackling problems related to __drug discovery__, __healthcare__, __climate change__, __autonomous driving__, etc. --> 
 
 I am currently:
-- __[Lab representative](https://mila.quebec/en/mila-lab-reps/)__ at __[Mila](https://mila.quebec/en/)__
-- Teaching assistant for __[Representation Learning (IFT6135)](https://sites.google.com/mila.quebec/ift6135-a2023/course-description)__ at Université de Montréal
+- Chairman of the __[Lab representatives](https://mila.quebec/en/mila-lab-reps/)__ at __[Mila](https://mila.quebec/en/)__
 - Senior advisor for the __[McGill A.I. Society](https://mcgillai.com/)__
 <!-- - is to __take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.__ -->
 
 I have previously been:
-- Research intern at __[Waabi](https://waabi.ai/)__ working on __variational autoencoders for controllable traffic simulation__ and at the __[Vector Institute](https://vectorinstitute.ai/)__ working on __[reinforcement learning for HVAC control](https://arxiv.org/abs/2308.05711)__
-- Software development intern at __[Amazon](https://www.amazon.ca/)__, __[Square Enix](https://www.square-enix.com/)__, and __[Expedia](https://www.expedia.ca/)__
-- Undergraduate researcher with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__, working on __[discovering important states for reinforcement learning in sparse reward environments](https://arxiv.org/abs/2210.05845)__ and with __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__, working on __[model-based reinforcement learning in pixel environments](https://arxiv.org/abs/2310.09997)__
+- Research intern at:
+  - __[Waabi](https://waabi.ai/)__ - working on __variational autoencoders for controllable traffic simulation__ 
+  - __[Vector Institute](https://vectorinstitute.ai/)__ - working on __[reinforcement learning for HVAC control](https://arxiv.org/abs/2308.05711)__
+- Software development intern at 
+  - __[Amazon](https://www.amazon.ca/)__
+  - __[Square Enix](https://www.square-enix.com/)__
+  - __[Expedia](https://www.expedia.ca/)__
+- Undergraduate researcher with
+  - __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ - working on __[discovering important states for reinforcement learning in sparse reward environments](https://arxiv.org/abs/2210.05845)__ 
+  - __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__ - working on __[model-based reinforcement learning in pixel environments](https://arxiv.org/abs/2310.09997)__
 - Selected to be a part of the __[MIT Brains Minds and Machines Summer Course](https://cbmm.mit.edu/summer-school)__
 - Selected to attend the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__ 
 - Co-leader of McGill's team for __[Project X](https://www.uoft.ai/projectx)__, where we received the highest score out of 25 submitted papers for our work on __[deep reinforcement learning for mechanical ventilation](https://ojs.aaai.org/index.php/AAAI/article/view/26862)__
 - Co-organizer and teaching assistant for the __[McGill A.I. Society's Accelerated Introduction to ML Bootcamp](https://mcgillai.com/mais202)__
-- Teaching assistant for Software Systems (COMP206) at McGill
+- Teaching assistant for:
+  - __[Software Systems (COMP206)](https://www.mcgill.ca/study/2024-2025/courses/comp-206)__ at McGill
+  - __[Representation Learning (IFT6135)](https://sites.google.com/mila.quebec/ift6135-a2023/course-description)__ at Université de Montréal
 
 
 <!-- 
