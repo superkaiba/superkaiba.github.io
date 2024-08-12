@@ -42,6 +42,7 @@ I am currently:
 
 I have previously been:
 - Research intern at:
+  - __[Occam AI](https://www.occam.ai/)__ - working on __automated SQL query generation using LLMs__
   - __[Waabi](https://waabi.ai/)__ - working on __variational autoencoders for controllable traffic simulation__ 
   - __[Vector Institute](https://vectorinstitute.ai/)__ - working on __[reinforcement learning for HVAC control](https://arxiv.org/abs/2308.05711)__
 - Software development intern at 
