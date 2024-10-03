@@ -16,14 +16,25 @@ social: true  # includes social icons at the bottom of the page
 
 I am a graduate student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__.
 
-__I am broadly interested in building AI systems that have more human-like capabilities such as system 2 thinking, out-of-distribution generalization, compositional reasoning, long-term planning, and efficient learning, as well as applying AI to projects that have a concrete positive impact on society__.
+__My two main research goals are:__
+- __Building AI systems that have more human-like capabilities such as system 2 thinking, out-of-distribution generalization, long-term planning, and efficient learning.__
+- __Applying AI to projects that have a concrete positive impact on society__
 
-To this end, my current research directions include:
-- Exploiting the common-sense/world-knowledge/reasoning capabilities of __LLMs__ and __VLMs__ to train/improve our AI models (__[example](https://arxiv.org/pdf/2402.01207.pdf)__)
+Concrete directions I am interested in (and have explored) include:
 
-- Incorporating ideas from __cognitive science__, __neuroscience__, __psychology__, and __causality__ into our AI models (__[example](https://arxiv.org/pdf/2210.05845.pdf)__)
+__AI With Human-Like Capabilities__
+- Input-driven learning (paper on __[bias-only learning](https://arxiv.org/pdf/2407.00957)__)
+- Compositionality (paper on __[compositionality in LLMs](https://arxiv.org/pdf/2410.01444)__)
+- Discrete Representations (paper on __[discovering discrete subgoals for RL](https://arxiv.org/pdf/2210.05845)__)
+- Causality (paper on __[causal graph discovery with LLMs](https://arxiv.org/pdf/2402.01207)__)
+- LLMs and VLMs (papers on __[causal graph discovery with LLMs](https://arxiv.org/pdf/2402.01207)__ and __[compositionality in LLMs](https://arxiv.org/pdf/2410.01444)__, internship at __[Occam AI](https://www.occam.ai/)__)
+- Taking inspiration from cognitive science, neuroscience, and psychology (papers on __[bias-only learning](https://arxiv.org/pdf/2407.00957)__ and __[discovering discrete subgoals for RL](https://arxiv.org/pdf/2210.05845)__)
 
-- Applying AI to projects related to __healthcare__, __drug discovery__, __climate change__, and __autonomous driving__ (__[example](https://ojs.aaai.org/index.php/AAAI/article/view/26862)__)
+__AI for Positive Impact__
+- Healthcare ([paper on RL for Mechanical Ventilation](https://ojs.aaai.org/index.php/AAAI/article/view/26862))
+- Climate Change ([paper on RL for HVAC Control](https://arxiv.org/pdf/2308.05711))
+- Autonomous Driving (Internship at [Waabi](https://waabi.ai/))
+- Drug Discovery
 
 <!-- 
 My primary research interests are:
