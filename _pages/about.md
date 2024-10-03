@@ -29,6 +29,7 @@ __AI With Human-Like Capabilities__
 - Causality (paper on __[causal graph discovery with LLMs](https://arxiv.org/pdf/2402.01207)__)
 - LLMs and VLMs (papers on __[causal graph discovery with LLMs](https://arxiv.org/pdf/2402.01207)__ and __[compositionality in LLMs](https://arxiv.org/pdf/2410.01444)__, internship at __[Occam AI](https://www.occam.ai/)__)
 - Taking inspiration from cognitive science, neuroscience, and psychology (papers on __[bias-only learning](https://arxiv.org/pdf/2407.00957)__ and __[discovering discrete subgoals for RL](https://arxiv.org/pdf/2210.05845)__)
+- Model-based reinforcement learning (paper on __[temporally extended tree-search planning](https://arxiv.org/pdf/2310.09997)__)
 
 __AI for Positive Impact__
 - Healthcare ([paper on RL for Mechanical Ventilation](https://ojs.aaai.org/index.php/AAAI/article/view/26862))
