@@ -32,9 +32,9 @@ __AI With Human-Like Capabilities__
 - Model-based reinforcement learning (paper on __[temporally extended tree-search planning](https://arxiv.org/pdf/2310.09997)__)
 
 __AI for Positive Impact__
-- Healthcare ([paper on RL for Mechanical Ventilation](https://ojs.aaai.org/index.php/AAAI/article/view/26862))
-- Climate Change ([paper on RL for HVAC Control](https://arxiv.org/pdf/2308.05711))
-- Autonomous Driving (Internship at [Waabi](https://waabi.ai/))
+- Healthcare (paper on __[RL for Mechanical Ventilation](https://ojs.aaai.org/index.php/AAAI/article/view/26862)__)
+- Climate Change (paper on __[RL for HVAC Control](https://arxiv.org/pdf/2308.05711)__)
+- Autonomous Driving (Internship at __[Waabi](https://waabi.ai/)__)
 - Drug Discovery
 
 <!-- 
