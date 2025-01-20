@@ -17,12 +17,12 @@ social: true  # includes social icons at the bottom of the page
 I am a graduate student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__.
 
 __My two main research goals are:__
-- __Building AI systems that have more human-like capabilities such as system 2 thinking, out-of-distribution generalization, long-term planning, and efficient learning.__
+- __Building safe and aligned AI systems that have more human-like capabilities such as system 2 thinking, out-of-distribution generalization, long-term planning, and efficient learning.__
 - __Applying AI to projects that have a concrete positive impact on society__
 
 Concrete directions I am interested in (and have explored) include:
 
-__AI With Human-Like Capabilities__
+__Safe and aligned AI With Human-Like Capabilities__
 - LLMs and VLMs (papers on __[causal graph discovery with LLMs](https://arxiv.org/pdf/2402.01207)__ and __[compositionality in LLMs](https://arxiv.org/pdf/2410.01444)__, internship at __[Occam AI](https://www.occam.ai/)__)
 - Input-driven learning (paper on __[bias-only learning](https://arxiv.org/pdf/2407.00957)__)
 - Compositionality (papers on __[complexity-based theory of compositionality](https://arxiv.org/pdf/2410.14817)__ and __[compositionality in LLMs](https://arxiv.org/pdf/2410.01444)__)
