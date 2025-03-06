@@ -6,7 +6,7 @@ subtitle:
 
 profile:
   align: right
-  image: /Users/thomasjiralerspong/development/superkaiba.github.io/assets/img/prof_pic.jpg
+  image: prof_pic.jpg
   address: >
 
 news: false  # includes a list of news items
