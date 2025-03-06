@@ -6,7 +6,7 @@ subtitle:
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: testpic.jpg
   image_circular: true
 
 news: false  # includes a list of news items
