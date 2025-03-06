@@ -14,7 +14,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a graduate student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__.
+I am a graduate student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__ and a co-founder of __[Occam AI](https://www.occam.ai/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__.
 
 __My two main research goals are:__
 - __Building safe and aligned AI systems that have more human-like capabilities such as system 2 thinking, out-of-distribution generalization, long-term planning, and efficient learning.__
@@ -52,9 +52,9 @@ I am currently:
 - Senior advisor for the __[McGill A.I. Society](https://mcgillai.com/)__
 <!-- - is to __take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.__ -->
 
+<!-- - __[Occam AI](https://www.occam.ai/)__ - working on __automated SQL query generation using LLMs__ -->
 I have previously been:
 - Research intern at:
-  - __[Occam AI](https://www.occam.ai/)__ - working on __automated SQL query generation using LLMs__
   - __[Waabi](https://waabi.ai/)__ - working on __variational autoencoders for controllable traffic simulation__ 
   - __[Vector Institute](https://vectorinstitute.ai/)__ - working on __[reinforcement learning for HVAC control](https://arxiv.org/abs/2308.05711)__
 - Software development intern at 
