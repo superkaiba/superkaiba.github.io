@@ -6,7 +6,7 @@ subtitle:
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: assets/img/prof_pic.jpg
   address: >
 
 news: false  # includes a list of news items
