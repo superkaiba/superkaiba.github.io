@@ -13,73 +13,47 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a graduate student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. I previously completed my Bachelor's in honours computer science at __[McGill University](https://www.mcgill.ca/)__ working with __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ and __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__.
+I am a graduate student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Doina Precup](https://mila.quebec/en/person/doina-precup/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. 
 
-__My two main research goals are:__
-- __Building safe and aligned AI systems that have more human-like capabilities such as system 2 thinking, out-of-distribution generalization, long-term planning, and efficient learning.__
-- __Applying AI to projects that have a concrete positive impact on society__
-
-Concrete directions I am interested in (and have explored) include:
-
-__Safe and aligned AI With Human-Like Capabilities__
-- LLMs and VLMs (papers on __[causal graph discovery with LLMs](https://arxiv.org/pdf/2402.01207)__ and __[compositionality in LLMs](https://arxiv.org/pdf/2410.01444)__, internship at __[Occam AI](https://www.occam.ai/)__)
-- Input-driven learning (paper on __[bias-only learning](https://arxiv.org/pdf/2407.00957)__)
-- Compositionality (papers on __[complexity-based theory of compositionality](https://arxiv.org/pdf/2410.14817)__ and __[compositionality in LLMs](https://arxiv.org/pdf/2410.01444)__)
-- Discrete Representations (paper on __[discovering discrete subgoals for RL](https://arxiv.org/pdf/2210.05845)__)
-- Causality (paper on __[causal graph discovery with LLMs](https://arxiv.org/pdf/2402.01207)__)
-- Taking inspiration from cognitive science, neuroscience, and psychology (papers on __[bias-only learning](https://arxiv.org/pdf/2407.00957)__ and __[discovering discrete subgoals for RL](https://arxiv.org/pdf/2210.05845)__)
-- Model-based reinforcement learning (paper on __[temporally extended tree-search planning](https://arxiv.org/pdf/2310.09997)__)
-
-__AI for Positive Impact__
-- Healthcare (paper on __[RL for Mechanical Ventilation](https://ojs.aaai.org/index.php/AAAI/article/view/26862)__)
-- Climate Change (paper on __[RL for HVAC Control](https://arxiv.org/pdf/2308.05711)__)
-- Autonomous Driving (Internship at __[Waabi](https://waabi.ai/)__)
-- Drug Discovery
-
-<!-- 
-My primary research interests are:
-- Incorporating ideas from __cognitive science__, __neuroscience__, and __causality__ into our AI models/RL agents in order to give them more human-like capabilities such as __out-of-distribution generalization__, __compositional reasoning__, and __long-term planning__
-
-- Exploiting the capabilities of __LLMs__ to help train/improve our AI models/RL agents
-
-<!-- - Understanding the capabilities and limitations of __LLMs__/__diffusion models__ as well as developing new LLM/diffusion model architectures/training paradigms -->
-<!-- 
-- Applying artificial intelligence to projects that have a __concrete positive impact on society__, by tackling problems related to __drug discovery__, __healthcare__, __climate change__, __autonomous driving__, etc. --> 
-
-I am currently:
-- Chairman of the __[Lab representatives](https://mila.quebec/en/mila-lab-reps/)__ at __[Mila](https://mila.quebec/en/)__
-- Senior advisor for the __[McGill A.I. Society](https://mcgillai.com/)__
-<!-- - is to __take inspiration from human cognition to develop independent and useful artificial intelligence systems which have a positive impact on society.__ -->
-
-<!-- - __[Occam AI](https://www.occam.ai/)__ - working on __automated SQL query generation using LLMs__ -->
-I have previously been:
-- Research intern at:
-  - __[Waabi](https://waabi.ai/)__ - working on __variational autoencoders for controllable traffic simulation__ 
-  - __[Vector Institute](https://vectorinstitute.ai/)__ - working on __[reinforcement learning for HVAC control](https://arxiv.org/abs/2308.05711)__
-- Software development intern at 
-  - __[Amazon](https://www.amazon.ca/)__
-  - __[Square Enix](https://www.square-enix.com/)__
-  - __[Expedia](https://www.expedia.ca/)__
-- Undergraduate researcher with
-  - __[Blake Richards](https://mila.quebec/en/person/blake-richards/)__ - working on __[discovering important states for reinforcement learning in sparse reward environments](https://arxiv.org/abs/2210.05845)__ 
-  - __[Doina Precup](https://cs.mcgill.ca/~dprecup/)__ - working on __[model-based reinforcement learning in pixel environments](https://arxiv.org/abs/2310.09997)__
-- Selected to be a part of the __[MIT Brains Minds and Machines Summer Course](https://cbmm.mit.edu/summer-school)__
-- Selected to attend the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__ 
-- Co-leader of McGill's team for __[Project X](https://www.uoft.ai/projectx)__, where we received the highest score out of 25 submitted papers for our work on __[deep reinforcement learning for mechanical ventilation](https://ojs.aaai.org/index.php/AAAI/article/view/26862)__
-- Co-organizer and teaching assistant for the __[McGill A.I. Society's Accelerated Introduction to ML Bootcamp](https://mcgillai.com/mais202)__
-- Teaching assistant for:
-  - __[Software Systems (COMP206)](https://www.mcgill.ca/study/2024-2025/courses/comp-206)__ at McGill
-  - __[Representation Learning (IFT6135)](https://sites.google.com/mila.quebec/ift6135-a2023/course-description)__ at Université de Montréal
+I have a wide array of interests, most of which I have been fortunate enough to work on:
+- __LLMs/VLMs__:
+  - LLM agents (internship at __[Occam AI](https://www.occam.ai/)__)
+  - LLM internals and mechanistic interpretability (paper on __[compositionality in LLMs](https://arxiv.org/pdf/2410.01444)__)
+  - LLM applications (paper on __[causal graph discovery with LLMs](https://arxiv.org/pdf/2402.01207)__)
+- __Neuroscience/Cognitive science/Psychology inspired AI__:
+  - Input-driven learning (paper on __[bias-only learning](https://arxiv.org/pdf/2407.00957)__)
+- __Modularity__:
+  - Compositionality (papers on __[complexity-based theory of compositionality](https://arxiv.org/pdf/2410.14817)__ and __[compositionality in LLMs](https://arxiv.org/pdf/2410.01444)__)
+  - Discrete Representations (paper on __[discovering discrete subgoals for RL](https://arxiv.org/pdf/2210.05845)__)
+- __Model-based AI__:
+  - Causality (papers on __[causal graph discovery with LLMs](https://arxiv.org/pdf/2402.01207)__ and __[causal imputation](https://arxiv.org/pdf/2410.20647)__)
+  - Model-based reinforcement learning (paper on __[temporally extended tree-search planning](https://arxiv.org/pdf/2310.09997)__)
+- __AI for good__:
+  - AI for Healthcare (paper on __[RL for Mechanical Ventilation](https://ojs.aaai.org/index.php/AAAI/article/view/26862)__)
+  - AI for Climate Change (paper on __[RL for HVAC Control](https://arxiv.org/pdf/2308.05711)__)
+  - AI for Autonomous Driving (Internship at __[Waabi](https://waabi.ai/)__)
+  - AI for Drug Discovery
 
 
-<!-- 
-I completed my Bachelor's in Honours Computer Science at __[McGill University](https://www.mcgill.ca/)__ where I worked with __[Professor Blake Richards](https://www.mcgill.ca/neuro/blake-richards-phd)__ and __[Dr. Chen Sun](https://linclab.mila.quebec/team/chen)__ on identifying important states for reinforcement learning in sparse reward environments, as well as with __[Professor Doina Precup](https://mila.quebec/en/person/doina-precup/)__ and __[Dr. Khimya Khetarpal](https://kkhetarpal.github.io/)__ on temporally extended models and planning using option models in pixel environments.
 
-I was also previously an intern at __[Expedia](https://www.expedia.ca/)__, __[Square Enix](https://www.square-enix.com/)__, __[Amazon](https://www.amazon.ca/)__, the __[Vector Institute](https://vectorinstitute.ai/)__ and __[Waabi](https://waabi.ai/)__, as well as a __Technical Project Manager for the [McGill A.I. Society](https://mcgillai.com/)__, where I helped to organize, run, and teach __[MAIS 202](https://mcgillai.com/mais202)__, the Accelerated Introduction to ML Bootcamp every semester.
+<!-- Things I am currently interested in:
+- __Mechanistic Interpretability__
+- __NeuroAI__
+- __AI Agents__
 
-In 2022, I was a part of McGill's team in __[Project X](https://www.uoft.ai/projectx)__, a machine learning research competition organized by the University of Toronto. Our paper on using deep conservative reinforcement learning for mechanical ventilation treatment (which I co-first authored) received the highest score out of all 25 papers submitted to the competition, winning in the clinical practice category. 
+Things I have worked on in the past:
 
-I was also fortunate to be selected to participate in the __[10th Heidelberg Laureate Forum](https://www.heidelberg-laureate-forum.org/forum/10th-hlf-2023.html)__. -->
+- __[LLMs and VLMs](https://arxiv.org/pdf/2410.01444)__
+- __[Input-driven learning](https://arxiv.org/pdf/2407.00957)__
+- __[Compositionality](https://arxiv.org/pdf/2410.01444)__
+- __[Discrete Representations](https://arxiv.org/pdf/2210.05845)__
+- __[Causality](https://arxiv.org/pdf/2402.01207)__
+- __[NeuroAI](https://arxiv.org/pdf/2407.00957)__ 
+- __[Model-based reinforcement learning](https://arxiv.org/pdf/2310.09997)__
+- __[AI for Healthcare](https://ojs.aaai.org/index.php/AAAI/article/view/26862)__
+- __[AI for Climate Change](https://arxiv.org/pdf/2308.05711)__
+- __[AI for Autonomous Driving](https://waabi.ai/)__ -->
+
 In my free time, I enjoy traveling, watching/analyzing good movies, and writing sad songs (check out my (very) amateur music __[here](https://soundcloud.com/jirato)__)! 
 
 Reach out at __thomas.jiralerspong@mila.quebec__ if there is anything you want to discuss, I'm always happy to talk!
