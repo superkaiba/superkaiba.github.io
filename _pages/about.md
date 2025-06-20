@@ -19,7 +19,16 @@ I am also currently an AI research fellow at __[Anthropic](https://www.anthropic
 
 My research has been funded by a __[Vanier Canada Graduate Scholarship](https://vanier.gc.ca/en/home-accueil.html)__, __[NSERC Canada Graduate Scholarship](https://www.nserc-crsng.gc.ca/students-etudiants/pg-cs/cgsm-bescm_eng.asp)__, and __[FRQNT Scholarship](https://frq.gouv.qc.ca/en/program/frqnt-2024-2025-masters-training-scholarships/)__.
 
-I have a wide array of interests, most of which I have been fortunate enough to work on:
+## Research Interests
+
+<div id="research-network" style="width: 100%; height: 600px; margin: 30px 0;"></div>
+
+<script src="{{ '/assets/js/research-network.js' | relative_url }}"></script>
+
+<details style="margin-top: 20px;">
+<summary style="cursor: pointer; color: var(--global-theme-color); font-weight: 600;">View as list</summary>
+<div style="margin-top: 15px;">
+
 - __LLMs/VLMs__:
   - LLM agents (internship at __[Occam AI](https://www.occam.ai/)__)
   - LLM internals and mechanistic interpretability (paper on __[compositionality in LLMs](https://arxiv.org/pdf/2410.01444)__)
@@ -37,6 +46,9 @@ I have a wide array of interests, most of which I have been fortunate enough to 
   - AI for Climate Change (paper on __[RL for HVAC Control](https://arxiv.org/pdf/2308.05711)__)
   - AI for Autonomous Driving (Internship at __[Waabi](https://waabi.ai/)__)
   - AI for Drug Discovery
+
+</div>
+</details>
 
 
 
