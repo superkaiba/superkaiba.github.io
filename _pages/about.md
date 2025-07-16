@@ -15,7 +15,7 @@ social: true  # includes social icons at the bottom of the page
 
 I am a PhD student in computer science co-supervised by __[Yoshua Bengio](https://yoshuabengio.org/)__ and __[Guillaume Lajoie](https://www.guillaumelajoie.com/)__ at __[Mila](https://mila.quebec/en/)__ and __[Université de Montréal](https://www.umontreal.ca/)__. 
 
-<!-- I am also currently an AI research fellow at __[Anthropic](https://www.anthropic.com/)__, working on mechanistic interpretability of emergently misaligned models. -->
+I am also currently an AI research fellow at __[Anthropic](https://www.anthropic.com/)__, working on mechanistic interpretability of emergently misaligned models.
 
 My research has been funded by a __[Vanier Canada Graduate Scholarship](https://vanier.gc.ca/en/home-accueil.html)__, __[NSERC Canada Graduate Scholarship](https://www.nserc-crsng.gc.ca/students-etudiants/pg-cs/cgsm-bescm_eng.asp)__, and __[FRQNT Scholarship](https://frq.gouv.qc.ca/en/program/frqnt-2024-2025-masters-training-scholarships/)__.
 
