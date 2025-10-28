@@ -8,63 +8,207 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Fixed Sidebar Navigation -->
-    <nav class="sidebar">
-        <div class="sidebar-content">
-            <h1 class="site-title">Thomas Jiralerspong</h1>
-
-            <div class="external-links">
-                <a href="assets/docs/resume.pdf" target="_blank" class="link-item">Resume</a>
-                <a href="assets/docs/cv.pdf" target="_blank" class="link-item">CV</a>
-                <a href="https://scholar.google.com/citations?user=ifQsJnIAAAAJ" target="_blank" class="link-item">Scholar</a>
-                <a href="https://linkedin.com/in/thomas-jiralerspong" target="_blank" class="link-item">LinkedIn</a>
-                <a href="https://github.com/superkaiba" target="_blank" class="link-item">GitHub</a>
-            </div>
-        </div>
-    </nav>
-
     <!-- Main Content Area -->
     <main class="content">
-        <section id="about" class="section">
-            <div class="section-inner">
-                <div class="profile-header">
-                    <img src="assets/images/profile.jpg" alt="Thomas Jiralerspong" class="profile-image">
-                    <div class="profile-info">
-                        <p class="bio">
-                            PhD student at <a href="https://mila.quebec/en/" target="_blank">Mila</a> and <a href="https://www.umontreal.ca/" target="_blank">UdeM</a>, supervised by <a href="https://yoshuabengio.org/" target="_blank">Yoshua Bengio</a> and <a href="https://www.guillaumelajoie.com/" target="_blank">Guillaume Lajoie</a>. AI Research Fellow at <a href="https://www.anthropic.com/" target="_blank">Anthropic</a>.
-                        </p>
+        <!-- Header -->
+        <header class="site-header">
+            <img src="assets/images/profile.jpg" alt="Thomas Jiralerspong" class="profile-image">
+            <h1 class="site-title">Thomas Jiralerspong</h1>
+            <p class="tagline">PhD Student at Mila/UdeM · AI Research Fellow at Anthropic</p>
 
-                        <h3 class="section-heading">Research</h3>
-                        <p class="bio">
-                            I work on mechanistic interpretability, compositionality, and neuroscience-inspired AI. My research has been funded by the Vanier CGS, NSERC CGS, and FRQNT scholarships.
-                        </p>
-
-                        <h3 class="section-heading">Selected Publications</h3>
-                        <ul class="pub-list">
-                            <li><a href="https://arxiv.org/pdf/2410.14817" target="_blank">Complexity-Based Theory of Compositionality</a> (2024)</li>
-                            <li><a href="https://arxiv.org/pdf/2410.01444" target="_blank">Compositionality in LLMs</a> (2024)</li>
-                            <li><a href="https://arxiv.org/pdf/2407.00957" target="_blank">Bias-Only Learning</a> (2024)</li>
-                            <li><a href="https://ojs.aaai.org/index.php/AAAI/article/view/26862/26634" target="_blank">Safe Mechanical Ventilation via Deep Offline RL</a> (AAAI 2023)</li>
-                            <li><a href="https://arxiv.org/pdf/2210.05845.pdf" target="_blank">Contrastive Introspection in RL</a> (NeurIPS 2023)</li>
-                        </ul>
-
-                        <h3 class="section-heading">Experience</h3>
-                        <ul class="experience-list">
-                            <li>AI Research Fellow at Anthropic</li>
-                            <li>Research Intern at Occam AI, Waabi</li>
-                            <li>BSc Computer Science from McGill University</li>
-                        </ul>
-
-                        <p class="bio contact">
-                            <strong>thomas.jiralerspong@mila.quebec</strong>
-                        </p>
-                    </div>
-                </div>
+            <div class="links">
+                <a href="assets/docs/cv.pdf" target="_blank">CV</a>
+                <a href="https://scholar.google.com/citations?user=ifQsJnIAAAAJ" target="_blank">Google Scholar</a>
+                <a href="https://github.com/superkaiba" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/thomas-jiralerspong" target="_blank">LinkedIn</a>
+                <a href="mailto:thomas.jiralerspong@mila.quebec">Email</a>
             </div>
+        </header>
+
+        <!-- About -->
+        <section class="section">
+            <p class="about">
+                I'm a PhD student at Mila and Université de Montréal, supervised by <span class="highlight">Yoshua Bengio</span> and <a href="https://www.guillaumelajoie.com/" target="_blank">Guillaume Lajoie</a>. My research focuses on mechanistic interpretability, compositionality, and neuroscience-inspired AI—essentially, understanding how neural networks learn and represent knowledge.
+            </p>
+            <p class="about">
+                Currently an <span class="highlight">AI Research Fellow at Anthropic</span>, where I work on interpreting large language models. My work has been supported by the <a href="https://vanier.gc.ca/en/home-accueil.html" target="_blank"><span class="highlight">Vanier CGS</span></a>, <a href="https://www.nserc-crsng.gc.ca/index_eng.asp" target="_blank">NSERC CGS</a>, and <a href="http://www.frqnt.gouv.qc.ca/en/" target="_blank">FRQNT</a> scholarships.
+            </p>
         </section>
+
+        <!-- Publications & Experience Side by Side -->
+        <div class="two-column-sections">
+            <section class="section column">
+                <h2>Selected First Author Publications</h2>
+                <ul class="list">
+                    <li>
+                        <div class="pub-title-row">
+                            <a href="https://openreview.net/pdf?id=YXB8uigyOg" target="_blank">Cross-Architecture Model Diffing With Crosscoders</a>
+                            <span class="meta">Under Review</span>
+                        </div>
+                        <p class="pub-description">We show that sparse autoencoders can be used to discover behavioral differences between language models with different architectures in an unsupervised manner</p>
+                    </li>
+                    <li>
+                        <div class="pub-title-row">
+                            <a href="https://arxiv.org/pdf/2510.09660v3" target="_blank">Learning What Matters: Steering Diffusion via Spectrally Anisotropic Forward Noise</a>
+                            <span class="meta">Under Review</span>
+                        </div>
+                        <p class="pub-description">We show that controlling frequency components in the forward diffusion process improves generative quality and enables better compositional learning</p>
+                    </li>
+                    <li>
+                        <div class="pub-title-row">
+                            <a href="https://arxiv.org/pdf/2410.14817" target="_blank">A Complexity-Based Theory of Compositionality</a>
+                            <span class="meta">ICML 2025</span>
+                        </div>
+                        <p class="pub-description">We develop a theoretical framework connecting algorithmic complexity with compositional learning, showing when and why neural networks learn compositional representations</p>
+                    </li>
+                    <li class="hidden-pub" data-batch="1">
+                        <div class="pub-title-row">
+                            <a href="https://arxiv.org/pdf/2410.01444" target="_blank">Geometric Signatures of Compositionality Across a Language Model's Lifetime</a>
+                            <span class="meta">ACL 2025 · <em>Highlight Award</em></span>
+                        </div>
+                        <p class="pub-description">We identify geometric signatures in LLM representations that predict compositional generalization and track how these emerge during training</p>
+                    </li>
+                    <li class="hidden-pub" data-batch="1">
+                        <div class="pub-title-row">
+                            <a href="https://arxiv.org/pdf/2407.00957" target="_blank">Expressivity of Neural Networks with Random Weights and Learned Biases</a>
+                            <span class="meta">ICLR 2025</span>
+                        </div>
+                        <p class="pub-description">We prove that neural networks can learn complex functions using only bias parameters while keeping weights random, characterizing the expressivity of this architecture</p>
+                    </li>
+                    <li class="hidden-pub" data-batch="1">
+                        <div class="pub-title-row">
+                            <a href="https://arxiv.org/abs/2501.17061" target="_blank">Shaping Inductive Bias in Diffusion Models through Frequency-Based Noise Control</a>
+                            <span class="meta">DeLTa Workshop 2025</span>
+                        </div>
+                        <p class="pub-description">We demonstrate how manipulating frequency components of noise in diffusion models shapes their inductive biases toward specific types of structure</p>
+                    </li>
+                    <li class="hidden-pub" data-batch="2">
+                        <div class="pub-title-row">
+                            <a href="https://arxiv.org/pdf/2402.01207.pdf" target="_blank">Efficient Causal Graph Discovery Using Large Language Models</a>
+                            <span class="meta">ICLR Workshop 2024</span>
+                        </div>
+                        <p class="pub-description">We show that LLMs can efficiently discover causal relationships from observational data by leveraging their world knowledge to guide structure learning</p>
+                    </li>
+                    <li class="hidden-pub" data-batch="2">
+                        <div class="pub-title-row">
+                            <a href="https://ojs.aaai.org/index.php/AAAI/article/view/26862/26634" target="_blank">Towards Safe Mechanical Ventilation Treatment Using Deep Offline RL</a>
+                            <span class="meta">AAAI 2023</span>
+                        </div>
+                        <p class="pub-description">We develop a deep offline RL approach for learning safe ventilator control policies from ICU data, with safety constraints to prevent harmful actions</p>
+                    </li>
+                    <li class="hidden-pub" data-batch="2">
+                        <div class="pub-title-row">
+                            <a href="https://arxiv.org/pdf/2310.09997.pdf" target="_blank">Forecaster: Towards Temporally Abstract Tree-Search Planning from Pixels</a>
+                            <span class="meta">NeurIPS Workshop 2023</span>
+                        </div>
+                        <p class="pub-description">We introduce a model-based RL method with affordance-aware tree-search planning that operates directly from pixel observations</p>
+                    </li>
+                    <li class="hidden-pub" data-batch="3">
+                        <div class="pub-title-row">
+                            <a href="https://arxiv.org/pdf/2210.02552.pdf" target="_blank">Deep Conservative RL for Personalization of Mechanical Ventilation Treatment</a>
+                            <span class="meta">RLDM 2022</span>
+                        </div>
+                        <p class="pub-description">We apply conservative offline RL to personalize mechanical ventilation treatment in critical care, addressing distributional shift in medical settings</p>
+                    </li>
+                </ul>
+                <button class="show-more-btn" id="pubs-btn" onclick="showMorePublications()">
+                    Show More
+                </button>
+            </section>
+
+            <section class="section column">
+                <h2>Experience</h2>
+                <ul class="list">
+                    <li>
+                        <div class="exp-header">
+                            <span class="exp-company"><a href="https://www.anthropic.com/" target="_blank"><span class="highlight">Anthropic</span></a></span>
+                            <span class="meta">Apr 2025–Oct 2025</span>
+                        </div>
+                        <p class="exp-role">AI Research Fellow</p>
+                        <p class="exp-description">Working on mechanistic interpretability to discover behavioral differences between models</p>
+                    </li>
+                    <li>
+                        <div class="exp-header">
+                            <span class="exp-company"><a href="https://www.occam.ai/" target="_blank">Occam AI</a></span>
+                            <span class="meta">Jun 2024–Apr 2025</span>
+                        </div>
+                        <p class="exp-role">Research Scientist</p>
+                        <p class="exp-description">Worked on optimization of interactions between networks of LLM agents and automated SQL query generation</p>
+                    </li>
+                    <li>
+                        <div class="exp-header">
+                            <span class="exp-company"><a href="https://waabi.ai/" target="_blank">Waabi</a></span>
+                            <span class="meta">Jun–Aug 2023</span>
+                        </div>
+                        <p class="exp-role">Deep Learning Research Intern</p>
+                        <p class="exp-description">Worked with <span class="mentor">Kelvin Wong</span> and <span class="mentor">Chris Zhang</span> on realistic and controllable traffic simulation using a transformer-based variational autoencoder</p>
+                    </li>
+                    <li class="hidden-exp" data-batch="1">
+                        <div class="exp-header">
+                            <span class="exp-company"><a href="https://mila.quebec/en/" target="_blank">Learning in Neural Circuits Lab, Mila/McGill</a></span>
+                            <span class="meta">Sep 2022–Aug 2023</span>
+                        </div>
+                        <p class="exp-role">Research Intern</p>
+                        <p class="exp-description">Worked with <a href="https://mila.quebec/en/person/blake-richards/" target="_blank"><span class="mentor">Prof. Blake Richards</span></a> on contrastive learning to discover critical states for reinforcement learning in sparse reward environments</p>
+                    </li>
+                    <li class="hidden-exp" data-batch="1">
+                        <div class="exp-header">
+                            <span class="exp-company"><a href="https://rl.cs.mcgill.ca/" target="_blank">Reasoning and Learning Lab, Mila/McGill</a></span>
+                            <span class="meta">Jan 2022–Aug 2023</span>
+                        </div>
+                        <p class="exp-role">Research Intern</p>
+                        <p class="exp-description">Worked with <a href="https://cs.mcgill.ca/~dprecup/" target="_blank"><span class="mentor">Prof. Doina Precup</span></a> on model-based reinforcement learning with affordance-aware tree-search planning directly from pixels</p>
+                    </li>
+                    <li class="hidden-exp" data-batch="1">
+                        <div class="exp-header">
+                            <span class="exp-company"><a href="https://vectorinstitute.ai/" target="_blank">Vector Institute for A.I.</a></span>
+                            <span class="meta">Sep–Dec 2022</span>
+                        </div>
+                        <p class="exp-role">Machine Learning Research Intern</p>
+                        <p class="exp-description">Worked with <span class="mentor">John Willes</span> and <span class="mentor">Marshall Wang</span> on model-based reinforcement learning for HVAC control</p>
+                    </li>
+                    <li class="hidden-exp" data-batch="2">
+                        <div class="exp-header">
+                            <span class="exp-company"><a href="https://aws.amazon.com/s3/" target="_blank">Amazon Web Services (S3 Team)</a></span>
+                            <span class="meta">May–Jul 2022</span>
+                        </div>
+                        <p class="exp-role">Software Development Engineer Intern</p>
+                        <p class="exp-description">Built JavaScript/Python tool to automate the incremental backup recovery system for AWS S3 (stores ~14 trillion objects)</p>
+                    </li>
+                    <li class="hidden-exp" data-batch="2">
+                        <div class="exp-header">
+                            <span class="exp-company"><a href="https://www.uoft.ai/projectx-2021" target="_blank">Project X ML Research Competition</a></span>
+                            <span class="meta">Jun 2021–Feb 2022</span>
+                        </div>
+                        <p class="exp-role">Co-leader of McGill's Team · Winner ($25k prize)</p>
+                        <p class="exp-description">Led team to highest score out of 25 submitted papers on deep offline conservative RL for mechanical ventilation treatment</p>
+                    </li>
+                    <li class="hidden-exp" data-batch="2">
+                        <div class="exp-header">
+                            <span class="exp-company"><a href="https://www.square-enix.com/" target="_blank">Square Enix</a></span>
+                            <span class="meta">May–Aug 2021</span>
+                        </div>
+                        <p class="exp-role">Software Development Intern</p>
+                        <p class="exp-description">Built localization system to allow a MOBA game to be translated into over 10 languages</p>
+                    </li>
+                    <li class="hidden-exp" data-batch="3">
+                        <div class="exp-header">
+                            <span class="exp-company"><a href="https://www.expedia.com/" target="_blank">Expedia</a></span>
+                            <span class="meta">Jun–Aug 2019</span>
+                        </div>
+                        <p class="exp-role">Software Development Intern</p>
+                        <p class="exp-description">Built React/TypeScript tool to identify which elements of a webpage are broken and display them to developers</p>
+                    </li>
+                </ul>
+                <button class="show-more-btn" id="exp-btn" onclick="showMoreExperience()">
+                    Show More
+                </button>
+            </section>
+        </div>
     </main>
 
     <script src="js/script.js"></script>
