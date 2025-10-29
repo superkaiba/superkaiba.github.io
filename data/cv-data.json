@@ -1,0 +1,698 @@
+{
+  "news": [
+    {
+      "id": "news-acl-2025",
+      "date": "January 2025",
+      "title": "Paper accepted to ACL 2025 with Highlight Award",
+      "content": "Our paper \"Geometric Signatures of Compositionality Across a Language Model's Lifetime\" was accepted to ACL 2025 and received a Highlight Award (top ~2.5% of submissions)!"
+    },
+    {
+      "id": "news-icml-2025",
+      "date": "January 2025",
+      "title": "Paper accepted to ICML 2025",
+      "content": "Our work \"A Complexity-Based Theory of Compositionality\" was accepted to ICML 2025. We develop a theoretical framework connecting algorithmic complexity with compositional learning in neural networks."
+    },
+    {
+      "id": "news-vanier-2025",
+      "date": "May 2024",
+      "title": "Awarded Vanier Canada Graduate Scholarship",
+      "content": "Honored to receive the Vanier Canada Graduate Scholarship ($150,000), Canada's most prestigious doctoral award. Grateful for this support to continue my research on mechanistic interpretability and compositionality."
+    },
+    {
+      "id": "news-anthropic-2025",
+      "date": "April 2025",
+      "title": "Starting as AI Research Fellow at Anthropic",
+      "content": "Excited to join Anthropic as an AI Research Fellow working on mechanistic interpretability to discover behavioral differences between models."
+    }
+  ],
+  "publications": {
+    "conferences": [
+      {
+        "id": "crosscoders-2026",
+        "highlight": true,
+        "featured": false,
+        "title": "Cross-Architecture Model Diffing With Crosscoders",
+        "authors": ["T. Jiralerspong", "T. Bricken"],
+        "venue": "Under Review",
+        "year": 2026,
+        "summary": "We show that sparse autoencoders can be used to discover behavioral differences between language models with different architectures in an unsupervised manner",
+        "link": "https://openreview.net/pdf?id=YXB8uigyOg"
+      },
+      {
+        "id": "diffusion-noise-2026",
+        "highlight": false,
+        "title": "Learning What Matters: Steering Diffusion via Spectrally Anisotropic Forward Noise",
+        "authors": ["L. Scimeca*", "T. Jiralerspong*", "B. Earnshaw", "J. Hartford", "Y. Bengio"],
+        "venue": "Under Review",
+        "year": 2026,
+        "summary": "We show that controlling frequency components in the forward diffusion process improves generative quality and enables better compositional learning",
+        "link": "https://arxiv.org/pdf/2510.09660v3"
+      },
+      {
+        "id": "complexity-compositionality-icml2025",
+        "highlight": true,
+        "featured": true,
+        "title": "A Complexity-Based Theory of Compositionality",
+        "authors": ["Eric Elmoznino*", "Thomas Jiralerspong*", "Yoshua Bengio", "Guillaume Lajoie"],
+        "venue": "ICML",
+        "year": 2025,
+        "summary": "We connect algorithmic complexity to compositional learning, proving when neural networks learn to compose primitive concepts.",
+        "abstract": "We propose a formal mathematical definition of representational compositionality grounded in algorithmic information theory. A compositional representation must satisfy three key properties: expressiveness (capturing complex information), symbolic structure (re-describable as discrete symbolic sequences with re-combinable parts), and semantic simplicity (the function connecting symbols to representation must be simple). We validate our framework through experiments on synthetic and real-world datasets, demonstrating how it unifies various perspectives from AI and cognitive science literature.",
+        "link": "https://arxiv.org/abs/2410.14817"
+      },
+      {
+        "id": "geometric-compositionality-acl2025",
+        "highlight": true,
+        "featured": true,
+        "title": "Geometric Signatures of Compositionality Across a Language Model's Lifetime",
+        "authors": ["Jin Hwa Lee*", "Thomas Jiralerspong*", "Lei Yu", "Emily Cheng"],
+        "venue": "ACL",
+        "year": 2025,
+        "award": "Highlight Award",
+        "summary": "We discover geometric signatures in language model representations that predict compositional generalization ability.",
+        "abstract": "We investigate whether language models capture the inherent simplicity of language through compositionality by examining how dataset compositionality relates to the intrinsic dimension of model representations. We find that dataset compositionality is reflected in the intrinsic dimensionality of learned representations, with this relationship emerging through linguistic features developed during training. Nonlinear and linear dimensionality respectively encode semantic and superficial aspects of linguistic composition.",
+        "link": "https://aclanthology.org/2025.acl-long.265/"
+      },
+      {
+        "id": "random-weights-iclr2025",
+        "highlight": false,
+        "title": "Expressivity of Neural Networks with Random Weights and Learned Biases",
+        "authors": ["E. Williams", "A. Ryoo*", "T. Jiralerspong*", "M. Perich", "G. Lajoie"],
+        "venue": "ICLR",
+        "year": 2025,
+        "summary": "We prove that neural networks can learn complex functions using only bias parameters while keeping weights random, characterizing the expressivity of this architecture",
+        "link": "https://arxiv.org/pdf/2407.00957"
+      },
+      {
+        "id": "delta-ai-iclr2024",
+        "highlight": false,
+        "title": "Delta-AI: Local Objectives for Amortized Inference in Sparse Graphical Models",
+        "authors": ["J. Falet", "H. Lee", "N. Malkin", "C. Sun", "D. Secrieru", "T. Jiralerspong", "D. Zhang", "G. Lajoie", "Y. Bengio"],
+        "venue": "ICLR",
+        "year": 2024,
+        "summary": "We develop local objectives for amortized inference in sparse graphical models using delta functions",
+        "link": "https://arxiv.org/pdf/2310.02423"
+      },
+      {
+        "id": "contrastive-retrospection-neurips2023",
+        "highlight": false,
+        "title": "Contrastive Retrospection: honing in on critical steps for rapid learning and generalization in RL",
+        "authors": ["C. Sun", "W. Yang", "T. Jiralerspong", "D. Malenfant", "B. Alsbury-Nealy", "Y. Bengio", "B. Richards"],
+        "venue": "NeurIPS",
+        "year": 2023,
+        "summary": "We develop a contrastive learning method to identify critical states in RL that accelerate learning in sparse reward environments",
+        "link": "https://arxiv.org/pdf/2210.05845.pdf"
+      },
+      {
+        "id": "ventilation-aaai2023",
+        "highlight": false,
+        "title": "Towards Safe Mechanical Ventilation Treatment Using Deep Offline Reinforcement Learning",
+        "authors": ["F. Kondrup*", "T. Jiralerspong*", "E. Lau", "N. de Lara", "J. Shkrob", "M.D. Tran", "D. Precup", "S. Basu"],
+        "venue": "AAAI",
+        "year": 2023,
+        "summary": "We develop a deep offline RL approach for learning safe ventilator control policies from ICU data, with safety constraints to prevent harmful actions",
+        "link": "https://ojs.aaai.org/index.php/AAAI/article/view/26862/26634"
+      },
+      {
+        "id": "hvac-uic2023",
+        "highlight": false,
+        "title": "A Comparison of Classical and Deep Reinforcement Learning Methods for HVAC Control",
+        "authors": ["M. Wang", "J. Willes", "T. Jiralerspong", "M. Moezzi"],
+        "venue": "UIC",
+        "year": 2023,
+        "summary": "We compare classical and deep RL approaches for HVAC control in building energy management",
+        "link": "https://arxiv.org/pdf/2308.05711.pdf"
+      }
+    ],
+    "workshops": [
+      {
+        "id": "frequency-noise-delta2025",
+        "highlight": false,
+        "title": "Shaping Inductive Bias in Diffusion Models through Frequency-Based Noise Control",
+        "authors": ["T. Jiralerspong", "B. Earnshaw", "J. Hartford", "Y. Bengio", "L. Scimeca"],
+        "venue": "ICLR Workshop on Deep Generative Models (DeLTa)",
+        "year": 2025,
+        "summary": "We demonstrate how manipulating frequency components of noise in diffusion models shapes their inductive biases toward specific types of structure",
+        "link": "https://arxiv.org/abs/2501.17061"
+      },
+      {
+        "id": "causal-imputation-neurips2024",
+        "highlight": false,
+        "title": "General Causal Imputation via Synthetic Interventions",
+        "authors": ["M. Jiralerspong", "T. Jiralerspong", "V. Shah", "D. Sridhar", "G. Gidel"],
+        "venue": "NeurIPS Workshop on Causal Representation Learning",
+        "year": 2024,
+        "summary": "We develop methods for causal imputation using synthetic interventions in observational data",
+        "link": ""
+      },
+      {
+        "id": "llm-causal-iclr2024",
+        "highlight": false,
+        "title": "Efficient Causal Graph Discovery Using Large Language Models",
+        "authors": ["T. Jiralerspong*", "X. Chen*", "Y. More", "V. Shah", "Y. Bengio"],
+        "venue": "ICLR Workshop on How Far Are We From AGI?",
+        "year": 2024,
+        "summary": "We show that LLMs can efficiently discover causal relationships from observational data by leveraging their world knowledge to guide structure learning",
+        "link": "https://arxiv.org/pdf/2402.01207.pdf"
+      },
+      {
+        "id": "forecaster-neurips2023",
+        "highlight": false,
+        "title": "Forecaster: Towards Temporally Abstract Tree-Search Planning from Pixels",
+        "authors": ["T. Jiralerspong*", "F. Kondrup*", "D. Precup", "K. Khetarpal"],
+        "venue": "NeurIPS Workshop on Generalization in Planning",
+        "year": 2023,
+        "summary": "We introduce a model-based RL method with affordance-aware tree-search planning that operates directly from pixel observations",
+        "link": "https://arxiv.org/pdf/2310.09997.pdf"
+      },
+      {
+        "id": "ventilation-rldm2022",
+        "highlight": false,
+        "title": "Deep Conservative Reinforcement Learning for Personalization of Mechanical Ventilation Treatment",
+        "authors": ["F. Kondrup*", "T. Jiralerspong*", "E. Lau", "N. de Lara", "J. Shkrob", "M.D. Tran", "D. Precup", "S. Basu"],
+        "venue": "Multi-disciplinary Conference on Reinforcement Learning and Decision Making (RLDM)",
+        "year": 2022,
+        "summary": "We apply conservative offline RL to personalize mechanical ventilation treatment in critical care, addressing distributional shift in medical settings",
+        "link": "https://arxiv.org/pdf/2210.02552.pdf"
+      }
+    ]
+  },
+  "research_experience": [
+    {
+      "id": "anthropic-2025",
+      "highlight": true,
+      "featured": true,
+      "company": "Anthropic",
+      "company_url": "https://www.anthropic.com/",
+      "position": "AI Research Fellow",
+      "location": "San Francisco, United States",
+      "start_date": "2025-04",
+      "end_date": "2025-10",
+      "summary": "Working on mechanistic interpretability to discover behavioral differences between models",
+      "details": "Conducting research on mechanistic interpretability and AI safety. Developing methods to understand how large language models represent and process information internally.",
+      "mentors": [],
+      "technologies": ["PyTorch", "Python"]
+    },
+    {
+      "id": "occam-2024",
+      "highlight": false,
+      "company": "Occam AI",
+      "company_url": "https://www.occam.ai/",
+      "position": "Research Scientist",
+      "location": "New York City, United States",
+      "start_date": "2024-06",
+      "end_date": "2025-04",
+      "summary": "Worked on optimization of interactions between networks of LLM agents and automated SQL query generation",
+      "details": "Developed optimization algorithms for multi-agent LLM systems and created automated SQL query generation pipelines using large language models.",
+      "mentors": [],
+      "technologies": ["PyTorch", "Python"]
+    },
+    {
+      "id": "waabi-2023",
+      "highlight": false,
+      "company": "Waabi",
+      "company_url": "https://waabi.ai/",
+      "position": "Deep Learning Research Intern",
+      "location": "Toronto, Canada",
+      "start_date": "2023-06",
+      "end_date": "2023-08",
+      "summary": "Worked with Kelvin Wong and Chris Zhang on realistic and controllable traffic simulation using a transformer-based variational autoencoder",
+      "details": "Developed realistic and controllable traffic simulation systems using transformer-based variational autoencoders for autonomous driving applications.",
+      "mentors": ["Kelvin Wong", "Chris Zhang"],
+      "technologies": ["PyTorch", "Python"]
+    },
+    {
+      "id": "blake-richards-2022",
+      "highlight": false,
+      "company": "Learning in Neural Circuits Lab, Mila/McGill University",
+      "company_url": "https://mila.quebec/en/",
+      "position": "Research Intern",
+      "location": "Montreal, Canada",
+      "start_date": "2022-09",
+      "end_date": "2023-08",
+      "summary": "Worked with Prof. Blake Richards on contrastive learning to discover critical states for reinforcement learning in sparse reward environments",
+      "details": "Developed contrastive learning methods to identify critical states that enable rapid learning and generalization in reinforcement learning tasks with sparse rewards.",
+      "mentors": ["Prof. Blake Richards"],
+      "mentor_links": {"Prof. Blake Richards": "https://mila.quebec/en/person/blake-richards/"},
+      "technologies": ["PyTorch", "Python"]
+    },
+    {
+      "id": "doina-precup-2022",
+      "highlight": false,
+      "company": "Reasoning and Learning Lab, Mila/McGill University",
+      "company_url": "https://rl.cs.mcgill.ca/",
+      "position": "Research Intern",
+      "location": "Montreal, Canada",
+      "start_date": "2022-01",
+      "end_date": "2023-08",
+      "summary": "Worked with Prof. Doina Precup on model-based reinforcement learning with affordance-aware tree-search planning directly from pixels",
+      "details": "Developed model-based RL methods with affordance-aware tree-search planning that operate directly from pixel observations for complex decision-making tasks.",
+      "mentors": ["Prof. Doina Precup"],
+      "mentor_links": {"Prof. Doina Precup": "https://cs.mcgill.ca/~dprecup/"},
+      "technologies": ["PyTorch", "Python"]
+    },
+    {
+      "id": "vector-2022",
+      "highlight": false,
+      "company": "Vector Institute for A.I.",
+      "company_url": "https://vectorinstitute.ai/",
+      "position": "Machine Learning Research Intern",
+      "location": "Toronto, Canada",
+      "start_date": "2022-09",
+      "end_date": "2022-12",
+      "summary": "Worked with John Willes and Marshall Wang on model-based reinforcement learning for HVAC control",
+      "details": "Developed model-based reinforcement learning algorithms for optimizing HVAC systems in building energy management.",
+      "mentors": ["John Willes", "Marshall Wang"],
+      "technologies": ["PyTorch", "Python"]
+    },
+    {
+      "id": "project-x-2021",
+      "highlight": true,
+      "featured": true,
+      "company": "Project X, Machine Learning Research Competition",
+      "company_url": "https://www.uoft.ai/projectx-2021",
+      "position": "Co-leader of McGill's Team",
+      "location": "Remote",
+      "start_date": "2021-06",
+      "end_date": "2022-02",
+      "summary": "Led team to highest score out of 25 submitted papers on deep offline conservative RL for mechanical ventilation treatment",
+      "details": "Co-led McGill's team in a machine learning research competition, receiving the highest score out of 25 submissions. Developed deep offline conservative reinforcement learning methods for mechanical ventilation treatment. Won $25,000 prize.",
+      "mentors": [],
+      "award": "Winner ($25,000 prize)",
+      "technologies": ["PyTorch", "Python"]
+    }
+  ],
+  "industry_experience": [
+    {
+      "id": "aws-2022",
+      "highlight": false,
+      "company": "Amazon Web Services (AWS) - S3 Team",
+      "company_url": "https://aws.amazon.com/s3/",
+      "position": "Software Development Engineer Intern",
+      "location": "Vancouver, Canada",
+      "start_date": "2022-05",
+      "end_date": "2022-07",
+      "summary": "Built JavaScript/Python tool to automate the incremental backup recovery system for AWS S3 (stores ~14 trillion objects)",
+      "details": "Developed automation tools for the incremental backup recovery system supporting AWS S3, which stores approximately 14 trillion objects globally.",
+      "technologies": ["JavaScript", "Python"]
+    },
+    {
+      "id": "square-enix-2021",
+      "highlight": false,
+      "company": "Square Enix",
+      "company_url": "https://www.square-enix.com/",
+      "position": "Software Development Intern",
+      "location": "Montreal, Canada",
+      "start_date": "2021-05",
+      "end_date": "2021-08",
+      "summary": "Built localization system to allow a MOBA game to be translated into over 10 languages",
+      "details": "Developed a comprehensive localization system enabling a MOBA game to be translated into over 10 languages, improving global accessibility.",
+      "technologies": ["C#"]
+    },
+    {
+      "id": "expedia-2019",
+      "highlight": false,
+      "company": "Expedia",
+      "company_url": "https://www.expedia.com/",
+      "position": "Software Development Intern",
+      "location": "Montreal, Canada",
+      "start_date": "2019-06",
+      "end_date": "2019-08",
+      "summary": "Built React/TypeScript tool to identify which elements of a webpage are broken and display them to developers",
+      "details": "Developed a React/TypeScript debugging tool that automatically identifies broken webpage elements and provides convenient visualization for developers.",
+      "technologies": ["JavaScript", "TypeScript", "React"]
+    }
+  ],
+  "education": [
+    {
+      "id": "udem-phd",
+      "highlight": true,
+      "featured": true,
+      "institution": "Université de Montréal",
+      "institution_url": "https://www.umontreal.ca/",
+      "degree": "PhD in Computer Science",
+      "location": "Montreal, Canada",
+      "start_date": "2023-09",
+      "end_date": "2027-04",
+      "status": "In Progress",
+      "gpa": null,
+      "supervisors": ["Yoshua Bengio", "Guillaume Lajoie"],
+      "supervisor_links": {
+        "Yoshua Bengio": "https://yoshuabengio.org/",
+        "Guillaume Lajoie": "https://www.guillaumelajoie.com/"
+      },
+      "awards": [
+        "Vanier Canada Graduate Scholarship ($150,000)",
+        "FRQNT Scholarship ($40,000) - Rank #1 among all applicants in category",
+        "NSERC Canada Graduate Scholarship ($17,500)",
+        "Hydro-Québec Excellence Scholarship ($10,000)",
+        "Arbour Scholarship ($7,500)"
+      ]
+    },
+    {
+      "id": "mit-bmm-2024",
+      "highlight": false,
+      "institution": "Massachusetts Institute of Technology",
+      "institution_url": "https://mit.edu/",
+      "degree": "Brains, Minds, and Machines Summer Course",
+      "location": "Cambridge, United States",
+      "start_date": "2024",
+      "end_date": "2024",
+      "status": "Completed"
+    },
+    {
+      "id": "mcgill-bsc",
+      "highlight": false,
+      "institution": "McGill University",
+      "institution_url": "https://www.mcgill.ca/",
+      "degree": "B.Sc., Honours Computer Science",
+      "location": "Montreal, Canada",
+      "start_date": "2020-09",
+      "end_date": "2023-05",
+      "status": "Completed",
+      "gpa": "4.00/4.00",
+      "supervisors": ["Blake Richards", "Doina Precup"],
+      "supervisor_links": {
+        "Blake Richards": "https://mila.quebec/en/person/blake-richards/",
+        "Doina Precup": "https://cs.mcgill.ca/~dprecup/"
+      },
+      "notes": "Exchange semester at the National University of Singapore",
+      "awards": [
+        "J.W. McConnell Major Entrance Scholarship ($9,000)"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "id": "vanier-2025",
+      "highlight": true,
+      "featured": true,
+      "title": "Vanier Canada Graduate Scholarship",
+      "amount": "$150,000",
+      "year": 2025,
+      "description": "Canada's most prestigious doctoral scholarship",
+      "link": "https://vanier.gc.ca/en/home-accueil.html"
+    },
+    {
+      "id": "frqnt-2024",
+      "highlight": true,
+      "title": "FRQNT Master's Scholarship",
+      "amount": "$40,000",
+      "year": 2024,
+      "description": "Rank #1 among all applicants in category",
+      "link": "http://www.frqnt.gouv.qc.ca/en/"
+    },
+    {
+      "id": "arbour-2024",
+      "highlight": false,
+      "title": "Arbour Scholarship",
+      "amount": "$7,500",
+      "year": 2024,
+      "link": ""
+    },
+    {
+      "id": "hydro-quebec-2024",
+      "highlight": false,
+      "title": "Hydro-Québec Excellence Scholarship",
+      "amount": "$10,000",
+      "year": 2024,
+      "link": ""
+    },
+    {
+      "id": "heidelberg-2023",
+      "highlight": true,
+      "featured": true,
+      "title": "Heidelberg Laureate Forum",
+      "year": 2023,
+      "description": "Chosen as one of 200 most promising young researchers in math & CS worldwide",
+      "link": "https://www.heidelberg-laureate-forum.org/"
+    },
+    {
+      "id": "nserc-2023",
+      "highlight": false,
+      "title": "NSERC Canada Graduate Scholarship",
+      "amount": "$17,500",
+      "year": 2023,
+      "link": "https://www.nserc-crsng.gc.ca/index_eng.asp"
+    },
+    {
+      "id": "udem-masters-2023",
+      "highlight": false,
+      "title": "University of Montreal Master's Scholarship",
+      "amount": "$5,000",
+      "year": 2023,
+      "link": ""
+    },
+    {
+      "id": "mcgill-mobility-2022",
+      "highlight": false,
+      "title": "McGill Mobility Bursary for Exchanges",
+      "amount": "$6,000",
+      "year": 2022,
+      "link": ""
+    },
+    {
+      "id": "project-x-winner-2022",
+      "highlight": true,
+      "title": "Winner of UofT AI's Project X Competition",
+      "amount": "$25,000",
+      "year": 2022,
+      "description": "Highest score out of 25 submitted papers",
+      "link": "https://www.uoft.ai/projectx-2021"
+    },
+    {
+      "id": "mcconnell-2020",
+      "highlight": false,
+      "title": "J.W. McConnell Major Entrance Scholarship",
+      "amount": "$9,000",
+      "year": 2020,
+      "duration": "2020-2022",
+      "link": ""
+    },
+    {
+      "id": "cibpa-2021",
+      "highlight": false,
+      "title": "CIBPA Foundation Bursary",
+      "amount": "$1,000",
+      "year": 2021,
+      "link": ""
+    },
+    {
+      "id": "cibpa-2022",
+      "highlight": false,
+      "title": "CIBPA Foundation Bursary",
+      "amount": "$2,500",
+      "year": 2022,
+      "link": ""
+    },
+    {
+      "id": "cibpa-2023",
+      "highlight": false,
+      "title": "CIBPA Foundation Bursary",
+      "amount": "$1,000",
+      "year": 2023,
+      "link": ""
+    },
+    {
+      "id": "valedictorian-2020",
+      "highlight": false,
+      "title": "Marianopolis College Valedictorian",
+      "year": 2020,
+      "link": ""
+    },
+    {
+      "id": "governor-general-2020",
+      "highlight": false,
+      "title": "Governor General of Canada's Academic Medal",
+      "year": 2020,
+      "link": ""
+    }
+  ],
+  "teaching": [
+    {
+      "id": "udem-ta-2023",
+      "highlight": false,
+      "institution": "Université de Montréal",
+      "institution_url": "https://www.umontreal.ca/",
+      "role": "Teaching Assistant",
+      "course": "Representation Learning",
+      "year": 2023
+    },
+    {
+      "id": "mcgill-ai-society-2021",
+      "highlight": false,
+      "institution": "McGill A.I. Society",
+      "institution_url": "https://mcgillai.com/",
+      "role": "Organizer/Teaching Assistant",
+      "course": "Accelerated Intro to ML",
+      "start_date": "2021",
+      "end_date": "2023"
+    },
+    {
+      "id": "mcgill-ta-2021",
+      "highlight": false,
+      "institution": "McGill University",
+      "institution_url": "https://www.mcgill.ca/",
+      "role": "Teaching Assistant",
+      "course": "Software Systems",
+      "start_date": "2021",
+      "end_date": "2022"
+    },
+    {
+      "id": "mcgill-lecturer-2022",
+      "highlight": false,
+      "institution": "McGill University",
+      "institution_url": "https://www.mcgill.ca/",
+      "role": "Guest Lecturer",
+      "course": "Theory of Machine Learning",
+      "year": 2022
+    }
+  ],
+  "service": [
+    {
+      "id": "mila-lab-rep-2023",
+      "highlight": false,
+      "organization": "Mila",
+      "organization_url": "https://mila.quebec/en/",
+      "role": "Chairman of Lab Representatives",
+      "start_date": "2023",
+      "end_date": "Present"
+    },
+    {
+      "id": "mila-social-2023",
+      "highlight": false,
+      "organization": "Mila",
+      "organization_url": "https://mila.quebec/en/",
+      "role": "Chairman of Social Committee",
+      "start_date": "2023",
+      "end_date": "Present"
+    },
+    {
+      "id": "mila-recruitment-2023",
+      "highlight": false,
+      "organization": "Mila",
+      "organization_url": "https://mila.quebec/en/",
+      "role": "Executive Member of Recruitment Committee",
+      "start_date": "2023",
+      "end_date": "Present"
+    },
+    {
+      "id": "mcgill-ai-advisor-2023",
+      "highlight": false,
+      "organization": "McGill AI Society",
+      "organization_url": "https://mcgillai.com/",
+      "role": "Senior Advisor",
+      "start_date": "2023",
+      "end_date": "Present"
+    },
+    {
+      "id": "mcgill-ai-pm-2021",
+      "highlight": false,
+      "organization": "McGill AI Society",
+      "organization_url": "https://mcgillai.com/",
+      "role": "Technical Project Manager",
+      "start_date": "2021",
+      "end_date": "2023"
+    },
+    {
+      "id": "main-conf-2022",
+      "highlight": false,
+      "organization": "Montreal AI & Neuroscience Conference",
+      "organization_url": "",
+      "role": "Organizer - Introduction to deep learning with PyTorch workshop",
+      "year": 2022
+    },
+    {
+      "id": "mcgill-neurotech-2021",
+      "highlight": false,
+      "organization": "McGill NeuroTech",
+      "organization_url": "",
+      "role": "Machine Learning Developer",
+      "start_date": "2021",
+      "end_date": "2022"
+    },
+    {
+      "id": "mcgill-robotics-2020",
+      "highlight": false,
+      "organization": "McGill Robotics",
+      "organization_url": "",
+      "role": "Software Developer",
+      "start_date": "2020",
+      "end_date": "2021"
+    }
+  ],
+  "press": [
+    {
+      "id": "scilogs-2024",
+      "highlight": false,
+      "outlet": "SciLogs",
+      "title": "What Do Food and Research Have in Common? More Than You Might Think",
+      "author": "Nina Beier",
+      "date": "2024-01-24",
+      "link": "https://scilogs.spektrum.de/hlf/what-do-food-and-research-have-in-common-more-than-you-might-think/",
+      "summary": "Feature on my experience at the Heidelberg Laureate Forum"
+    },
+    {
+      "id": "tribune-2022",
+      "highlight": false,
+      "outlet": "The McGill Tribune",
+      "title": "Six McGill undergrads win UofT international artificial intelligence competition",
+      "author": "Mikaela Shadick",
+      "date": "2022-03-15",
+      "link": "https://www.thetribune.ca/sci-tech/six-mcgill-undergrads-win-uoft-international-artificial-intelligence-competition-03152022/",
+      "summary": "Coverage of Project X competition win"
+    },
+    {
+      "id": "reporter-2022",
+      "highlight": false,
+      "outlet": "McGill Reporter",
+      "title": "Undergrad team uses machine learning to create a better hospital ventilator",
+      "author": "Richard Deschamps",
+      "date": "2022-03-01",
+      "link": "https://reporter.mcgill.ca/undergrad-team-uses-machine-learning-to-create-a-better-hospital-ventilator/",
+      "summary": "Feature on mechanical ventilation research project"
+    }
+  ],
+  "invited_talks": [
+    {
+      "id": "cucai-2022",
+      "highlight": false,
+      "event": "Canadian Undergraduate Conference on AI (CUCAI)",
+      "year": 2022,
+      "link": ""
+    },
+    {
+      "id": "uoft-ai-2022",
+      "highlight": false,
+      "event": "University of Toronto AI Conference",
+      "year": 2022,
+      "link": ""
+    },
+    {
+      "id": "mcgill-learnathon-2022",
+      "highlight": false,
+      "event": "McGill AI Society Learnathon",
+      "year": 2022,
+      "link": ""
+    }
+  ],
+  "languages": [
+    {
+      "level": "Native",
+      "languages": ["English", "French"]
+    },
+    {
+      "level": "Advanced",
+      "languages": ["Italian", "Spanish"]
+    },
+    {
+      "level": "Beginner",
+      "languages": ["Mandarin", "Japanese"]
+    }
+  ],
+  "skills": {
+    "programming": ["Python", "Java", "JavaScript", "R", "C", "C++", "C#", "OCaml", "SQL", "HTML", "CSS"],
+    "ml_libraries": ["PyTorch", "TensorFlow", "Keras", "Pandas", "NumPy", "Matplotlib"],
+    "tools": ["LaTeX", "Slurm", "Jupyter Notebooks", "Perforce", "GitHub", "Jira", "Unity"]
+  }
+}

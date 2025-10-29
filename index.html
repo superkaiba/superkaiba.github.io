@@ -12,6 +12,28 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Table of Contents -->
+    <nav class="toc">
+        <div class="toc-content">
+            <h3>Contents</h3>
+            <ul>
+                <li><a href="#featured">Featured Projects</a></li>
+                <li><a href="#complete-cv">Complete CV</a>
+                    <ul class="toc-nested">
+                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="#research-experience">Research Exp</a></li>
+                        <li><a href="#industry-experience">Industry Exp</a></li>
+                        <li><a href="#awards">Awards</a></li>
+                        <li><a href="#teaching">Teaching</a></li>
+                        <li><a href="#service">Service</a></li>
+                        <li><a href="#press">Press</a></li>
+                        <li><a href="#talks">Talks</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- Main Content Area -->
     <main class="content">
         <!-- Top Section: 2 Columns -->
@@ -32,191 +54,191 @@
 
             <!-- Right: About -->
             <div class="about-column">
-                <h2>About</h2>
-                <p class="about">
-                    I am a PhD student at <a href="https://mila.quebec/en/" target="_blank">Mila</a> and <a href="https://www.umontreal.ca/" target="_blank">Université de Montréal</a>, supervised by <a href="https://yoshuabengio.org/" target="_blank"><span class="highlight">Yoshua Bengio</span></a> and <a href="https://www.guillaumelajoie.com/" target="_blank">Guillaume Lajoie</a>. Currently an <span class="highlight">AI Research Fellow at Anthropic</span>. I have a wide variety of research interests (see below for a list of my publications and experience), but I have most recently been working on mechanistic interpretability, compositionality, and neuroscience-inspired AI.
+                <p class="hero-intro">
+                    Hi! I'm a PhD student interested in understanding how neural networks learn and represent knowledge.
                 </p>
-                <p class="about">
-                    I previously worked at <a href="https://www.occam.ai/" target="_blank">Occam AI</a> (LLM agent optimization), <a href="https://waabi.ai/" target="_blank">Waabi</a> (autonomous driving simulation), and conducted research with <a href="https://mila.quebec/en/person/blake-richards/" target="_blank"><span class="mentor">Prof. Blake Richards</span></a> (neuroscience-inspired RL) and <a href="https://cs.mcgill.ca/~dprecup/" target="_blank"><span class="mentor">Prof. Doina Precup</span></a> (model-based RL). My work has been supported by the <a href="https://vanier.gc.ca/en/home-accueil.html" target="_blank"><span class="highlight">Vanier CGS</span></a>, <a href="https://www.nserc-crsng.gc.ca/index_eng.asp" target="_blank">NSERC CGS</a>, and <a href="http://www.frqnt.gouv.qc.ca/en/" target="_blank">FRQNT</a>.
-                </p>
-                <p class="about">
-                    I am always happy to chat, collaborate, or mentor. Feel free to reach out at <a href="mailto:thomas.jiralerspong@mila.quebec"><strong>thomas.jiralerspong@mila.quebec</strong></a>.
+
+                <div class="about-section">
+                    <h3 class="about-heading">Current</h3>
+                    <ul class="about-list">
+                        <li><span class="highlight">AI Research Fellow at Anthropic</span> (mechanistic interpretability)</li>
+                        <li>PhD at <a href="https://mila.quebec/en/" target="_blank">Mila</a>/<a href="https://www.umontreal.ca/" target="_blank">UdeM</a> with <a href="https://yoshuabengio.org/" target="_blank"><span class="highlight">Yoshua Bengio</span></a> & <a href="https://www.guillaumelajoie.com/" target="_blank">Guillaume Lajoie</a></li>
+                        <li><a href="https://vanier.gc.ca/en/home-accueil.html" target="_blank"><span class="highlight">Vanier Scholar</span></a></li>
+                        <li>Research: Mechanistic interpretability, compositionality, neuroscience-inspired AI</li>
+                    </ul>
+                </div>
+
+                <div class="about-section">
+                    <h3 class="about-heading">Previous</h3>
+                    <ul class="about-list">
+                        <li>Research Scientist at <a href="https://www.occam.ai/" target="_blank">Occam AI</a> (LLM agent optimization)</li>
+                        <li>Research Intern at <a href="https://waabi.ai/" target="_blank">Waabi</a> (autonomous driving simulation)</li>
+                        <li>Research with <a href="https://mila.quebec/en/person/blake-richards/" target="_blank">Blake Richards</a> (neuroscience RL) & <a href="https://cs.mcgill.ca/~dprecup/" target="_blank">Doina Precup</a> (model-based RL)</li>
+                        <li>Invited to <a href="https://www.heidelberg-laureate-forum.org/" target="_blank">Heidelberg Laureate Forum</a></li>
+                        <li>BSc from <a href="https://www.mcgill.ca/" target="_blank">McGill University</a> (4.0 GPA)</li>
+                        <li>Past work: Reinforcement learning, healthcare ML, causal inference, diffusion models</li>
+                    </ul>
+                </div>
+
+                <p class="hero-contact">
+                    Always happy to chat, collaborate, or mentor → <a href="mailto:thomas.jiralerspong@mila.quebec"><strong>thomas.jiralerspong@mila.quebec</strong></a>
                 </p>
             </div>
         </div>
 
-        <!-- Publications & Experience Side by Side -->
-        <div class="two-column-sections">
-            <section class="section column">
-                <h2>Selected First Author Publications</h2>
-                <ul class="list">
-                    <li>
-                        <div class="pub-title-row">
-                            <a href="https://openreview.net/pdf?id=YXB8uigyOg" target="_blank">Cross-Architecture Model Diffing With Crosscoders</a>
-                            <span class="meta">Under Review</span>
-                        </div>
-                        <p class="pub-description">We show that sparse autoencoders can be used to discover behavioral differences between language models with different architectures in an unsupervised manner</p>
-                    </li>
-                    <li>
-                        <div class="pub-title-row">
-                            <a href="https://arxiv.org/pdf/2510.09660v3" target="_blank">Learning What Matters: Steering Diffusion via Spectrally Anisotropic Forward Noise</a>
-                            <span class="meta">Under Review</span>
-                        </div>
-                        <p class="pub-description">We show that controlling frequency components in the forward diffusion process improves generative quality and enables better compositional learning</p>
-                    </li>
-                    <li>
-                        <div class="pub-title-row">
-                            <a href="https://arxiv.org/pdf/2410.14817" target="_blank">A Complexity-Based Theory of Compositionality</a>
-                            <span class="meta">ICML 2025</span>
-                        </div>
-                        <p class="pub-description">We develop a theoretical framework connecting algorithmic complexity with compositional learning, showing when and why neural networks learn compositional representations</p>
-                    </li>
-                    <li class="hidden-pub" data-batch="1">
-                        <div class="pub-title-row">
-                            <a href="https://arxiv.org/pdf/2410.01444" target="_blank">Geometric Signatures of Compositionality Across a Language Model's Lifetime</a>
-                            <span class="meta">ACL 2025 · <em>Highlight Award</em></span>
-                        </div>
-                        <p class="pub-description">We identify geometric signatures in LLM representations that predict compositional generalization and track how these emerge during training</p>
-                    </li>
-                    <li class="hidden-pub" data-batch="1">
-                        <div class="pub-title-row">
-                            <a href="https://arxiv.org/pdf/2407.00957" target="_blank">Expressivity of Neural Networks with Random Weights and Learned Biases</a>
-                            <span class="meta">ICLR 2025</span>
-                        </div>
-                        <p class="pub-description">We prove that neural networks can learn complex functions using only bias parameters while keeping weights random, characterizing the expressivity of this architecture</p>
-                    </li>
-                    <li class="hidden-pub" data-batch="1">
-                        <div class="pub-title-row">
-                            <a href="https://arxiv.org/abs/2501.17061" target="_blank">Shaping Inductive Bias in Diffusion Models through Frequency-Based Noise Control</a>
-                            <span class="meta">DeLTa Workshop 2025</span>
-                        </div>
-                        <p class="pub-description">We demonstrate how manipulating frequency components of noise in diffusion models shapes their inductive biases toward specific types of structure</p>
-                    </li>
-                    <li class="hidden-pub" data-batch="2">
-                        <div class="pub-title-row">
-                            <a href="https://arxiv.org/pdf/2402.01207.pdf" target="_blank">Efficient Causal Graph Discovery Using Large Language Models</a>
-                            <span class="meta">ICLR Workshop 2024</span>
-                        </div>
-                        <p class="pub-description">We show that LLMs can efficiently discover causal relationships from observational data by leveraging their world knowledge to guide structure learning</p>
-                    </li>
-                    <li class="hidden-pub" data-batch="2">
-                        <div class="pub-title-row">
-                            <a href="https://ojs.aaai.org/index.php/AAAI/article/view/26862/26634" target="_blank">Towards Safe Mechanical Ventilation Treatment Using Deep Offline RL</a>
-                            <span class="meta">AAAI 2023</span>
-                        </div>
-                        <p class="pub-description">We develop a deep offline RL approach for learning safe ventilator control policies from ICU data, with safety constraints to prevent harmful actions</p>
-                    </li>
-                    <li class="hidden-pub" data-batch="2">
-                        <div class="pub-title-row">
-                            <a href="https://arxiv.org/pdf/2310.09997.pdf" target="_blank">Forecaster: Towards Temporally Abstract Tree-Search Planning from Pixels</a>
-                            <span class="meta">NeurIPS Workshop 2023</span>
-                        </div>
-                        <p class="pub-description">We introduce a model-based RL method with affordance-aware tree-search planning that operates directly from pixel observations</p>
-                    </li>
-                    <li class="hidden-pub" data-batch="3">
-                        <div class="pub-title-row">
-                            <a href="https://arxiv.org/pdf/2210.02552.pdf" target="_blank">Deep Conservative RL for Personalization of Mechanical Ventilation Treatment</a>
-                            <span class="meta">RLDM 2022</span>
-                        </div>
-                        <p class="pub-description">We apply conservative offline RL to personalize mechanical ventilation treatment in critical care, addressing distributional shift in medical settings</p>
-                    </li>
-                </ul>
-                <button class="show-more-btn" id="pubs-btn" onclick="showMorePublications()">
-                    Show More
+        <!-- Featured Projects Section -->
+        <section id="featured" class="collapsible-section">
+            <div class="section-header" onclick="toggleSection('featured')">
+                <button class="section-toggle-btn">
+                    <i class="fas fa-chevron-up"></i>
                 </button>
-            </section>
+                <h2 class="main-section-title">Featured Projects</h2>
+            </div>
+            <div class="section-content">
+                <ul id="featured-container" class="item-list"></ul>
+            </div>
+        </section>
 
-            <section class="section column">
-                <h2>Experience</h2>
-                <ul class="list">
-                    <li>
-                        <div class="exp-header">
-                            <span class="exp-company"><a href="https://www.anthropic.com/" target="_blank"><span class="highlight">Anthropic</span></a></span>
-                            <span class="meta">Apr 2025–Oct 2025</span>
-                        </div>
-                        <p class="exp-role">AI Research Fellow</p>
-                        <p class="exp-description">Working on mechanistic interpretability to discover behavioral differences between models</p>
-                    </li>
-                    <li>
-                        <div class="exp-header">
-                            <span class="exp-company"><a href="https://www.occam.ai/" target="_blank">Occam AI</a></span>
-                            <span class="meta">Jun 2024–Apr 2025</span>
-                        </div>
-                        <p class="exp-role">Research Scientist</p>
-                        <p class="exp-description">Worked on optimization of interactions between networks of LLM agents and automated SQL query generation</p>
-                    </li>
-                    <li>
-                        <div class="exp-header">
-                            <span class="exp-company"><a href="https://waabi.ai/" target="_blank">Waabi</a></span>
-                            <span class="meta">Jun–Aug 2023</span>
-                        </div>
-                        <p class="exp-role">Deep Learning Research Intern</p>
-                        <p class="exp-description">Worked with <span class="mentor">Kelvin Wong</span> and <span class="mentor">Chris Zhang</span> on realistic and controllable traffic simulation using a transformer-based variational autoencoder</p>
-                    </li>
-                    <li class="hidden-exp" data-batch="1">
-                        <div class="exp-header">
-                            <span class="exp-company"><a href="https://mila.quebec/en/" target="_blank">Learning in Neural Circuits Lab, Mila/McGill</a></span>
-                            <span class="meta">Sep 2022–Aug 2023</span>
-                        </div>
-                        <p class="exp-role">Research Intern</p>
-                        <p class="exp-description">Worked with <a href="https://mila.quebec/en/person/blake-richards/" target="_blank"><span class="mentor">Prof. Blake Richards</span></a> on contrastive learning to discover critical states for reinforcement learning in sparse reward environments</p>
-                    </li>
-                    <li class="hidden-exp" data-batch="1">
-                        <div class="exp-header">
-                            <span class="exp-company"><a href="https://rl.cs.mcgill.ca/" target="_blank">Reasoning and Learning Lab, Mila/McGill</a></span>
-                            <span class="meta">Jan 2022–Aug 2023</span>
-                        </div>
-                        <p class="exp-role">Research Intern</p>
-                        <p class="exp-description">Worked with <a href="https://cs.mcgill.ca/~dprecup/" target="_blank"><span class="mentor">Prof. Doina Precup</span></a> on model-based reinforcement learning with affordance-aware tree-search planning directly from pixels</p>
-                    </li>
-                    <li class="hidden-exp" data-batch="1">
-                        <div class="exp-header">
-                            <span class="exp-company"><a href="https://vectorinstitute.ai/" target="_blank">Vector Institute for A.I.</a></span>
-                            <span class="meta">Sep–Dec 2022</span>
-                        </div>
-                        <p class="exp-role">Machine Learning Research Intern</p>
-                        <p class="exp-description">Worked with <span class="mentor">John Willes</span> and <span class="mentor">Marshall Wang</span> on model-based reinforcement learning for HVAC control</p>
-                    </li>
-                    <li class="hidden-exp" data-batch="2">
-                        <div class="exp-header">
-                            <span class="exp-company"><a href="https://aws.amazon.com/s3/" target="_blank">Amazon Web Services (S3 Team)</a></span>
-                            <span class="meta">May–Jul 2022</span>
-                        </div>
-                        <p class="exp-role">Software Development Engineer Intern</p>
-                        <p class="exp-description">Built JavaScript/Python tool to automate the incremental backup recovery system for AWS S3 (stores ~14 trillion objects)</p>
-                    </li>
-                    <li class="hidden-exp" data-batch="2">
-                        <div class="exp-header">
-                            <span class="exp-company"><a href="https://www.uoft.ai/projectx-2021" target="_blank">Project X ML Research Competition</a></span>
-                            <span class="meta">Jun 2021–Feb 2022</span>
-                        </div>
-                        <p class="exp-role">Co-leader of McGill's Team · Winner ($25k prize)</p>
-                        <p class="exp-description">Led team to highest score out of 25 submitted papers on deep offline conservative RL for mechanical ventilation treatment</p>
-                    </li>
-                    <li class="hidden-exp" data-batch="2">
-                        <div class="exp-header">
-                            <span class="exp-company"><a href="https://www.square-enix.com/" target="_blank">Square Enix</a></span>
-                            <span class="meta">May–Aug 2021</span>
-                        </div>
-                        <p class="exp-role">Software Development Intern</p>
-                        <p class="exp-description">Built localization system to allow a MOBA game to be translated into over 10 languages</p>
-                    </li>
-                    <li class="hidden-exp" data-batch="3">
-                        <div class="exp-header">
-                            <span class="exp-company"><a href="https://www.expedia.com/" target="_blank">Expedia</a></span>
-                            <span class="meta">Jun–Aug 2019</span>
-                        </div>
-                        <p class="exp-role">Software Development Intern</p>
-                        <p class="exp-description">Built React/TypeScript tool to identify which elements of a webpage are broken and display them to developers</p>
-                    </li>
-                </ul>
-                <button class="show-more-btn" id="exp-btn" onclick="showMoreExperience()">
-                    Show More
+        <!-- Complete CV Section -->
+        <section id="complete-cv" class="collapsible-section">
+            <div class="section-header" onclick="toggleSection('complete-cv')">
+                <button class="section-toggle-btn">
+                    <i class="fas fa-chevron-up"></i>
                 </button>
-            </section>
-        </div>
+                <h2 class="main-section-title">Complete CV</h2>
+            </div>
+            <div class="section-content">
+
+        <!-- Publications Section -->
+        <section id="publications" class="collapsible-section">
+            <div class="section-header" onclick="toggleSection('publications')">
+                <button class="section-toggle-btn">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+                <h2 class="main-section-title">Publications</h2>
+            </div>
+            <div class="section-content">
+                <div class="collapsible-subsection">
+                    <div class="subsection-header" onclick="toggleSubsection('conferences')">
+                        <button class="subsection-toggle-btn">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                        <h3 class="subsection-title">Refereed Conferences</h3>
+                    </div>
+                    <div class="subsection-content" id="conferences-content">
+                        <ul id="conferences-list" class="item-list"></ul>
+                    </div>
+                </div>
+
+                <div class="collapsible-subsection">
+                    <div class="subsection-header" onclick="toggleSubsection('workshops')">
+                        <button class="subsection-toggle-btn">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                        <h3 class="subsection-title">Refereed Workshops</h3>
+                    </div>
+                    <div class="subsection-content" id="workshops-content">
+                        <ul id="workshops-list" class="item-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Experience Section -->
+        <section id="research-experience" class="collapsible-section">
+            <div class="section-header" onclick="toggleSection('research-experience')">
+                <button class="section-toggle-btn">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+                <h2 class="main-section-title">Research Experience</h2>
+            </div>
+            <div class="section-content">
+                <ul id="research-exp-list" class="item-list"></ul>
+            </div>
+        </section>
+
+        <!-- Industry Experience Section -->
+        <section id="industry-experience" class="collapsible-section">
+            <div class="section-header" onclick="toggleSection('industry-experience')">
+                <button class="section-toggle-btn">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+                <h2 class="main-section-title">Industry Experience</h2>
+            </div>
+            <div class="section-content">
+                <ul id="industry-exp-list" class="item-list"></ul>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section id="awards" class="collapsible-section">
+            <div class="section-header" onclick="toggleSection('awards')">
+                <button class="section-toggle-btn">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+                <h2 class="main-section-title">Awards & Honors</h2>
+            </div>
+            <div class="section-content">
+                <ul id="awards-list" class="awards-list"></ul>
+            </div>
+        </section>
+
+        <!-- Teaching Section -->
+        <section id="teaching" class="collapsible-section">
+            <div class="section-header" onclick="toggleSection('teaching')">
+                <button class="section-toggle-btn">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+                <h2 class="main-section-title">Teaching</h2>
+            </div>
+            <div class="section-content">
+                <ul id="teaching-list" class="simple-list"></ul>
+            </div>
+        </section>
+
+        <!-- Service & Outreach Section -->
+        <section id="service" class="collapsible-section">
+            <div class="section-header" onclick="toggleSection('service')">
+                <button class="section-toggle-btn">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+                <h2 class="main-section-title">Service & Outreach</h2>
+            </div>
+            <div class="section-content">
+                <ul id="service-list" class="simple-list"></ul>
+            </div>
+        </section>
+
+        <!-- Press Section -->
+        <section id="press" class="collapsible-section">
+            <div class="section-header" onclick="toggleSection('press')">
+                <button class="section-toggle-btn">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+                <h2 class="main-section-title">Press</h2>
+            </div>
+            <div class="section-content">
+                <ul id="press-list" class="simple-list"></ul>
+            </div>
+        </section>
+
+        <!-- Invited Talks Section -->
+        <section id="talks" class="collapsible-section">
+            <div class="section-header" onclick="toggleSection('talks')">
+                <button class="section-toggle-btn">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+                <h2 class="main-section-title">Invited Talks</h2>
+            </div>
+            <div class="section-content">
+                <ul id="talks-list" class="simple-list"></ul>
+            </div>
+        </section>
+
+            </div>
+        </section>
     </main>
 
-    <script src="js/script.js"></script>
+    <script src="js/cv-renderer.js"></script>
 </body>
 </html>
