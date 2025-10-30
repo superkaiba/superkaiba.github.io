@@ -14,8 +14,12 @@ async function loadCVData() {
 
 // Render the entire page
 function renderPage() {
-    if (!window.cvData) return;
     const cvData = window.cvData;
+    if (!window.cvData) {
+        console.log('renderPage: cvData not loaded');
+        return;
+    }
+    console.log('renderPage: starting render');
 
     renderAboutSection();
     renderFeatured();
@@ -31,8 +35,10 @@ function renderPage() {
 
 // Render featured projects section (publications only)
 function renderFeatured() {
+    const cvData = window.cvData;
     const container = document.getElementById('featured-container');
-    if (!container) return;
+    const cvData = window.cvData;
+    if (!container || !cvData) return;
 
     const featured = [];
 
@@ -109,6 +115,7 @@ function toggleAbstract(paperId) {
 
 // Render publications section
 function renderPublications() {
+    const cvData = window.cvData;
     renderPublicationSubsection('conferences', 'conferences-list');
     renderPublicationSubsection('workshops', 'workshops-list');
 }
@@ -143,6 +150,7 @@ function renderPublicationSubsection(type, containerId) {
 
 // Render research experience
 function renderResearchExperience() {
+    const cvData = window.cvData;
     const container = document.getElementById('research-exp-list');
     if (!container || !cvData.research_experience) return;
 
@@ -182,6 +190,7 @@ function renderResearchExperience() {
 
 // Render industry experience
 function renderIndustryExperience() {
+    const cvData = window.cvData;
     const container = document.getElementById('industry-exp-list');
     if (!container || !cvData.industry_experience) return;
 
@@ -217,6 +226,7 @@ function renderIndustryExperience() {
 
 // Render awards
 function renderAwards() {
+    const cvData = window.cvData;
     const container = document.getElementById('awards-list');
     if (!container || !cvData.awards) return;
 
@@ -240,6 +250,7 @@ function renderAwards() {
 
 // Render teaching
 function renderTeaching() {
+    const cvData = window.cvData;
     const container = document.getElementById('teaching-list');
     if (!container || !cvData.teaching) return;
 
@@ -262,6 +273,7 @@ function renderTeaching() {
 
 // Render service & outreach
 function renderService() {
+    const cvData = window.cvData;
     const container = document.getElementById('service-list');
     if (!container || !cvData.service) return;
 
@@ -284,6 +296,7 @@ function renderService() {
 
 // Render press
 function renderPress() {
+    const cvData = window.cvData;
     const container = document.getElementById('press-list');
     if (!container || !cvData.press) return;
 
@@ -302,6 +315,7 @@ function renderPress() {
 
 // Render invited talks
 function renderInvitedTalks() {
+    const cvData = window.cvData;
     const container = document.getElementById('talks-list');
     if (!container || !cvData.invited_talks) return;
 
