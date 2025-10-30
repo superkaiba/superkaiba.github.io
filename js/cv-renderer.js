@@ -37,7 +37,6 @@ function renderPage() {
 function renderFeatured() {
     const cvData = window.cvData;
     const container = document.getElementById('featured-container');
-    const cvData = window.cvData;
     if (!container || !cvData) return;
 
     const featured = [];
