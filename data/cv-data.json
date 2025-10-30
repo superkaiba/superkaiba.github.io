@@ -1,4 +1,111 @@
 {
+  "about_config": {
+    "intro": "Hi! I'm an AI researcher interested in building systems that are more interpretable, aligned, and capable of reasoning. Always happy to chat, collaborate, or mentor —",
+    "email": "thomas.jiralerspong@mila.quebec",
+    "cta": "Check out my featured projects and complete CV below",
+    "current": [
+      {
+        "type": "position",
+        "ref_type": "research_experience",
+        "ref_id": "anthropic-2025"
+      },
+      {
+        "type": "education",
+        "ref_type": "education",
+        "ref_id": "udem-phd"
+      },
+      {
+        "type": "award",
+        "ref_type": "awards",
+        "ref_id": "vanier-2025"
+      },
+      {
+        "type": "research_interests",
+        "interests": [
+          {
+            "name": "Mechanistic interpretability",
+            "papers": ["crosscoders-2026"]
+          },
+          {
+            "name": "Compositionality",
+            "papers": ["complexity-compositionality-icml2025", "geometric-compositionality-acl2025"]
+          },
+          {
+            "name": "Neuroscience-inspired AI",
+            "papers": ["random-weights-iclr2025"]
+          }
+        ]
+      }
+    ],
+    "previous": [
+      {
+        "type": "award",
+        "ref_type": "awards",
+        "ref_id": "heidelberg-2023"
+      },
+      {
+        "type": "award",
+        "ref_type": "awards",
+        "ref_id": "project-x-winner-2022"
+      },
+      {
+        "type": "position",
+        "ref_type": "research_experience",
+        "ref_id": "occam-2024"
+      },
+      {
+        "type": "position",
+        "ref_type": "research_experience",
+        "ref_id": "waabi-2023"
+      },
+      {
+        "type": "position",
+        "ref_type": "research_experience",
+        "ref_id": "blake-richards-2022"
+      },
+      {
+        "type": "position",
+        "ref_type": "research_experience",
+        "ref_id": "doina-precup-2022"
+      },
+      {
+        "type": "service",
+        "ref_type": "service",
+        "ref_id": "mila-lab-rep-2023"
+      },
+      {
+        "type": "service",
+        "ref_type": "service",
+        "ref_id": "mcgill-ai-pm-2021"
+      },
+      {
+        "type": "education",
+        "ref_type": "education",
+        "ref_id": "mcgill-bsc"
+      },
+      {
+        "type": "past_work_areas",
+        "areas": [
+          {
+            "name": "Reinforcement learning",
+            "papers": ["contrastive-retrospection-neurips2023", "ventilation-aaai2023", "forecaster-neurips2023", "ventilation-rldm2022"]
+          },
+          {
+            "name": "Healthcare ML",
+            "papers": ["ventilation-aaai2023", "ventilation-rldm2022"]
+          },
+          {
+            "name": "Causal inference",
+            "papers": ["llm-causal-iclr2024"]
+          },
+          {
+            "name": "Diffusion models",
+            "papers": ["diffusion-noise-2026", "frequency-noise-delta2025"]
+          }
+        ]
+      }
+    ]
+  },
   "news": [
     {
       "id": "news-acl-2025",

@@ -16,6 +16,7 @@ async function loadCVData() {
 function renderPage() {
     if (!cvData) return;
 
+    renderAboutSection();
     renderFeatured();
     renderPublications();
     renderResearchExperience();
@@ -496,24 +497,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Wait for content to render before collapsing
     setTimeout(initializeCollapsedSections, 100);
 
-    // Add event listeners for About items
-    setTimeout(() => {
-        document.querySelectorAll('.expandable-about-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                // Don't trigger if clicking on a link
-                if (e.target.tagName === 'A') return;
-
-                const details = this.querySelector('.about-item-details');
-                if (details) {
-                    if (details.style.display === 'none' || details.style.display === '') {
-                        details.style.display = 'block';
-                        this.classList.add('expanded');
-                    } else {
-                        details.style.display = 'none';
-                        this.classList.remove('expanded');
-                    }
-                }
-            });
-        });
-    }, 200);
+    // Add event listeners for About items (after rendering)
+    setTimeout(attachAboutListeners, 300);
 });
