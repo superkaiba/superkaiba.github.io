@@ -52,23 +52,34 @@ function renderFeatured() {
         const p = f.data;
         const authorsStr = p.authors.join(', ');
 
+        // Determine publication status
+        let statusText = '';
+        if (p.venue === 'Under Review') {
+            statusText = 'Submitted';
+        } else {
+            statusText = `Published at ${p.venue} ${p.year}`;
+            if (p.award) statusText += ` · ${p.award}`;
+        }
+
         return `
         <li class="featured-paper" data-id="featured-${p.id}">
             <div class="paper-main-card">
-                <div class="paper-header-row">
-                    <h3 class="paper-title">${p.title}</h3>
-                    <span class="paper-venue">${p.venue} ${p.year}${p.award ? ' · ' + p.award : ''}</span>
+                <div class="paper-top-row">
+                    <div class="paper-title-area">
+                        <h3 class="paper-title">${p.title}</h3>
+                        <span class="paper-status">${statusText}</span>
+                        <p class="paper-authors">${authorsStr}</p>
+                    </div>
+                    <div class="paper-actions-compact">
+                        ${p.abstract ? `<button class="paper-btn-compact secondary-btn-compact" onclick="toggleAbstract('${p.id}')">
+                            <span id="abstract-btn-${p.id}">Abstract</span>
+                        </button>` : ''}
+                        <a href="${p.link}" target="_blank" class="paper-btn-compact primary-btn-compact">
+                            Paper
+                        </a>
+                    </div>
                 </div>
-                <p class="paper-authors">${authorsStr}</p>
                 <p class="paper-description">${p.summary}</p>
-                <div class="paper-actions">
-                    ${p.abstract ? `<button class="paper-btn secondary-btn" onclick="toggleAbstract('${p.id}')">
-                        <span class="abstract-btn-text" id="abstract-btn-${p.id}">Show Abstract</span>
-                    </button>` : ''}
-                    <a href="${p.link}" target="_blank" class="paper-btn primary-btn">
-                        View Paper →
-                    </a>
-                </div>
                 ${p.abstract ? `<div class="paper-abstract" id="abstract-${p.id}" style="display: none;">
                     <p>${p.abstract}</p>
                 </div>` : ''}
@@ -87,10 +98,10 @@ function toggleAbstract(paperId) {
 
     if (abstractDiv.style.display === 'none') {
         abstractDiv.style.display = 'block';
-        btnText.textContent = 'Hide Abstract';
+        btnText.textContent = 'Hide';
     } else {
         abstractDiv.style.display = 'none';
-        btnText.textContent = 'Show Abstract';
+        btnText.textContent = 'Abstract';
     }
 }
 
@@ -447,9 +458,60 @@ function initializeCollapsedSections() {
     });
 }
 
+// Toggle About item inline expansion
+window.toggleAboutItem = function(itemId) {
+    const details = document.getElementById(`about-${itemId}`);
+    if (!details) return;
+
+    if (details.style.display === 'none' || details.style.display === '') {
+        details.style.display = 'block';
+    } else {
+        details.style.display = 'none';
+    }
+}
+
+// Back to top functionality
+window.scrollToTop = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Show/hide back to top button based on scroll
+window.addEventListener('scroll', () => {
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (!backToTopBtn) return;
+
+    if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('visible');
+    } else {
+        backToTopBtn.classList.remove('visible');
+    }
+});
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     loadCVData();
     // Wait for content to render before collapsing
     setTimeout(initializeCollapsedSections, 100);
+
+    // Add event listeners for About items
+    setTimeout(() => {
+        document.querySelectorAll('.expandable-about-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                // Don't trigger if clicking on a link
+                if (e.target.tagName === 'A') return;
+
+                const details = this.querySelector('.about-item-details');
+                if (details) {
+                    if (details.style.display === 'none' || details.style.display === '') {
+                        details.style.display = 'block';
+                    } else {
+                        details.style.display = 'none';
+                    }
+                }
+            });
+        });
+    }, 200);
 });

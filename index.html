@@ -7,7 +7,7 @@
     <meta name="description" content="Thomas Jiralerspong - PhD Student at Mila, AI Research Fellow at Anthropic">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -55,15 +55,29 @@
             <!-- Right: About -->
             <div class="about-column">
                 <p class="hero-intro">
-                    Hi! I'm a PhD student interested in understanding how neural networks learn and represent knowledge.
+                    Hi! I'm an AI researcher interested in building systems that are more interpretable, aligned, and capable of reasoning. Always happy to chat, collaborate, or mentor — <a href="mailto:thomas.jiralerspong@mila.quebec">thomas.jiralerspong@mila.quebec</a>
+                </p>
+
+                <p class="hero-cta">
+                    Check out my <a href="#featured">featured projects</a> and <a href="#complete-cv">complete CV</a> below
                 </p>
 
                 <div class="about-section">
                     <h3 class="about-heading">Current</h3>
                     <ul class="about-list">
-                        <li><span class="highlight">AI Research Fellow at Anthropic</span> (mechanistic interpretability)</li>
-                        <li>PhD at <a href="https://mila.quebec/en/" target="_blank">Mila</a>/<a href="https://www.umontreal.ca/" target="_blank">UdeM</a> with <a href="https://yoshuabengio.org/" target="_blank"><span class="highlight">Yoshua Bengio</span></a> & <a href="https://www.guillaumelajoie.com/" target="_blank">Guillaume Lajoie</a></li>
-                        <li><a href="https://vanier.gc.ca/en/home-accueil.html" target="_blank"><span class="highlight">Vanier Scholar</span></a></li>
+                        <li class="expandable-about-item">
+                            <span class="about-item-title">AI Research Fellow at <a href="https://www.anthropic.com/" target="_blank">Anthropic</a> (mechanistic interpretability)</span>
+                            <div class="about-item-details" style="display: none;">
+                                Apr 2025 – Oct 2025 · Working on mechanistic interpretability to discover behavioral differences between models
+                            </div>
+                        </li>
+                        <li>PhD at <a href="https://mila.quebec/en/" target="_blank">Mila</a>/<a href="https://www.umontreal.ca/" target="_blank">UdeM</a> with <a href="https://yoshuabengio.org/" target="_blank">Yoshua Bengio</a> & <a href="https://www.guillaumelajoie.com/" target="_blank">Guillaume Lajoie</a></li>
+                        <li class="expandable-about-item">
+                            <span class="about-item-title"><a href="https://vanier.gc.ca/en/home-accueil.html" target="_blank">Vanier Scholar</a></span>
+                            <div class="about-item-details" style="display: none;">
+                                $150,000 · Canada's most prestigious doctoral scholarship
+                            </div>
+                        </li>
                         <li>Research: Mechanistic interpretability, compositionality, neuroscience-inspired AI</li>
                     </ul>
                 </div>
@@ -71,18 +85,47 @@
                 <div class="about-section">
                     <h3 class="about-heading">Previous</h3>
                     <ul class="about-list">
-                        <li>Research Scientist at <a href="https://www.occam.ai/" target="_blank">Occam AI</a> (LLM agent optimization)</li>
-                        <li>Research Intern at <a href="https://waabi.ai/" target="_blank">Waabi</a> (autonomous driving simulation)</li>
-                        <li>Research with <a href="https://mila.quebec/en/person/blake-richards/" target="_blank">Blake Richards</a> (neuroscience RL) & <a href="https://cs.mcgill.ca/~dprecup/" target="_blank">Doina Precup</a> (model-based RL)</li>
-                        <li>Invited to <a href="https://www.heidelberg-laureate-forum.org/" target="_blank">Heidelberg Laureate Forum</a></li>
-                        <li>BSc from <a href="https://www.mcgill.ca/" target="_blank">McGill University</a> (4.0 GPA)</li>
+                        <li class="expandable-about-item">
+                            <span class="about-item-title">Invited to <a href="https://www.heidelberg-laureate-forum.org/" target="_blank">Heidelberg Laureate Forum</a> (most promising young researchers in math & CS)</span>
+                            <div class="about-item-details" style="display: none;">
+                                2023 · Chosen as one of 200 most promising young researchers in mathematics and computer science worldwide
+                            </div>
+                        </li>
+                        <li class="expandable-about-item">
+                            <span class="about-item-title">Winner of Project X ($25k prize)</span>
+                            <div class="about-item-details" style="display: none;">
+                                2021-2022 · Co-led McGill's team to highest score out of 25 submissions in UofT AI's ML research competition
+                            </div>
+                        </li>
+                        <li class="expandable-about-item">
+                            <span class="about-item-title">Research Scientist at <a href="https://www.occam.ai/" target="_blank">Occam AI</a> (LLM agents)</span>
+                            <div class="about-item-details" style="display: none;">
+                                Jun 2024 – Apr 2025 · Optimization of interactions between networks of LLM agents, automated SQL query generation
+                            </div>
+                        </li>
+                        <li class="expandable-about-item">
+                            <span class="about-item-title">Research Intern at <a href="https://waabi.ai/" target="_blank">Waabi</a> (autonomous driving simulation)</span>
+                            <div class="about-item-details" style="display: none;">
+                                Jun – Aug 2023 · Realistic traffic simulation using transformer-based VAE · Mentored by Kelvin Wong & Chris Zhang
+                            </div>
+                        </li>
+                        <li class="expandable-about-item">
+                            <span class="about-item-title">Research with <a href="https://mila.quebec/en/person/blake-richards/" target="_blank">Blake Richards</a> (neuroscience RL)</span>
+                            <div class="about-item-details" style="display: none;">
+                                Sep 2022 – Aug 2023 · Contrastive learning to discover critical states for RL in sparse reward environments
+                            </div>
+                        </li>
+                        <li class="expandable-about-item">
+                            <span class="about-item-title">Research with <a href="https://cs.mcgill.ca/~dprecup/" target="_blank">Doina Precup</a> (model-based RL)</span>
+                            <div class="about-item-details" style="display: none;">
+                                Jan 2022 – Aug 2023 · Model-based RL with affordance-aware tree-search planning from pixels
+                            </div>
+                        </li>
+                        <li>BSc from <a href="https://www.mcgill.ca/" target="_blank">McGill University</a></li>
                         <li>Past work: Reinforcement learning, healthcare ML, causal inference, diffusion models</li>
                     </ul>
                 </div>
 
-                <p class="hero-contact">
-                    Always happy to chat, collaborate, or mentor → <a href="mailto:thomas.jiralerspong@mila.quebec"><strong>thomas.jiralerspong@mila.quebec</strong></a>
-                </p>
             </div>
         </div>
 
@@ -238,6 +281,11 @@
             </div>
         </section>
     </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="js/cv-renderer.js"></script>
 </body>
