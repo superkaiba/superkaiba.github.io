@@ -1,11 +1,11 @@
 // Load and render CV data
-let cvData = null;
+window.cvData = null;
 
 // Load CV data from JSON
 async function loadCVData() {
     try {
         const response = await fetch('data/cv-data.json');
-        cvData = await response.json();
+        window.cvData = await response.json();
         renderPage();
     } catch (error) {
         console.error('Error loading CV data:', error);
@@ -14,7 +14,8 @@ async function loadCVData() {
 
 // Render the entire page
 function renderPage() {
-    if (!cvData) return;
+    if (!window.cvData) return;
+    const cvData = window.cvData;
 
     renderAboutSection();
     renderFeatured();

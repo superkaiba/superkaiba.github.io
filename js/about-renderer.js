@@ -1,10 +1,11 @@
 // Render About section dynamically from JSON
 function renderAboutSection() {
+    const cvData = window.cvData;
     if (!cvData || !cvData.about_config) {
-        console.log('About rendering skipped - no data');
+        console.log('About rendering skipped - no data', cvData);
         return;
     }
-    console.log('Rendering About section');
+    console.log('Rendering About section', cvData.about_config);
 
     const config = cvData.about_config;
 
@@ -209,6 +210,9 @@ function renderPastWorkAreas(item) {
 
 // Helper functions
 function findDataById(refType, refId) {
+    const cvData = window.cvData;
+    if (!cvData) return null;
+
     if (refType === 'research_experience') {
         return cvData.research_experience.find(e => e.id === refId);
     } else if (refType === 'awards') {
@@ -222,6 +226,9 @@ function findDataById(refType, refId) {
 }
 
 function findPaperById(paperId) {
+    const cvData = window.cvData;
+    if (!cvData) return null;
+
     if (cvData.publications && cvData.publications.conferences) {
         const conf = cvData.publications.conferences.find(p => p.id === paperId);
         if (conf) return conf;
