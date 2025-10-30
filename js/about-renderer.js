@@ -1,6 +1,10 @@
 // Render About section dynamically from JSON
 function renderAboutSection() {
-    if (!cvData || !cvData.about_config) return;
+    if (!cvData || !cvData.about_config) {
+        console.log('About rendering skipped - no data');
+        return;
+    }
+    console.log('Rendering About section');
 
     const config = cvData.about_config;
 
