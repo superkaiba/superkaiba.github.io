@@ -507,8 +507,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (details) {
                     if (details.style.display === 'none' || details.style.display === '') {
                         details.style.display = 'block';
+                        this.classList.add('expanded');
                     } else {
                         details.style.display = 'none';
+                        this.classList.remove('expanded');
                     }
                 }
             });

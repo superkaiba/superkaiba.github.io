@@ -336,6 +336,7 @@
       "end_date": "2027-04",
       "status": "In Progress",
       "gpa": null,
+      "thesis_topic": "Advancing our understanding of how neural networks learn and represent knowledge",
       "supervisors": ["Yoshua Bengio", "Guillaume Lajoie"],
       "supervisor_links": {
         "Yoshua Bengio": "https://yoshuabengio.org/",
@@ -347,7 +348,8 @@
         "NSERC Canada Graduate Scholarship ($17,500)",
         "Hydro-Québec Excellence Scholarship ($10,000)",
         "Arbour Scholarship ($7,500)"
-      ]
+      ],
+      "key_papers": ["complexity-compositionality-icml2025", "geometric-compositionality-acl2025"]
     },
     {
       "id": "mit-bmm-2024",
@@ -379,7 +381,13 @@
       "notes": "Exchange semester at the National University of Singapore",
       "awards": [
         "J.W. McConnell Major Entrance Scholarship ($9,000)"
-      ]
+      ],
+      "clubs": [
+        "McGill AI Society - Technical Project Manager",
+        "McGill NeuroTech - Machine Learning Developer",
+        "McGill Robotics - Software Developer"
+      ],
+      "undergrad_research": "Undergraduate research in reinforcement learning with Prof. Blake Richards and Prof. Doina Precup"
     }
   ],
   "awards": [
