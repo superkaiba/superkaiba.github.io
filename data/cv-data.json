@@ -1,6 +1,6 @@
 {
   "about_config": {
-    "intro": "Hi! I'm an AI researcher interested in building systems that are more interpretable, aligned, and capable of reasoning. Always happy to chat, collaborate, or mentor —",
+    "intro": "Hey there! I'm a graduate student in AI at Mila and Université de Montréal. My research interests are very (very) varied, spanning mechanistic interpretability, compositionality, causality, neuroscience-inspired AI, and reinforcement learning. Beyond academia, I've worked in applied AI research, autonomous driving, and software development. Always on the lookout for new challenges and collaboration opportunities —",
     "email": "thomas.jiralerspong@mila.quebec",
     "cta": "Check out my featured projects and complete CV below",
     "current": [
@@ -440,7 +440,7 @@
       "degree": "PhD in Computer Science",
       "location": "Montreal, Canada",
       "start_date": "2023-09",
-      "end_date": "2027-04",
+      "end_date": "2027-05",
       "status": "In Progress",
       "gpa": null,
       "thesis_topic": "Advancing our understanding of how neural networks learn and represent knowledge",
@@ -474,7 +474,7 @@
       "highlight": false,
       "institution": "McGill University",
       "institution_url": "https://www.mcgill.ca/",
-      "degree": "B.Sc., Honours Computer Science",
+      "degree": "B.Sc., Honours Computer Science and Mathematics",
       "location": "Montreal, Canada",
       "start_date": "2020-09",
       "end_date": "2023-05",
@@ -492,7 +492,8 @@
       "clubs": [
         "McGill AI Society - Technical Project Manager",
         "McGill NeuroTech - Machine Learning Developer",
-        "McGill Robotics - Software Developer"
+        "McGill Robotics - Software Developer",
+        "McGill Game Development Student Society"
       ],
       "undergrad_research": "Undergraduate research in reinforcement learning with Prof. Blake Richards and Prof. Doina Precup"
     }
