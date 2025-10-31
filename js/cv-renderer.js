@@ -57,7 +57,13 @@ function renderFeatured() {
     // Render featured papers
     const html = featured.map(f => {
         const p = f.data;
-        const authorsStr = p.authors.join(', ');
+        // Bold and underline Thomas Jiralerspong in author list
+        const authorsStr = p.authors.map(author => {
+            if (author.includes('T. Jiralerspong') || author.includes('Thomas Jiralerspong')) {
+                return `<strong><u>${author}</u></strong>`;
+            }
+            return author;
+        }).join(', ');
 
         // Determine publication status
         let statusText = '';

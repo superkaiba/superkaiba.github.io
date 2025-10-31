@@ -150,7 +150,7 @@
       {
         "id": "crosscoders-2026",
         "highlight": true,
-        "featured": false,
+        "featured": true,
         "title": "Cross-Architecture Model Diffing With Crosscoders",
         "authors": ["T. Jiralerspong", "T. Bricken"],
         "venue": "Under Review",
@@ -161,6 +161,7 @@
       {
         "id": "diffusion-noise-2026",
         "highlight": false,
+        "featured": true,
         "title": "Learning What Matters: Steering Diffusion via Spectrally Anisotropic Forward Noise",
         "authors": ["L. Scimeca*", "T. Jiralerspong*", "B. Earnshaw", "J. Hartford", "Y. Bengio"],
         "venue": "Under Review",
@@ -196,6 +197,7 @@
       {
         "id": "random-weights-iclr2025",
         "highlight": false,
+        "featured": true,
         "title": "Expressivity of Neural Networks with Random Weights and Learned Biases",
         "authors": ["E. Williams", "A. Ryoo*", "T. Jiralerspong*", "M. Perich", "G. Lajoie"],
         "venue": "ICLR",
@@ -226,6 +228,7 @@
       {
         "id": "ventilation-aaai2023",
         "highlight": false,
+        "featured": true,
         "title": "Towards Safe Mechanical Ventilation Treatment Using Deep Offline Reinforcement Learning",
         "authors": ["F. Kondrup*", "T. Jiralerspong*", "E. Lau", "N. de Lara", "J. Shkrob", "M.D. Tran", "D. Precup", "S. Basu"],
         "venue": "AAAI",
@@ -248,6 +251,7 @@
       {
         "id": "frequency-noise-delta2025",
         "highlight": false,
+        "featured": true,
         "title": "Shaping Inductive Bias in Diffusion Models through Frequency-Based Noise Control",
         "authors": ["T. Jiralerspong", "B. Earnshaw", "J. Hartford", "Y. Bengio", "L. Scimeca"],
         "venue": "ICLR Workshop on Deep Generative Models (DeLTa)",
@@ -268,6 +272,7 @@
       {
         "id": "llm-causal-iclr2024",
         "highlight": false,
+        "featured": true,
         "title": "Efficient Causal Graph Discovery Using Large Language Models",
         "authors": ["T. Jiralerspong*", "X. Chen*", "Y. More", "V. Shah", "Y. Bengio"],
         "venue": "ICLR Workshop on How Far Are We From AGI?",
@@ -278,6 +283,7 @@
       {
         "id": "forecaster-neurips2023",
         "highlight": false,
+        "featured": true,
         "title": "Forecaster: Towards Temporally Abstract Tree-Search Planning from Pixels",
         "authors": ["T. Jiralerspong*", "F. Kondrup*", "D. Precup", "K. Khetarpal"],
         "venue": "NeurIPS Workshop on Generalization in Planning",
@@ -288,6 +294,7 @@
       {
         "id": "ventilation-rldm2022",
         "highlight": false,
+        "featured": true,
         "title": "Deep Conservative Reinforcement Learning for Personalization of Mechanical Ventilation Treatment",
         "authors": ["F. Kondrup*", "T. Jiralerspong*", "E. Lau", "N. de Lara", "J. Shkrob", "M.D. Tran", "D. Precup", "S. Basu"],
         "venue": "Multi-disciplinary Conference on Reinforcement Learning and Decision Making (RLDM)",
