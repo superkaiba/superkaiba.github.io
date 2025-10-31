@@ -794,6 +794,13 @@ a:hover {
         grid-template-columns: 1fr;
         gap: 2rem;
         margin-bottom: 3rem;
+        padding: 1.5rem;
+    }
+
+    .profile-column {
+        order: -1;
+        align-items: center;
+        text-align: center;
     }
 
     .profile-image {
@@ -801,11 +808,19 @@ a:hover {
         height: 100px;
     }
 
+    .site-title {
+        font-size: 1.4rem;
+    }
+
     .links-column {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0.75rem;
         justify-content: center;
+    }
+
+    .about-column {
+        text-align: left;
     }
 
 
@@ -841,9 +856,21 @@ a:hover {
         font-size: 1.2rem;
     }
 
+    .top-section {
+        padding: 1.25rem;
+    }
+
     .profile-image {
         width: 80px;
         height: 80px;
+    }
+
+    .site-title {
+        font-size: 1.25rem;
+    }
+
+    .links-column {
+        gap: 0.5rem;
     }
 
     .links-column a {
