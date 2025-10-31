@@ -41,9 +41,19 @@ function renderFeatured() {
 
     const featured = [];
 
-    // Collect only featured publications
+    // Collect featured publications from conferences
     if (cvData.publications && cvData.publications.conferences) {
         cvData.publications.conferences.filter(p => p.featured).forEach(p => {
+            featured.push({
+                year: p.year,
+                data: p
+            });
+        });
+    }
+
+    // Collect featured publications from workshops
+    if (cvData.publications && cvData.publications.workshops) {
+        cvData.publications.workshops.filter(p => p.featured).forEach(p => {
             featured.push({
                 year: p.year,
                 data: p
