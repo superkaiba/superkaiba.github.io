@@ -78,7 +78,7 @@ function renderFeatured() {
         // Determine publication status
         let statusText = '';
         if (p.venue === 'Under Review') {
-            statusText = 'Submitted';
+            statusText = 'Under Review';
         } else {
             statusText = `Published at ${p.venue} ${p.year}`;
             if (p.award) statusText += ` · ${p.award}`;
