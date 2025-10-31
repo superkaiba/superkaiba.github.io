@@ -21,6 +21,12 @@ function renderAboutSection() {
         previousElem.innerHTML = config.previous_paragraph;
     }
 
+    // Render research goal paragraph
+    const researchGoalElem = document.querySelector('.about-research-goal');
+    if (researchGoalElem && config.research_goal_paragraph) {
+        researchGoalElem.innerHTML = config.research_goal_paragraph;
+    }
+
     // Render contact
     const contactElem = document.querySelector('.about-contact');
     if (contactElem) {
