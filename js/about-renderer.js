@@ -15,10 +15,10 @@ function renderAboutSection() {
         currentElem.innerHTML = config.current_paragraph;
     }
 
-    // Render previous paragraph
-    const previousElem = document.querySelector('.about-previous');
-    if (previousElem) {
-        previousElem.innerHTML = config.previous_paragraph;
+    // Render previous list
+    const previousListElem = document.querySelector('.about-previous-list');
+    if (previousListElem && config.previous_list) {
+        previousListElem.innerHTML = config.previous_list.map(item => `<li>${item}</li>`).join('');
     }
 
     // Render research goal paragraph
