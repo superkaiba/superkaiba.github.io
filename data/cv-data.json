@@ -156,7 +156,8 @@
         "venue": "Under Review",
         "year": 2026,
         "summary": "We show that sparse autoencoders can be used to discover behavioral differences between language models with different architectures in an unsupervised manner",
-        "link": "https://openreview.net/pdf?id=YXB8uigyOg"
+        "link": "https://openreview.net/pdf?id=YXB8uigyOg",
+        "image": "assets/images/papers/crosscoder-comparison_v1.png"
       },
       {
         "id": "diffusion-noise-2026",
@@ -167,7 +168,8 @@
         "venue": "Under Review",
         "year": 2026,
         "summary": "We show that controlling frequency components in the forward diffusion process improves generative quality and enables better compositional learning",
-        "link": "https://arxiv.org/pdf/2510.09660v3"
+        "link": "https://arxiv.org/pdf/2510.09660v3",
+        "image": "assets/images/papers/anisotropic.png"
       },
       {
         "id": "complexity-compositionality-icml2025",
@@ -179,7 +181,8 @@
         "year": 2025,
         "summary": "We connect algorithmic complexity to compositional learning, proving when neural networks learn to compose primitive concepts.",
         "abstract": "We propose a formal mathematical definition of representational compositionality grounded in algorithmic information theory. A compositional representation must satisfy three key properties: expressiveness (capturing complex information), symbolic structure (re-describable as discrete symbolic sequences with re-combinable parts), and semantic simplicity (the function connecting symbols to representation must be simple). We validate our framework through experiments on synthetic and real-world datasets, demonstrating how it unifies various perspectives from AI and cognitive science literature.",
-        "link": "https://arxiv.org/abs/2410.14817"
+        "link": "https://arxiv.org/abs/2410.14817",
+        "image": "assets/images/papers/complexity_compositionality.png"
       },
       {
         "id": "geometric-compositionality-acl2025",
@@ -192,7 +195,8 @@
         "award": "Highlight Award",
         "summary": "We discover geometric signatures in language model representations that predict compositional generalization ability.",
         "abstract": "We investigate whether language models capture the inherent simplicity of language through compositionality by examining how dataset compositionality relates to the intrinsic dimension of model representations. We find that dataset compositionality is reflected in the intrinsic dimensionality of learned representations, with this relationship emerging through linguistic features developed during training. Nonlinear and linear dimensionality respectively encode semantic and superficial aspects of linguistic composition.",
-        "link": "https://aclanthology.org/2025.acl-long.265/"
+        "link": "https://aclanthology.org/2025.acl-long.265/",
+        "image": "assets/images/papers/geometric_signatures_of_compositionality.png"
       },
       {
         "id": "random-weights-iclr2025",
@@ -203,7 +207,8 @@
         "venue": "ICLR",
         "year": 2025,
         "summary": "We prove that neural networks can learn complex functions using only bias parameters while keeping weights random, characterizing the expressivity of this architecture",
-        "link": "https://arxiv.org/pdf/2407.00957"
+        "link": "https://arxiv.org/pdf/2407.00957",
+        "image": "assets/images/papers/expressivity_of_neural_networks.png"
       },
       {
         "id": "delta-ai-iclr2024",
@@ -234,7 +239,8 @@
         "venue": "AAAI",
         "year": 2023,
         "summary": "We develop a deep offline RL approach for learning safe ventilator control policies from ICU data, with safety constraints to prevent harmful actions",
-        "link": "https://ojs.aaai.org/index.php/AAAI/article/view/26862/26634"
+        "link": "https://ojs.aaai.org/index.php/AAAI/article/view/26862/26634",
+        "image": "assets/images/papers/deepvent.png"
       },
       {
         "id": "hvac-uic2023",
@@ -257,7 +263,8 @@
         "venue": "ICLR Workshop on Deep Generative Models (DeLTa)",
         "year": 2025,
         "summary": "We demonstrate how manipulating frequency components of noise in diffusion models shapes their inductive biases toward specific types of structure",
-        "link": "https://arxiv.org/abs/2501.17061"
+        "link": "https://arxiv.org/abs/2501.17061",
+        "image": "assets/images/papers/anisotropic.png"
       },
       {
         "id": "causal-imputation-neurips2024",
@@ -278,7 +285,8 @@
         "venue": "ICLR Workshop on How Far Are We From AGI?",
         "year": 2024,
         "summary": "We show that LLMs can efficiently discover causal relationships from observational data by leveraging their world knowledge to guide structure learning",
-        "link": "https://arxiv.org/pdf/2402.01207.pdf"
+        "link": "https://arxiv.org/pdf/2402.01207.pdf",
+        "image": "assets/images/papers/efficient_causal_graph_discovery.png"
       },
       {
         "id": "forecaster-neurips2023",
@@ -289,7 +297,8 @@
         "venue": "NeurIPS Workshop on Generalization in Planning",
         "year": 2023,
         "summary": "We introduce a model-based RL method with affordance-aware tree-search planning that operates directly from pixel observations",
-        "link": "https://arxiv.org/pdf/2310.09997.pdf"
+        "link": "https://arxiv.org/pdf/2310.09997.pdf",
+        "image": "assets/images/papers/forecaster.png"
       },
       {
         "id": "ventilation-rldm2022",
@@ -300,7 +309,8 @@
         "venue": "Multi-disciplinary Conference on Reinforcement Learning and Decision Making (RLDM)",
         "year": 2022,
         "summary": "We apply conservative offline RL to personalize mechanical ventilation treatment in critical care, addressing distributional shift in medical settings",
-        "link": "https://arxiv.org/pdf/2210.02552.pdf"
+        "link": "https://arxiv.org/pdf/2210.02552.pdf",
+        "image": "assets/images/papers/deepvent.png"
       }
     ]
   },

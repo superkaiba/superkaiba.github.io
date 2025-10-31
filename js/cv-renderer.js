@@ -86,6 +86,9 @@ function renderFeatured() {
 
         return `
         <li class="featured-paper" data-id="featured-${p.id}">
+            ${p.image ? `<div class="paper-image-container">
+                <img src="${p.image}" alt="${p.title}" class="paper-image" />
+            </div>` : ''}
             <div class="paper-main-card">
                 <div class="paper-top-row">
                     <div class="paper-title-area">

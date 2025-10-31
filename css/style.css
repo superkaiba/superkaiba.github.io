@@ -451,12 +451,28 @@ a:hover {
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid #f0f0f0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1.5rem;
+    align-items: start;
 }
 
 .featured-paper:last-child {
     margin-bottom: 0;
     border-bottom: none;
     padding-bottom: 0;
+}
+
+.paper-image-container {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.paper-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
 }
 
 .paper-top-row {
@@ -918,6 +934,16 @@ a:hover {
     .about-contact,
     .hero-cta {
         font-size: 0.875rem;
+    }
+
+    .featured-paper {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .paper-image-container {
+        width: 100%;
+        max-width: 300px;
     }
 
     .paper-top-row {
