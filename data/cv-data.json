@@ -1,14 +1,14 @@
 {
   "about_config": {
-    "current_paragraph": "I'm a PhD student and <a href='https://vanier.gc.ca/en/home-accueil.html' target='_blank'>Vanier Scholar</a> at <a href='https://mila.quebec/en/' target='_blank'>Mila</a> and <a href='https://www.umontreal.ca/' target='_blank'>Université de Montréal</a> co-supervised by <a href='https://yoshuabengio.org/' target='_blank'>Yoshua Bengio</a> and <a href='https://www.guillaumelajoie.com/' target='_blank'>Guillaume Lajoie</a>.",
+    "current_paragraph": "I'm a PhD student and <a href='https://vanier.gc.ca/en/home-accueil.html' target='_blank'><strong>Vanier Scholar</strong></a> at <a href='https://mila.quebec/en/' target='_blank'><strong>Mila</strong></a> and <a href='https://www.umontreal.ca/' target='_blank'><strong>Université de Montréal</strong></a> co-supervised by <a href='https://yoshuabengio.org/' target='_blank'><strong>Yoshua Bengio</strong></a> and <a href='https://www.guillaumelajoie.com/' target='_blank'><strong>Guillaume Lajoie</strong></a>.",
     "previous_list": [
-      "Research fellow at <a href='https://www.anthropic.com/' target='_blank'>Anthropic</a> (mechanistic interpretability)",
-      "Research scientist at <a href='https://www.occam.ai/' target='_blank'>Occam AI</a> (LLM agents)",
-      "Research intern at <a href='https://waabi.ai/' target='_blank'>Waabi</a> (autonomous driving)",
-      "Research intern at the <a href='https://vectorinstitute.ai/' target='_blank'>Vector Institute for AI</a> (AI for HVAC)",
+      "Research fellow at <a href='https://www.anthropic.com/' target='_blank'><strong>Anthropic</strong></a> (mechanistic interpretability)",
+      "Research scientist at <a href='https://www.occam.ai/' target='_blank'><strong>Occam AI</strong></a> (LLM agents)",
+      "Research intern at <a href='https://waabi.ai/' target='_blank'><strong>Waabi</strong></a> (autonomous driving)",
+      "Research intern at the <a href='https://vectorinstitute.ai/' target='_blank'><strong>Vector Institute for AI</strong></a> (AI for HVAC)",
       "Research intern with <a href='https://mila.quebec/en/person/blake-richards/' target='_blank'>Blake Richards</a> (neuroscience AI)",
       "Research intern with <a href='https://cs.mcgill.ca/~dprecup/' target='_blank'>Doina Precup</a> (model-based RL)",
-      "Software development intern at <a href='https://aws.amazon.com/' target='_blank'>Amazon</a>, <a href='https://www.expedia.com/' target='_blank'>Expedia</a>, <a href='https://www.square-enix.com/' target='_blank'>Square Enix</a>",
+      "Software development intern at <a href='https://aws.amazon.com/' target='_blank'><strong>Amazon</strong></a>, <a href='https://www.expedia.com/' target='_blank'><strong>Expedia</strong></a>, <a href='https://www.square-enix.com/' target='_blank'><strong>Square Enix</strong></a>",
       "Chosen as one of 200 most promising young researchers in math & CS by the <a href='https://www.heidelberg-laureate-forum.org/' target='_blank'>Heidelberg Laureate Forum</a>",
       "Won <a href='https://www.uoft.ai/projectx-2021' target='_blank'>Project X</a> ML competition"
     ],
