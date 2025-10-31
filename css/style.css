@@ -295,6 +295,25 @@ a:hover {
     margin-bottom: 1rem;
 }
 
+.about-current,
+.about-previous {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #333;
+    margin-bottom: 1.25rem;
+}
+
+.about-contact {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.about-contact a {
+    color: #000;
+}
+
 .hero-intro {
     font-size: 1.15rem;
     line-height: 1.75;
