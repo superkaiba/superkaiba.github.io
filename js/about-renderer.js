@@ -27,6 +27,12 @@ function renderAboutSection() {
         researchGoalElem.innerHTML = config.research_goal_paragraph;
     }
 
+    // Render personal interests
+    const personalInterestsElem = document.querySelector('.about-personal-interests');
+    if (personalInterestsElem && config.personal_interests) {
+        personalInterestsElem.innerHTML = config.personal_interests;
+    }
+
     // Render contact
     const contactElem = document.querySelector('.about-contact');
     if (contactElem) {

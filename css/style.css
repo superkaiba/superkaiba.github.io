@@ -315,11 +315,17 @@ a:hover {
 }
 
 .about-current,
-.about-research-goal {
+.about-research-goal,
+.about-personal-interests {
     font-size: 1rem;
     line-height: 1.75;
     color: #333;
     margin-bottom: 1.25rem;
+}
+
+.about-personal-interests {
+    color: #666;
+    font-style: italic;
 }
 
 .about-previous-section {
