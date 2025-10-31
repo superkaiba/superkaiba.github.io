@@ -234,11 +234,30 @@ a:hover {
 
 .top-section {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 4rem;
+    grid-template-columns: minmax(auto, 180px) 1fr;
+    gap: 3rem;
     margin-bottom: 4rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid #f0f0f0;
+}
+
+@media screen and (max-width: 1024px) {
+    .top-section {
+        gap: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .top-section {
+        grid-template-columns: minmax(auto, 160px) 1fr;
+        gap: 2rem;
+    }
+
+    .about-current,
+    .about-previous,
+    .about-research-goal {
+        font-size: 0.95rem;
+    }
 }
 
 /* Left Column: Photo, Name, Links */
