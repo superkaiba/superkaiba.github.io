@@ -245,12 +245,14 @@
       {
         "id": "hvac-uic2023",
         "highlight": false,
+        "featured": false,
         "title": "A Comparison of Classical and Deep Reinforcement Learning Methods for HVAC Control",
         "authors": ["M. Wang", "J. Willes", "T. Jiralerspong", "M. Moezzi"],
         "venue": "UIC",
         "year": 2023,
         "summary": "We compare classical and deep RL approaches for HVAC control in building energy management",
-        "link": "https://arxiv.org/pdf/2308.05711.pdf"
+        "link": "https://arxiv.org/pdf/2308.05711.pdf",
+        "image": "assets/images/papers/hvac.png"
       }
     ],
     "workshops": [
