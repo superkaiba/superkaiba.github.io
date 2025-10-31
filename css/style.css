@@ -304,77 +304,6 @@ a:hover {
     letter-spacing: -0.01em;
 }
 
-.about-section {
-    margin-bottom: 1.25rem;
-}
-
-.about-section:last-of-type {
-    margin-bottom: 1.5rem;
-}
-
-.about-heading {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #999;
-    margin-bottom: 0.75rem;
-}
-
-.about-list {
-    list-style: none;
-}
-
-.about-list li {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 0.5rem;
-}
-
-.expandable-about-item {
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.expandable-about-item:hover .about-item-title {
-    background: #fafafa;
-}
-
-.about-item-title {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    padding: 0.35rem 0.5rem;
-    margin: -0.35rem -0.5rem;
-    border-radius: 4px;
-}
-
-.about-item-title::before {
-    content: '\f078';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    font-size: 0.7rem;
-    color: #999;
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-}
-
-.expandable-about-item.expanded .about-item-title::before {
-    transform: rotate(180deg);
-}
-
-.about-item-details {
-    font-size: 0.85rem;
-    color: #666;
-    line-height: 1.5;
-    margin-top: 0.5rem;
-    padding: 0.75rem;
-    background: #fafafa;
-    border-left: 2px solid #e0e0e0;
-    border-radius: 3px;
-}
 
 .hero-cta {
     font-size: 0.9rem;
@@ -872,19 +801,13 @@ a:hover {
         font-size: 0.8rem;
     }
 
-    .hero-intro {
-        font-size: 1.05rem;
+    .about-current,
+    .about-previous {
+        font-size: 0.95rem;
     }
 
+    .about-contact,
     .hero-cta {
-        font-size: 0.875rem;
-    }
-
-    .about-list li {
-        font-size: 0.85rem;
-    }
-
-    .hero-contact {
         font-size: 0.875rem;
     }
 

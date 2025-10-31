@@ -9,28 +9,28 @@ function renderAboutSection() {
 
     const config = cvData.about_config;
 
-    // Render intro
-    const introElem = document.querySelector('.hero-intro');
-    if (introElem) {
-        introElem.innerHTML = `${config.intro} <a href="mailto:${config.email}">${config.email}</a>`;
+    // Render current paragraph
+    const currentElem = document.querySelector('.about-current');
+    if (currentElem) {
+        currentElem.innerHTML = config.current_paragraph;
+    }
+
+    // Render previous paragraph
+    const previousElem = document.querySelector('.about-previous');
+    if (previousElem) {
+        previousElem.innerHTML = config.previous_paragraph;
+    }
+
+    // Render contact
+    const contactElem = document.querySelector('.about-contact');
+    if (contactElem) {
+        contactElem.innerHTML = `Always happy to chat, collaborate, or mentor → <a href="mailto:${config.email}"><strong>${config.email}</strong></a>`;
     }
 
     // Render CTA
     const ctaElem = document.querySelector('.hero-cta');
     if (ctaElem) {
         ctaElem.innerHTML = config.cta.replace('featured projects', '<a href="#featured">featured projects</a>').replace('complete CV', '<a href="#complete-cv">complete CV</a>');
-    }
-
-    // Render Current section
-    const currentContainer = document.querySelector('.about-section:nth-of-type(1) .about-list');
-    if (currentContainer) {
-        currentContainer.innerHTML = renderAboutItems(config.current);
-    }
-
-    // Render Previous section
-    const previousContainer = document.querySelector('.about-section:nth-of-type(2) .about-list');
-    if (previousContainer) {
-        previousContainer.innerHTML = renderAboutItems(config.previous);
     }
 }
 

@@ -1,9 +1,10 @@
 {
   "about_config": {
-    "intro": "Hey there! I'm a graduate student in AI at Mila and Université de Montréal. My research interests are very (very) varied, spanning mechanistic interpretability, compositionality, causality, neuroscience-inspired AI, and reinforcement learning. Beyond academia, I've worked in applied AI research, autonomous driving, and software development. Always on the lookout for new challenges and collaboration opportunities —",
+    "current_paragraph": "I'm a PhD student at Mila and Université de Montréal co-supervised by Yoshua Bengio and Guillaume Lajoie. Currently an AI Research Fellow at Anthropic working on mechanistic interpretability. My research is supported by the Vanier Canada Graduate Scholarship. I work on mechanistic interpretability, compositionality, and neuroscience-inspired AI.",
+    "previous_paragraph": "Previously, I was a Research Scientist at Occam AI (LLM agents), Research Intern at Waabi (autonomous driving), and conducted research with Blake Richards (neuroscience RL) and Doina Precup (model-based RL) at Mila/McGill. I was invited to the Heidelberg Laureate Forum, won the Project X ML competition ($25k), and completed my BSc in Computer Science and Mathematics at McGill (4.0 GPA). Past work spans reinforcement learning, healthcare ML, causal inference, and diffusion models.",
     "email": "thomas.jiralerspong@mila.quebec",
     "cta": "Check out my featured projects and complete CV below",
-    "current": [
+    "old_current": [
       {
         "type": "position",
         "ref_type": "research_experience",
