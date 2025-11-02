@@ -263,7 +263,7 @@
       {
         "id": "frequency-noise-delta2025",
         "highlight": false,
-        "featured": true,
+        "featured": false,
         "title": "Shaping Inductive Bias in Diffusion Models through Frequency-Based Noise Control",
         "authors": ["T. Jiralerspong", "B. Earnshaw", "J. Hartford", "Y. Bengio", "L. Scimeca"],
         "venue": "ICLR Workshop on Deep Generative Models (DeLTa)",
@@ -312,7 +312,7 @@
       {
         "id": "ventilation-rldm2022",
         "highlight": false,
-        "featured": true,
+        "featured": false,
         "title": "Deep Conservative Reinforcement Learning for Personalization of Mechanical Ventilation Treatment",
         "authors": ["F. Kondrup*", "T. Jiralerspong*", "E. Lau", "N. de Lara", "J. Shkrob", "M.D. Tran", "D. Precup", "S. Basu"],
         "venue": "Multi-disciplinary Conference on Reinforcement Learning and Decision Making (RLDM)",
