@@ -27,12 +27,6 @@ function renderAboutSection() {
         researchGoalElem.innerHTML = config.research_goal_paragraph;
     }
 
-    // Render personal interests
-    const personalInterestsElem = document.querySelector('.about-personal-interests');
-    if (personalInterestsElem && config.personal_interests) {
-        personalInterestsElem.innerHTML = config.personal_interests;
-    }
-
     // Render contact
     const contactElem = document.querySelector('.about-contact');
     if (contactElem) {
@@ -42,7 +36,13 @@ function renderAboutSection() {
     // Render CTA
     const ctaElem = document.querySelector('.hero-cta');
     if (ctaElem) {
-        ctaElem.innerHTML = config.cta.replace('featured projects', '<a href="#featured">featured projects</a>').replace('complete CV', '<a href="#complete-cv">complete CV</a>');
+        ctaElem.innerHTML = config.cta.replace('featured projects', '<a href="#featured">featured projects</a>');
+    }
+
+    // Render personal interests
+    const personalInterestsElem = document.querySelector('.about-personal-interests');
+    if (personalInterestsElem && config.personal_interests) {
+        personalInterestsElem.innerHTML = config.personal_interests;
     }
 }
 
