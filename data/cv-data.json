@@ -155,7 +155,8 @@
         "authors": ["T. Jiralerspong", "T. Bricken"],
         "venue": "Under Review",
         "year": 2026,
-        "summary": "We show that sparse autoencoders can be used to discover behavioral differences between language models with different architectures in an unsupervised manner",
+        "summary": "We provide the first application of crosscoders to cross-architecture model diffing, discovering features like CCP alignment in Qwen and American exceptionalism in Llama.",
+        "abstract": "Model diffing, the process of comparing models' internal representations to identify their differences, is a promising approach for uncovering safety-critical behaviors in new models. However, its application has so far been primarily focused on comparing a base model with its finetune. Since new LLM releases are often novel architectures, cross-architecture methods are essential to make model diffing widely applicable. Crosscoders are one solution capable of cross-architecture model diffing but have only ever been applied to base vs finetune comparisons. We provide the first application of crosscoders to cross-architecture model diffing and introduce Dedicated Feature Crosscoders (DFCs), an architectural modification designed to better isolate features unique to one model. Using this technique, we find in an unsupervised fashion features including Chinese Communist Party alignment in Qwen3-8B and Deepseek-R1-0528-Qwen3-8B, American exceptionalism in Llama3.1-8B-Instruct, and copyright refusal in GPT-OSS-20B. Together, our results work towards establishing cross-architecture crosscoder model diffing as an effective method for identifying meaningful behavioral differences between AI models.",
         "link": "https://openreview.net/pdf?id=YXB8uigyOg",
         "image": "assets/images/papers/crosscoder-comparison_v1.png"
       },
@@ -167,7 +168,8 @@
         "authors": ["L. Scimeca*", "T. Jiralerspong*", "B. Earnshaw", "J. Hartford", "Y. Bengio"],
         "venue": "Under Review",
         "year": 2026,
-        "summary": "We show that controlling frequency components in the forward diffusion process improves generative quality and enables better compositional learning",
+        "summary": "We introduce anisotropic noise operators that build inductive biases into diffusion models by manipulating frequency components, improving generative performance.",
+        "abstract": "Diffusion Probabilistic Models (DPMs) have achieved strong generative performance, yet their inductive biases remain largely implicit. In this work, we aim to build inductive biases into the training and sampling of diffusion models to better accommodate the target distribution of the data to model. We introduce an anisotropic noise operator that shapes these biases by replacing the isotropic forward covariance with a structured, frequency-diagonal covariance. This operator unifies band-pass masks and power-law weightings, allowing us to emphasize or suppress designated frequency bands, while keeping the forward process Gaussian. We refer to this as Spectrally Anisotropic Gaussian Diffusion (SAGD). In this work, we derive the score relation for anisotropic covariances and show that, under full support, the learned score converges to the true data score as t → 0, while anisotropy reshapes the probability-flow path from noise to data. Empirically, we show the induced anisotropy outperforms standard diffusion across several vision datasets, and enables selective omission: learning while ignoring known corruptions confined to specific bands.",
         "link": "https://arxiv.org/pdf/2510.09660v3",
         "image": "assets/images/papers/anisotropic.png"
       },
@@ -206,7 +208,8 @@
         "authors": ["Ezekiel Williams", "Alexandre Payeur", "Avery Hee-Woon Ryoo", "Thomas Jiralerspong", "Matthew G Perich", "Luca Mazzucato", "Guillaume Lajoie"],
         "venue": "ICLR",
         "year": 2025,
-        "summary": "We prove that neural networks can learn complex functions using only bias parameters while keeping weights random, characterizing the expressivity of this architecture",
+        "summary": "We prove feedforward networks with fixed random weights can approximate any continuous function by learning only biases, relevant for neuroscience and LLM fine-tuning.",
+        "abstract": "Landmark universal function approximation results for neural networks with trained weights and biases provided the impetus for the ubiquitous use of neural networks as learning models in neuroscience and Artificial Intelligence (AI). Recent work has extended these results to networks in which a smaller subset of weights (e.g., output weights) are tuned, leaving other parameters random. However, it remains an open question whether universal approximation holds when only biases are learned, despite evidence from neuroscience and AI that biases significantly shape neural responses. The current paper answers this question. We provide theoretical and numerical evidence demonstrating that feedforward neural networks with fixed random weights can approximate any continuous function on compact sets. We further show an analogous result for the approximation of dynamical systems with recurrent neural networks. Our findings are relevant to neuroscience, where they demonstrate the potential for behaviourally relevant changes in dynamics without modifying synaptic weights, as well as for AI, where they shed light on recent fine-tuning methods for large language models, like bias and prefix-based approaches.",
         "link": "https://arxiv.org/pdf/2407.00957",
         "image": "assets/images/papers/expressivity_of_neural_networks.png"
       },
@@ -238,7 +241,8 @@
         "authors": ["F. Kondrup*", "T. Jiralerspong*", "E. Lau", "N. de Lara", "J. Shkrob", "M.D. Tran", "D. Precup", "S. Basu"],
         "venue": "AAAI",
         "year": 2023,
-        "summary": "We develop a deep offline RL approach for learning safe ventilator control policies from ICU data, with safety constraints to prevent harmful actions",
+        "summary": "We present DeepVent, a Conservative Q-Learning agent that learns optimal ventilator parameters to promote patient survival, outperforming physicians from MIMIC-III.",
+        "abstract": "Mechanical ventilation is a key form of life support for patients with pulmonary impairment. Healthcare workers are required to continuously adjust ventilator settings for each patient, a challenging and time consuming task. Hence, it would be beneficial to develop an automated decision support tool to optimize ventilation treatment. We present DeepVent, a Conservative Q-Learning (CQL) based offline Deep Reinforcement Learning (DRL) agent that learns to predict the optimal ventilator parameters for a patient to promote 90 day survival. We design a clinically relevant intermediate reward that encourages continuous improvement of the patient vitals as well as addresses the challenge of sparse reward in RL. We find that DeepVent recommends ventilation parameters within safe ranges, as outlined in recent clinical trials. The CQL algorithm offers additional safety by mitigating the overestimation of the value estimates of out-of-distribution states/actions. We evaluate our agent using Fitted Q Evaluation (FQE) and demonstrate that it outperforms physicians from the MIMIC-III dataset.",
         "link": "https://ojs.aaai.org/index.php/AAAI/article/view/26862/26634",
         "image": "assets/images/papers/deepvent.png"
       },
@@ -264,7 +268,8 @@
         "authors": ["T. Jiralerspong", "B. Earnshaw", "J. Hartford", "Y. Bengio", "L. Scimeca"],
         "venue": "ICLR Workshop on Deep Generative Models (DeLTa)",
         "year": 2025,
-        "summary": "We demonstrate how manipulating frequency components of noise in diffusion models shapes their inductive biases toward specific types of structure",
+        "summary": "We devise frequency-based noising operators to purposefully set inductive biases in diffusion models for topologically structured data.",
+        "abstract": "Diffusion Probabilistic Models (DPMs) are powerful generative models that have achieved unparalleled success in a number of generative tasks. In this work, we aim to build inductive biases into the training and sampling of diffusion models to better accommodate the target distribution of the data to model. For topologically structured data, we devise a frequency-based noising operator to purposefully manipulate, and set, these inductive biases. We first show that appropriate manipulations of the noising forward process can lead DPMs to focus on particular aspects of the distribution to learn. We show that different datasets necessitate different inductive biases, and that appropriate frequency-based noise control induces increased generative performance compared to standard diffusion. Finally, we demonstrate the possibility of ignoring information at particular frequencies while learning. We show this in an image corruption and recovery task, where we train a DPM to recover the original target distribution after severe noise corruption.",
         "link": "https://arxiv.org/abs/2501.17061",
         "image": "assets/images/papers/anisotropic.png"
       },
@@ -286,7 +291,8 @@
         "authors": ["T. Jiralerspong*", "X. Chen*", "Y. More", "V. Shah", "Y. Bengio"],
         "venue": "ICLR Workshop on How Far Are We From AGI?",
         "year": 2024,
-        "summary": "We show that LLMs can efficiently discover causal relationships from observational data by leveraging their world knowledge to guide structure learning",
+        "summary": "We propose a BFS-based framework using LLMs for causal graph discovery that requires only linear queries instead of quadratic, achieving state-of-the-art results.",
+        "abstract": "We propose a novel framework that leverages LLMs for full causal graph discovery. While previous LLM-based methods have used a pairwise query approach, this requires a quadratic number of queries which quickly becomes impractical for larger causal graphs. In contrast, the proposed framework uses a breadth-first search (BFS) approach which allows it to use only a linear number of queries. We also show that the proposed method can easily incorporate observational data when available, to improve performance. In addition to being more time and data-efficient, the proposed framework achieves state-of-the-art results on real-world causal graphs of varying sizes. The results demonstrate the effectiveness and efficiency of the proposed method in discovering causal relationships, showcasing its potential for broad applicability in causal graph discovery tasks across different domains.",
         "link": "https://arxiv.org/pdf/2402.01207.pdf",
         "image": "assets/images/papers/efficient_causal_graph_discovery.png"
       },
@@ -298,7 +304,8 @@
         "authors": ["T. Jiralerspong*", "F. Kondrup*", "D. Precup", "K. Khetarpal"],
         "venue": "NeurIPS Workshop on Generalization in Planning",
         "year": 2023,
-        "summary": "We introduce a model-based RL method with affordance-aware tree-search planning that operates directly from pixel observations",
+        "summary": "We introduce Forecaster, a hierarchical RL approach that plans over high-level goals using a temporally abstract world model and tree-search from pixels.",
+        "abstract": "The ability to plan at many different levels of abstraction enables agents to envision the long-term repercussions of their decisions and thus enables sample-efficient learning. This becomes particularly beneficial in complex environments from high-dimensional state space such as pixels, where the goal is distant and the reward sparse. We introduce Forecaster, a deep hierarchical reinforcement learning approach which plans over high-level goals leveraging a temporally abstract world model. Forecaster learns an abstract model of its environment by modelling the transitions dynamics at an abstract level and training a world model on such transition. It then uses this world model to choose optimal high-level goals through a tree-search planning procedure. It additionally trains a low-level policy that learns to reach those goals. Our method not only captures building world models with longer horizons, but also, planning with such models in downstream tasks. We empirically demonstrate Forecaster's potential in both single-task learning and generalization to new tasks in the AntMaze domain.",
         "link": "https://arxiv.org/pdf/2310.09997.pdf",
         "image": "assets/images/papers/forecaster.png"
       },
