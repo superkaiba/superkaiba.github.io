@@ -1,0 +1,19 @@
+% Add these to your LaTeX CV under "Refereed Conferences" section (at the top, since they're under review):
+
+\Large{Under Review}
+& \small \textbf{Thomas Jiralerspong}, Trenton Bricken. "Cross-Architecture Model Diffing With Crosscoders." Under review. 2026.
+\\
+\\
+& \small Luca Scimeca*, \textbf{Thomas Jiralerspong*}, Berton Earnshaw, Jason Hartford, Yoshua Bengio. "Learning What Matters: Steering Diffusion via Spectrally Anisotropic Forward Noise." Under review. 2026.
+\\
+\\
+
+% Or if you want to keep them in the commented section, replace the commented "Under Review" section with:
+
+\Large{Under Review}
+& \small \textbf{Thomas Jiralerspong}, Trenton Bricken. "Cross-Architecture Model Diffing With Crosscoders." Under review. 2026.
+\\
+\\
+& \small Luca Scimeca*, \textbf{Thomas Jiralerspong*}, Berton Earnshaw, Jason Hartford, Yoshua Bengio. "Learning What Matters: Steering Diffusion via Spectrally Anisotropic Forward Noise." Under review. 2026.
+\\
+\\
