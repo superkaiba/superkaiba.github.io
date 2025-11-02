@@ -23,14 +23,16 @@ function renderPage() {
 
     renderAboutSection();
     renderFeatured();
-    renderPublications();
-    renderResearchExperience();
-    renderIndustryExperience();
-    renderAwards();
-    renderTeaching();
-    renderService();
-    renderPress();
-    renderInvitedTalks();
+
+    // COMPLETE CV SECTIONS - COMMENTED OUT FOR NOW
+    // renderPublications();
+    // renderResearchExperience();
+    // renderIndustryExperience();
+    // renderAwards();
+    // renderTeaching();
+    // renderService();
+    // renderPress();
+    // renderInvitedTalks();
 }
 
 // Render featured projects section (publications only)
