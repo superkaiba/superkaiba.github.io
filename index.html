@@ -7,11 +7,29 @@
     <meta name="description" content="Thomas Jiralerspong - PhD Student at Mila, AI Research Fellow at Anthropic">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Oxanium:wght@400;500;600;700&family=Nova+Square&family=Tomorrow:wght@400;500;600;700&family=Saira+Semi+Condensed:wght@400;500;600;700&family=Turret+Road:wght@400;500;700&family=Text+Me+One&family=Lekton:wght@400;700&family=Sono:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Font Selector - COMMENTED OUT
+    <div class="font-selector">
+        <label for="font-select">Font:</label>
+        <select id="font-select">
+            <option value="Space Grotesk">Space Grotesk</option>
+            <option value="Oxanium">Oxanium</option>
+            <option value="Nova Square">Nova Square</option>
+            <option value="Tomorrow">Tomorrow</option>
+            <option value="Saira Semi Condensed">Saira Semi Condensed</option>
+            <option value="Turret Road">Turret Road</option>
+            <option value="Text Me One">Text Me One</option>
+            <option value="Lekton">Lekton</option>
+            <option value="Sono">Sono</option>
+            <option value="Share Tech Mono">Share Tech Mono</option>
+        </select>
+    </div>
+    -->
+
     <!-- Table of Contents - COMMENTED OUT FOR NOW
     <nav class="toc">
         <div class="toc-content">
@@ -71,20 +89,14 @@
         </div>
 
         <!-- Featured Projects Section -->
-        <section id="featured" class="collapsible-section">
-            <div class="section-header" onclick="toggleSection('featured')">
-                <button class="section-toggle-btn">
-                    <i class="fas fa-chevron-up"></i>
-                </button>
-                <h2 class="main-section-title">Featured Projects</h2>
-            </div>
-            <div class="section-content">
-                <ul id="featured-container" class="item-list"></ul>
-            </div>
+        <section id="featured">
+            <h2 class="main-section-title">Featured Projects</h2>
+            <ul id="featured-container" class="item-list"></ul>
         </section>
 
-        <!-- COMPLETE CV SECTION - COMMENTED OUT FOR NOW -->
         <!--
+        COMPLETE CV SECTION - COMMENTED OUT FOR NOW
+
         <section id="complete-cv" class="collapsible-section">
             <div class="section-header" onclick="toggleSection('complete-cv')">
                 <button class="section-toggle-btn">
@@ -94,7 +106,7 @@
             </div>
             <div class="section-content">
 
-        <!-- Publications Section -->
+        Publications Section
         <section id="publications" class="collapsible-section">
             <div class="section-header" onclick="toggleSection('publications')">
                 <button class="section-toggle-btn">
@@ -129,7 +141,7 @@
             </div>
         </section>
 
-        <!-- Research Experience Section -->
+        Research Experience Section
         <section id="research-experience" class="collapsible-section">
             <div class="section-header" onclick="toggleSection('research-experience')">
                 <button class="section-toggle-btn">
@@ -142,7 +154,7 @@
             </div>
         </section>
 
-        <!-- Industry Experience Section -->
+        Industry Experience Section
         <section id="industry-experience" class="collapsible-section">
             <div class="section-header" onclick="toggleSection('industry-experience')">
                 <button class="section-toggle-btn">
@@ -155,7 +167,7 @@
             </div>
         </section>
 
-        <!-- Awards Section -->
+        Awards Section
         <section id="awards" class="collapsible-section">
             <div class="section-header" onclick="toggleSection('awards')">
                 <button class="section-toggle-btn">
@@ -168,7 +180,7 @@
             </div>
         </section>
 
-        <!-- Teaching Section -->
+        Teaching Section
         <section id="teaching" class="collapsible-section">
             <div class="section-header" onclick="toggleSection('teaching')">
                 <button class="section-toggle-btn">
@@ -181,7 +193,7 @@
             </div>
         </section>
 
-        <!-- Service & Outreach Section -->
+        Service & Outreach Section
         <section id="service" class="collapsible-section">
             <div class="section-header" onclick="toggleSection('service')">
                 <button class="section-toggle-btn">
@@ -194,7 +206,7 @@
             </div>
         </section>
 
-        <!-- Press Section -->
+        Press Section
         <section id="press" class="collapsible-section">
             <div class="section-header" onclick="toggleSection('press')">
                 <button class="section-toggle-btn">
@@ -207,7 +219,7 @@
             </div>
         </section>
 
-        <!-- Invited Talks Section -->
+        Invited Talks Section
         <section id="talks" class="collapsible-section">
             <div class="section-header" onclick="toggleSection('talks')">
                 <button class="section-toggle-btn">
@@ -223,7 +235,8 @@
             </div>
         </section>
 
-        END OF COMPLETE CV SECTION -->
+        END OF COMPLETE CV SECTION
+        -->
     </main>
 
     <!-- Back to Top Button -->
@@ -233,5 +246,28 @@
 
     <script src="js/cv-renderer.js"></script>
     <script src="js/about-renderer.js"></script>
+
+    <!-- Font Selector Script - COMMENTED OUT
+    <script>
+        // Font selector functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const fontSelect = document.getElementById('font-select');
+
+            // Load saved font preference
+            const savedFont = localStorage.getItem('selectedFont');
+            if (savedFont) {
+                document.body.style.fontFamily = `'${savedFont}', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`;
+                fontSelect.value = savedFont;
+            }
+
+            // Handle font changes
+            fontSelect.addEventListener('change', (e) => {
+                const selectedFont = e.target.value;
+                document.body.style.fontFamily = `'${selectedFont}', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`;
+                localStorage.setItem('selectedFont', selectedFont);
+            });
+        });
+    </script>
+    -->
 </body>
 </html>

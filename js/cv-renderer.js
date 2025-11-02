@@ -79,8 +79,8 @@ function renderFeatured() {
 
         // Determine publication status
         let statusText = '';
-        if (p.venue === 'Under Review') {
-            statusText = 'Under Review';
+        if (p.venue.startsWith('Under Review')) {
+            statusText = p.venue;
         } else {
             statusText = `Published at ${p.venue} ${p.year}`;
             if (p.award) statusText += ` · ${p.award}`;
