@@ -70,6 +70,22 @@ a:hover {
     font-weight: 600;
 }
 
+strong {
+    font-weight: 700;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+strong u {
+    text-decoration: none;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg, #4f46e5, #06b6d4) 1;
+    padding-bottom: 1px;
+}
+
 /* =====================
    Table of Contents
    ===================== */
