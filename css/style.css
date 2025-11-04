@@ -19,6 +19,14 @@ body {
     color: #333;
     background-color: #fff;
     display: flex;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 
 /* =====================
@@ -45,12 +53,17 @@ h2 {
 a {
     color: #000;
     text-decoration: none;
-    border-bottom: 1px solid #ddd;
-    transition: all 0.25s ease;
+    position: relative;
+    background-image: linear-gradient(90deg, #4f46e5, #06b6d4);
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    background-size: 0% 2px;
+    transition: background-size 0.3s ease-out;
+    padding-bottom: 2px;
 }
 
 a:hover {
-    border-bottom-color: #000;
+    background-size: 100% 2px;
 }
 
 .highlight {
@@ -124,6 +137,16 @@ a:hover {
     max-width: 1100px;
     margin: 0 auto;
     padding: 4rem 4rem 6rem 4rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpFade 0.9s ease-out 0.2s forwards;
+}
+
+@keyframes slideUpFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .collapsible-section {
@@ -213,7 +236,10 @@ a:hover {
 .main-section-title {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #000;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin: 0;
     letter-spacing: -0.02em;
     text-transform: none;
@@ -274,12 +300,25 @@ a:hover {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1rem;
+    border: 3px solid transparent;
+    background: linear-gradient(#fff, #fff) padding-box,
+                linear-gradient(135deg, #4f46e5, #06b6d4, #10b981) border-box;
+    transition: all 0.4s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(79, 70, 229, 0.3);
 }
 
 .site-title {
     font-size: 1.6rem;
     margin-bottom: 1rem;
     font-weight: 700;
+    background: linear-gradient(135deg, #000, #4f46e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .links-column {
@@ -292,13 +331,17 @@ a:hover {
 .links-column a {
     font-size: 0.875rem;
     color: #666;
-    border-bottom: 1px solid #ddd;
-    transition: all 0.2s ease;
+    background-image: linear-gradient(90deg, #4f46e5, #06b6d4);
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    background-size: 0% 2px;
+    transition: all 0.3s ease;
+    padding-bottom: 2px;
 }
 
 .links-column a:hover {
-    color: #000;
-    border-bottom-color: #000;
+    color: #4f46e5;
+    background-size: 100% 2px;
 }
 
 /* =====================
@@ -386,13 +429,19 @@ a:hover {
 }
 
 .hero-cta a {
-    color: #000;
+    color: #4f46e5;
     font-weight: 500;
-    border-bottom: 2px solid #000;
+    background-image: linear-gradient(90deg, #4f46e5, #06b6d4);
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    background-size: 100% 2px;
+    transition: all 0.3s ease;
+    padding-bottom: 2px;
 }
 
 .hero-cta a:hover {
-    border-bottom-color: #666;
+    background-size: 100% 3px;
+    color: #06b6d4;
 }
 
 .hero-contact {
@@ -416,7 +465,7 @@ a:hover {
     right: 2rem;
     width: 45px;
     height: 45px;
-    background: #000;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -424,7 +473,7 @@ a:hover {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
     font-size: 1rem;
     display: flex;
     align-items: center;
@@ -437,9 +486,9 @@ a:hover {
 }
 
 #back-to-top:hover {
-    background: #333;
+    background: linear-gradient(135deg, #4338ca, #0891b2);
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
 }
 
 /* =====================
@@ -455,6 +504,21 @@ a:hover {
     grid-template-columns: 200px 1fr;
     gap: 1.5rem;
     align-items: start;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.featured-paper:nth-child(1) { animation-delay: 0.3s; }
+.featured-paper:nth-child(2) { animation-delay: 0.5s; }
+.featured-paper:nth-child(3) { animation-delay: 0.7s; }
+.featured-paper:nth-child(4) { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .featured-paper:last-child {
@@ -525,13 +589,16 @@ a:hover {
 }
 
 .primary-btn-compact {
-    background: #000;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
     color: #fff;
     font-weight: 500;
+    border: none;
 }
 
 .primary-btn-compact:hover {
-    background: #333;
+    background: linear-gradient(135deg, #4338ca, #0891b2);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
 
 .secondary-btn-compact {
@@ -539,12 +606,14 @@ a:hover {
     color: #666;
     border: 1px solid #ddd;
     font-weight: 500;
+    background-image: none;
 }
 
 .secondary-btn-compact:hover {
-    border-color: #000;
-    color: #000;
-    background: #f5f5f5;
+    border-color: #4f46e5;
+    color: #4f46e5;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(6, 182, 212, 0.05));
+    background-size: 100% 100%;
 }
 
 .paper-authors {
