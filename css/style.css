@@ -68,18 +68,6 @@ a:hover {
     color: #06b6d4;
 }
 
-strong a {
-    font-weight: 600;
-    color: #4f46e5;
-    background-size: 100% 1px;
-    cursor: pointer;
-}
-
-strong a:hover {
-    background-size: 100% 2px;
-    color: #06b6d4;
-}
-
 .highlight {
     font-weight: 600;
 }
