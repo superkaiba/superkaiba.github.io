@@ -15,6 +15,12 @@ function renderAboutSection() {
         currentElem.innerHTML = config.current_paragraph;
     }
 
+    // Render startup paragraph
+    const startupElem = document.querySelector('.about-startup');
+    if (startupElem && config.startup_paragraph) {
+        startupElem.innerHTML = config.startup_paragraph;
+    }
+
     // Render previous list
     const previousListElem = document.querySelector('.about-previous-list');
     if (previousListElem && config.previous_list) {
