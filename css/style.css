@@ -61,19 +61,12 @@ a {
     transition: all 0.25s ease-out;
     padding-bottom: 1px;
     cursor: pointer;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 a:hover {
     background-size: 100% 2px;
     color: #06b6d4;
-}
-
-/* Ensure links are never bold, even inside strong tags */
-strong a,
-a strong {
-    font-weight: 400;
-    color: #4f46e5;
 }
 
 .highlight {
