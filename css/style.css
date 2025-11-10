@@ -51,7 +51,7 @@ h2 {
 }
 
 a {
-    color: #4f46e5;
+    color: #000;
     text-decoration: none;
     position: relative;
     background-image: linear-gradient(90deg, #4f46e5, #06b6d4);
@@ -344,7 +344,7 @@ strong u {
 
 .links-column a {
     font-size: 0.875rem;
-    color: #4f46e5;
+    color: #000;
     background-image: linear-gradient(90deg, #4f46e5, #06b6d4);
     background-repeat: no-repeat;
     background-position: 0% 100%;
@@ -445,7 +445,7 @@ strong u {
 }
 
 .hero-cta a {
-    color: #4f46e5;
+    color: #000;
     font-weight: 500;
     background-image: linear-gradient(90deg, #4f46e5, #06b6d4);
     background-repeat: no-repeat;
