@@ -15,28 +15,16 @@ function renderAboutSection() {
         currentElem.innerHTML = config.current_paragraph;
     }
 
-    // Render startup paragraph
-    const startupElem = document.querySelector('.about-startup');
-    if (startupElem && config.startup_paragraph) {
-        startupElem.innerHTML = config.startup_paragraph;
+    // Render current interests paragraph
+    const currentInterestsElem = document.querySelector('.about-current-interests');
+    if (currentInterestsElem && config.current_interests_paragraph) {
+        currentInterestsElem.innerHTML = config.current_interests_paragraph;
     }
 
     // Render previous list
     const previousListElem = document.querySelector('.about-previous-list');
     if (previousListElem && config.previous_list) {
         previousListElem.innerHTML = config.previous_list.map(item => `<li>${item}</li>`).join('');
-    }
-
-    // Render research goal paragraph
-    const researchGoalElem = document.querySelector('.about-research-goal');
-    if (researchGoalElem && config.research_goal_paragraph) {
-        researchGoalElem.innerHTML = config.research_goal_paragraph;
-    }
-
-    // Render current interests paragraph
-    const currentInterestsElem = document.querySelector('.about-current-interests');
-    if (currentInterestsElem && config.current_interests_paragraph) {
-        currentInterestsElem.innerHTML = config.current_interests_paragraph;
     }
 
     // Render contact
