@@ -33,6 +33,12 @@ function renderAboutSection() {
         researchGoalElem.innerHTML = config.research_goal_paragraph;
     }
 
+    // Render current interests paragraph
+    const currentInterestsElem = document.querySelector('.about-current-interests');
+    if (currentInterestsElem && config.current_interests_paragraph) {
+        currentInterestsElem.innerHTML = config.current_interests_paragraph;
+    }
+
     // Render contact
     const contactElem = document.querySelector('.about-contact');
     if (contactElem) {
