@@ -15,10 +15,10 @@ function renderAboutSection() {
         currentElem.innerHTML = config.current_paragraph;
     }
 
-    // Render current interests paragraph
-    const currentInterestsElem = document.querySelector('.about-current-interests');
-    if (currentInterestsElem && config.current_interests_paragraph) {
-        currentInterestsElem.innerHTML = config.current_interests_paragraph;
+    // Render current interests list
+    const currentInterestsListElem = document.querySelector('.about-current-interests-list');
+    if (currentInterestsListElem && config.current_interests_list) {
+        currentInterestsListElem.innerHTML = config.current_interests_list.map(item => `<li>${item}</li>`).join('');
     }
 
     // Render previous list
