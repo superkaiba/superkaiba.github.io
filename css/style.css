@@ -379,6 +379,36 @@ strong u {
     font-style: italic;
 }
 
+.about-current-interests-section {
+    margin-bottom: 1.25rem;
+}
+
+.about-current-interests-intro {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.about-current-interests-list {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.about-current-interests-list li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 0.35rem;
+    position: relative;
+}
+
+.about-current-interests-list li::before {
+    content: '•';
+    position: absolute;
+    left: -1rem;
+    color: #ccc;
+}
+
 .about-previous-section {
     margin-bottom: 1.25rem;
 }
