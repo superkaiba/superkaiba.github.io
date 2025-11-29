@@ -3,10 +3,10 @@
     "current_paragraph": "Hey! I'm a PhD student in artificial intelligence at <a href='https://mila.quebec/en/' target='_blank'><strong>Mila</strong></a> and <a href='https://www.umontreal.ca/' target='_blank'><strong>Université de Montréal</strong></a> co-supervised by <a href='https://yoshuabengio.org/' target='_blank'><strong>Yoshua Bengio</strong></a> and <a href='https://www.guillaumelajoie.com/' target='_blank'><strong>Guillaume Lajoie</strong></a>. My research has been supported by <a href='https://vanier.gc.ca/en/home-accueil.html' target='_blank'><strong>Vanier</strong></a>, <a href='https://www.nserc-crsng.gc.ca/index_eng.asp' target='_blank'><strong>NSERC</strong></a>, and <a href='http://www.frqnt.gouv.qc.ca/en/' target='_blank'><strong>FRQNT</strong></a> scholarships.",
     "startup_paragraph": "",
     "current_interests_list": [
-      "<strong>Agentic AI</strong> (in-context learning, continually learning agents, multi-agent architectures, long-term memory)",
-      "<strong>AI safety and mechanistic interpretability</strong>",
-      "<strong>Bio-inspired methods</strong> (neuroAI, evolutionary methods)",
-      "<strong>Applications</strong> (biology, scientific discovery)"
+      "<strong>Agentic AI:</strong> in-context learning, continually learning agents, multi-agent architectures, long-term memory",
+      "<strong>Model internals:</strong> mechanistic interpretability, compositionality",
+      "<strong>Bio-inspired methods:</strong> neuroAI, evolutionary methods",
+      "<strong>Applications:</strong> biology, scientific discovery"
     ],
     "previous_list": [
       "<strong>Research</strong> (<a href='https://www.anthropic.com/' target='_blank'>Anthropic</a> (mech interp), <a href='https://www.occam.ai/' target='_blank'>Occam AI</a> (LLM agents), <a href='https://waabi.ai/' target='_blank'>Waabi</a> (autonomous driving), <a href='https://vectorinstitute.ai/' target='_blank'>Vector Institute</a> (HVAC), with <a href='https://mila.quebec/en/person/blake-richards/' target='_blank'>Blake Richards</a> (neuroAI), with <a href='https://cs.mcgill.ca/~dprecup/' target='_blank'>Doina Precup</a> (model-based RL))",
