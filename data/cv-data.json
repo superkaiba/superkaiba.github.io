@@ -5,6 +5,7 @@
     "current_interests_list": [
       "<strong>Agentic AI:</strong> in-context learning, continually learning agents, multi-agent architectures, long-term memory, open-ended learning, reasoning",
       "<strong>Model internals:</strong> mechanistic interpretability, compositionality, latent reasoning",
+      "<strong>AI Safety:</strong> chain of thought monitoring",
       "<strong>Bio-inspired methods:</strong> neuroAI, evolutionary methods",
       "<strong>Applications:</strong> biology, scientific discovery, creative arts"
     ],
