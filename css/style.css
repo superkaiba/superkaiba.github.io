@@ -531,6 +531,14 @@ strong u {
 }
 
 /* =====================
+   Mentored Students Section
+   ===================== */
+
+#mentored-students {
+    margin-bottom: 3rem;
+}
+
+/* =====================
    Featured Projects Section
    ===================== */
 
@@ -859,7 +867,8 @@ strong u {
 
 .teaching-item,
 .service-item,
-.talk-item {
+.talk-item,
+.student-item {
     margin-bottom: 1rem;
 }
 
