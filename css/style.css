@@ -535,7 +535,17 @@ strong u {
    ===================== */
 
 #mentored-students {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+}
+
+.student-item {
+    margin-bottom: 0.75rem;
+}
+
+.student-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-left: 0.5rem;
 }
 
 /* =====================
