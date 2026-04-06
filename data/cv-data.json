@@ -1,6 +1,6 @@
 {
   "about_config": {
-    "current_paragraph": "Hey! I'm a PhD student in artificial intelligence at <a href='https://mila.quebec/en/' target='_blank'><strong>Mila</strong></a> and <a href='https://www.umontreal.ca/' target='_blank'><strong>Université de Montréal</strong></a> co-supervised by <a href='https://yoshuabengio.org/' target='_blank'><strong>Yoshua Bengio</strong></a> and <a href='https://www.guillaumelajoie.com/' target='_blank'><strong>Guillaume Lajoie</strong></a> (and previously <a href='https://cs.mcgill.ca/~dprecup/' target='_blank'><strong>Doina Precup</strong></a>). I'm currently a Research Fellow at the <a href='https://www.astrafellowship.org/' target='_blank'><strong>Astra Fellowship</strong></a>, mentored by Dan Mossing (<a href='https://www.anthropic.com/' target='_blank'>Anthropic</a>). My research has been supported by <a href='https://vanier.gc.ca/en/home-accueil.html' target='_blank'><strong>Vanier</strong></a>, <a href='https://www.nserc-crsng.gc.ca/index_eng.asp' target='_blank'><strong>NSERC</strong></a>, and <a href='http://www.frqnt.gouv.qc.ca/en/' target='_blank'><strong>FRQNT</strong></a> scholarships.",
+    "current_paragraph": "Hey! I'm a PhD student in artificial intelligence at <a href='https://mila.quebec/en/' target='_blank'><strong>Mila</strong></a> and <a href='https://www.umontreal.ca/' target='_blank'><strong>Université de Montréal</strong></a> co-supervised by <a href='https://yoshuabengio.org/' target='_blank'><strong>Yoshua Bengio</strong></a> and <a href='https://www.guillaumelajoie.com/' target='_blank'><strong>Guillaume Lajoie</strong></a> (and previously <a href='https://cs.mcgill.ca/~dprecup/' target='_blank'><strong>Doina Precup</strong></a>). I'm currently a Research Fellow at the <a href='https://constellation.org/programs/astra' target='_blank'><strong>Astra Fellowship</strong></a>. My research has been supported by <a href='https://vanier.gc.ca/en/home-accueil.html' target='_blank'><strong>Vanier</strong></a>, <a href='https://www.nserc-crsng.gc.ca/index_eng.asp' target='_blank'><strong>NSERC</strong></a>, and <a href='http://www.frqnt.gouv.qc.ca/en/' target='_blank'><strong>FRQNT</strong></a> scholarships.",
     "startup_paragraph": "",
     "current_interests_list": [
       "<strong>Agentic AI:</strong> in-context learning, continually learning agents, multi-agent architectures, long-term memory, open-ended learning, reasoning",
@@ -332,22 +332,21 @@
       "highlight": true,
       "featured": true,
       "company": "Astra Fellowship",
-      "company_url": "https://www.astrafellowship.org/",
+      "company_url": "https://constellation.org/programs/astra",
       "position": "Research Fellow",
       "location": "Berkeley, United States",
       "start_date": "2026-04",
       "end_date": "Present",
       "summary": "Characterizing persona space and controllability in LLMs",
-      "details": "Mentored by Dan Mossing (Anthropic). Research on characterizing persona space and controllability in LLMs.",
-      "mentors": ["Dan Mossing"],
-      "mentor_links": {"Dan Mossing": "https://www.anthropic.com/"},
+      "details": "Research on characterizing persona space and controllability in LLMs.",
+      "mentors": [],
       "technologies": ["PyTorch", "Python"]
     },
     {
       "id": "astra-deepmind-2026",
       "highlight": true,
       "company": "Astra Fellowship - Google DeepMind Stream",
-      "company_url": "https://www.astrafellowship.org/",
+      "company_url": "https://constellation.org/programs/astra",
       "position": "Research Fellow",
       "location": "Berkeley, United States",
       "start_date": "2026-01",
