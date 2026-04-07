@@ -156,7 +156,7 @@
         "featured": true,
         "title": "Cross-Architecture Model Diffing With Crosscoders",
         "authors": ["T. Jiralerspong", "T. Bricken"],
-        "venue": "Under Review at ICLR 2026",
+        "venue": "Official Anthropic Release. Under Review at ICML 2026",
         "year": 2026,
         "summary": "We provide the first application of crosscoders to cross-architecture model diffing, discovering features like CCP alignment in Qwen and American exceptionalism in Llama.",
         "abstract": "Model diffing, the process of comparing models' internal representations to identify their differences, is a promising approach for uncovering safety-critical behaviors in new models. However, its application has so far been primarily focused on comparing a base model with its finetune. Since new LLM releases are often novel architectures, cross-architecture methods are essential to make model diffing widely applicable. Crosscoders are one solution capable of cross-architecture model diffing but have only ever been applied to base vs finetune comparisons. We provide the first application of crosscoders to cross-architecture model diffing and introduce Dedicated Feature Crosscoders (DFCs), an architectural modification designed to better isolate features unique to one model. Using this technique, we find in an unsupervised fashion features including Chinese Communist Party alignment in Qwen3-8B and Deepseek-R1-0528-Qwen3-8B, American exceptionalism in Llama3.1-8B-Instruct, and copyright refusal in GPT-OSS-20B. Together, our results work towards establishing cross-architecture crosscoder model diffing as an effective method for identifying meaningful behavioral differences between AI models.",
@@ -809,6 +809,16 @@
     }
   ],
   "press": [
+    {
+      "id": "anthropic-blog-2026",
+      "highlight": true,
+      "outlet": "Anthropic",
+      "title": "A \"Diff\" Tool for AI: Finding Behavioral Differences in New Models",
+      "author": "Anthropic Research",
+      "date": "2026-03-13",
+      "link": "https://www.anthropic.com/research/diff-tool",
+      "summary": "Official Anthropic blog post on our Dedicated Feature Crosscoder (DFC) method for cross-architecture model diffing"
+    },
     {
       "id": "scilogs-2024",
       "highlight": false,
