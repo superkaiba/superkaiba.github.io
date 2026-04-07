@@ -64,8 +64,34 @@ function showMoreExperience() {
     }
 }
 
+// Dark mode toggle
+function initTheme() {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        toggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    toggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+            toggle.innerHTML = '<i class="fas fa-moon"></i>';
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            toggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    });
+}
+
 // Initialize hidden items on page load
 document.addEventListener('DOMContentLoaded', function() {
+    initTheme();
     // Hide all publications with hidden-pub class
     document.querySelectorAll('.hidden-pub').forEach(pub => {
         pub.style.display = 'none';

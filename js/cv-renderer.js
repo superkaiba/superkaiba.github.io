@@ -22,6 +22,7 @@ function renderPage() {
     console.log('renderPage: starting render');
 
     renderAboutSection();
+    renderNews();
     renderFeatured();
 
     // COMPLETE CV SECTIONS - COMMENTED OUT FOR NOW
@@ -33,6 +34,22 @@ function renderPage() {
     // renderService();
     // renderPress();
     // renderInvitedTalks();
+}
+
+// Render news section
+function renderNews() {
+    const cvData = window.cvData;
+    const container = document.getElementById('news-container');
+    if (!container || !cvData || !cvData.news) return;
+
+    const html = cvData.news.map(item => `
+        <li class="news-item">
+            <span class="news-date">${item.date}</span>
+            <span class="news-text">${item.text}</span>
+        </li>
+    `).join('');
+
+    container.innerHTML = html;
 }
 
 // Render featured projects section (publications only)
@@ -102,6 +119,8 @@ function renderFeatured() {
                         ${p.abstract ? `<button class="paper-btn-compact secondary-btn-compact" onclick="toggleAbstract('${p.id}')">
                             <span id="abstract-btn-${p.id}">Abstract</span>
                         </button>` : ''}
+                        ${p.code ? `<a href="${p.code}" target="_blank" class="paper-btn-compact secondary-btn-compact">Code</a>` : ''}
+                        ${p.blog ? `<a href="${p.blog}" target="_blank" class="paper-btn-compact secondary-btn-compact">Blog</a>` : ''}
                         <a href="${p.link}" target="_blank" class="paper-btn-compact primary-btn-compact">
                             Paper
                         </a>

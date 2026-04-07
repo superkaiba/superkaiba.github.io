@@ -124,28 +124,28 @@
   },
   "news": [
     {
-      "id": "news-acl-2025",
-      "date": "January 2025",
-      "title": "Paper accepted to ACL 2025 with Highlight Award",
-      "content": "Our paper \"Geometric Signatures of Compositionality Across a Language Model's Lifetime\" was accepted to ACL 2025 and received a Highlight Award (top ~2.5% of submissions)!"
+      "date": "Apr 2026",
+      "text": "<a href='https://constellation.org/programs/astra' target='_blank'>Astra Fellowship</a> research position started, mentored by Dan Mossing (Anthropic)"
     },
     {
-      "id": "news-icml-2025",
-      "date": "January 2025",
-      "title": "Paper accepted to ICML 2025",
-      "content": "Our work \"A Complexity-Based Theory of Compositionality\" was accepted to ICML 2025. We develop a theoretical framework connecting algorithmic complexity with compositional learning in neural networks."
+      "date": "Apr 2026",
+      "text": "Anthropic <a href='https://x.com/AnthropicAI/status/2040179539738030182' target='_blank'>tweeted</a> our model diffing research (500K+ views)"
     },
     {
-      "id": "news-vanier-2025",
-      "date": "May 2024",
-      "title": "Awarded Vanier Canada Graduate Scholarship",
-      "content": "Honored to receive the Vanier Canada Graduate Scholarship ($150,000), Canada's most prestigious doctoral award. Grateful for this support to continue my research on mechanistic interpretability and compositionality."
+      "date": "Mar 2026",
+      "text": "Our crosscoder work published as an <a href='https://www.anthropic.com/research/diff-tool' target='_blank'>official Anthropic research release</a>"
     },
     {
-      "id": "news-anthropic-2025",
-      "date": "April 2025",
-      "title": "Starting as AI Research Fellow at Anthropic",
-      "content": "Excited to join Anthropic as an AI Research Fellow working on mechanistic interpretability to discover behavioral differences between models."
+      "date": "Jan 2026",
+      "text": "Two papers accepted to ICLR 2026 workshops (<a href='https://openreview.net/pdf?id=gCzFYQuJke' target='_blank'>CAO</a>, <a href='https://arxiv.org/pdf/2603.16928' target='_blank'>AIWILD</a>)"
+    },
+    {
+      "date": "Jan 2025",
+      "text": "Paper accepted to <strong>ACL 2025</strong> with Highlight Award (top ~2.5%)"
+    },
+    {
+      "date": "Jan 2025",
+      "text": "Paper accepted to <strong>ICML 2025</strong>"
     }
   ],
   "publications": {
@@ -161,6 +161,8 @@
         "summary": "We provide the first application of crosscoders to cross-architecture model diffing, discovering features like CCP alignment in Qwen and American exceptionalism in Llama.",
         "abstract": "Model diffing, the process of comparing models' internal representations to identify their differences, is a promising approach for uncovering safety-critical behaviors in new models. However, its application has so far been primarily focused on comparing a base model with its finetune. Since new LLM releases are often novel architectures, cross-architecture methods are essential to make model diffing widely applicable. Crosscoders are one solution capable of cross-architecture model diffing but have only ever been applied to base vs finetune comparisons. We provide the first application of crosscoders to cross-architecture model diffing and introduce Dedicated Feature Crosscoders (DFCs), an architectural modification designed to better isolate features unique to one model. Using this technique, we find in an unsupervised fashion features including Chinese Communist Party alignment in Qwen3-8B and Deepseek-R1-0528-Qwen3-8B, American exceptionalism in Llama3.1-8B-Instruct, and copyright refusal in GPT-OSS-20B. Together, our results work towards establishing cross-architecture crosscoder model diffing as an effective method for identifying meaningful behavioral differences between AI models.",
         "link": "https://openreview.net/pdf?id=YXB8uigyOg",
+        "code": "https://github.com/superkaiba/dfc_learning",
+        "blog": "https://www.anthropic.com/research/diff-tool",
         "image": "assets/images/papers/crosscoder-comparison_v1.png"
       },
       {
@@ -297,6 +299,7 @@
         "summary": "We propose a BFS-based framework using LLMs for causal graph discovery that requires only linear queries instead of quadratic, achieving state-of-the-art results.",
         "abstract": "We propose a novel framework that leverages LLMs for full causal graph discovery. While previous LLM-based methods have used a pairwise query approach, this requires a quadratic number of queries which quickly becomes impractical for larger causal graphs. In contrast, the proposed framework uses a breadth-first search (BFS) approach which allows it to use only a linear number of queries. We also show that the proposed method can easily incorporate observational data when available, to improve performance. In addition to being more time and data-efficient, the proposed framework achieves state-of-the-art results on real-world causal graphs of varying sizes. The results demonstrate the effectiveness and efficiency of the proposed method in discovering causal relationships, showcasing its potential for broad applicability in causal graph discovery tasks across different domains.",
         "link": "https://arxiv.org/pdf/2402.01207.pdf",
+        "code": "https://github.com/superkaiba/causal-llm-bfs",
         "image": "assets/images/papers/efficient_causal_graph_discovery.png"
       },
       {
