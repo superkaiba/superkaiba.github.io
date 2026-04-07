@@ -125,27 +125,27 @@
   "news": [
     {
       "date": "Apr 2026",
-      "text": "<a href='https://constellation.org/programs/astra' target='_blank'>Astra Fellowship</a> research position started, mentored by Dan Mossing (Anthropic)"
-    },
-    {
-      "date": "Apr 2026",
-      "text": "Anthropic <a href='https://x.com/AnthropicAI/status/2040179539738030182' target='_blank'>tweeted</a> our model diffing research (500K+ views)"
+      "text": "<a href='https://constellation.org/programs/astra' target='_blank'>Astra Fellowship</a> research position started, mentored by Roland Zimmerman (Google DeepMind)"
     },
     {
       "date": "Mar 2026",
-      "text": "Our crosscoder work published as an <a href='https://www.anthropic.com/research/diff-tool' target='_blank'>official Anthropic research release</a>"
+      "text": "<a href='https://www.anthropic.com/research/diff-tool' target='_blank'>Cross-Architecture Model Diffing With Crosscoders</a> published as <a href='https://www.anthropic.com/research/diff-tool' target='_blank'>official Anthropic research release</a> (<a href='https://x.com/AnthropicAI/status/2040179539738030182' target='_blank'>500K+ views on X</a>)"
     },
     {
       "date": "Jan 2026",
-      "text": "Two papers accepted to ICLR 2026 workshops (<a href='https://openreview.net/pdf?id=gCzFYQuJke' target='_blank'>CAO</a>, <a href='https://arxiv.org/pdf/2603.16928' target='_blank'>AIWILD</a>)"
+      "text": "<a href='https://openreview.net/pdf?id=gCzFYQuJke' target='_blank'>Measuring Control Intervention Awareness</a> and <a href='https://arxiv.org/pdf/2603.16928' target='_blank'>Noticing the Watcher</a> accepted to ICLR 2026 workshops"
+    },
+    {
+      "date": "May 2025",
+      "text": "Started as Research Fellow at <a href='https://www.anthropic.com/' target='_blank'>Anthropic</a>, mentored by <a href='https://www.trentonbricken.com/' target='_blank'>Trenton Bricken</a>"
     },
     {
       "date": "Jan 2025",
-      "text": "Paper accepted to <strong>ACL 2025</strong> with Highlight Award (top ~2.5%)"
+      "text": "<a href='https://aclanthology.org/2025.acl-long.265/' target='_blank'>Geometric Signatures of Compositionality</a> accepted to <strong>ACL 2025</strong> with Highlight Award (top ~2.5%)"
     },
     {
       "date": "Jan 2025",
-      "text": "Paper accepted to <strong>ICML 2025</strong>"
+      "text": "<a href='https://arxiv.org/abs/2410.14817' target='_blank'>A Complexity-Based Theory of Compositionality</a> accepted to <strong>ICML 2025</strong>"
     }
   ],
   "publications": {
@@ -342,7 +342,7 @@
       "end_date": "Present",
       "summary": "Characterizing persona space and controllability in LLMs",
       "details": "Research on characterizing persona space and controllability in LLMs.",
-      "mentors": [],
+      "mentors": ["Roland Zimmerman"],
       "technologies": ["PyTorch", "Python"]
     },
     {
@@ -367,11 +367,12 @@
       "company_url": "https://www.anthropic.com/",
       "position": "AI Research Fellow",
       "location": "San Francisco, United States",
-      "start_date": "2025-04",
+      "start_date": "2025-05",
       "end_date": "2025-10",
       "summary": "Working on mechanistic interpretability to discover behavioral differences between models",
       "details": "Conducting research on mechanistic interpretability and AI safety. Developing methods to understand how large language models represent and process information internally.",
-      "mentors": [],
+      "mentors": ["Trenton Bricken"],
+      "mentor_links": {"Trenton Bricken": "https://www.trentonbricken.com/"},
       "technologies": ["PyTorch", "Python"]
     },
     {
