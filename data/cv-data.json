@@ -125,11 +125,15 @@
   "news": [
     {
       "date": "Apr 2026",
-      "text": "<a href='https://constellation.org/programs/astra' target='_blank'>Astra Fellowship</a> research position started, working on persona controllability in LLMs"
+      "text": "Started <a href='https://constellation.org/programs/astra' target='_blank'>Astra Fellowship</a> research with Dan Mossing (<a href='https://www.anthropic.com/' target='_blank'>Anthropic</a>), working on persona controllability in LLMs"
     },
     {
       "date": "Mar 2026",
       "text": "<a href='https://www.anthropic.com/research/diff-tool' target='_blank'>Cross-Architecture Model Diffing With Crosscoders</a> published as <a href='https://www.anthropic.com/research/diff-tool' target='_blank'>official Anthropic research release</a> (<a href='https://x.com/AnthropicAI/status/2040179539738030182' target='_blank'>500K+ views on X</a>)"
+    },
+    {
+      "date": "Jan 2026",
+      "text": "Started <a href='https://constellation.org/programs/astra' target='_blank'>Astra Fellowship</a> — Google DeepMind stream with Roland Zimmermann (<a href='https://deepmind.google/' target='_blank'>Google DeepMind</a>), working on control intervention awareness in LLMs"
     },
     {
       "date": "Jan 2026",
@@ -349,7 +353,7 @@
     {
       "id": "astra-deepmind-2026",
       "highlight": true,
-      "company": "Astra Fellowship - Anthropic Stream",
+      "company": "Astra Fellowship - Google DeepMind Stream",
       "company_url": "https://constellation.org/programs/astra",
       "position": "Research Fellow",
       "location": "Berkeley, United States",
@@ -357,7 +361,8 @@
       "end_date": "2026-03",
       "summary": "Benchmark for Control Intervention Awareness in LLMs",
       "details": "Research on developing a benchmark for control intervention awareness in LLMs.",
-      "mentors": [],
+      "mentors": ["Roland Zimmermann"],
+      "mentor_links": {"Roland Zimmermann": "https://deepmind.google/"},
       "technologies": ["PyTorch", "Python"]
     },
     {

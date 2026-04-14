@@ -55,13 +55,21 @@ When updating personal content in `index.html`:
 - `assets/images/`: Profile picture (profile.jpg)
 
 **Resume LaTeX Sources:**
-- `overleaf-resume/`: Cloned from Overleaf (project `65b1f9e3457a4d1a6feaa36a`). Contains LaTeX source files for all resume/CV variants:
-  - `1_page_phd.tex`, `1_page_safety.tex`, `1_page_founder.tex`, `1_page_games.tex`, `1_page_secret.tex` — tailored 1-page resumes
+- `overleaf-resume/`: Git submodule cloned from Overleaf (project `65b1f9e3457a4d1a6feaa36a`). Contains LaTeX source files for all resume/CV variants:
+  - `1_page_safety.tex` — **current active 1-page resume** (compiled to `assets/docs/resume.pdf`)
+  - `1_page_phd.tex`, `1_page_founder.tex`, `1_page_games.tex`, `1_page_secret.tex` — other tailored 1-page resumes
   - `2_page.tex` — 2-page resume
-  - `academic.tex` — academic CV
+  - `academic.tex` — academic CV (compiled to `assets/docs/cv.pdf`)
   - `list_of_publications.tex`, `liste_des_publications.tex`, `list_of_awards.tex`
   - `no_publications_or_awards.tex`
-  - This is a separate git repo (nested). To pull updates: `cd overleaf-resume && git pull`
+  - To pull updates: `cd overleaf-resume && git pull`
+
+**IMPORTANT: When modifying LaTeX sources, you MUST recompile PDFs and copy them:**
+```bash
+cd overleaf-resume
+pdflatex 1_page_safety.tex && cp 1_page_safety.pdf ../assets/docs/resume.pdf
+pdflatex academic.tex && cp academic.pdf ../assets/docs/cv.pdf
+```
 
 ## Design System
 
