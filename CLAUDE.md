@@ -54,6 +54,15 @@ When updating personal content in `index.html`:
 - `assets/docs/`: PDF files (resume.pdf, cv.pdf)
 - `assets/images/`: Profile picture (profile.jpg)
 
+**Resume LaTeX Sources:**
+- `overleaf-resume/`: Cloned from Overleaf (project `65b1f9e3457a4d1a6feaa36a`). Contains LaTeX source files for all resume/CV variants:
+  - `1_page_phd.tex`, `1_page_safety.tex`, `1_page_founder.tex`, `1_page_games.tex`, `1_page_secret.tex` — tailored 1-page resumes
+  - `2_page.tex` — 2-page resume
+  - `academic.tex` — academic CV
+  - `list_of_publications.tex`, `liste_des_publications.tex`, `list_of_awards.tex`
+  - `no_publications_or_awards.tex`
+  - This is a separate git repo (nested). To pull updates: `cd overleaf-resume && git pull`
+
 ## Design System
 
 **Color Palette:**
