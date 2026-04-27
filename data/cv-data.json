@@ -125,6 +125,10 @@
   "news": [
     {
       "date": "Apr 2026",
+      "text": "<a href='https://openreview.net/pdf?id=gCzFYQuJke' target='_blank'>Measuring Control Intervention Awareness Across Frontier LLMs</a> received the <strong>Best Paper Award</strong> at the CAO Workshop at <strong>ICLR 2026</strong>"
+    },
+    {
+      "date": "Apr 2026",
       "text": "Started <a href='https://constellation.org/programs/astra' target='_blank'>Astra Fellowship</a> research with Dan Mossing (<a href='https://www.anthropic.com/' target='_blank'>Anthropic</a>), working on persona controllability in LLMs"
     },
     {
