@@ -65,6 +65,7 @@ function renderFeatured() {
         cvData.publications.conferences.filter(p => p.featured).forEach(p => {
             featured.push({
                 year: p.year,
+                month: p.month || 0,
                 data: p
             });
         });
@@ -75,13 +76,14 @@ function renderFeatured() {
         cvData.publications.workshops.filter(p => p.featured).forEach(p => {
             featured.push({
                 year: p.year,
+                month: p.month || 0,
                 data: p
             });
         });
     }
 
-    // Sort by year (reverse chronological)
-    featured.sort((a, b) => b.year - a.year);
+    // Sort by year then month (reverse chronological)
+    featured.sort((a, b) => (b.year * 100 + b.month) - (a.year * 100 + a.month));
 
     // Render featured papers
     const html = featured.map(f => {
