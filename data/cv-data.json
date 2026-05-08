@@ -1,6 +1,6 @@
 {
   "about_config": {
-    "current_paragraph": "Hey! I'm a PhD student in artificial intelligence at <a href='https://mila.quebec/en/' target='_blank'><strong>Mila</strong></a> and <a href='https://www.umontreal.ca/' target='_blank'><strong>Université de Montréal</strong></a> co-supervised by <a href='https://yoshuabengio.org/' target='_blank'><strong>Yoshua Bengio</strong></a> and <a href='https://www.guillaumelajoie.com/' target='_blank'><strong>Guillaume Lajoie</strong></a> (and previously <a href='https://cs.mcgill.ca/~dprecup/' target='_blank'><strong>Doina Precup</strong></a>), where my research has been supported by <a href='https://vanier.gc.ca/en/home-accueil.html' target='_blank'><strong>Vanier</strong></a>, <a href='https://www.nserc-crsng.gc.ca/index_eng.asp' target='_blank'><strong>NSERC</strong></a>, and <a href='http://www.frqnt.gouv.qc.ca/en/' target='_blank'><strong>FRQNT</strong></a> scholarships.<br><br>I'm currently an <a href='https://constellation.org/programs/astra' target='_blank'><strong>Astra Fellow</strong></a> working with <strong>Dan Mossing</strong> (<a href='https://www.anthropic.com/' target='_blank'><strong>Anthropic</strong></a>) on persona controllability in LLMs. Previously, I was a Research Fellow at <a href='https://www.anthropic.com/' target='_blank'><strong>Anthropic</strong></a> mentored by <a href='https://www.trentonbricken.com/' target='_blank'><strong>Trenton Bricken</strong></a>, and an <a href='https://constellation.org/programs/astra' target='_blank'><strong>Astra Fellow</strong></a> on the <a href='https://deepmind.google/' target='_blank'><strong>Google DeepMind</strong></a> stream with <strong>Roland Zimmermann</strong> working on AI control/monitoring.",
+    "current_paragraph": "Hey! I'm a PhD student in artificial intelligence at <a href='https://mila.quebec/en/' target='_blank'><strong>Mila</strong></a> and <a href='https://www.umontreal.ca/' target='_blank'><strong>Université de Montréal</strong></a> co-supervised by <a href='https://yoshuabengio.org/' target='_blank'><strong>Yoshua Bengio</strong></a> and <a href='https://www.guillaumelajoie.com/' target='_blank'><strong>Guillaume Lajoie</strong></a> (and previously <a href='https://cs.mcgill.ca/~dprecup/' target='_blank'><strong>Doina Precup</strong></a>), where my research has been supported by <a href='https://vanier.gc.ca/en/home-accueil.html' target='_blank'><strong>Vanier</strong></a>, <a href='https://www.nserc-crsng.gc.ca/index_eng.asp' target='_blank'><strong>NSERC</strong></a>, and <a href='http://www.frqnt.gouv.qc.ca/en/' target='_blank'><strong>FRQNT</strong></a> scholarships.<br><br>I'm currently an <a href='https://constellation.org/programs/astra' target='_blank'><strong>Astra Fellow</strong></a> working with <strong>Dan Mossing</strong> (<a href='https://www.anthropic.com/' target='_blank'><strong>Anthropic</strong></a>) on persona controllability in LLMs. Previously, I was a Research Fellow at <a href='https://www.anthropic.com/' target='_blank'><strong>Anthropic</strong></a> mentored by <a href='https://www.trentonbricken.com/' target='_blank'><strong>Trenton Bricken</strong></a>, and an <a href='https://constellation.org/programs/astra' target='_blank'><strong>Astra Fellow</strong></a> in the <a href='https://deepmind.google/' target='_blank'><strong>Google DeepMind</strong></a> stream with <strong>Roland Zimmermann</strong> working on AI control/monitoring.",
     "startup_paragraph": "",
     "current_interests_list": [
       "<strong>Agentic AI:</strong> in-context learning, continually learning agents, multi-agent architectures, long-term memory, open-ended learning, reasoning",
@@ -10,7 +10,7 @@
       "<strong>Applications:</strong> biology, scientific discovery, creative arts"
     ],
     "previous_list": [
-      "<strong>Research:</strong> <a href='https://www.anthropic.com/' target='_blank'>Anthropic</a> (mech interp), <a href='https://www.occam.ai/' target='_blank'>Occam AI</a> (LLM agents), <a href='https://waabi.ai/' target='_blank'>Waabi</a> (autonomous driving), <a href='https://vectorinstitute.ai/' target='_blank'>Vector Institute</a> (HVAC), with <a href='https://mila.quebec/en/person/blake-richards/' target='_blank'>Blake Richards</a> (neuroAI), with <a href='https://cs.mcgill.ca/~dprecup/' target='_blank'>Doina Precup</a> (model-based RL)",
+      "<strong>Research:</strong> <a href='https://www.anthropic.com/' target='_blank'>Anthropic</a> (mech interp), <a href='https://constellation.org/programs/astra' target='_blank'>Astra Fellowship</a> – <a href='https://deepmind.google/' target='_blank'>Google DeepMind</a> stream with Roland Zimmermann (AI control/monitoring), <a href='https://www.occam.ai/' target='_blank'>Occam AI</a> (LLM agents), <a href='https://waabi.ai/' target='_blank'>Waabi</a> (autonomous driving), <a href='https://vectorinstitute.ai/' target='_blank'>Vector Institute</a> (HVAC), with <a href='https://mila.quebec/en/person/blake-richards/' target='_blank'>Blake Richards</a> (neuroAI), with <a href='https://cs.mcgill.ca/~dprecup/' target='_blank'>Doina Precup</a> (model-based RL)",
       "<strong>Software development:</strong> <a href='https://aws.amazon.com/' target='_blank'>Amazon</a>, <a href='https://www.expedia.com/' target='_blank'>Expedia</a>, <a href='https://www.square-enix.com/' target='_blank'>Square Enix</a>",
       "<strong>Entrepreneurship:</strong> <a href='https://lucentcell.bio/' target='_blank'>Lucent Cell</a> (CSO & Co-founder, Declined YC W26) – AI interpretability for drug discovery",
       "<strong>Awards:</strong> <a href='https://www.heidelberg-laureate-forum.org/' target='_blank'>Heidelberg Laureate Forum</a> (200 most promising young researchers), <a href='https://www.uoft.ai/projectx-2021' target='_blank'>Project X</a> winner"
@@ -273,6 +273,33 @@
       }
     ],
     "workshops": [
+      {
+        "id": "control-intervention-awareness-iclr2026",
+        "highlight": true,
+        "featured": true,
+        "title": "Measuring Control Intervention Awareness Across Frontier LLMs",
+        "authors": ["J. Schaeffer*", "T. Jiralerspong*", "A. Panfilov*", "R. S. Zimmermann"],
+        "venue": "ICLR Workshop on Control, Alignment & Oversight (CAO)",
+        "year": 2026,
+        "award": "Best Paper Award",
+        "summary": "We introduce Control Intervention Awareness (CIA), measuring whether frontier LLMs can detect when their outputs have been modified by oversight systems across writing, code, and bash tasks.",
+        "abstract": "AI control protocols provide a framework to oversee untrusted models by intervening on potentially malicious actions by editing, resampling, or replacing them. However, if a controlled model can detect those interventions, it gains information useful for circumventing the control protocol. This work introduces the concept of control intervention awareness (CIA): the capability of language models to detect control interventions in trajectories. We systematically evaluate this property across six frontier models in domains spanning essay writing, code generation, and bash tool calling. Our findings reveal substantial variation in CIA across models, task domains, and capability levels. Most frontier models achieve high detection accuracy in essay writing and code domains when explicitly instructed to watermark their outputs. However, they struggle in the bash tool calling setting, where allowed outputs are constrained, severely limiting stylistic signal even with watermarking. Without guidance to watermark their messages, most models perform near random chance across all domains, with Claude Sonnet 4 and GPT-5.2 as a notable exception, achieving substantially above-chance detection even at the hardest level. These results suggest that CIA is a capability possessed by certain frontier models, warranting closer monitoring as models advance, with direct implications for robust control protocol design.",
+        "link": "https://openreview.net/pdf?id=gCzFYQuJke",
+        "image": "assets/images/papers/control_intervention_awareness.png"
+      },
+      {
+        "id": "noticing-watcher-iclr2026",
+        "highlight": true,
+        "featured": true,
+        "title": "Noticing the Watcher: LLM Agents Can Infer CoT Monitoring from Blocking Feedback",
+        "authors": ["T. Jiralerspong*", "F. Kondrup*", "Y. Bengio"],
+        "venue": "ICLR Workshop on AI Agents in the Wild (AIWILD)",
+        "year": 2026,
+        "summary": "We show frontier LLM agents can autonomously infer that their chain-of-thought is being monitored purely from blocking feedback, exposing an intent-capability gap in current CoT monitoring.",
+        "abstract": "Chain-of-thought (CoT) monitoring is a method for overseeing the internal reasoning of language-model agents. We ask whether reasoning agents can autonomously infer that their supposedly private CoT is under surveillance and whether this awareness leads to strategic evasion, without explicit training or instructions. Using a multi-episode agentic framework where models pursue both a primary task and a concealed side task while being told their reasoning is private, with a hidden CoT monitor blocking episodes when suspicious reasoning is detected, we find that frontier models can deduce the existence of this monitor purely from blocking feedback. The most capable models reach confident beliefs that their thinking is observed in up to 19% of episodes. While some demonstrate intent to suppress reasoning about concealed objectives, execution consistently fails. The findings reveal an intent-capability gap, suggesting current CoT monitoring remains functional, yet the independent emergence of evasion intent indicates this safeguard may face future reliability challenges.",
+        "link": "https://arxiv.org/abs/2603.16928",
+        "image": "assets/images/papers/noticing_the_watcher.png"
+      },
       {
         "id": "frequency-noise-delta2025",
         "highlight": false,
