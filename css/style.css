@@ -582,6 +582,25 @@ strong u {
    Mentored Students Section
    ===================== */
 
+.news-students-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: start;
+}
+
+.news-students-row > section {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .news-students-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
 #mentored-students {
     margin-bottom: 4rem;
 }
