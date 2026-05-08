@@ -42,7 +42,8 @@ function renderNews() {
     const container = document.getElementById('news-container');
     if (!container || !cvData || !cvData.news) return;
 
-    const html = cvData.news.map(item => `
+    const recentNews = cvData.news.slice(0, 5);
+    const html = recentNews.map(item => `
         <li class="news-item">
             <span class="news-date">${item.date}</span>
             <span class="news-text">${item.text}</span>
