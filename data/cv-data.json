@@ -1,6 +1,6 @@
 {
   "about_config": {
-    "current_paragraph": "Hey! I'm a PhD student in artificial intelligence at <a href='https://mila.quebec/en/' target='_blank'><strong>Mila</strong></a> and <a href='https://www.umontreal.ca/' target='_blank'><strong>Université de Montréal</strong></a> co-supervised by <a href='https://yoshuabengio.org/' target='_blank'><strong>Yoshua Bengio</strong></a> and <a href='https://www.guillaumelajoie.com/' target='_blank'><strong>Guillaume Lajoie</strong></a> (and previously <a href='https://cs.mcgill.ca/~dprecup/' target='_blank'><strong>Doina Precup</strong></a>), where my research has been supported by <a href='https://vanier.gc.ca/en/home-accueil.html' target='_blank'><strong>Vanier</strong></a>, <a href='https://www.nserc-crsng.gc.ca/index_eng.asp' target='_blank'><strong>NSERC</strong></a>, and <a href='http://www.frqnt.gouv.qc.ca/en/' target='_blank'><strong>FRQNT</strong></a> scholarships.<br><br>I'm currently an <a href='https://constellation.org/programs/astra' target='_blank'><strong>Astra Fellow</strong></a> working with <strong>Dan Mossing</strong> (<a href='https://www.anthropic.com/' target='_blank'><strong>Anthropic</strong></a>) on persona controllability in LLMs. I'm also a <strong>Principal Investigator</strong> at <a href='https://algoverseairesearch.org/' target='_blank'><strong>Algoverse AI Research</strong></a> and a research <strong>mentor</strong> for <a href='https://caish.org/mars' target='_blank'><strong>MARS V</strong></a> (Meridian Cambridge), where I mentor 6 researchers on AI safety projects. Previously, I was a Research Fellow at <a href='https://www.anthropic.com/' target='_blank'><strong>Anthropic</strong></a> mentored by <a href='https://www.trentonbricken.com/' target='_blank'><strong>Trenton Bricken</strong></a>, and an <a href='https://constellation.org/programs/astra' target='_blank'><strong>Astra Fellow</strong></a> in the <a href='https://deepmind.google/' target='_blank'><strong>Google DeepMind</strong></a> stream working on AI control/monitoring.",
+    "current_paragraph": "Hey! I'm a PhD student in artificial intelligence at <a href='https://mila.quebec/en/' target='_blank'><strong>Mila</strong></a> and <a href='https://www.umontreal.ca/' target='_blank'><strong>Université de Montréal</strong></a> co-supervised by <a href='https://yoshuabengio.org/' target='_blank'><strong>Yoshua Bengio</strong></a> and <a href='https://www.guillaumelajoie.com/' target='_blank'><strong>Guillaume Lajoie</strong></a> (and previously <a href='https://cs.mcgill.ca/~dprecup/' target='_blank'><strong>Doina Precup</strong></a>), where my research has been supported by <a href='https://vanier.gc.ca/en/home-accueil.html' target='_blank'><strong>Vanier</strong></a>, <a href='https://www.nserc-crsng.gc.ca/index_eng.asp' target='_blank'><strong>NSERC</strong></a>, and <a href='http://www.frqnt.gouv.qc.ca/en/' target='_blank'><strong>FRQNT</strong></a> scholarships.<br><br>I'm currently an <a href='https://constellation.org/programs/astra' target='_blank'><strong>Astra Fellow</strong></a> working with <strong>Dan Mossing</strong> (<a href='https://www.anthropic.com/' target='_blank'><strong>Anthropic</strong></a>) on persona controllability in LLMs. I'm also a <strong>Principal Investigator</strong> at <a href='https://algoverseairesearch.org/' target='_blank'><strong>Algoverse AI Research</strong></a> and a research <strong>mentor</strong> for <a href='https://caish.org/mars' target='_blank'><strong>MARS V</strong></a> (Meridian Cambridge), where I mentor 7 researchers on AI safety projects. Previously, I was a Research Fellow at <a href='https://www.anthropic.com/' target='_blank'><strong>Anthropic</strong></a> mentored by <a href='https://www.trentonbricken.com/' target='_blank'><strong>Trenton Bricken</strong></a>, and an <a href='https://constellation.org/programs/astra' target='_blank'><strong>Astra Fellow</strong></a> in the <a href='https://deepmind.google/' target='_blank'><strong>Google DeepMind</strong></a> stream working on AI control/monitoring.",
     "startup_paragraph": "",
     "current_interests_list": [
       "<strong>Agentic AI:</strong> in-context learning, continually learning agents, multi-agent architectures, long-term memory, open-ended learning, reasoning",
@@ -129,7 +129,7 @@
     },
     {
       "date": "Jun 2026",
-      "text": "Joined <a href='https://caish.org/mars' target='_blank'>MARS V</a> (Meridian Cambridge) as a <strong>research mentor</strong>, mentoring 6 researchers on AI safety projects"
+      "text": "Joined <a href='https://caish.org/mars' target='_blank'>MARS V</a> (Meridian Cambridge) as a <strong>research mentor</strong>, mentoring 7 researchers on AI safety projects"
     },
     {
       "date": "Apr 2026",
@@ -414,8 +414,8 @@
       "location": "Oxford, United Kingdom / Remote",
       "start_date": "2026-06",
       "end_date": "Present",
-      "summary": "Mentoring 6 researchers on AI safety research projects",
-      "details": "Mentorship of 6 researchers (supported by a research manager) conducting AI safety research as part of the Mentorship for Alignment Research Students (MARS) program.",
+      "summary": "Mentoring 7 researchers on AI safety research projects",
+      "details": "Mentorship of 7 researchers (supported by a research manager) conducting AI safety research as part of the Mentorship for Alignment Research Students (MARS) program.",
       "technologies": ["PyTorch", "Python"]
     },
     {
