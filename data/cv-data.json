@@ -283,6 +283,32 @@
     ],
     "workshops": [
       {
+        "id": "interleaving-emergent-misalignment-icml2026",
+        "highlight": true,
+        "featured": false,
+        "title": "When Does Interleaving Prevent Emergent Misalignment?",
+        "authors": ["S. Mammeri", "R. N. Kwon", "C. Sun", "S. Sahoo", "C. Gagné", "T. Jiralerspong"],
+        "venue": "ICML Workshop on Mechanistic Interpretability",
+        "year": 2026,
+        "month": 7,
+        "summary": "We show that whether interleaving benign data prevents emergent misalignment depends partly on the evaluation itself — the standard EM benchmark is sensitive to prompt length — and identify an activation region that predicts which interleaved sets prevent EM on Qwen-2.5 7B and 32B.",
+        "abstract": "Large language models finetuned on narrow harmful tasks are prone to emergent misalignment (EM), where harmful behavior generalizes beyond the training distribution. Interleaving benign data during finetuning has been proposed as a mitigation, but recent work disagrees on whether it prevents EM. In this paper, we investigate this disagreement on Qwen-2.5 7B and 32B, and find that no single property of the interleaved data, taken in isolation, accounts for the gap. Instead, much of it traces to the evaluation itself, as the standard EM benchmark is sensitive to the length of the prompts it uses, and lengthening the evaluation prompts substantially shifts measured misalignment across model sizes. We then identify a region in the model's activations that predicts whether a given interleaved set will prevent EM, and show that reformulating benign data to fall within it substantially reduces EM on both 7B and 32B. This suggests that the standard EM benchmark, which relies on short prompts, may misrepresent the effectiveness of proposed mitigations.",
+        "link": "https://openreview.net/pdf?id=DzpyGJQ6dt"
+      },
+      {
+        "id": "inoculation-reelicitation-icml2026",
+        "highlight": true,
+        "featured": false,
+        "title": "Hidden-State Similarity Predicts Re-Elicitation After Inoculation Prompting",
+        "authors": ["R. N. Kwon", "S. Mammeri", "S. Sahoo", "C. Gagné", "T. Jiralerspong"],
+        "venue": "ICML Workshop on Mechanistic Interpretability",
+        "year": 2026,
+        "month": 7,
+        "summary": "We find that suppressed behavior re-emerges after inoculation prompting when evaluation prompts induce activation states similar to the inoculation context — activation-space similarity predicts re-elicitation better than textual similarity.",
+        "abstract": "Fine-tuning on narrow harmful tasks can cause emergent misalignment, where models generalize harmful behavior beyond the training distribution. Inoculation prompting can reduce this effect by explicitly eliciting the undesired behavior during training, but recent work shows that the behavior can reappear when evaluation prompts contain cues from the training context. We study what makes such prompts effective triggers. We find that textual similarity to the inoculation prompt is an incomplete predictor: prompts are more likely to re-elicit suppressed behavior when they induce activation states similar to those produced by the inoculation context. These findings advance our understanding of how inoculation prompting modulates conditional misalignment, and suggest that activation-space analysis can help identify when suppressed behaviors remain accessible under eval-time prompts.",
+        "link": "https://openreview.net/pdf?id=rCT6VjpCGA"
+      },
+      {
         "id": "control-intervention-awareness-iclr2026",
         "highlight": true,
         "featured": true,
