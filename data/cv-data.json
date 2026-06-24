@@ -285,7 +285,7 @@
       {
         "id": "interleaving-emergent-misalignment-icml2026",
         "highlight": true,
-        "featured": false,
+        "featured": true,
         "title": "When Does Interleaving Prevent Emergent Misalignment?",
         "authors": ["S. Mammeri", "R. N. Kwon", "C. Sun", "S. Sahoo", "C. Gagné", "T. Jiralerspong"],
         "venue": "ICML Workshop on Mechanistic Interpretability",
@@ -298,7 +298,7 @@
       {
         "id": "inoculation-reelicitation-icml2026",
         "highlight": true,
-        "featured": false,
+        "featured": true,
         "title": "Hidden-State Similarity Predicts Re-Elicitation After Inoculation Prompting",
         "authors": ["R. N. Kwon", "S. Mammeri", "S. Sahoo", "C. Gagné", "T. Jiralerspong"],
         "venue": "ICML Workshop on Mechanistic Interpretability",
