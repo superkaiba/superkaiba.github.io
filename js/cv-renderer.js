@@ -24,6 +24,7 @@ function renderPage() {
     renderAboutSection();
     renderNews();
     renderFeatured();
+    renderMentored();
 
     // COMPLETE CV SECTIONS - COMMENTED OUT FOR NOW
     // renderPublications();
@@ -53,92 +54,95 @@ function renderNews() {
     container.innerHTML = html;
 }
 
-// Render featured projects section (publications only)
-function renderFeatured() {
+// Collect publications matching a predicate, sorted reverse chronologically
+function collectPapers(predicate) {
     const cvData = window.cvData;
-    const container = document.getElementById('featured-container');
-    if (!container || !cvData) return;
+    const papers = [];
+    if (!cvData || !cvData.publications) return papers;
 
-    const featured = [];
-
-    // Collect featured publications from conferences
-    if (cvData.publications && cvData.publications.conferences) {
-        cvData.publications.conferences.filter(p => p.featured).forEach(p => {
-            featured.push({
+    ['conferences', 'workshops', 'preprints'].forEach(type => {
+        (cvData.publications[type] || []).filter(predicate).forEach(p => {
+            papers.push({
                 year: p.year,
                 month: p.month || 0,
                 data: p
             });
         });
-    }
-
-    // Collect featured publications from workshops
-    if (cvData.publications && cvData.publications.workshops) {
-        cvData.publications.workshops.filter(p => p.featured).forEach(p => {
-            featured.push({
-                year: p.year,
-                month: p.month || 0,
-                data: p
-            });
-        });
-    }
+    });
 
     // Sort by year then month (reverse chronological)
-    featured.sort((a, b) => (b.year * 100 + b.month) - (a.year * 100 + a.month));
+    papers.sort((a, b) => (b.year * 100 + b.month) - (a.year * 100 + a.month));
 
-    // Render featured papers
-    const html = featured.map(f => {
-        const p = f.data;
-        // Bold and underline Thomas Jiralerspong in author list
-        const authorsStr = p.authors.map(author => {
-            if (author.includes('T. Jiralerspong') || author.includes('Thomas Jiralerspong')) {
-                return `<strong><u>${author}</u></strong>`;
-            }
-            return author;
-        }).join(', ');
+    return papers;
+}
 
-        // Determine publication status
-        let statusText = '';
-        if (p.venue.startsWith('Under Review')) {
-            statusText = p.venue;
-        } else {
-            statusText = `Published at ${p.venue} ${p.year}`;
-            if (p.award) statusText += ` · ${p.award}`;
+// Build the HTML for a single paper card
+function buildPaperCard(p) {
+    // Bold and underline Thomas Jiralerspong in author list
+    const authorsStr = p.authors.map(author => {
+        if (author.includes('T. Jiralerspong') || author.includes('Thomas Jiralerspong')) {
+            return `<strong><u>${author}</u></strong>`;
         }
+        return author;
+    }).join(', ');
 
-        return `
-        <li class="featured-paper${p.image ? '' : ' no-image'}" data-id="featured-${p.id}">
-            ${p.image ? `<div class="paper-image-container">
-                <img src="${p.image}" alt="${p.title}" class="paper-image" />
-            </div>` : ''}
-            <div class="paper-main-card">
-                <div class="paper-top-row">
-                    <div class="paper-title-area">
-                        <h3 class="paper-title">${p.title}</h3>
-                        <span class="paper-status">${statusText}</span>
-                        <p class="paper-authors">${authorsStr}</p>
-                    </div>
-                    <div class="paper-actions-compact">
-                        ${p.abstract ? `<button class="paper-btn-compact secondary-btn-compact" onclick="toggleAbstract('${p.id}')">
-                            <span id="abstract-btn-${p.id}">Abstract</span>
-                        </button>` : ''}
-                        ${p.code ? `<a href="${p.code}" target="_blank" class="paper-btn-compact secondary-btn-compact">Code</a>` : ''}
-                        ${p.blog ? `<a href="${p.blog}" target="_blank" class="paper-btn-compact secondary-btn-compact">Blog</a>` : ''}
-                        <a href="${p.link}" target="_blank" class="paper-btn-compact primary-btn-compact">
-                            Paper
-                        </a>
-                    </div>
+    // Determine publication status
+    let statusText = '';
+    if (p.venue.startsWith('Under Review') || p.venue.startsWith('arXiv')) {
+        statusText = p.venue;
+    } else {
+        statusText = `Published at ${p.venue} ${p.year}`;
+        if (p.award) statusText += ` · ${p.award}`;
+    }
+
+    return `
+    <li class="featured-paper${p.image ? '' : ' no-image'}" data-id="featured-${p.id}">
+        ${p.image ? `<div class="paper-image-container">
+            <img src="${p.image}" alt="${p.title}" class="paper-image" />
+        </div>` : ''}
+        <div class="paper-main-card">
+            <div class="paper-top-row">
+                <div class="paper-title-area">
+                    <h3 class="paper-title">${p.title}</h3>
+                    <span class="paper-status">${statusText}</span>
+                    <p class="paper-authors">${authorsStr}</p>
                 </div>
-                <p class="paper-description">${p.summary}</p>
-                ${p.abstract ? `<div class="paper-abstract" id="abstract-${p.id}" style="display: none;">
-                    <p>${p.abstract}</p>
-                </div>` : ''}
+                <div class="paper-actions-compact">
+                    ${p.abstract ? `<button class="paper-btn-compact secondary-btn-compact" onclick="toggleAbstract('${p.id}')">
+                        <span id="abstract-btn-${p.id}">Abstract</span>
+                    </button>` : ''}
+                    ${p.code ? `<a href="${p.code}" target="_blank" class="paper-btn-compact secondary-btn-compact">Code</a>` : ''}
+                    ${p.blog ? `<a href="${p.blog}" target="_blank" class="paper-btn-compact secondary-btn-compact">Blog</a>` : ''}
+                    <a href="${p.link}" target="_blank" class="paper-btn-compact primary-btn-compact">
+                        Paper
+                    </a>
+                </div>
             </div>
-        </li>
-        `;
-    }).join('');
+            <p class="paper-description">${p.summary}</p>
+            ${p.abstract ? `<div class="paper-abstract" id="abstract-${p.id}" style="display: none;">
+                <p>${p.abstract}</p>
+            </div>` : ''}
+        </div>
+    </li>
+    `;
+}
 
-    container.innerHTML = html;
+// Render featured projects section (publications only)
+function renderFeatured() {
+    const container = document.getElementById('featured-container');
+    if (!container || !window.cvData) return;
+
+    const featured = collectPapers(p => p.featured && !p.mentored);
+    container.innerHTML = featured.map(f => buildPaperCard(f.data)).join('');
+}
+
+// Render mentored projects section (papers led by mentored students)
+function renderMentored() {
+    const container = document.getElementById('mentored-container');
+    if (!container || !window.cvData) return;
+
+    const mentored = collectPapers(p => p.mentored);
+    container.innerHTML = mentored.map(f => buildPaperCard(f.data)).join('');
 }
 
 // Toggle abstract visibility

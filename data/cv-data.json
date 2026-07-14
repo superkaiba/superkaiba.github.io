@@ -285,7 +285,8 @@
       {
         "id": "interleaving-emergent-misalignment-icml2026",
         "highlight": true,
-        "featured": true,
+        "featured": false,
+        "mentored": true,
         "title": "When Does Interleaving Prevent Emergent Misalignment?",
         "authors": ["S. Mammeri", "R. N. Kwon", "C. Sun", "S. Sahoo", "C. Gagné", "T. Jiralerspong"],
         "venue": "ICML Workshop on Mechanistic Interpretability",
@@ -299,7 +300,8 @@
       {
         "id": "inoculation-reelicitation-icml2026",
         "highlight": true,
-        "featured": true,
+        "featured": false,
+        "mentored": true,
         "title": "Hidden-State Similarity Predicts Re-Elicitation After Inoculation Prompting",
         "authors": ["R. N. Kwon", "S. Mammeri", "S. Sahoo", "C. Gagné", "T. Jiralerspong"],
         "venue": "ICML Workshop on Mechanistic Interpretability",
@@ -400,6 +402,21 @@
         "summary": "We apply conservative offline RL to personalize mechanical ventilation treatment in critical care, addressing distributional shift in medical settings",
         "link": "https://arxiv.org/pdf/2210.02552.pdf",
         "image": "assets/images/papers/deepvent.png"
+      }
+    ],
+    "preprints": [
+      {
+        "id": "delta-crosscoder-2026",
+        "highlight": true,
+        "mentored": true,
+        "title": "Delta-Crosscoder: Robust Crosscoder Model Diffing in Narrow Fine-Tuning Regimes",
+        "authors": ["A. Kassem", "T. Jiralerspong", "N. Rostamzadeh", "G. Farnadi"],
+        "venue": "arXiv Preprint",
+        "year": 2026,
+        "month": 2,
+        "summary": "We introduce Delta-Crosscoder, which combines BatchTopK sparsity with a delta-based loss to reliably isolate the latent directions causally responsible for narrow fine-tuning behaviors across 10 model organisms, enabling effective mitigation.",
+        "abstract": "Model diffing methods aim to identify how fine-tuning changes a model's internal representations. Crosscoders approach this by learning shared dictionaries of interpretable latent directions between base and fine-tuned models. However, existing formulations struggle with narrow fine-tuning, where behavioral changes are localized and asymmetric. We introduce Delta-Crosscoder, which combines BatchTopK sparsity with a delta-based loss prioritizing directions that change between models, plus an implicit contrastive signal from paired activations on matched inputs. Evaluated across 10 model organisms, including synthetic false facts, emergent misalignment, subliminal learning, and taboo word guessing (Gemma, LLaMA, Qwen; 1B-9B parameters), Delta-Crosscoder reliably isolates latent directions causally responsible for fine-tuned behaviors and enables effective mitigation, outperforming SAE-based baselines, while matching the Non-SAE-based. Our results demonstrate that crosscoders remain a powerful tool for model diffing.",
+        "link": "https://arxiv.org/abs/2603.04426"
       }
     ]
   },
