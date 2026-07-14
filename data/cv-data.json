@@ -416,7 +416,8 @@
         "month": 2,
         "summary": "We introduce Delta-Crosscoder, which combines BatchTopK sparsity with a delta-based loss to reliably isolate the latent directions causally responsible for narrow fine-tuning behaviors across 10 model organisms, enabling effective mitigation.",
         "abstract": "Model diffing methods aim to identify how fine-tuning changes a model's internal representations. Crosscoders approach this by learning shared dictionaries of interpretable latent directions between base and fine-tuned models. However, existing formulations struggle with narrow fine-tuning, where behavioral changes are localized and asymmetric. We introduce Delta-Crosscoder, which combines BatchTopK sparsity with a delta-based loss prioritizing directions that change between models, plus an implicit contrastive signal from paired activations on matched inputs. Evaluated across 10 model organisms, including synthetic false facts, emergent misalignment, subliminal learning, and taboo word guessing (Gemma, LLaMA, Qwen; 1B-9B parameters), Delta-Crosscoder reliably isolates latent directions causally responsible for fine-tuned behaviors and enables effective mitigation, outperforming SAE-based baselines, while matching the Non-SAE-based. Our results demonstrate that crosscoders remain a powerful tool for model diffing.",
-        "link": "https://arxiv.org/abs/2603.04426"
+        "link": "https://arxiv.org/abs/2603.04426",
+        "image": "assets/images/papers/delta_crosscoder.png"
       }
     ]
   },

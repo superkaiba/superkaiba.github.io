@@ -616,6 +616,55 @@ strong u {
 }
 
 /* =====================
+   Featured + Mentored Projects two-column row
+   ===================== */
+
+.projects-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: start;
+}
+
+.projects-row > section {
+    margin-bottom: 0;
+}
+
+/* Narrow columns: stack paper image above text, buttons below title */
+.projects-row .featured-paper {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.projects-row .paper-image-container {
+    width: 100%;
+    max-width: 300px;
+}
+
+.projects-row .paper-top-row {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.projects-row .paper-title-area {
+    order: 1;
+}
+
+.projects-row .paper-actions-compact {
+    order: 2;
+    margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 900px) {
+    .projects-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* =====================
    Featured Projects Section
    ===================== */
 
