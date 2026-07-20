@@ -665,6 +665,53 @@ strong u {
 }
 
 /* =====================
+   Mentee Testimonials Section
+   ===================== */
+
+#testimonials {
+    margin-bottom: 4rem;
+}
+
+.testimonials-note {
+    font-size: 0.85rem;
+    color: var(--text-faint);
+    margin: 0.75rem 0 1.5rem;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.testimonial {
+    margin: 0;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--border-mid);
+}
+
+.testimonial p {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.7;
+    margin: 0 0 0.75rem;
+}
+
+.testimonial cite {
+    font-size: 0.85rem;
+    font-style: normal;
+    color: var(--text-faint);
+}
+
+@media screen and (max-width: 900px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* =====================
    Featured Projects Section
    ===================== */
 
