@@ -665,19 +665,33 @@ strong u {
 }
 
 /* =====================
-   Mentee Testimonials (inside Mentored Students)
+   Mentee Testimonials
    ===================== */
+
+.testimonials-link {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.testimonials-page {
+    max-width: 760px;
+}
+
+.testimonials-page .back-link {
+    font-size: 0.85rem;
+    margin-bottom: 3rem;
+}
 
 .testimonials-note {
     font-size: 0.85rem;
     color: var(--text-faint);
-    margin: 0.25rem 0 1rem;
+    margin: 0.25rem 0 2.5rem;
 }
 
 .testimonial-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 
 .testimonial {
