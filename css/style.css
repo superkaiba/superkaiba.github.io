@@ -665,24 +665,19 @@ strong u {
 }
 
 /* =====================
-   Mentee Testimonials Section
+   Mentee Testimonials (inside Mentored Students)
    ===================== */
-
-#testimonials {
-    margin-bottom: 4rem;
-}
 
 .testimonials-note {
     font-size: 0.85rem;
     color: var(--text-faint);
-    margin: 0.75rem 0 1.5rem;
+    margin: 0.25rem 0 1rem;
 }
 
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    align-items: start;
+.testimonial-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .testimonial {
@@ -702,13 +697,6 @@ strong u {
     font-size: 0.85rem;
     font-style: normal;
     color: var(--text-faint);
-}
-
-@media screen and (max-width: 900px) {
-    .testimonial-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
 }
 
 /* =====================
