@@ -30,7 +30,7 @@ function renderAboutSection() {
     // Render contact
     const contactElem = document.querySelector('.about-contact');
     if (contactElem) {
-        contactElem.innerHTML = `Always happy to chat, collaborate, or mentor → <a href="mailto:${config.email}"><strong>${config.email}</strong></a>`;
+        contactElem.innerHTML = `Always happy to chat, collaborate, or mentor → <a href="mailto:${config.email}"><strong>${config.email}</strong></a><br>Curious what working with me is like? → <a href="testimonials.html"><strong>mentee testimonials</strong></a>`;
     }
 
     // Render CTA
