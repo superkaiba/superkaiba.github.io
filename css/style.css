@@ -714,6 +714,50 @@ strong u {
 }
 
 /* =====================
+   Top 5s
+   ===================== */
+
+.top5s-page {
+    max-width: 760px;
+}
+
+.top5s-page .back-link {
+    font-size: 0.85rem;
+    margin-bottom: 3rem;
+}
+
+.top5s-note {
+    font-size: 0.85rem;
+    color: var(--text-faint);
+    margin: 0.25rem 0 2.5rem;
+}
+
+.top5s-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.top5-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.top5-list li {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+
+@media screen and (max-width: 768px) {
+    .top5s-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* =====================
    Featured Projects Section
    ===================== */
 
