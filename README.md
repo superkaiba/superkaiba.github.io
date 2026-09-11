@@ -1,150 +1,36 @@
-# Personal Website
+# Thomas Jiralerspong’s website
 
-A minimal, monochrome personal website with a fixed sidebar navigation.
+Personal research website at https://thomas.jiralerspong.com/, hosted on GitHub Pages.
 
-## Quick Start
+## Editing
 
-### 1. Add Your Content
+The deployed pages are static HTML. No build step or package installation is required.
 
-Edit `index.html` and replace the placeholder content with your information:
+- `index.html`: introduction, news, research, mentored projects, mentees, and testimonials. Recent entries are visible; native `<details>` elements expand the rest.
+- `publications.html`, `mentorship.html`, `testimonials.html`, and `top5s.html`: standalone pages with the same sidebar.
+- `css/style.css`: responsive layout and light/dark styles.
+- `js/script.js`: theme preference, mobile contents menu, active-section tracking, and links that reveal collapsed content.
+- `assets/images/`: portrait, project figures, and film/TV covers.
+- `assets/docs/cv.pdf` and `assets/docs/resume.pdf`: academic CV and one-page resume.
 
-- **Line 7**: Update the page title
-- **Line 8**: Update the meta description
-- **Line 15**: Replace "Your Name" with your actual name
-- **Line 26-30**: Update external links (resume, CV, Google Scholar, LinkedIn, GitHub)
-- **Section: About** (lines 38-50): Add your bio and description
-- **Section: Experience** (lines 55-80): Add your work experience (sorted by most recent)
-- **Section: Publications** (lines 85-110): Add your publications and projects (sorted by most recent)
-- **Section: Interests** (lines 115-130): Add your research interests
+Edit the HTML directly and keep sidebar labels, shared profile links, and repeated content consistent across pages. The retained `data/cv-data.json`, `js/about-renderer.js`, and `js/cv-renderer.js` belong to the earlier dynamic layout; the current pages do not load them.
 
-### 2. Add Your Profile Picture
+Use descriptive, visibly underlined links. Sidebar headings are stronger than navigation items, and mentorship subsections are indented under Mentorship. Keep CV and resume links identically styled.
 
-- Place your profile picture in `assets/images/` directory
-- Name it `profile.jpg` (or update the reference in line 42 of `index.html`)
-- Recommended: Square image, at least 400x400px
-
-### 3. Add Your PDFs
-
-Place your documents in the `assets/docs/` directory:
-- `resume.pdf` - Your 1-page resume
-- `cv.pdf` - Your academic CV
-
-### 4. Test Locally
-
-Open `index.html` in your web browser to preview the site. You can:
-- Double-click the file in Finder
-- Or use a local server:
-  ```bash
-  python3 -m http.server 8000
-  ```
-  Then visit http://localhost:8000
-
-## Deploy to GitHub Pages
-
-### Option 1: GitHub.com Interface (Easiest)
-
-1. Create a new repository on GitHub named `yourusername.github.io` (replace `yourusername` with your GitHub username)
-2. Upload all files to this repository
-3. Go to Settings → Pages
-4. Under "Source", select "Deploy from a branch"
-5. Select "main" branch and "/ (root)" folder
-6. Click Save
-7. Your site will be live at `https://yourusername.github.io`
-
-### Option 2: Using Git (Command Line)
+## Local preview and checks
 
 ```bash
-# Initialize git repository
-git init
-
-# Add all files
-git add .
-
-# Create first commit
-git commit -m "Initial commit: personal website"
-
-# Add your GitHub repository as remote
-git remote add origin https://github.com/yourusername/yourusername.github.io.git
-
-# Push to GitHub
-git branch -M main
-git push -u origin main
+python3 -m http.server 8000
 ```
 
-Then enable GitHub Pages as described in Option 1 (steps 3-7).
+Open http://localhost:8000/. Check desktop and phone widths, section jumps, disclosure controls, the mobile menu, both color themes, and the two PDFs. Keep temporary screenshots and preview snapshots outside this repository.
 
-### Custom Domain (Optional)
+When changing CSS, JavaScript, or PDFs, update their URL version parameters on all pages so returning visitors receive the new files.
 
-To use a custom domain like `www.yourname.com`:
+## CV and resume sources
 
-1. Create a file named `CNAME` in the root directory
-2. Add your domain name to this file (e.g., `www.yourname.com`)
-3. Configure your domain's DNS settings (see [GitHub docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site))
+The `overleaf-resume/` submodule contains the LaTeX sources. The active documents are `academic.tex` and `1_page_safety.tex`. After changing either source, recompile it and copy its PDF into `assets/docs/`. Push the submodule commit before publishing its updated reference in this repository.
 
-## Customization
+## Deployment
 
-### Colors
-
-The site uses a monochrome/grayscale color scheme. To customize:
-
-Edit `css/style.css` and modify these color variables:
-- `#1a1a1a` - Dark text (headings)
-- `#4a4a4a` - Medium text (body)
-- `#808080` - Light text (metadata)
-- `#f8f8f8` - Sidebar background
-- `#e0e0e0` - Borders
-
-### Fonts
-
-Current font stack is system fonts. To use custom fonts:
-
-1. Add font import at the top of `css/style.css`:
-   ```css
-   @import url('https://fonts.googleapis.com/css2?family=Your+Font&display=swap');
-   ```
-2. Update the `font-family` in the body selector
-
-### Layout
-
-- **Sidebar width**: Change `width: 280px` in `.sidebar` (line 43 of style.css)
-- **Content max-width**: Change `max-width: 900px` in `.content` (line 59 of style.css)
-- **Spacing**: Adjust padding and margin values throughout style.css
-
-## Browser Support
-
-Works on all modern browsers:
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers
-
-## File Structure
-
-```
-personal_website/
-├── index.html          # Main HTML file
-├── css/
-│   └── style.css       # Styling
-├── js/
-│   └── script.js       # Interactive features
-├── assets/
-│   ├── images/         # Profile picture
-│   └── docs/           # Resume and CV PDFs
-└── README.md           # This file
-```
-
-## Features
-
-- ✓ Fixed sidebar navigation with smooth scrolling
-- ✓ Active section highlighting
-- ✓ Fully responsive (mobile-friendly)
-- ✓ Minimal, monochrome design
-- ✓ No dependencies or build process
-- ✓ Fast loading
-- ✓ SEO-friendly semantic HTML
-
-## Support
-
-For issues or questions about GitHub Pages deployment, see:
-- [GitHub Pages Documentation](https://docs.github.com/en/pages)
-- [GitHub Pages Quickstart](https://docs.github.com/en/pages/quickstart)
+Pushing `master` triggers `.github/workflows/deploy.yml`, which deploys this repository to the existing GitHub Pages site. Confirm that the workflow succeeds and verify https://thomas.jiralerspong.com/ after publishing. Production pages must not include preview URLs or `noindex` directives.

@@ -1,96 +1,53 @@
-# CLAUDE.md
+# Repository guide
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
-## Overview
-
-This is a static personal website (GitHub Pages site) for an academic/research profile. It's a single-page design with a fixed sidebar and minimal, monochrome styling. The site is built with pure HTML/CSS/JS—no build process, frameworks, or dependencies.
+These instructions apply to Codex and other coding agents. The legacy filename is retained for existing references.
 
 ## Architecture
 
-**Single-Page Layout:**
-- `index.html`: Single HTML file containing all content in one page
-- Fixed sidebar navigation (`.sidebar`) on the left with name and external links
-- Main content area (`.content`) on the right with profile, research, publications, and experience
-- Fully responsive: sidebar becomes horizontal on mobile (<768px)
+This is Thomas Jiralerspong’s static personal research website, deployed at https://thomas.jiralerspong.com/ using GitHub Pages. It uses HTML, CSS, and JavaScript without a framework or build step.
 
-**Styling Philosophy:**
-- Monochrome/grayscale aesthetic with Inter font family
-- Profile image has `grayscale(100%)` filter applied
-- Minimal borders and subtle hover effects
-- All styling defined in a single `css/style.css` file organized by sections
+- `index.html` contains About, News, My research, and Mentorship. Mentored projects, Mentees, and Testimonials are subsections of Mentorship.
+- `publications.html`, `mentorship.html`, `testimonials.html`, and `top5s.html` are standalone destinations with shared navigation.
+- `css/style.css` contains all page styles.
+- `js/script.js` handles theme selection, the phone contents menu, active-section highlighting, and hash navigation that expands containing disclosures.
+- The earlier `data/cv-data.json`, `js/about-renderer.js`, and `js/cv-renderer.js` are retained as historical structured data and renderers, but are not loaded by the current pages. Edit the rendered HTML to change current content.
 
-**Key Layout Measurements:**
-- Sidebar: Fixed 240px width, becomes full-width on mobile
-- Content: Left margin of 240px (to account for sidebar), max-width 800px
-- Profile image: 140px circular (120px on tablet, 100px on phone)
+## Design and behavior
 
-## Development Commands
+Use the existing monochrome palette and Space Grotesk typography. The left sidebar contains the portrait, Contents, Links, and a sun/moon theme control. It remains sticky above 540px and becomes a compact expandable bar on smaller screens. A sidebar taller than the viewport scrolls with the page until its bottom is visible; it must never create a separate scrollbar. The expanded phone menu uses the page scroll too.
 
-**Local Testing:**
+Keep section headings and contents labels consistent. Show mentorship subsections as an indented nested list. Use descriptive underlined links and equal styling for Academic CV and 1 page resume. Recent items appear first, with native `<details>` controls for additional entries. Keep Thomas’s name emphasized in author lists and equal-contribution notes above the relevant projects.
+
+Preserve descriptive link text, semantic headings, keyboard focus indicators, reduced-motion support, and disclosure navigation. Keep repeated sidebar links and content consistent across all pages.
+
+## Local verification
+
 ```bash
-# Open in browser
-open index.html
-
-# Or run local server
 python3 -m http.server 8000
-# Then visit http://localhost:8000
 ```
 
-**Git Operations:**
-This is a `username.github.io` repository that deploys automatically to GitHub Pages from the master branch.
+Check relevant desktop and phone layouts, light/dark themes, section jumps, disclosures, and local assets. Ensure no horizontal overflow or JavaScript errors. Use focused checks appropriate to the change. Keep temporary previews, screenshots, private research provenance, and logs outside this repository.
 
-## Content Update Locations
+## CV and resume
 
-When updating personal content in `index.html`:
-- Line 6: Page title
-- Line 7: Meta description
-- Line 17: Site title (name in sidebar)
-- Lines 20-24: External links (Resume, CV, Scholar, LinkedIn, GitHub)
-- Line 34: Profile image path (stored in `assets/images/`)
-- Lines 36-63: Main content (bio, research, publications, experience, contact)
+- `assets/docs/cv.pdf` is the academic CV.
+- `assets/docs/resume.pdf` is the one-page AI safety resume.
+- `overleaf-resume/` is the Overleaf Git submodule containing their LaTeX sources.
+- Active sources: `academic.tex` and `1_page_safety.tex`.
+- Other variants include `1_page_phd.tex`, `1_page_founder.tex`, `1_page_games.tex`, `1_page_secret.tex`, `2_page.tex`, and publication/award lists.
 
-**Asset Directories:**
-- `assets/docs/`: PDF files (resume.pdf, cv.pdf)
-- `assets/images/`: Profile picture (profile.jpg)
+**When modifying LaTeX sources, you MUST recompile PDFs and copy them:**
 
-**Resume LaTeX Sources:**
-- `overleaf-resume/`: Git submodule cloned from Overleaf (project `65b1f9e3457a4d1a6feaa36a`). Contains LaTeX source files for all resume/CV variants:
-  - `1_page_safety.tex` — **current active 1-page resume** (compiled to `assets/docs/resume.pdf`)
-  - `1_page_phd.tex`, `1_page_founder.tex`, `1_page_games.tex`, `1_page_secret.tex` — other tailored 1-page resumes
-  - `2_page.tex` — 2-page resume
-  - `academic.tex` — academic CV (compiled to `assets/docs/cv.pdf`)
-  - `list_of_publications.tex`, `liste_des_publications.tex`, `list_of_awards.tex`
-  - `no_publications_or_awards.tex`
-  - To pull updates: `cd overleaf-resume && git pull`
-
-**IMPORTANT: When modifying LaTeX sources, you MUST recompile PDFs and copy them:**
 ```bash
 cd overleaf-resume
 pdflatex 1_page_safety.tex && cp 1_page_safety.pdf ../assets/docs/resume.pdf
 pdflatex academic.tex && cp academic.pdf ../assets/docs/cv.pdf
 ```
 
-## Design System
+Run enough passes to resolve references, verify the resulting documents, and push the submodule commit before committing its new reference in the website repository. Do not expose credentials.
 
-**Color Palette:**
-- `#000`: Primary text (headings, emphasis)
-- `#333`: Body text
-- `#555`: Secondary text
-- `#666`: Link items
-- `#888`: Section headings
-- `#f0f0f0`: Borders
-- `#ddd` / `#e0e0e0`: Underlines
+## Publishing
 
-**Typography:**
-- Font: Inter (Google Fonts) with system fallbacks
-- Weights: 300 (body), 400 (headings), 500 (strong/subheadings)
-- Section headings: Uppercase with letter-spacing
+The `master` branch deploys through `.github/workflows/deploy.yml` to the existing GitHub Pages site. Publishing requires the user’s authorization; an explicit instruction to push or publish provides it. Preserve the current provider and custom domain.
 
-**Responsive Breakpoints:**
-- 768px: Sidebar becomes horizontal, profile stacks vertically
-- 480px: Further padding reduction
-
-## JavaScript
-
-`js/script.js` is minimal—only updates footer year if a `#year` element exists (currently not in the HTML). The site has no interactive features or navigation logic since it's a single-page layout.
+Bump cache versions on all affected stylesheet, script, or PDF links. Preserve canonical URLs and the homepage Person structured data. Do not publish `noindex`, blocked preview robots rules, temporary preview pages, screenshots, or private provenance. Confirm the deployment workflow succeeds and verify the live site before reporting publication complete.
