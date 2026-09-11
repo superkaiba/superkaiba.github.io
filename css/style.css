@@ -185,3 +185,16 @@ details[open]>summary>.when-closed{display:none}
  .has-js .contents[data-expanded="true"]{position:relative}
  .has-js .contents[data-expanded="true"] .sidebar-panel{max-height:none;overflow:visible}
 }
+
+/* Status first, then program, with a compact description of each mentee's work. */
+.mentee-status{margin-top:30px}
+.mentee-status:first-of-type{margin-top:0}
+.mentee-status>h4{font-size:17px;font-weight:500;line-height:1.5;margin:0 0 22px}
+.mentee-status>.mentee-program{margin-left:14px}
+.mentee-program h5{font-size:14px;font-weight:500;line-height:1.5;color:var(--strong);margin:0 0 12px}
+.mentee-role{font-size:13px;line-height:1.6;color:var(--muted);margin:3px 0 0}
+.bio strong{font-weight:600}
+@media(max-width:540px){.mentee-status>.mentee-program{margin-left:10px}}
+
+/* Give every text link the same visible emphasis. */
+a[href],.contents a[data-section],.contents .resource-list a,.contents .toc-parent>a,.contents li a[aria-current="location"]{font-weight:600}
