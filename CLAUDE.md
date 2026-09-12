@@ -20,6 +20,8 @@ Keep section headings and contents labels consistent. Show mentorship subsection
 
 Preserve descriptive link text, semantic headings, keyboard focus indicators, reduced-motion support, and disclosure navigation. Keep repeated sidebar links and content consistent across all pages.
 
+Short paper descriptions must first explain what we study, investigate, or develop, then state the main findings and any essential qualification. Use one or two concise sentences grounded in the paper; include both the research context and the takeaway. Keep these descriptions consistent across the homepage (including expanded older projects), research and mentorship pages, and project image captions.
+
 ## Local verification
 
 ```bash

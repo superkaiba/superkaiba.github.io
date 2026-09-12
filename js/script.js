@@ -5,8 +5,8 @@ let isDark = savedTheme ? savedTheme === 'dark' : matchMedia('(prefers-color-sch
 function applyTheme() {
   document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
   toggle.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+  toggle.setAttribute('aria-label', isDark ? 'Light mode' : 'Dark mode');
   toggle.setAttribute('aria-pressed', String(isDark));
-  toggle.setAttribute('aria-label', toggle.title);
 }
 applyTheme();
 toggle.addEventListener('click', () => {
@@ -81,26 +81,38 @@ function clearContentsSelection() {
   clearTimeout(destinationTimer);
   scheduleContentsUpdate();
 }
-function setContentsExpanded(expanded) {
+let contentsReturnY = null;
+function setContentsExpanded(expanded, restoreScroll = true) {
   if (!contentsToggle) return;
+  const mobile = innerWidth <= 540;
+  if (expanded && mobile) contentsReturnY = scrollY;
   contents.dataset.expanded = String(expanded);
   contentsToggle.setAttribute('aria-expanded', String(expanded));
   contentsToggle.querySelector('.contents-indicator').textContent = expanded ? '−' : '+';
+  if (mobile && expanded) {
+    // The expanded menu uses the page scroll, so bring it into view from any section.
+    contents.scrollIntoView({ block: 'start', behavior: 'instant' });
+  } else if (!expanded && contentsReturnY !== null) {
+    if (restoreScroll && mobile) scrollTo({ top: contentsReturnY, behavior: 'instant' });
+    contentsReturnY = null;
+  }
 }
 contentsToggle?.addEventListener('click', () => setContentsExpanded(contents.dataset.expanded !== 'true'));
 contents?.addEventListener('keydown', event => {
   if (event.key === 'Escape' && contents.dataset.expanded === 'true') {
     setContentsExpanded(false);
-    contentsToggle.focus();
+    contentsToggle.focus({ preventScroll: true });
   }
 });
 contentsLinks.forEach(link => link.addEventListener('click', event => {
-  if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) setContentsExpanded(false);
+  if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) setContentsExpanded(false, false);
 }));
 let contentsFramePending = false;
 function updateContents() {
   contentsFramePending = false;
   if (!trackedSections.length) return;
+  // Opening the mobile menu should preserve the section the reader came from.
+  if (innerWidth <= 540 && contents.dataset.expanded === 'true') return;
   const threshold = Math.min(innerHeight * 0.22, 160);
   let current = trackedSections[0];
   for (const item of trackedSections) {
