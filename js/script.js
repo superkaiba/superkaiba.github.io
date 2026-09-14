@@ -27,7 +27,7 @@ function revealHashTarget(hash, moveFocus = false) {
   }
   selectContentsTarget(target);
   requestAnimationFrame(() => {
-    target.scrollIntoView({ block: 'start' });
+    target.scrollIntoView({ block: 'start', behavior: 'instant' });
     if (moveFocus) {
       const focusTarget = target.tagName === 'DETAILS' ? target.querySelector('summary') : target;
       if (!focusTarget.hasAttribute('tabindex') && focusTarget.tagName !== 'SUMMARY') {
@@ -62,7 +62,8 @@ const contents = document.querySelector('.contents');
 const contentsToggle = document.querySelector('.contents-toggle');
 const contentsLinks = [...document.querySelectorAll('.contents a[data-section]')];
 const currentSectionLabel = document.querySelector('.current-section');
-const trackedSections = contentsLinks.map(link => ({ link, section: document.getElementById(link.dataset.section) })).filter(item => item.section);
+const trackedSections = contentsLinks.map(link => ({ link, section: document.getElementById(link.dataset.section) })).filter(item => item.section)
+  .sort((a, b) => a.section.compareDocumentPosition(b.section) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1);
 let selectedDestination = null;
 let destinationScrollY = null;
 let destinationTimer;
