@@ -49,3 +49,7 @@ ul.paper-summary{padding-left:19px;margin-bottom:0}ul.paper-summary li+li{margin
 .contents .sidebar-label{font-size:14px;font-weight:600;letter-spacing:.15px}
 .experience-items>span{display:block}.experience-items>span+span{margin-top:7px}
 @media(max-width:540px){.contents .resource-links{margin:0}.contents #contents-links{border-top:0;padding-top:0}.contents-toggle{font-size:12px}}
+
+.blog-navigation{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 26px;padding-bottom:18px;border-bottom:1px solid var(--line);font-size:14px}
+.blog-navigation .back-home{display:inline-block;padding:8px 13px;border:1px solid var(--line);border-radius:5px;font-weight:600;background:var(--surface)}
+.blog-footer{flex-wrap:wrap}
