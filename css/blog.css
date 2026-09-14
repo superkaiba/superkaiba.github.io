@@ -42,3 +42,10 @@ ul.paper-summary{padding-left:19px;margin-bottom:0}ul.paper-summary li+li{margin
 }
 @media(max-width:800px){.latest-posts ol{grid-template-columns:1fr}.latest-posts li{display:grid;grid-template-columns:100px minmax(0,1fr);gap:16px}.latest-posts .blog-card-image{height:90px;margin:0}}
 @media(max-width:540px){.latest-posts li{grid-template-columns:80px minmax(0,1fr);gap:14px}.latest-posts .blog-card-image{height:76px}.latest-posts h3{font-size:16px}}
+
+/* Separate external resources from in-page navigation. */
+.contents .resource-links{margin-top:0;margin-bottom:24px}
+.contents #contents-links{border-top:1px solid var(--line);padding-top:20px}
+.contents .sidebar-label{font-size:14px;font-weight:600;letter-spacing:.15px}
+.experience-items>span{display:block}.experience-items>span+span{margin-top:7px}
+@media(max-width:540px){.contents .resource-links{margin:0}.contents #contents-links{border-top:0;padding-top:0}.contents-toggle{font-size:12px}}
