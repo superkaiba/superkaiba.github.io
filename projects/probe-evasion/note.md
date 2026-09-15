@@ -2,11 +2,15 @@
 
 Probes are small classifiers that read a model's internal activations to detect a behavior of interest. They could be useful monitors, but only if the model cannot easily work around them. [Obfuscated Activations](https://arxiv.org/abs/2412.09565) shows that attacks can change activations enough to evade some internal defenses while preserving the behavior those defenses are meant to catch.
 
-I want to understand whether a model can learn to do something similar **in context**, without changing its weights. For example, does telling the model that it is being monitored, or giving it feedback from a probe, help it find ways to avoid detection?
+Learning to evade probes **in context**, without changing model weights, has already been studied. [You Can't Escape Your Own Activations](https://arxiv.org/abs/2609.03035) compares agents that receive no monitoring information, monitoring awareness, or feedback from the previous round's probe score. In its experiments with Qwen3-32B-AWQ and GPT-OSS-20B, the strongest probes remain accurate even when the agents know about the monitor and receive feedback.
 
-We would start with a fixed probe and a controlled task where we can independently measure the behavior. We would then check:
+I propose to test whether that result holds for **larger, more capable models**. A model that is better at using feedback or understanding its own behavior might find strategies that the models studied so far do not. This is an empirical question; greater capability could also make the monitored behavior easier to detect.
 
-- Does detection get worse after the model receives information about the probe?
-- Is the model still doing the same thing, or did it simply stop the behavior?
-- Does evasion transfer to a new probe or a new task?
-- How much information or feedback does the model need?
+We would reproduce the fixed-probe setup and extend it to larger open models whose activations we can inspect. We would then check:
+
+- Does detection get worse as models become larger or receive more feedback?
+- Is the model still carrying out the monitored behavior, or did it simply stop?
+- Does evasion transfer to a new probe or task?
+- How much information and interaction time does the model need?
+
+Comparing the same tasks, feedback budgets, and independently checked behavior across model sizes would help establish whether the existing result survives scaling.

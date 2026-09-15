@@ -14,7 +14,9 @@ source_title: "Teaching AI by taking inspiration from developmental psychology +
 
 There is a rich literature on how people learn ethics, and I think it could be useful to draw more deliberately from it when designing model training. Possible directions include explaining reasons, comparing similar cases, considering another person's perspective, or reflecting on a mistake.
 
-I propose to choose one such idea, find the relevant work in developmental psychology, and turn it into a concrete training intervention.
+For example, [Explaining the moral of the story](https://cognition.princeton.edu/publications/explaining-moral-story) studies how asking children to explain helps them generalize a story's moral beyond its surface details. [Can classic moral stories promote honesty in children?](https://pubmed.ncbi.nlm.nih.gov/24928424/) separately measures how story framing affects actual truth-telling. These suggest testing both principle generalization and behavior, rather than judging only the quality of an explanation.
+
+I propose to choose one such finding and turn it into a concrete training intervention. The human studies would motivate the experiment; whether the same intervention helps a language model would be something to test.
 
 We would then check:
 

@@ -4,7 +4,9 @@ My [recent context-to-answer work](https://thomas.jiralerspong.com/assets/docs/a
 
 Sparse autoencoders (SAEs) try to express activations in terms of a larger set of features. I propose to investigate whether we can map **context features to answer features**, so that a prediction tells us something more understandable about what the model is likely to do.
 
-We would begin with paired context and answer activations, encode them with SAEs, and compare a direct feature-to-feature map against mapping in the residual stream first.
+[Transcoders](https://arxiv.org/abs/2406.11944) and [crosscoders](https://transformer-circuits.pub/2024/crosscoders/index.html) provide ways to learn relationships between sparse representations. Here, the target would be features of a future answer. [Turn-Averaged SAEs](https://arxiv.org/abs/2606.28548) is especially relevant because encoding an average activation can behave differently from averaging features encoded one token at a time.
+
+We would begin with paired context and answer activations and compare these choices of answer representation. Then we would compare a direct feature-to-feature map against mapping in the residual stream first, using only the context when making predictions.
 
 We would then check:
 

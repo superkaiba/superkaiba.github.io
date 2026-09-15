@@ -10,17 +10,20 @@ source_title: "Understanding What Distillation Does to Model Internals"
 
 # What distillation changes inside a model
 
-[Knowledge distillation](https://arxiv.org/abs/1503.02531) trains one model to imitate another, often transferring useful behavior from a larger model to a smaller one. But what does it do to their internal representations?
+[Knowledge distillation](https://arxiv.org/abs/1503.02531) trains one model to imitate another, often transferring useful behavior from a larger model to a smaller one. But matching outputs does not tell us how much of the teacher's internal computation the student preserves.
 
-One possibility is that a smaller, inspectable model could help us understand a larger model whose internals we cannot access. People sometimes call this a “sidecar” model. [Work on transferring linear features across models](https://arxiv.org/abs/2506.06609) provides a useful comparison for how much representation alignment is possible.
+This question has already been studied in [Distilled Circuits](https://arxiv.org/abs/2505.10822), which examines how student models reorganize, compress, and discard teacher components. I want to extend this kind of analysis to **larger modern language models**, and test whether the relationships between teacher and student representations change with scale.
 
-I propose to start with two open models, treating the larger one as a stand-in for a black box so that we can still check our conclusions.
+One possible application is a smaller, inspectable “sidecar” model that helps us understand a larger model whose internals we cannot access. [Transferring Linear Features Across Language Models](https://arxiv.org/abs/2506.06609) shows that representations can align even without distillation, so we would measure how much distillation adds beyond that existing similarity.
+
+We would use a larger open teacher and smaller students, treating the teacher as a black box during sidecar construction while retaining its activations to check our conclusions afterward.
 
 First steps:
 
-- Generate text from the larger model and feed the same text through the smaller model.
-- Compare their representations before any distillation.
-- Distill the larger model into the smaller one and track how that relationship changes.
-- Compare distillation from text alone with matching the teacher's output probabilities.
+- Compare teacher and student representations on the same text before distillation.
+- Distill the teacher into the students and track how their representations and circuits change.
+- Compare text-only distillation with matching the teacher's output probabilities.
+- Vary teacher and student size, and compare models from the same and different families.
+- Test whether student activations predict teacher-specific failures or intervention effects beyond what the generated text reveals.
 
-We would then test whether the smaller model's internals tell us something about the teacher that we could not learn from the text alone, and whether this depends on the models being from the same family.
+The goal is to understand what survives distillation at larger scales, and when a student's internals are a useful guide to its teacher.

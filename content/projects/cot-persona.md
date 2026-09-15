@@ -14,7 +14,7 @@ The [Persona Selection Model](https://alignment.anthropic.com/2026/psm/) propose
 
 The reasoning text often sounds different from the final answer. It may discuss what the assistant should say, question an approach, or consider several perspectives. [Reasoning Models Generate Societies of Thought](https://arxiv.org/abs/2601.10825) is relevant to the possibility that some reasoning involves multiple simulated perspectives. [Persona Features Control Emergent Misalignment](https://arxiv.org/abs/2506.19823) provides another starting point for relating behavioral traits to internal features.
 
-I propose to study the relationship between the reasoning and answer representations more directly.
+[Do LLMs Experience an Internal Polylogue?](https://arxiv.org/abs/2605.09159) already tracks persona directions during reasoning and tests interventions at different stages. I propose to build on this by studying the relationship between the reasoning persona and the final-answer assistant more directly, especially which perspective is represented as the model's own.
 
 Some questions:
 

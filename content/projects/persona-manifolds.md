@@ -12,7 +12,7 @@ source_title: "Persona manifolds"
 
 A lot of work on personas represents them using linear directions, as in [persona features](https://arxiv.org/abs/2506.19823) and the [assistant axis](https://arxiv.org/abs/2601.10387). These tools are useful, but they may miss structure if persona representations lie on a curved surface rather than in a simple linear subspace.
 
-[Goodfire's work on neural geometry](https://www.goodfire.ai/research/neural-geometry), [manifold steering](https://arxiv.org/abs/2605.05115), and [whether SAEs capture concept manifolds](https://arxiv.org/abs/2604.28119) provide starting points for investigating this.
+[Goodfire's work on neural geometry](https://www.goodfire.ai/research/neural-geometry) motivates investigating curved representation spaces. [Manifold steering](https://arxiv.org/abs/2605.05115) explores interventions that respect that geometry, while [Do Sparse Autoencoders Capture Concept Manifolds?](https://arxiv.org/abs/2604.28119) examines how sparse features describe curved concepts. [Learning a Generative Meta-Model of LLM Activations](https://arxiv.org/abs/2602.06964) also uses a learned activation prior for nonlinear steering, including persona directions. These give us concrete alternatives to compare with fixed linear steering.
 
 The goal is to characterize both individual personas and the broader structure of persona space.
 

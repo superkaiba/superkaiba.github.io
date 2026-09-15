@@ -4,6 +4,8 @@ A lot of interpretability work relies on the idea that meaningful concepts can b
 
 The goal of this project would be to characterize **what is linearly decodable, where, and under which conditions**. I would like to understand the pattern of successes and failures, rather than just finding a probe that performs well on one dataset.
 
+[The Geometry of Truth](https://arxiv.org/abs/2310.06824) gives a concrete case of linear structure, while [Not All Language Model Features Are One-Dimensionally Linear](https://arxiv.org/abs/2405.14860) identifies richer feature geometry. [Amnesic Probing](https://arxiv.org/abs/2006.00995) motivates checking whether information that a probe can extract actually affects the model's behavior.
+
 We could start with concepts that differ in useful ways: factual versus behavioral, local versus context-dependent, and simple attributes versus combinations of attributes.
 
 Some questions:

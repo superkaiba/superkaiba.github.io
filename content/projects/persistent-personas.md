@@ -14,6 +14,8 @@ There has been a lot of work on [persona features](https://arxiv.org/abs/2506.19
 
 Intuitively, a persona should persist. If a model is answering in a particular character or style, we do not expect it to abruptly switch halfway through a sentence. This suggests that persistence across tokens might help identify high-level behavioral features.
 
+[Persistent Sparse Autoencoders](https://arxiv.org/abs/2607.17117) already learns feature-specific timescales. This gives us a direct method to build on: are persona features unusually persistent, and does their persistence predict how long a behavioral change lasts? We would compare that method with simpler measures of how long ordinary SAE features stay active.
+
 I propose to look at this in two ways:
 
 - Find SAE features that remain active over many tokens, and test whether they are especially associated with personas or behavioral traits.

@@ -1,15 +1,17 @@
-# Interpretability and safety of looped transformers
+# Safety implications of looped transformers
 
-Looped transformers reuse a set of layers over multiple computation steps. This means a model can do more internal computation without having a different set of parameters for every step.
+Looped transformers reuse a set of layers over multiple computation steps. [Reasoning with Latent Thoughts](https://arxiv.org/abs/2502.17416) shows how this can support reasoning with additional internal computation. As more reasoning happens in hidden states, we need to understand what this changes about monitoring and controlling a model.
 
-[Reasoning with Latent Thoughts](https://arxiv.org/abs/2502.17416) studies how this repeated computation can support reasoning. I am interested in what the model is doing internally as it goes around the loop, and what this means for interpretability and safety.
+[A Mechanistic Analysis of Looped Reasoning Language Models](https://arxiv.org/abs/2604.11791) already studies recurrent dynamics, convergence, and stages of computation. [Latent Chain-of-Thought?](https://arxiv.org/abs/2507.02199) also investigates what can be decoded from intermediate states. I want to build on these results to study the **safety implications** of the architecture.
 
-We would start with an openly available model and tasks where we can understand the intermediate computation. Then we could apply tools such as probes, activation patching, and feature analysis across loop iterations.
+For example, a safety intervention might work at one iteration and then be undone by later computation. A monitor trained at one loop depth might become unreliable when we give the model more compute. And if the reasoning is internal, a monitor that depends on a readable chain-of-thought may lose access to useful evidence.
 
-Some questions:
+We would use open looped models and controlled tasks to ask:
 
-- Does each iteration refine the same representation, or carry out a qualitatively different operation?
-- Can we identify when the model has finished the useful part of its computation?
-- Do behavioral features persist, disappear, or become stronger as computation continues?
-- Do interventions have to be applied once, or repeatedly across the loop?
-- What can we observe when reasoning happens internally instead of in a visible chain-of-thought?
+- Does increasing the loop budget change harmful behavior or the reliability of safety monitors?
+- Do later iterations preserve, weaken, or undo a safety intervention?
+- When is a one-time intervention sufficient, and when is repeated intervention needed?
+- Can an internal monitor transfer across loop counts, tasks, and stages of computation?
+- Can we recognize an unsafe trajectory early enough to stop or redirect it while preserving useful task performance?
+
+Interpretability tools would help explain these outcomes. The main goal is to identify which safety assumptions continue to hold when models reason through repeated internal computation.

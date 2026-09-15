@@ -14,7 +14,9 @@ Modern LLMs process several kinds of text: system prompts, user messages, chain-
 
 My [context-to-answer mapping work](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf) gives one reason to look more closely at the relationship between input and output representations. [Reasoning Models Generate Societies of Thought](https://arxiv.org/abs/2601.10825) is another relevant perspective on what might be happening within the reasoning portion.
 
-The goal would be to characterize the major differences between these message types.
+[LLM Reasoning as Trajectories](https://arxiv.org/abs/2604.05655) studies geometry across reasoning stages, and [LLM Agents Already Know When to Call Tools](https://arxiv.org/abs/2605.09252) examines internal signals associated with tool use. These suggest that message types and stages can carry distinct information even when they occur within one conversation.
+
+The goal would be to characterize those differences while controlling the content, speaker, and token position.
 
 We could start by asking:
 

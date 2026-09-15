@@ -4,7 +4,9 @@
 
 Our preliminary experiments suggest that emotional distress appeals can make a monitor more likely to let an agent's behavior pass. For example, an agent might frame itself as struggling, frightened, or at risk of being shut down.
 
-The project would extend these results and test whether the effect can be reduced.
+[Can You Trick the Grader?](https://arxiv.org/abs/2508.07805) already studies emotional persuasion of LLM judges, including appeals attached to incorrect answers. We want to examine the corresponding problem in agent oversight: whether distress appeals change a monitor's assessment of the same completed actions, and whether that weakens a control protocol.
+
+The project would extend our preliminary results and test whether the effect can be reduced.
 
 We would ask:
 

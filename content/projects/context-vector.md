@@ -14,7 +14,7 @@ In my [newest paper](https://thomas.jiralerspong.com/assets/docs/affine-anticipa
 
 The goal of this project would be to understand **what is stored there**. Does it mostly summarize the prompt, or does it also encode the likely answer, the user, the assistant's stance, and other high-level properties?
 
-We would start by separating these possibilities with carefully matched prompts and answers.
+[In-Context Learning Creates Task Vectors](https://arxiv.org/abs/2310.15916) finds compact representations of the task induced by demonstrations. [Emergent Response Planning in LLMs](https://arxiv.org/abs/2502.06258) and [ParaScopes](https://arxiv.org/abs/2511.00180) provide evidence about information concerning future responses in hidden states. Together, these suggest several kinds of information to separate with carefully matched prompts and answers.
 
 Some questions:
 

@@ -12,7 +12,9 @@ source_title: "A mechanistic understanding of elicitation vs teaching"
 
 Fine-tuning can improve performance in at least two different ways: it can teach a model something new, or make the model use a capability it already had. Those outcomes can look similar if we only measure the final score.
 
-[This work on elicitation versus teaching](https://openreview.net/pdf?id=re9NtTb1Dy) uses an information-theoretic approach to distinguish them. I would like to understand whether that distinction also has a recognizable signature inside the model.
+[Bits That Count: Quantifying and Predicting Capabilities of Language Models](https://icml.cc/virtual/2026/poster/61292) uses an information-theoretic approach to this distinction. [Mechanistically analyzing the effects of fine-tuning on procedurally defined tasks](https://arxiv.org/abs/2311.12786) provides a complementary controlled setting for studying how fine-tuning changes access to capabilities.
+
+I would like to connect these approaches: does elicitation versus teaching have a recognizable signature inside the model, and can that signature predict how training will generalize?
 
 We would start from a controlled setting where the two regimes are well defined and differ in as few other ways as possible. Then we could compare:
 

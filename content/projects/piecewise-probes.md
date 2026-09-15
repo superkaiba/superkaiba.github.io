@@ -14,6 +14,8 @@ Linear probes are appealing because they are simple and cheap, but they assume t
 
 The [linear representation hypothesis](https://arxiv.org/abs/2311.03658) gives a useful starting point, while [work on concept manifolds](https://arxiv.org/abs/2604.28119) motivates looking beyond a single direction.
 
+[Beyond Linear Probes](https://arxiv.org/abs/2509.26238) already explores more expressive safety monitors, and [Probing for Representation Manifolds in Superposition](https://arxiv.org/abs/2605.18537) studies structure beyond a single direction. I am interested in whether a small number of understandable local rules can capture useful parts of that structure.
+
 I propose to compare ordinary linear probes with piecewise linear probes and subspace probes. A piecewise probe would use different linear rules in different regions; a subspace probe could use several directions together.
 
 We would check:
