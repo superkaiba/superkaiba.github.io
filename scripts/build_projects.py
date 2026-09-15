@@ -109,6 +109,8 @@ def main():
         rendered = re.sub(r"<h1>.*?</h1>", "", rendered, count=1, flags=re.S)
         if meta["status"] not in STATUSES:
             raise ValueError(f"Unsupported status in {path.name}: {meta['status']!r}")
+        if not isinstance(meta.get("published", True), bool):
+            raise ValueError(f"The published field in {path.name} must be true or false")
         meta.update(slug=path.stem, rendered=rendered, body=body)
         projects.append(meta)
     projects.sort(key=lambda p:(STATUSES[p["status"]], p.get("order", 999), p["title"].lower()))
@@ -119,6 +121,13 @@ def main():
             if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug) or slug in anchors:
                 raise ValueError(f"Invalid or duplicate project anchor: {slug!r}")
             anchors.add(slug)
+    unpublished = [p for p in projects if not p.get("published", True)]
+    projects = [p for p in projects if p.get("published", True)]
+    # Keep unpublished proposals editable, but remove their generated pages.
+    for p in unpublished:
+        for slug in [p["slug"], *p.get("aliases", [])]:
+            for name in ("index.html", "note.md"):
+                (DEST / slug / name).unlink(missing_ok=True)
     DEST.mkdir(parents=True, exist_ok=True)
     assets = {
         "base.css": (ROOT / "css/style.css").read_text(),
@@ -156,7 +165,7 @@ def main():
             toc += "</ol>"
         toc += "</li>"
     (DEST / "index.html").write_text(render_page(body, toc, versions))
-    print(f"Rendered {len(projects)} projects with a scrolling table of contents at {DEST}")
+    print(f"Rendered {len(projects)} projects at {DEST}; retained {len(unpublished)} unpublished proposals in {CONTENT}")
 
 if __name__ == "__main__":
     main()
