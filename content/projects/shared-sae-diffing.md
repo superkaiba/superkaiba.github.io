@@ -1,16 +1,16 @@
 ---
-title: Using a shared SAE for model diffing
+title: Applying SharedSAE to model diffing
 status: Not started
 order: 17
 ---
 
-# Using a shared SAE for model diffing
+# Applying SharedSAE to model diffing
 
-[Crosscoders](https://transformer-circuits.pub/2024/crosscoders/index.html) learn shared sparse features across models. My work on [Delta-Crosscoder](https://arxiv.org/abs/2603.04426) shows why narrow fine-tuning changes need particular care, while [model stitching](https://arxiv.org/abs/2506.06609) provides a way to align representation spaces and transfer sparse autoencoders. This raises a practical question about how much machinery is needed to compare models reliably.
+[SharedSAE: One Feature Dictionary Across Language Models](https://arxiv.org/abs/2609.04344) introduces a shared dictionary of sparse features with model-specific encoders and decoders. The paper shows that these features and their descriptions can transfer across models, and that new models can be adapted to a frozen dictionary.
 
-It would be useful to test when one shared SAE—a sparse autoencoder trained to describe both models—provides a clear account of their differences, and when it misses changes that a crosscoder can detect.
+It would be useful to apply SharedSAE to model diffing: can its shared features reveal what changes between a base model and its fine-tuned versions? [Crosscoders](https://transformer-circuits.pub/2024/crosscoders/index.html) and my work on [Delta-Crosscoder](https://arxiv.org/abs/2603.04426) provide comparison methods for identifying changes introduced by fine-tuning.
 
-- Train a shared dictionary on matched activations from a base model and several controlled fine-tunes.
-- Compare joint training, a frozen dictionary transferred between models, and crosscoder baselines.
+- Apply SharedSAE to a base model and several controlled fine-tunes using matched inputs.
+- Compare joint dictionary training with freezing the dictionary before adapting the fine-tuned checkpoints.
 - Separate changes in feature frequency or strength from genuinely new behavior and reconstruction errors.
-- Test whether the identified differences predict behavioral changes and survive feature ablation or activation patching.
+- Compare with crosscoder baselines, and test whether the identified differences predict behavioral changes using feature ablation or activation patching.
