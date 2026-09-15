@@ -1,8 +1,7 @@
 ---
 title: Recovering information from obfuscated chain-of-thought
-category: safety
 status: Not started
-order: 8
+order: 46
 ---
 
 # Recovering information from obfuscated chain-of-thought

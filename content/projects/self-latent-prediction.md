@@ -1,8 +1,7 @@
 ---
 title: Does predicting internal activations improve introspection?
-category: reasoning
 status: Not started
-order: 4
+order: 34
 ---
 
 # Does predicting internal activations improve introspection?

@@ -15,13 +15,8 @@ CONTENT = ROOT / "content" / "projects"
 DEST = ROOT / "projects"
 HOME_URL = "https://thomas.jiralerspong.com/"
 GROUPS = [
-    ("Context and prediction", "context-prediction"),
-    ("Representations and interpretability", "representations"),
-    ("Personas and cognition", "personas"),
-    ("Reasoning and architectures", "reasoning"),
-    ("Safety and evaluation", "safety"),
-    ("Training and adaptation", "training"),
-    ("Multi-agent systems", "agents"),
+    ("Not Started", "not-started"),
+    ("In Progress", "in-progress"),
     ("Completed", "completed"),
 ]
 STATUSES = {"Not started": 0, "In progress": 1, "Completed": 2}
@@ -97,7 +92,7 @@ def render_page(body, toc, versions):
 <div class="page-layout project-layout">
 <aside class="contents">
 <div class="project-sidebar-heading"><a href="{HOME_URL}">Thomas Jiralerspong</a>{theme_button()}</div>
-<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Context and prediction</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Not Started</span><span class="contents-indicator" aria-hidden="true">+</span></button>
 <div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol>{toc}</ol></nav></div>
 </aside><div class="site-wrap"><main class="project-catalogue" id="main">
 <h1>Research projects</h1>{body}
@@ -114,13 +109,11 @@ def main():
         rendered = re.sub(r"<h1>.*?</h1>", "", rendered, count=1, flags=re.S)
         if meta["status"] not in STATUSES:
             raise ValueError(f"Unsupported status in {path.name}: {meta['status']!r}")
-        if meta["category"] not in {key for _, key in GROUPS}:
-            raise ValueError(f"Unsupported category in {path.name}: {meta['category']!r}")
         meta.update(slug=path.stem, rendered=rendered, body=body)
         projects.append(meta)
     projects.sort(key=lambda p:(STATUSES[p["status"]], p.get("order", 999), p["title"].lower()))
     # Validate all public anchors before writing files, including historical names.
-    anchors = {key for _, key in GROUPS} | {"main", "not-started", "in-progress"}
+    anchors = {key for _, key in GROUPS} | {"main"}
     for p in projects:
         for slug in [p["slug"], *p.get("aliases", [])]:
             if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug) or slug in anchors:
@@ -139,9 +132,8 @@ def main():
     # Navigation now uses the same page-scrolling sidebar as the main website.
     (DEST / "catalogue.js").unlink(missing_ok=True)
     body, toc = "", ""
-    legacy_statuses = {"Not started": "not-started", "In progress": "in-progress"}
     for title, key in GROUPS:
-        rows = [p for p in projects if p["category"] == key]
+        rows = [p for p in projects if p["status"].lower().replace(" ", "-") == key]
         body += f'<section class="project-group toc-section" id="{key}"><h2>{title}</h2>'
         toc += f'<li class="toc-parent"><a href="#{key}" data-section="{key}">{title}</a>'
         if rows:
@@ -152,8 +144,6 @@ def main():
             slug, name = p["slug"], escape(p["title"])
             toc += f'<li class="toc-child"><a href="#{slug}" data-section="{slug}">{name}</a></li>'
             aliases = list(p.get("aliases", []))
-            if p["status"] in legacy_statuses:
-                aliases.append(legacy_statuses.pop(p["status"]))
             alias_html = ''.join(f'<span class="project-alias" id="{alias}" aria-hidden="true"></span>' for alias in aliases)
             body += f'<article class="project-row toc-section" id="{slug}">{alias_html}<h3><a href="#{slug}">{name}</a></h3><p class="project-status">{escape(p["status"])}</p><div class="project-reading">{p["rendered"]}</div></article>'
             for path_slug in [slug, *p.get("aliases", [])]:

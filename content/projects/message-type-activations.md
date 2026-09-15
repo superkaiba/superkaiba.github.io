@@ -1,8 +1,7 @@
 ---
 title: Representations across prompts, reasoning, answers and tool calls
-category: reasoning
 status: Not started
-order: 2
+order: 32
 ---
 
 # Representations across prompts, reasoning, answers and tool calls

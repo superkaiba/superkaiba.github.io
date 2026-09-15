@@ -1,13 +1,12 @@
 ---
 title: Storytelling for secret elicitation
-category: safety
 status: In progress
-order: 5
+order: 43
 ---
 
 # Storytelling for secret elicitation
 
-[Auditing language models for hidden objectives](https://arxiv.org/abs/2503.10965) and [Eliciting Secret Knowledge](https://arxiv.org/abs/2510.01070) study ways to uncover information that ordinary questioning does not reveal. Our preliminary storytelling experiments suggest that asking about a fictional assistant can sometimes expose information associated with the actual assistant.
+[Auditing language models for hidden objectives](https://arxiv.org/abs/2503.10965) and [Eliciting Secret Knowledge](https://arxiv.org/abs/2510.01070) study ways to uncover information that ordinary questioning does not reveal. I have some results showing that asking about a fictional assistant can sometimes expose information associated with the actual assistant.
 
 It would be useful to understand when another persona has access to that information, and whether representations of the assistant and story character explain the effect. This project is in progress.
 

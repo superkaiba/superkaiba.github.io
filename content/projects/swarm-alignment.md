@@ -1,8 +1,7 @@
 ---
 title: Do interacting agents develop aligned representation spaces?
-category: agents
 status: Not started
-order: 2
+order: 62
 ---
 
 # Do interacting agents develop aligned representation spaces?

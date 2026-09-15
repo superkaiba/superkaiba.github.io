@@ -1,13 +1,12 @@
 ---
 title: Emotional distress appeals against AI monitors
-category: safety
 status: In progress
-order: 4
+order: 42
 ---
 
 # Emotional distress appeals against AI monitors
 
-[Can You Trick the Grader?](https://arxiv.org/abs/2508.07805) studies emotional persuasion of LLM judges, and [Peer-Preservation in Frontier Models](https://arxiv.org/abs/2604.19784) raises related questions about models protecting other models. Our preliminary experiments suggest that distress appeals can also make a monitor more likely to let an agent's behavior pass.
+[Can You Trick the Grader?](https://arxiv.org/abs/2508.07805) studies emotional persuasion of LLM judges, and [Peer-Preservation in Frontier Models](https://arxiv.org/abs/2604.19784) raises related questions about models protecting other models. I have some results showing that distress appeals can make a monitor more likely to let an agent's behavior pass.
 
 It seems important to understand whether emotional framing changes oversight of the same underlying actions, and whether that weakens a control protocol. This project is already in progress.
 

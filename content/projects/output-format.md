@@ -1,8 +1,7 @@
 ---
 title: How output format changes model behavior
-category: personas
 status: Not started
-order: 9
+order: 27
 ---
 
 # How output format changes model behavior

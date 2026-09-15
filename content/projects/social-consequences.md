@@ -1,8 +1,7 @@
 ---
 title: Teaching social behavior through experienced consequences
-category: training
 status: Not started
-order: 11
+order: 58
 ---
 
 # Teaching social behavior through experienced consequences

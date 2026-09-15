@@ -1,8 +1,7 @@
 ---
 title: Using a shared SAE for model diffing
-category: representations
 status: Not started
-order: 10
+order: 17
 ---
 
 # Using a shared SAE for model diffing

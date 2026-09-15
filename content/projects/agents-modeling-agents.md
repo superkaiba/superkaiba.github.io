@@ -1,8 +1,7 @@
 ---
 title: How agents represent other agents
-category: agents
 status: Not started
-order: 1
+order: 61
 ---
 
 # How agents represent other agents

@@ -1,8 +1,7 @@
 ---
 title: Revisiting cognitive tests of System 1 and System 2
-category: personas
 status: Not started
-order: 8
+order: 26
 ---
 
 # Revisiting cognitive tests of System 1 and System 2

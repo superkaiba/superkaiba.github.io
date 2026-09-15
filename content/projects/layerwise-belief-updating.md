@@ -1,8 +1,7 @@
 ---
 title: Do different layers perform different stages of belief updating?
-category: representations
 status: Not started
-order: 6
+order: 13
 ---
 
 # Do different layers perform different stages of belief updating?

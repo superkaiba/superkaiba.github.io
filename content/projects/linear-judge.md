@@ -1,8 +1,7 @@
 ---
 title: Which judge scores are linearly readable from activations?
-category: safety
 status: Not started
-order: 6
+order: 44
 ---
 
 # Which judge scores are linearly readable from activations?

@@ -1,8 +1,7 @@
 ---
 title: What determines the right probe?
-category: representations
 status: Not started
-order: 8
+order: 15
 aliases:
 - linear-decodability
 - piecewise-probes

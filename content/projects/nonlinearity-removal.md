@@ -1,8 +1,7 @@
 ---
 title: Which nonlinearities can a model do without?
-category: reasoning
 status: Not started
-order: 5
+order: 35
 ---
 
 # Which nonlinearities can a model do without?

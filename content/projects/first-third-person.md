@@ -1,8 +1,7 @@
 ---
 title: First-person and third-person identity in prompts
-category: personas
 status: Not started
-order: 5
+order: 23
 ---
 
 # First-person and third-person identity in prompts

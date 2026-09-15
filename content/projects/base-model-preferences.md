@@ -1,8 +1,7 @@
 ---
 title: Base-model preferences
-category: personas
 status: Not started
-order: 10
+order: 28
 ---
 
 # Base-model preferences

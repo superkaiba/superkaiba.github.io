@@ -1,6 +1,5 @@
 ---
 title: Red-teaming through predicted answer representations
-category: context-prediction
 status: Not started
 order: 4
 ---

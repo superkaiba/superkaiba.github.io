@@ -1,8 +1,7 @@
 ---
 title: Comparing tools for reading activations
-category: representations
 status: Not started
-order: 5
+order: 12
 ---
 
 # Comparing tools for reading activations

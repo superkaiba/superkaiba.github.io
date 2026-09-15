@@ -1,8 +1,7 @@
 ---
 title: Are RL-induced changes concentrated at chat-template positions?
-category: training
 status: Not started
-order: 8
+order: 55
 ---
 
 # Are RL-induced changes concentrated at chat-template positions?

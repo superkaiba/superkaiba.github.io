@@ -1,8 +1,7 @@
 ---
 title: Does reasoning change what a model believes about itself?
-category: reasoning
 status: Not started
-order: 6
+order: 36
 ---
 
 # Does reasoning change what a model believes about itself?

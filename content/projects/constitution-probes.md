@@ -1,8 +1,7 @@
 ---
 title: Probing for violations of a whole constitution
-category: safety
 status: Not started
-order: 2
+order: 40
 ---
 
 # Probing for violations of a whole constitution

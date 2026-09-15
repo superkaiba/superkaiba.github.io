@@ -1,8 +1,7 @@
 ---
 title: What changes when models learn to predict user turns?
-category: training
 status: Not started
-order: 13
+order: 60
 ---
 
 # What changes when models learn to predict user turns?

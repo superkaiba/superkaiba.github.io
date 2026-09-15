@@ -1,8 +1,7 @@
 ---
 title: Safety implications of looped transformers
-category: reasoning
 status: Not started
-order: 3
+order: 33
 ---
 
 # Safety implications of looped transformers

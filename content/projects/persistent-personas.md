@@ -1,8 +1,7 @@
 ---
 title: Personas as persistent features
-category: personas
 status: Not started
-order: 2
+order: 20
 ---
 
 # Personas as persistent features

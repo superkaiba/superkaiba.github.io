@@ -1,8 +1,7 @@
 ---
 title: Characterizing activation geometry with nonlinear factors
-category: representations
 status: Not started
-order: 9
+order: 16
 ---
 
 # Characterizing activation geometry with nonlinear factors

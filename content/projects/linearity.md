@@ -1,8 +1,7 @@
 ---
 title: How linear are LLM representations?
-category: representations
 status: Not started
-order: 1
+order: 8
 ---
 
 # How linear are LLM representations?

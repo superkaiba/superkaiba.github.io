@@ -1,6 +1,5 @@
 ---
 title: Mapping context SAE features to answer SAE features
-category: context-prediction
 status: Not started
 order: 6
 ---

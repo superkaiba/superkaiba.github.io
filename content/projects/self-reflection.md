@@ -1,8 +1,7 @@
 ---
 title: Self-reflection to reduce reward hacking
-category: training
 status: Not started
-order: 6
+order: 53
 ---
 
 # Self-reflection to reduce reward hacking

@@ -1,8 +1,7 @@
 ---
 title: Measuring AI progress through the difficulty of verification
-category: safety
 status: Not started
-order: 7
+order: 45
 ---
 
 # Measuring AI progress through the difficulty of verification

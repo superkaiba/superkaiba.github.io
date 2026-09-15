@@ -1,8 +1,7 @@
 ---
 title: What can prompting, steering, LoRA, and fine-tuning change?
-category: training
 status: Not started
-order: 7
+order: 54
 ---
 
 # What can prompting, steering, LoRA, and fine-tuning change?

@@ -1,8 +1,7 @@
 ---
 title: User representations and assistant persona selection
-category: personas
 status: In progress
-order: 4
+order: 22
 ---
 
 # User representations and assistant persona selection

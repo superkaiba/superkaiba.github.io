@@ -1,8 +1,7 @@
 ---
 title: Nonlinear geometry of persona representations
-category: personas
 status: In progress
-order: 3
+order: 21
 ---
 
 # Nonlinear geometry of persona representations

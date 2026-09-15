@@ -1,6 +1,5 @@
 ---
 title: How fine-tuning changes the context-to-answer map
-category: context-prediction
 status: In progress
 order: 2
 ---

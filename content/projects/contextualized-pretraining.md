@@ -1,15 +1,16 @@
 ---
 title: Contextualized pretraining for more robust alignment
-category: training
 status: In progress
-order: 3
+order: 50
 ---
 
 # Contextualized pretraining for more robust alignment
 
 [Source-reliability learning](https://arxiv.org/abs/2310.15047) and [inoculation prompting](https://arxiv.org/abs/2510.04340) suggest that the context surrounding training examples can affect how their information generalizes. The [Scientist AI proposal](https://lawzero.org/en/publication/scientist-ai-safe-design-not-desiring) also motivates giving models explicit information about the provenance and reliability of what they read.
 
-It would be useful to test whether source attribution during pretraining creates better-separated representations and more robust behavior under later fine-tuning. Our preliminary attribution experiments provide a starting point; the pretraining extension needs a carefully chosen scale.
+I have some results showing that source attribution during fine-tuning can reduce misalignment on unrelated tasks, though the unwanted behavior can return when the training frame is reapplied. These [preliminary experiments](https://github.com/superkaiba/truthification_pretraining/blob/main/writeup/truthification_summary.pdf) provide a starting point.
+
+It would be useful to test whether source attribution during pretraining creates better-separated representations and more robust behavior under later fine-tuning. The pretraining extension needs a carefully chosen scale.
 
 - Compare meaningful source and reliability labels with arbitrary labels and unlabeled data.
 - Measure how attribution changes persona, source and belief representations.

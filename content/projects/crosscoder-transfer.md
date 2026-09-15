@@ -1,8 +1,7 @@
 ---
 title: Transferring capabilities and alignment through crosscoders
-category: representations
 status: Not started
-order: 4
+order: 11
 ---
 
 # Transferring capabilities and alignment through crosscoders

@@ -1,8 +1,7 @@
 ---
 title: Predicting when a task needs chain-of-thought
-category: reasoning
 status: Not started
-order: 8
+order: 38
 ---
 
 # Predicting when a task needs chain-of-thought

@@ -1,8 +1,7 @@
 ---
 title: Does the model simulate a grader persona?
-category: safety
 status: Not started
-order: 3
+order: 41
 ---
 
 # Does the model simulate a grader persona?

@@ -1,8 +1,7 @@
 ---
 title: A general predictor between activation locations
-category: representations
 status: Not started
-order: 2
+order: 9
 ---
 
 # A general predictor between activation locations

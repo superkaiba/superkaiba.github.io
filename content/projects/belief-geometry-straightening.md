@@ -1,8 +1,7 @@
 ---
 title: Connecting trajectory straightening with belief-state geometry
-category: representations
 status: Not started
-order: 11
+order: 18
 ---
 
 # Connecting trajectory straightening with belief-state geometry

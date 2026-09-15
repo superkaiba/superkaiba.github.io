@@ -1,8 +1,7 @@
 ---
 title: Do models represent whether text is AI-generated?
-category: personas
 status: Not started
-order: 6
+order: 24
 ---
 
 # Do models represent whether text is AI-generated?

@@ -1,8 +1,7 @@
 ---
 title: Can models learn to evade probes in context?
-category: safety
 status: Not started
-order: 1
+order: 39
 ---
 
 # Can models learn to evade probes in context?

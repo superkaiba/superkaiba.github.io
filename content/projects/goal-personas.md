@@ -1,8 +1,7 @@
 ---
 title: Can personas be defined by goals?
-category: personas
 status: Not started
-order: 7
+order: 25
 ---
 
 # Can personas be defined by goals?

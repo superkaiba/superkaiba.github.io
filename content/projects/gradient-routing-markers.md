@@ -1,8 +1,7 @@
 ---
 title: Localizing unwanted behavior and making it signal itself
-category: training
 status: Not started
-order: 12
+order: 59
 ---
 
 # Localizing unwanted behavior and making it signal itself

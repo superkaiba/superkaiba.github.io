@@ -1,8 +1,7 @@
 ---
 title: How synthetic and real training data change representations
-category: training
 status: Not started
-order: 1
+order: 48
 ---
 
 # How synthetic and real training data change representations

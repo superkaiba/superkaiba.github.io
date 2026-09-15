@@ -1,6 +1,5 @@
 ---
 title: What is stored in the final context activation?
-category: context-prediction
 status: Not started
 order: 5
 ---

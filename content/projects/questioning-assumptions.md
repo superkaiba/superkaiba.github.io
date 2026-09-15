@@ -1,8 +1,7 @@
 ---
 title: Teaching models to revise fundamental assumptions
-category: training
 status: Not started
-order: 9
+order: 56
 ---
 
 # Teaching models to revise fundamental assumptions

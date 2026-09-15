@@ -1,8 +1,7 @@
 ---
 title: Massive activations during reasoning and at its end
-category: reasoning
 status: Not started
-order: 7
+order: 37
 ---
 
 # Massive activations during reasoning and at its end

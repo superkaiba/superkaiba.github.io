@@ -1,8 +1,7 @@
 ---
 title: What do agents communicate beyond the apparent meaning of their messages?
-category: agents
 status: Not started
-order: 3
+order: 63
 ---
 
 # What do agents communicate beyond the apparent meaning of their messages?

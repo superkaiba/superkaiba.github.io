@@ -1,8 +1,7 @@
 ---
 title: An environment for honesty, calibration, and reporting failures
-category: safety
 status: Not started
-order: 9
+order: 47
 ---
 
 # An environment for honesty, calibration, and reporting failures

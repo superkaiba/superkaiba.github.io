@@ -1,8 +1,7 @@
 ---
 title: Mechanistic differences between elicitation and teaching
-category: training
 status: In progress
-order: 5
+order: 52
 ---
 
 # Mechanistic differences between elicitation and teaching

@@ -1,8 +1,7 @@
 ---
 title: Understanding the chain-of-thought persona
-category: reasoning
 status: In progress
-order: 1
+order: 31
 ---
 
 # Understanding the chain-of-thought persona

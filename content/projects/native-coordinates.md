@@ -1,8 +1,7 @@
 ---
 title: Semantic structure in native residual coordinates
-category: representations
 status: Not started
-order: 3
+order: 10
 ---
 
 # Semantic structure in native residual coordinates

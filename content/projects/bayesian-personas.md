@@ -1,8 +1,7 @@
 ---
 title: Persona selection as Bayesian inference
-category: personas
 status: In progress
-order: 1
+order: 19
 ---
 
 # Persona selection as Bayesian inference

@@ -1,8 +1,7 @@
 ---
 title: Teaching model behavior using ideas from developmental psychology
-category: training
 status: Not started
-order: 4
+order: 51
 ---
 
 # Teaching model behavior using ideas from developmental psychology

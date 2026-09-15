@@ -1,6 +1,5 @@
 ---
 title: Predicting how conversations unfold
-category: context-prediction
 status: Not started
 order: 3
 ---

@@ -1,8 +1,7 @@
 ---
 title: When is model behavior internally detectable?
-category: representations
 status: Not started
-order: 7
+order: 14
 ---
 
 # When is model behavior internally detectable?

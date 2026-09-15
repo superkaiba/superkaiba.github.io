@@ -1,8 +1,7 @@
 ---
 title: How does chat format recruit an assistant persona?
-category: training
 status: Not started
-order: 10
+order: 57
 ---
 
 # How does chat format recruit an assistant persona?

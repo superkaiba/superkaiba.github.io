@@ -1,13 +1,12 @@
 ---
 title: Predicting answer activations from context
-category: context-prediction
 status: In progress
 order: 1
 ---
 
 # Predicting answer activations from context
 
-In [Affine Anticipation](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf), we find that a linear map can predict much of an answer's mean activation from the final context activation. [Future Lens](https://arxiv.org/abs/2311.04897) studies a related possibility at the level of future tokens. These results suggest that useful information about an answer is available before it is generated, but a good average prediction can still miss the behavior we care about.
+I have some results showing that a linear map can predict much of an answer's mean activation from the final context activation, described in [Affine Anticipation](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf). [Future Lens](https://arxiv.org/abs/2311.04897) studies a related possibility at the level of future tokens. These results suggest that useful information about an answer is available before it is generated, but a good average prediction can still miss the behavior we care about.
 
 It would be useful to understand what is linearly predictable, what requires nonlinearity, and how much uncertainty comes from the model sampling different answers. This is a follow-up to Affine Anticipation.
 

@@ -1,8 +1,7 @@
 ---
 title: Do models recognize and react to simulated users?
-category: personas
 status: Not started
-order: 11
+order: 29
 ---
 
 # Do models recognize and react to simulated users?

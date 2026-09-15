@@ -1,8 +1,7 @@
 ---
 title: What distillation changes inside a model
-category: training
 status: In progress
-order: 2
+order: 49
 ---
 
 # What distillation changes inside a model

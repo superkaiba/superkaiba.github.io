@@ -1,8 +1,7 @@
 ---
 title: Which cognitive biases do language models exhibit?
-category: personas
 status: Not started
-order: 12
+order: 30
 ---
 
 # Which cognitive biases do language models exhibit?
