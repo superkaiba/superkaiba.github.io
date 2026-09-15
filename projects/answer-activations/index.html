@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Predicting answer activations from context · Thomas Jiralerspong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="../catalogue.css?v=2">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('research-project-theme')||'light'}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a><div class="catalogue">
+<header class="catalogue-header"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme" type="button">Toggle theme</button></header>
+<main id="main"><p><a href="../#answer-activations">← All projects</a></p><h1>Predicting answer activations from context</h1><div class="project-reading">
+<p>An LLM turns a context into an answer through many nonlinear steps. Nevertheless, my <a href="https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf">recent paper</a> finds that a linear map can predict the answer's mean residual-stream activation from the final context activation.</p>
+<p>This is different from <a href="https://arxiv.org/abs/2211.17192">speculative decoding</a>, which aims to accelerate generation by proposing tokens. Here, the interesting possibility is that we can predict something about the answer's internal representation before generating it.</p>
+<p>The follow-up would be to understand what we can do with this prediction.</p>
+<p>Some directions:</p>
+<ul>
+<li>Apply behavioral probes to predicted activations to anticipate what the model will do.</li>
+<li>Characterize which kinds of answer information are predictable and which are not.</li>
+<li>Study how the context-to-answer map changes during fine-tuning.</li>
+<li>Test whether this helps predict how training data will affect behavior.</li>
+<li>Compare with richer models of activation distributions, such as <a href="https://arxiv.org/abs/2602.06964">Learning a Generative Meta-Model of LLM Activations</a>.</li>
+</ul>
+<p>The core mapping result already exists, so we would choose a specific extension rather than simply repeat that analysis.</p></div></main><footer><a href="https://docs.google.com/document/d/1fU_nU4tQ_PxdVZ3fnls4tEby2015m_45Um3uQSxEDkU/edit">Advice for mentees</a> · <a href="https://thomas.jiralerspong.com/">Main website</a></footer>
+</div><script src="../catalogue.js?v=2"></script></body></html>

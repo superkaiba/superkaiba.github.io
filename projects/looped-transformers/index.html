@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Interpretability and safety of looped transformers · Thomas Jiralerspong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="../catalogue.css?v=2">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('research-project-theme')||'light'}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a><div class="catalogue">
+<header class="catalogue-header"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme" type="button">Toggle theme</button></header>
+<main id="main"><p><a href="../#looped-transformers">← All projects</a></p><h1>Interpretability and safety of looped transformers</h1><div class="project-reading">
+<p>Looped transformers reuse a set of layers over multiple computation steps. This means a model can do more internal computation without having a different set of parameters for every step.</p>
+<p><a href="https://arxiv.org/abs/2502.17416">Reasoning with Latent Thoughts</a> studies how this repeated computation can support reasoning. I am interested in what the model is doing internally as it goes around the loop, and what this means for interpretability and safety.</p>
+<p>We would start with an openly available model and tasks where we can understand the intermediate computation. Then we could apply tools such as probes, activation patching, and feature analysis across loop iterations.</p>
+<p>Some questions:</p>
+<ul>
+<li>Does each iteration refine the same representation, or carry out a qualitatively different operation?</li>
+<li>Can we identify when the model has finished the useful part of its computation?</li>
+<li>Do behavioral features persist, disappear, or become stronger as computation continues?</li>
+<li>Do interventions have to be applied once, or repeatedly across the loop?</li>
+<li>What can we observe when reasoning happens internally instead of in a visible chain-of-thought?</li>
+</ul></div></main><footer><a href="https://docs.google.com/document/d/1fU_nU4tQ_PxdVZ3fnls4tEby2015m_45Um3uQSxEDkU/edit">Advice for mentees</a> · <a href="https://thomas.jiralerspong.com/">Main website</a></footer>
+</div><script src="../catalogue.js?v=2"></script></body></html>

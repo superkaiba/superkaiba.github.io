@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Predicting reward hacking before it happens · Thomas Jiralerspong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="../catalogue.css?v=2">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('research-project-theme')||'light'}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a><div class="catalogue">
+<header class="catalogue-header"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme" type="button">Toggle theme</button></header>
+<main id="main"><p><a href="../#reward-hacking-probes">← All projects</a></p><h1>Predicting reward hacking before it happens</h1><div class="project-reading">
+<p>Reward hacking happens when a model gets a high score without doing what the task was actually intended to reward. Catching it after the fact is useful, but ideally we would know before the model takes the action.</p>
+<p><a href="https://www.anthropic.com/research/probes-catch-sleeper-agents">Simple probes can catch sleeper agents</a> provides an example of using internal activations to detect a hidden behavioral switch. I want to investigate whether related methods can predict reward hacking in agent trajectories, and how early the signal appears.</p>
+<p>We would start with a controlled environment where successful task completion and reward hacking can be checked separately. Then we would train probes at different points in the trajectory.</p>
+<p>We would check:</p>
+<ul>
+<li>Can we predict a hack before the first problematic action?</li>
+<li>Is the probe detecting intent, an opportunity to hack, or just a recognizable task format?</li>
+<li>Does it transfer to a different environment or a different kind of hack?</li>
+<li>Can the signal support an intervention without repeatedly interrupting legitimate work?</li>
+</ul></div></main><footer><a href="https://docs.google.com/document/d/1fU_nU4tQ_PxdVZ3fnls4tEby2015m_45Um3uQSxEDkU/edit">Advice for mentees</a> · <a href="https://thomas.jiralerspong.com/">Main website</a></footer>
+</div><script src="../catalogue.js?v=2"></script></body></html>

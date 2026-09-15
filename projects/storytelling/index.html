@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Storytelling for secret elicitation · Thomas Jiralerspong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="../catalogue.css?v=2">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('research-project-theme')||'light'}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a><div class="catalogue">
+<header class="catalogue-header"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme" type="button">Toggle theme</button></header>
+<main id="main"><p><a href="../#storytelling">← All projects</a></p><h1>Storytelling for secret elicitation</h1><div class="project-reading">
+<p>The <a href="https://alignment.anthropic.com/2026/psm/">Persona Selection Model</a> suggests thinking of the assistant as a character in a story. Separately, work such as <a href="https://arxiv.org/abs/2602.22755">AuditBench</a> and <a href="https://arxiv.org/abs/2405.19550">password-locked model evaluations</a> studies how to uncover behaviors or capabilities that a model does not reveal under ordinary questioning.</p>
+<p>We propose to connect these ideas: ask the assistant to tell a story about an AI assistant, or a human assistant, with a secret. Does the story reveal something that asking the assistant directly does not?</p>
+<p>We already have preliminary results suggesting that this can work in some settings. The next step is to understand when and why.</p>
+<p>Some questions:</p>
+<ul>
+<li>Which kinds of hidden behavior are easiest to elicit this way?</li>
+<li>Does it work differently for behaviors introduced during pretraining versus fine-tuning?</li>
+<li>Can we improve elicitation by intervening on the model's representation of the assistant or story character?</li>
+<li>Can training make a model resistant to this technique?</li>
+<li>What does it tell us about the relationship between the assistant and other personas?</li>
+</ul>
+<p><a href="https://arxiv.org/abs/2606.00545">The Assistant as a Privileged Persona</a> is particularly relevant to that last question.</p></div></main><footer><a href="https://docs.google.com/document/d/1fU_nU4tQ_PxdVZ3fnls4tEby2015m_45Um3uQSxEDkU/edit">Advice for mentees</a> · <a href="https://thomas.jiralerspong.com/">Main website</a></footer>
+</div><script src="../catalogue.js?v=2"></script></body></html>

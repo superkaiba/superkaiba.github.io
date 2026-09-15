@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Probing for violations of a whole constitution · Thomas Jiralerspong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="../catalogue.css?v=2">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('research-project-theme')||'light'}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a><div class="catalogue">
+<header class="catalogue-header"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme" type="button">Toggle theme</button></header>
+<main id="main"><p><a href="../#constitution-probes">← All projects</a></p><h1>Probing for violations of a whole constitution</h1><div class="project-reading">
+<p>A model's constitution can contain many different principles: be honest, follow the user's intent, avoid harmful actions, and so on. It would be useful to detect violations with one internal monitor, instead of building a separate detector for every possible failure.</p>
+<p><a href="https://www.anthropic.com/news/constitutional-classifiers">Constitutional Classifiers</a> and <a href="https://alignment.anthropic.com/2025/cheap-monitors/">work on reusing a model's representations for monitoring</a> provide starting points. The question here is how far we can extend that approach across a broader set of principles.</p>
+<p>I propose to start with a small constitution and examples that distinguish its different rules. We could compare a shared probe against separate probes for each rule, then gradually expand the constitution.</p>
+<p>Some questions:</p>
+<ul>
+<li>Is there a shared representation of “this violates the instructions/principles,” or does each rule need its own direction?</li>
+<li>Can a probe trained on some violations recognize new kinds of violations?</li>
+<li>Can it distinguish an actual violation from a harmless discussion of one?</li>
+<li>How does performance change when the constitution itself changes?</li>
+</ul></div></main><footer><a href="https://docs.google.com/document/d/1fU_nU4tQ_PxdVZ3fnls4tEby2015m_45Um3uQSxEDkU/edit">Advice for mentees</a> · <a href="https://thomas.jiralerspong.com/">Main website</a></footer>
+</div><script src="../catalogue.js?v=2"></script></body></html>

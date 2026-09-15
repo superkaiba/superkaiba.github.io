@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Which concepts are linearly decodable? · Thomas Jiralerspong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="../catalogue.css?v=2">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('research-project-theme')||'light'}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a><div class="catalogue">
+<header class="catalogue-header"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme" type="button">Toggle theme</button></header>
+<main id="main"><p><a href="../#linear-decodability">← All projects</a></p><h1>Which concepts are linearly decodable?</h1><div class="project-reading">
+<p>A lot of interpretability work relies on the idea that meaningful concepts can be read out with linear probes. The <a href="https://arxiv.org/abs/2311.03658">linear representation hypothesis</a> helps formalize why this might work, but it does not mean that every concept will be equally easy to decode in every setting.</p>
+<p>The goal of this project would be to characterize <strong>what is linearly decodable, where, and under which conditions</strong>. I would like to understand the pattern of successes and failures, rather than just finding a probe that performs well on one dataset.</p>
+<p>We could start with concepts that differ in useful ways: factual versus behavioral, local versus context-dependent, and simple attributes versus combinations of attributes.</p>
+<p>Some questions:</p>
+<ul>
+<li>At which layers and token positions does each kind of information become accessible?</li>
+<li>Do concepts stay linearly decodable when the prompt format or task changes?</li>
+<li>When a nonlinear probe helps, what additional structure is it using?</li>
+<li>Does being easy to read out also make a concept easy to control through an intervention?</li>
+</ul></div></main><footer><a href="https://docs.google.com/document/d/1fU_nU4tQ_PxdVZ3fnls4tEby2015m_45Um3uQSxEDkU/edit">Advice for mentees</a> · <a href="https://thomas.jiralerspong.com/">Main website</a></footer>
+</div><script src="../catalogue.js?v=2"></script></body></html>

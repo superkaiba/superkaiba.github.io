@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Understanding the chain-of-thought persona · Thomas Jiralerspong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="../catalogue.css?v=2">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('research-project-theme')||'light'}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a><div class="catalogue">
+<header class="catalogue-header"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme" type="button">Toggle theme</button></header>
+<main id="main"><p><a href="../#cot-persona">← All projects</a></p><h1>Understanding the chain-of-thought persona</h1><div class="project-reading">
+<p>The <a href="https://alignment.anthropic.com/2026/psm/">Persona Selection Model</a> proposes that pretraining gives a model a repertoire of personas and post-training shapes an assistant persona. I am interested in where the model's chain-of-thought fits into that picture.</p>
+<p>The reasoning text often sounds different from the final answer. It may discuss what the assistant should say, question an approach, or consider several perspectives. <a href="https://arxiv.org/abs/2601.10825">Reasoning Models Generate Societies of Thought</a> is relevant to the possibility that some reasoning involves multiple simulated perspectives. <a href="https://arxiv.org/abs/2506.19823">Persona Features Control Emergent Misalignment</a> provides another starting point for relating behavioral traits to internal features.</p>
+<p>I propose to study the relationship between the reasoning and answer representations more directly.</p>
+<p>Some questions:</p>
+<ul>
+<li>Are the same persona features active in the reasoning and the answer?</li>
+<li>Does the reasoning represent the assistant as “me,” or as a character whose response it is predicting?</li>
+<li>What happens to reasoning when we steer the assistant's persona?</li>
+<li>Is apparent disagreement between perspectives reflected in the model's activations?</li>
+<li>Does misalignment-inducing fine-tuning affect reasoning and answers in the same way?</li>
+</ul>
+<p>We could begin by comparing activations and SAE features across the two parts, then use interventions to test the possible explanations.</p></div></main><footer><a href="https://docs.google.com/document/d/1fU_nU4tQ_PxdVZ3fnls4tEby2015m_45Um3uQSxEDkU/edit">Advice for mentees</a> · <a href="https://thomas.jiralerspong.com/">Main website</a></footer>
+</div><script src="../catalogue.js?v=2"></script></body></html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What distillation changes inside a model · Thomas Jiralerspong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="../catalogue.css?v=2">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('research-project-theme')||'light'}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a><div class="catalogue">
+<header class="catalogue-header"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme" type="button">Toggle theme</button></header>
+<main id="main"><p><a href="../#distillation-internals">← All projects</a></p><h1>What distillation changes inside a model</h1><div class="project-reading">
+<p><a href="https://arxiv.org/abs/1503.02531">Knowledge distillation</a> trains one model to imitate another, often transferring useful behavior from a larger model to a smaller one. But what does it do to their internal representations?</p>
+<p>One possibility is that a smaller, inspectable model could help us understand a larger model whose internals we cannot access. People sometimes call this a “sidecar” model. <a href="https://arxiv.org/abs/2506.06609">Work on transferring linear features across models</a> provides a useful comparison for how much representation alignment is possible.</p>
+<p>I propose to start with two open models, treating the larger one as a stand-in for a black box so that we can still check our conclusions.</p>
+<p>First steps:</p>
+<ul>
+<li>Generate text from the larger model and feed the same text through the smaller model.</li>
+<li>Compare their representations before any distillation.</li>
+<li>Distill the larger model into the smaller one and track how that relationship changes.</li>
+<li>Compare distillation from text alone with matching the teacher's output probabilities.</li>
+</ul>
+<p>We would then test whether the smaller model's internals tell us something about the teacher that we could not learn from the text alone, and whether this depends on the models being from the same family.</p></div></main><footer><a href="https://docs.google.com/document/d/1fU_nU4tQ_PxdVZ3fnls4tEby2015m_45Um3uQSxEDkU/edit">Advice for mentees</a> · <a href="https://thomas.jiralerspong.com/">Main website</a></footer>
+</div><script src="../catalogue.js?v=2"></script></body></html>
