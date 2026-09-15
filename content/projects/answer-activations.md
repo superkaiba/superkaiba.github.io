@@ -12,6 +12,7 @@ It would be useful to build on these results by understanding what is linearly p
 
 - Characterize the most and least predictable directions and the dimensionality of answer representations.
 - Separate persistent behavioral information from token-specific variation and sampling noise from prediction error.
+- Develop nonlinear predictors and distributional predictors of answer activations, testing whether they improve on linear prediction and capture the range of activations across sampled answers.
 - Compare pooling across tokens and layers, and track predictability as an answer unfolds.
 - Forecast a judge's verdict before and during generation, checking predictions against actual outputs.
 - Test rare behaviors and reward hacking, paying particular attention to calibration and false negatives.
