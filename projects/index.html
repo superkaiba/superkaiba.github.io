@@ -367,9 +367,10 @@
 <li>Intervene on candidate representations and test effects on cooperation, deference and propagation of errors as team size changes.</li>
 </ul></div></article><article class="project-row toc-section" id="swarm-alignment"><h3><a href="#swarm-alignment">Do interacting agents develop aligned representation spaces?</a></h3><p class="project-status">Not started</p><div class="project-reading">
 <p><a href="https://arxiv.org/abs/2506.06609">Linear feature transfer</a> shows that representations can be mapped between independently trained models. <a href="https://arxiv.org/abs/2608.13317">StateBridge</a> explicitly aligns hidden states for latent communication, while work on <a href="https://aclanthology.org/2025.blackboxnlp-1.12/">multi-agent annotation discussions</a> studies convergence in agents' outputs.</p>
-<p>It would be useful to know whether ordinary interaction itself makes representation spaces more similar, and whether that similarity improves coordination or reduces useful diversity. Explicitly fitting an alignment map and observing natural convergence are different questions.</p>
+<p>It would be useful to know whether ordinary interaction or multi-agent reinforcement learning makes representation spaces more similar, and whether that similarity improves coordination or reduces useful diversity. Explicitly fitting an alignment map and observing natural convergence are different questions.</p>
 <ul>
 <li>Measure representational alignment before and after communication, including agents from different model families.</li>
+<li>Test whether multi-agent RL aligns representations between models, comparing joint training with independent training on the same tasks.</li>
 <li>Control for shared text, token positions, common conclusions and identical model weights using transcript replay.</li>
 <li>Track whether alignment predicts coordination, correlated mistakes or persona drift.</li>
 <li>Perturb candidate shared directions and test whether they causally affect team behavior.</li>
