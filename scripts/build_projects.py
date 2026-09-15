@@ -2,130 +2,169 @@
 # requires-python = ">=3.10"
 # dependencies = ["markdown>=3.7,<4", "PyYAML>=6,<7"]
 # ///
-"""Render the editable project notes into a static website directory."""
+"""Render the editable Markdown proposals as the public project catalogue."""
+from hashlib import sha256
 from html import escape
 from pathlib import Path
 import re
-import shutil
 import markdown
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "projects"
 DEST = ROOT / "projects"
-WEBSITE = ROOT
-ADVICE = "https://docs.google.com/document/d/1fU_nU4tQ_PxdVZ3fnls4tEby2015m_45Um3uQSxEDkU/edit"
-PST_BOOKING = "https://calendar.app.google/zR1Yk1Z4sVsHrBob8"
-NON_PST_BOOKING = "https://calendar.app.google/Rha6wPfEM5zcxNeaA"
+HOME_URL = "https://thomas.jiralerspong.com/"
+GROUPS = [("Not Started", "not-started"), ("In Progress", "in-progress"), ("Completed", "completed")]
 
-CSS = '''
-.catalogue{max-width:880px;margin:auto;padding:28px 32px 64px}
-.catalogue-header{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:44px}
-.catalogue-header button{border:1px solid var(--line);background:var(--bg);padding:6px 12px;border-radius:4px}
-.catalogue h1{font-size:32px;line-height:1.25;margin-bottom:20px}
-.catalogue h2{margin:44px 0 16px;font-size:25px}
-.catalogue h3{font-size:21px;line-height:1.45;margin-bottom:18px}
-.catalogue h3 a{text-decoration:none}
-.catalogue h3 a:hover{text-decoration:underline}
-.catalogue p{margin:12px 0;max-width:76ch}
-.catalogue .meta{font-size:13px;color:var(--muted)}
-.catalogue .filters{display:flex;gap:20px;margin:30px 0;align-items:end}
-.catalogue .filters label{display:block;font-size:14px;flex:1}
-.catalogue input,.catalogue select{display:block;width:100%;margin-top:8px;padding:10px 12px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:4px;font:inherit}
-.catalogue input:focus-visible,.catalogue select:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
-.project-row{padding:30px 0;border-top:1px solid var(--line);scroll-margin-top:28px}
-.project-row p{font-size:16px;margin:16px 0;line-height:1.8}
+CSS = """
+.project-layout{grid-template-columns:230px minmax(0,1fr);gap:48px}
+.project-layout>.contents{position:sticky;top:32px;max-height:calc(100dvh - 64px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding-right:10px}
+.project-sidebar-heading{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:28px}
+.project-sidebar-heading>a{font-size:13px;text-decoration:none}
+.project-layout .contents #theme-toggle{margin:0;flex-shrink:0}
+.project-layout .sidebar-panel{display:block}
+.project-layout .contents .sidebar-label{margin:0 0 12px}
+.project-layout .contents .toc-subsections{margin:4px 0 16px 12px}
+.project-layout .contents .toc-subsections .toc-child>a{font-size:12px;line-height:1.5;font-weight:400;padding:6px 0 6px 12px}
+.project-layout .contents .toc-subsections a[aria-current="location"]{font-weight:600}
+.project-layout .contents .toc-parent>a{font-size:14px;padding:8px 0 8px 14px}
+.project-catalogue{min-width:0}
+.project-catalogue h1{font-size:32px;margin:0 0 36px;line-height:1.25}
+.project-group{margin-top:44px;scroll-margin-top:28px}
+.project-group:first-of-type{margin-top:0}
+.project-group>h2{font-size:25px;margin:0 0 18px}
+.project-row{padding:28px 0;border-top:1px solid var(--line);scroll-margin-top:28px}
+.project-row h3{font-size:21px;line-height:1.45;margin:0 0 18px}
+.project-row h3 a{text-decoration:none}
+.project-row h3 a:hover{text-decoration:underline}
+.project-reading p{font-size:16px;line-height:1.8;margin:16px 0}
 .project-reading ul{padding-left:24px;margin:16px 0}
 .project-reading li{margin:9px 0;overflow-wrap:anywhere;line-height:1.8}
-.catalogue .onboarding{margin:24px 0 0}
-.catalogue .onboarding li{margin:8px 0}
-.catalogue .booking-duration{font-size:14px;color:var(--muted)}
-.catalogue [hidden]{display:none!important}
-.catalogue footer{display:block;margin-top:40px}
-@media(max-width:540px){.catalogue{padding:22px 22px 44px}.catalogue-header{margin-bottom:30px;font-size:14px}.catalogue h1{font-size:27px}.catalogue .filters{display:block}.catalogue .filters label+label{margin-top:16px}}
-'''
-
-JS = '''
-const theme=document.querySelector('#theme');
-theme.textContent=document.documentElement.dataset.theme==='dark'?'Light mode':'Dark mode';
-theme.addEventListener('click',()=>{
- const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
- document.documentElement.dataset.theme=next;
- theme.textContent=next==='dark'?'Light mode':'Dark mode';
- try{localStorage.setItem('research-project-theme',next)}catch{}
-});
-const query=document.querySelector('#search'),status=document.querySelector('#status');
-if(query&&status){
- const rows=[...document.querySelectorAll('.project-row')];
- function filter(){
-  const value=query.value.trim().toLowerCase();
-  rows.forEach(row=>row.hidden=!(row.textContent.toLowerCase().includes(value)&&(!status.value||row.dataset.status===status.value)));
-  document.querySelectorAll('.project-group').forEach(group=>group.hidden=![...group.querySelectorAll('.project-row')].some(row=>!row.hidden));
-  const count=rows.filter(row=>!row.hidden).length;
-  document.querySelector('#count').textContent=count+' project'+(count===1?'':'s');
-  document.querySelector('#empty').hidden=count!==0;
- }
- query.addEventListener('input',filter);status.addEventListener('change',filter);
- function revealHash(){
-  const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));
-  if(target&&target.classList.contains('project-row')){
-   query.value='';status.value='';filter();target.scrollIntoView();
-  }
- }
- window.addEventListener('hashchange',revealHash);revealHash();
+.project-reading a{overflow-wrap:anywhere}
+.project-empty{font-size:15px;color:var(--muted);padding-top:8px}
+.project-catalogue footer{display:block;margin-top:44px}
+@media(min-width:541px) and (max-width:900px){
+ .project-layout{grid-template-columns:180px minmax(0,1fr);gap:28px}
+ .project-layout>.contents{top:24px;max-height:calc(100dvh - 48px)}
+ .project-sidebar-heading{display:block}
+ .project-sidebar-heading>a{display:block;margin-bottom:10px}
 }
-'''
+@media(max-width:540px){
+ .project-layout{display:block;padding:24px 22px 44px}
+ .project-layout>.contents{display:block;top:0;margin:-24px -22px 28px;padding:12px 22px;max-height:none;overflow:visible;background:var(--bg)}
+ .project-sidebar-heading{display:flex;margin:0 0 6px}
+ .project-layout .contents-toggle{grid-column:auto;grid-row:auto}
+ .project-layout .current-section{max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .project-layout .sidebar-panel{display:block}
+ .has-js .project-layout .sidebar-panel{display:none}
+ .has-js .project-layout .contents[data-expanded="true"]{position:sticky}
+ .has-js .project-layout .contents[data-expanded="true"] .sidebar-panel{display:block;max-height:calc(100dvh - 150px);overflow-y:auto;padding:16px 0 8px}
+ .project-layout .contents nav{max-height:none;overflow:visible}
+ .project-layout .contents .toc-subsections .toc-child>a{min-height:40px;padding-top:10px;padding-bottom:10px}
+ .project-catalogue h1{font-size:28px;margin-bottom:30px}
+ .project-group>h2{font-size:23px}
+ .project-row h3{font-size:20px}
+ .project-row,.project-group{scroll-margin-top:126px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+"""
 
-def page(title, body, prefix=""):
+JS = """
+// Keep the active entry visible within the long desktop table of contents.
+const projectContents = document.querySelector('.project-layout > .contents');
+const projectNav = projectContents?.querySelector('nav');
+function keepCurrentProjectVisible(){
+ if(!projectContents || innerWidth <= 540) return;
+ const current = projectNav.querySelector('[aria-current="location"]');
+ if(!current) return;
+ const outer = projectContents.getBoundingClientRect();
+ const entry = current.getBoundingClientRect();
+ if(entry.top < outer.top + 20) projectContents.scrollTop += entry.top - outer.top - 20;
+ else if(entry.bottom > outer.bottom - 20) projectContents.scrollTop += entry.bottom - outer.bottom + 20;
+}
+if(projectNav){
+ new MutationObserver(keepCurrentProjectVisible).observe(projectNav,{subtree:true,attributes:true,attributeFilter:['aria-current']});
+}
+"""
+
+def group_for(status):
+    status = status.lower()
+    if status.startswith(("not started", "follow-up")):
+        return "not-started"
+    if status.startswith("in progress"):
+        return "in-progress"
+    if status.startswith(("completed", "done")):
+        return "completed"
+    raise ValueError(f"Unsupported project status: {status!r}")
+
+def theme_button():
+    return '''<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button>'''
+
+def render_page(body, toc, versions):
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{escape(title)} · Thomas Jiralerspong</title>
+<title>Research projects · Thomas Jiralerspong</title>
+<link rel="canonical" href="{HOME_URL}projects/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{prefix}base.css"><link rel="stylesheet" href="{prefix}catalogue.css?v=2">
-<script>try{{document.documentElement.dataset.theme=localStorage.getItem('research-project-theme')||'light'}}catch{{}}</script>
-</head><body><a class="skip-link" href="#main">Skip to content</a><div class="catalogue">
-<header class="catalogue-header"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme" type="button">Toggle theme</button></header>
-<main id="main">{body}</main><footer><a href="{ADVICE}">Advice for mentees</a> · <a href="https://thomas.jiralerspong.com/">Main website</a></footer>
-</div><script src="{prefix}catalogue.js?v=2"></script></body></html>'''
+<link rel="stylesheet" href="base.css?v={versions['base.css']}"><link rel="stylesheet" href="catalogue.css?v={versions['catalogue.css']}">
+<script>try{{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}}catch{{}}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="{HOME_URL}">Thomas Jiralerspong</a>{theme_button()}</div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Not Started</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol>{toc}</ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<h1>Research projects</h1>{body}
+<footer><a href="{HOME_URL}">Main website</a></footer>
+</main></div></div><script src="navigation.js?v={versions['navigation.js']}"></script><script src="catalogue.js?v={versions['catalogue.js']}"></script>
+</body></html>'''
 
 def main():
-    DEST.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(WEBSITE / "css/style.css", DEST / "base.css")
-    (DEST / "catalogue.css").write_text(CSS)
-    (DEST / "catalogue.js").write_text(JS)
-    projects=[]
+    projects = []
     for path in sorted(CONTENT.glob("*.md")):
-        _, front, body=path.read_text().split("---",2)
-        meta=yaml.safe_load(front)
-        target=DEST/path.stem
-        target.mkdir(exist_ok=True)
-        rendered=markdown.markdown(body,extensions=["sane_lists"])
-        heading=re.search(r"<h1>.*?</h1>",rendered,re.S).group()
-        rendered=rendered.replace(heading,"",1)
-        meta.update(slug=path.stem,rendered=rendered,body=body)
+        _, front, body = path.read_text().split("---", 2)
+        meta = yaml.safe_load(front)
+        rendered = markdown.markdown(body, extensions=["sane_lists"])
+        rendered = re.sub(r"<h1>.*?</h1>", "", rendered, count=1, flags=re.S)
+        meta.update(slug=path.stem, rendered=rendered, body=body, group=group_for(meta["status"]))
         projects.append(meta)
-        detail=f'<p><a href="../#{path.stem}">← All projects</a></p>{heading}<div class="project-reading">{rendered}</div>'
-        (target/"index.html").write_text(page(meta["title"],detail,"../"))
-        (target/"note.md").write_text(body.strip()+"\n")
     projects.sort(key=lambda p:(p.get("id", "zz"), p["title"].lower()))
-    groups=[("In progress","active",lambda p:p["status"].startswith("In progress")),("Follow-up projects","followup",lambda p:p["status"].startswith("Follow-up")),("New project ideas","new",lambda p:p["status"].startswith("Not started"))]
-    body=f'''<h1>Research projects</h1><p>These are projects I'm working on or would be interested in mentoring. Some already have teams; others are ideas we could develop together.</p>
-<div class="onboarding"><p>For SPAR, please:</p><ol>
-<li>Send me your <strong>top five projects, ranked</strong>, with a sentence on what interests you in each.</li>
-<li>Tell me your <strong>preferred team size</strong>, including yourself and excluding mentors, and how flexible you are.</li>
-<li>Read my <a href="{ADVICE}">advice for mentees</a> before we meet.</li>
-<li>Book an introductory call using the <a href="{PST_BOOKING}">PST scheduling link</a>. <strong>Please use PST whenever possible.</strong> Only use the <a href="{NON_PST_BOOKING}">non-PST scheduling link</a> if you need to because the PST times don't work for you.</li>
-</ol><p class="booking-duration">Our introductory chat will take 15 minutes. The booking pages currently reserve 30-minute slots.</p></div>
-<div class="filters"><label for="search">Search projects<input type="search" id="search" placeholder="Search titles and proposals"></label><label for="status">Work status<select id="status"><option value="">All projects</option><option value="active">In progress</option><option value="followup">Follow-up projects</option><option value="new">New project ideas</option></select></label></div><p id="count" class="meta" role="status">{len(projects)} projects</p><p id="empty" hidden>No projects match. Try a different search or status.</p>'''
-    for title,key,predicate in groups:
-        rows=[p for p in projects if predicate(p)]
-        body+=f'<section class="project-group"><h2>{escape(title)}</h2>'
+    DEST.mkdir(parents=True, exist_ok=True)
+    assets = {
+        "base.css": (ROOT / "css/style.css").read_text(),
+        "navigation.js": (ROOT / "js/script.js").read_text(),
+        "catalogue.css": CSS,
+        "catalogue.js": JS,
+    }
+    versions = {}
+    for name, content in assets.items():
+        (DEST / name).write_text(content)
+        versions[name] = sha256(content.encode()).hexdigest()[:12]
+    body, toc = "", ""
+    for title, key in GROUPS:
+        rows = [p for p in projects if p["group"] == key]
+        body += f'<section class="project-group toc-section" id="{key}"><h2>{title}</h2>'
+        toc += f'<li class="toc-parent"><a href="#{key}" data-section="{key}">{title}</a>'
+        if rows:
+            toc += '<ol class="toc-subsections">'
+        else:
+            body += '<p class="project-empty">No projects marked completed yet.</p>' if key == "completed" else '<p class="project-empty">No projects listed.</p>'
         for p in rows:
-            body+=f'<article class="project-row" id="{p["slug"]}" data-status="{key}"><h3><a href="#{p["slug"]}">{escape(p["title"])}</a></h3><div class="project-reading">{p["rendered"]}</div></article>'
-        body+='</section>'
-    (DEST/"index.html").write_text(page("Research projects",body))
-    print(f"Rendered all {len(projects)} full proposals inline at {DEST}")
+            slug, name = p["slug"], escape(p["title"])
+            toc += f'<li class="toc-child"><a href="#{slug}" data-section="{slug}">{name}</a></li>'
+            body += f'<article class="project-row toc-section" id="{slug}"><h3><a href="#{slug}">{name}</a></h3><div class="project-reading">{p["rendered"]}</div></article>'
+            target = DEST / slug
+            target.mkdir(exist_ok=True)
+            (target / "index.html").write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=../#{slug}"><title>{name} · Thomas Jiralerspong</title><link rel="canonical" href="{HOME_URL}projects/"></head><body><p><a href="../#{slug}">{name}</a></p></body></html>\n')
+            (target / "note.md").write_text(p["body"].strip() + "\n")
+        body += "</section>"
+        if rows:
+            toc += "</ol>"
+        toc += "</li>"
+    (DEST / "index.html").write_text(render_page(body, toc, versions))
+    print(f"Rendered {len(projects)} projects with a scrolling table of contents at {DEST}")
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()

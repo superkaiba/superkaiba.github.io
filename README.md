@@ -23,9 +23,9 @@ Use descriptive, visibly underlined links. Sidebar headings are stronger than na
 
 ### Project catalogue
 
-The permanent URL is https://thomas.jiralerspong.com/projects/. All proposals appear directly on that page. Individual projects have stable links based on their filenames, such as https://thomas.jiralerspong.com/projects/#self-reflection.
+The permanent URL is https://thomas.jiralerspong.com/projects/. All proposals appear directly on that page, with a scrolling table of contents matching the main site's navigation. The sections are ordered Not Started, In Progress, Completed. Individual projects have stable links based on their filenames, such as https://thomas.jiralerspong.com/projects/#self-reflection.
 
-Edit the Markdown files in `content/projects/` to change proposals or statuses. Keep filenames stable to preserve shared links. Add a new Markdown file with `title` and `status` in its YAML frontmatter; the existing `id` field only controls ordering and is not displayed. Current status groups recognize `In progress`, `Follow-up`, and `Not started` prefixes.
+Edit the Markdown files in `content/projects/` to change proposals or statuses. Keep filenames stable to preserve shared links. Add a new Markdown file with `title` and `status` in its YAML frontmatter; the existing `id` field only controls ordering and is not displayed. Statuses beginning with `Not started` or `Follow-up` appear under Not Started; `In progress` appears under In Progress; `Completed` or `Done` appears under Completed. Unknown statuses fail the build rather than silently hiding a project.
 
 Rebuild locally with:
 

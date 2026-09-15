@@ -1,25 +1,51 @@
 
-.catalogue{max-width:880px;margin:auto;padding:28px 32px 64px}
-.catalogue-header{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:44px}
-.catalogue-header button{border:1px solid var(--line);background:var(--bg);padding:6px 12px;border-radius:4px}
-.catalogue h1{font-size:32px;line-height:1.25;margin-bottom:20px}
-.catalogue h2{margin:44px 0 16px;font-size:25px}
-.catalogue h3{font-size:21px;line-height:1.45;margin-bottom:18px}
-.catalogue h3 a{text-decoration:none}
-.catalogue h3 a:hover{text-decoration:underline}
-.catalogue p{margin:12px 0;max-width:76ch}
-.catalogue .meta{font-size:13px;color:var(--muted)}
-.catalogue .filters{display:flex;gap:20px;margin:30px 0;align-items:end}
-.catalogue .filters label{display:block;font-size:14px;flex:1}
-.catalogue input,.catalogue select{display:block;width:100%;margin-top:8px;padding:10px 12px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:4px;font:inherit}
-.catalogue input:focus-visible,.catalogue select:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
-.project-row{padding:30px 0;border-top:1px solid var(--line);scroll-margin-top:28px}
-.project-row p{font-size:16px;margin:16px 0;line-height:1.8}
+.project-layout{grid-template-columns:230px minmax(0,1fr);gap:48px}
+.project-layout>.contents{position:sticky;top:32px;max-height:calc(100dvh - 64px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding-right:10px}
+.project-sidebar-heading{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:28px}
+.project-sidebar-heading>a{font-size:13px;text-decoration:none}
+.project-layout .contents #theme-toggle{margin:0;flex-shrink:0}
+.project-layout .sidebar-panel{display:block}
+.project-layout .contents .sidebar-label{margin:0 0 12px}
+.project-layout .contents .toc-subsections{margin:4px 0 16px 12px}
+.project-layout .contents .toc-subsections .toc-child>a{font-size:12px;line-height:1.5;font-weight:400;padding:6px 0 6px 12px}
+.project-layout .contents .toc-subsections a[aria-current="location"]{font-weight:600}
+.project-layout .contents .toc-parent>a{font-size:14px;padding:8px 0 8px 14px}
+.project-catalogue{min-width:0}
+.project-catalogue h1{font-size:32px;margin:0 0 36px;line-height:1.25}
+.project-group{margin-top:44px;scroll-margin-top:28px}
+.project-group:first-of-type{margin-top:0}
+.project-group>h2{font-size:25px;margin:0 0 18px}
+.project-row{padding:28px 0;border-top:1px solid var(--line);scroll-margin-top:28px}
+.project-row h3{font-size:21px;line-height:1.45;margin:0 0 18px}
+.project-row h3 a{text-decoration:none}
+.project-row h3 a:hover{text-decoration:underline}
+.project-reading p{font-size:16px;line-height:1.8;margin:16px 0}
 .project-reading ul{padding-left:24px;margin:16px 0}
 .project-reading li{margin:9px 0;overflow-wrap:anywhere;line-height:1.8}
-.catalogue .onboarding{margin:24px 0 0}
-.catalogue .onboarding li{margin:8px 0}
-.catalogue .booking-duration{font-size:14px;color:var(--muted)}
-.catalogue [hidden]{display:none!important}
-.catalogue footer{display:block;margin-top:40px}
-@media(max-width:540px){.catalogue{padding:22px 22px 44px}.catalogue-header{margin-bottom:30px;font-size:14px}.catalogue h1{font-size:27px}.catalogue .filters{display:block}.catalogue .filters label+label{margin-top:16px}}
+.project-reading a{overflow-wrap:anywhere}
+.project-empty{font-size:15px;color:var(--muted);padding-top:8px}
+.project-catalogue footer{display:block;margin-top:44px}
+@media(min-width:541px) and (max-width:900px){
+ .project-layout{grid-template-columns:180px minmax(0,1fr);gap:28px}
+ .project-layout>.contents{top:24px;max-height:calc(100dvh - 48px)}
+ .project-sidebar-heading{display:block}
+ .project-sidebar-heading>a{display:block;margin-bottom:10px}
+}
+@media(max-width:540px){
+ .project-layout{display:block;padding:24px 22px 44px}
+ .project-layout>.contents{display:block;top:0;margin:-24px -22px 28px;padding:12px 22px;max-height:none;overflow:visible;background:var(--bg)}
+ .project-sidebar-heading{display:flex;margin:0 0 6px}
+ .project-layout .contents-toggle{grid-column:auto;grid-row:auto}
+ .project-layout .current-section{max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .project-layout .sidebar-panel{display:block}
+ .has-js .project-layout .sidebar-panel{display:none}
+ .has-js .project-layout .contents[data-expanded="true"]{position:sticky}
+ .has-js .project-layout .contents[data-expanded="true"] .sidebar-panel{display:block;max-height:calc(100dvh - 150px);overflow-y:auto;padding:16px 0 8px}
+ .project-layout .contents nav{max-height:none;overflow:visible}
+ .project-layout .contents .toc-subsections .toc-child>a{min-height:40px;padding-top:10px;padding-bottom:10px}
+ .project-catalogue h1{font-size:28px;margin-bottom:30px}
+ .project-group>h2{font-size:23px}
+ .project-row h3{font-size:20px}
+ .project-row,.project-group{scroll-margin-top:126px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

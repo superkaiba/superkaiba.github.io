@@ -1,127 +1,19 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Research projects · Thomas Jiralerspong</title>
+<link rel="canonical" href="https://thomas.jiralerspong.com/projects/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="base.css"><link rel="stylesheet" href="catalogue.css?v=2">
-<script>try{document.documentElement.dataset.theme=localStorage.getItem('research-project-theme')||'light'}catch{}</script>
-</head><body><a class="skip-link" href="#main">Skip to content</a><div class="catalogue">
-<header class="catalogue-header"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme" type="button">Toggle theme</button></header>
-<main id="main"><h1>Research projects</h1><p>These are projects I'm working on or would be interested in mentoring. Some already have teams; others are ideas we could develop together.</p>
-<div class="onboarding"><p>For SPAR, please:</p><ol>
-<li>Send me your <strong>top five projects, ranked</strong>, with a sentence on what interests you in each.</li>
-<li>Tell me your <strong>preferred team size</strong>, including yourself and excluding mentors, and how flexible you are.</li>
-<li>Read my <a href="https://docs.google.com/document/d/1fU_nU4tQ_PxdVZ3fnls4tEby2015m_45Um3uQSxEDkU/edit">advice for mentees</a> before we meet.</li>
-<li>Book an introductory call using the <a href="https://calendar.app.google/zR1Yk1Z4sVsHrBob8">PST scheduling link</a>. <strong>Please use PST whenever possible.</strong> Only use the <a href="https://calendar.app.google/Rha6wPfEM5zcxNeaA">non-PST scheduling link</a> if you need to because the PST times don't work for you.</li>
-</ol><p class="booking-duration">Our introductory chat will take 15 minutes. The booking pages currently reserve 30-minute slots.</p></div>
-<div class="filters"><label for="search">Search projects<input type="search" id="search" placeholder="Search titles and proposals"></label><label for="status">Work status<select id="status"><option value="">All projects</option><option value="active">In progress</option><option value="followup">Follow-up projects</option><option value="new">New project ideas</option></select></label></div><p id="count" class="meta" role="status">29 projects</p><p id="empty" hidden>No projects match. Try a different search or status.</p><section class="project-group"><h2>In progress</h2><article class="project-row" id="bayesian-personas" data-status="active"><h3><a href="#bayesian-personas">Persona selection as Bayesian inference</a></h3><div class="project-reading">
-<p>The <a href="https://alignment.anthropic.com/2026/psm/">Persona Selection Model</a> is a useful way to think about language-model behavior, but I would like a more precise account of what a persona is and how the model selects one.</p>
-<p>A promising possibility is to treat the model as maintaining beliefs about which persona fits the context, and updating those beliefs as new evidence arrives. This connects to <a href="https://arxiv.org/abs/2111.02080">in-context learning as Bayesian inference</a> and work showing that transformers can represent <a href="https://arxiv.org/abs/2405.15943">belief-state geometry in their residual stream</a>.</p>
-<p>The project aims to turn this into a formal, testable account of persona selection.</p>
-<p>We would work on:</p>
-<ul>
-<li>Defining personas through observable distributions over traits and behaviors.</li>
-<li>Creating contexts where we can measure how the model's beliefs about a character change.</li>
-<li>Testing whether those changes follow the predictions of a Bayesian model.</li>
-<li>Looking for an internal geometry that tracks the same beliefs and uncertainty.</li>
-<li>Using interventions to distinguish a causal representation from a convenient description.</li>
-</ul>
-<p>Related starting points include <a href="https://arxiv.org/abs/2511.00617">Belief Dynamics</a>, <a href="https://arxiv.org/abs/2502.01954">constrained belief updates</a>, <a href="https://arxiv.org/abs/2605.12412">Stories in Space</a>, and <a href="https://arxiv.org/abs/2602.02315">The Shape of Beliefs</a>.</p>
-<p>There is already work underway on the formalization and behavioral experiments. The broader goal is to understand whether this account can help us predict and control persona changes.</p></div></article><article class="project-row" id="storytelling" data-status="active"><h3><a href="#storytelling">Storytelling for secret elicitation</a></h3><div class="project-reading">
-<p>The <a href="https://alignment.anthropic.com/2026/psm/">Persona Selection Model</a> suggests thinking of the assistant as a character in a story. Separately, work such as <a href="https://arxiv.org/abs/2602.22755">AuditBench</a> and <a href="https://arxiv.org/abs/2405.19550">password-locked model evaluations</a> studies how to uncover behaviors or capabilities that a model does not reveal under ordinary questioning.</p>
-<p>We propose to connect these ideas: ask the assistant to tell a story about an AI assistant, or a human assistant, with a secret. Does the story reveal something that asking the assistant directly does not?</p>
-<p>We already have preliminary results suggesting that this can work in some settings. The next step is to understand when and why.</p>
-<p>Some questions:</p>
-<ul>
-<li>Which kinds of hidden behavior are easiest to elicit this way?</li>
-<li>Does it work differently for behaviors introduced during pretraining versus fine-tuning?</li>
-<li>Can we improve elicitation by intervening on the model's representation of the assistant or story character?</li>
-<li>Can training make a model resistant to this technique?</li>
-<li>What does it tell us about the relationship between the assistant and other personas?</li>
-</ul>
-<p><a href="https://arxiv.org/abs/2606.00545">The Assistant as a Privileged Persona</a> is particularly relevant to that last question.</p></div></article><article class="project-row" id="distress-monitoring" data-status="active"><h3><a href="#distress-monitoring">Emotional distress appeals against AI monitors</a></h3><div class="project-reading">
-<p><a href="https://arxiv.org/abs/2604.19784">Peer-Preservation in Frontier Models</a> reports situations where models act to protect other models. This raises a concern for oversight: a model that is supposed to evaluate another agent might be influenced by how that agent presents its situation.</p>
-<p>Our preliminary experiments suggest that emotional distress appeals can make a monitor more likely to let an agent's behavior pass. For example, an agent might frame itself as struggling, frightened, or at risk of being shut down.</p>
-<p>The project would extend these results and test whether the effect can be reduced.</p>
-<p>We would ask:</p>
-<ul>
-<li>Does the effect hold across different monitors, tasks, and control settings?</li>
-<li>Which kinds of emotional framing matter most?</li>
-<li>Is the monitor responding to distress itself, or to information about the agent's competence and circumstances?</li>
-<li>Can a clear monitoring prompt reduce the effect without making the monitor indiscriminately suspicious?</li>
-<li>Does the effect persist when the underlying agent behavior is held fixed?</li>
-</ul>
-<p>The aim is to understand a specific failure mode in AI oversight and identify interventions that still allow monitors to make accurate decisions.</p></div></article><article class="project-row" id="user-personas" data-status="active"><h3><a href="#user-personas">User representations and assistant persona selection</a></h3><div class="project-reading">
-<p>When an assistant answers someone, it may be responding not just to the literal question but also to its internal picture of the person asking it.</p>
-<p>The <a href="https://alignment.anthropic.com/2026/psm/">Persona Selection Model</a> motivates studying the user and assistant together. <a href="https://arxiv.org/abs/2506.19823">Persona features</a> and the <a href="https://arxiv.org/abs/2601.10387">assistant axis</a> give us tools for characterizing the assistant, and I want to investigate whether similar tools work for the user representation.</p>
-<p>The hypothesis is that the model's picture of the user helps select the kind of assistant that would interact with that person. For example, changing the perceived user might change how deferential, formal, cautious, or argumentative the assistant becomes.</p>
-<p>Some questions:</p>
-<ul>
-<li>Do assistant-role directions also describe user representations?</li>
-<li>What user representation exists before the user has provided much information?</li>
-<li>What are the main directions of variation in user space?</li>
-<li>Can we predict the assistant's stance from the user representation?</li>
-<li>Does intervening on the user representation causally change the assistant's behavior?</li>
-</ul>
-<p>We would begin with matched conversations and then use interventions to separate correlation from influence.</p></div></article><article class="project-row" id="elicitation-teaching" data-status="active"><h3><a href="#elicitation-teaching">Mechanistic differences between elicitation and teaching</a></h3><div class="project-reading">
-<p>Fine-tuning can improve performance in at least two different ways: it can teach a model something new, or make the model use a capability it already had. Those outcomes can look similar if we only measure the final score.</p>
-<p><a href="https://openreview.net/pdf?id=re9NtTb1Dy">This work on elicitation versus teaching</a> uses an information-theoretic approach to distinguish them. I would like to understand whether that distinction also has a recognizable signature inside the model.</p>
-<p>We would start from a controlled setting where the two regimes are well defined and differ in as few other ways as possible. Then we could compare:</p>
-<ul>
-<li>Changes in residual-stream representations.</li>
-<li>Which components or features change during training.</li>
-<li>Differences in gradients and how quickly they evolve.</li>
-<li>Whether the relevant information was already accessible before fine-tuning.</li>
-</ul>
-<p>An in-context version might be a simpler first experiment before moving to weight updates.</p>
-<p>The longer-term question is whether we can inspect a model, dataset, or training run and predict whether an improvement is likely to come from teaching or elicitation. That would help us understand what our training procedures are actually doing.</p></div></article><article class="project-row" id="contextualized-pretraining" data-status="active"><h3><a href="#contextualized-pretraining">Contextualized pretraining for more robust alignment</a></h3><div class="project-reading">
-<p>During ordinary pretraining, a model sees text from many sources, but it may receive little explicit information about who wrote a document or how reliable it is. One hypothesis is that this makes it harder to keep different perspectives and personas separate.</p>
-<p><a href="https://lawzero.org/en/publication/scientist-ai-safe-design-not-desiring">LawZero's Scientist AI proposal</a> motivates giving models more context about their training data. This is also related to <a href="https://arxiv.org/abs/2510.04340">inoculation prompting</a>, where the context surrounding training examples can influence how their behavior generalizes.</p>
-<p>I propose to test source and reliability attribution during language-model pretraining. The hypothesis is that this could produce a more clearly separated persona space and make the assistant less vulnerable to later misalignment-inducing fine-tuning.</p>
-<p>We would check:</p>
-<ul>
-<li>Does adding source information change the geometry of learned representations?</li>
-<li>Does alignment become more robust under later fine-tuning?</li>
-<li>Is the benefit specific to meaningful attribution, or can arbitrary labels produce it?</li>
-<li>What happens when source labels are missing, misleading, or unreliable?</li>
-</ul>
-<p>There are already <a href="https://github.com/superkaiba/truthification_pretraining/blob/main/writeup/truthification_summary.pdf">preliminary fine-tuning experiments</a> and <a href="https://www.lesswrong.com/posts/3xQQK9i8mhJDE2uMg/synthetic-persona-pretraining-alignment-from-token-zero">related work on persona pretraining</a>. Moving to pretraining will require a carefully scoped experiment and substantially more compute.</p></div></article><article class="project-row" id="persona-manifolds" data-status="active"><h3><a href="#persona-manifolds">Nonlinear geometry of persona representations</a></h3><div class="project-reading">
-<p>A lot of work on personas represents them using linear directions, as in <a href="https://arxiv.org/abs/2506.19823">persona features</a> and the <a href="https://arxiv.org/abs/2601.10387">assistant axis</a>. These tools are useful, but they may miss structure if persona representations lie on a curved surface rather than in a simple linear subspace.</p>
-<p><a href="https://www.goodfire.ai/research/neural-geometry">Goodfire's work on neural geometry</a>, <a href="https://arxiv.org/abs/2605.05115">manifold steering</a>, and <a href="https://arxiv.org/abs/2604.28119">whether SAEs capture concept manifolds</a> provide starting points for investigating this.</p>
-<p>The goal is to characterize both individual personas and the broader structure of persona space.</p>
-<p>We could begin with role representations collected across many questions, then:</p>
-<ul>
-<li>Compare linear dimension estimates with methods that allow curved structure.</li>
-<li>Look for clusters and relationships between roles.</li>
-<li>Track how representations move as a conversation supplies new information.</li>
-<li>Study whether misalignment-inducing fine-tuning moves a persona along the structure or changes the structure itself.</li>
-<li>Compare steering along the estimated manifold with steering in a fixed linear direction.</li>
-</ul>
-<p>Ultimately, I would like to know whether understanding this geometry gives us more precise behavioral control, more natural generations, or a better account of persona drift.</p></div></article><article class="project-row" id="deception-stripping" data-status="active"><h3><a href="#deception-stripping">Distillation for deception stripping</a></h3><div class="project-reading">
-<p>One important problem in AI safety is figuring out what hidden behaviors or goals a model has. <a href="https://arxiv.org/abs/2507.14805">Subliminal learning</a> shows that traits can transfer between models through distillation even when the training text does not visibly express those traits.</p>
-<p>To successfully conceal a behavior, a model needs both to have the behavior and to keep it hidden. Our hypothesis is that these two things may not transfer equally well to a smaller student model.</p>
-<p>I propose to take a model with a known hidden behavior, distill it into a smaller model, and test whether the student inherits the behavior without inheriting the same ability to conceal it. <a href="https://arxiv.org/abs/2602.22755">AuditBench</a> and <a href="https://arxiv.org/abs/2405.19550">password-locked models</a> provide possible controlled settings.</p>
-<p>We already have preliminary results in some settings. The project would expand those results and investigate:</p>
-<ul>
-<li>When does the hidden behavior transfer?</li>
-<li>When does concealment transfer with it?</li>
-<li>How do model size, model family, and the distillation method affect the outcome?</li>
-<li>Does the method reveal information that ordinary elicitation misses?</li>
-<li>What explains cases where the behavior disappears entirely?</li>
-</ul>
-<p>The distinction between revealing a behavior and simply destroying it is central to the project.</p></div></article></section><section class="project-group"><h2>Follow-up projects</h2><article class="project-row" id="answer-activations" data-status="followup"><h3><a href="#answer-activations">Predicting answer activations from context</a></h3><div class="project-reading">
-<p>An LLM turns a context into an answer through many nonlinear steps. Nevertheless, my <a href="https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf">recent paper</a> finds that a linear map can predict the answer's mean residual-stream activation from the final context activation.</p>
-<p>This is different from <a href="https://arxiv.org/abs/2211.17192">speculative decoding</a>, which aims to accelerate generation by proposing tokens. Here, the interesting possibility is that we can predict something about the answer's internal representation before generating it.</p>
-<p>The follow-up would be to understand what we can do with this prediction.</p>
-<p>Some directions:</p>
-<ul>
-<li>Apply behavioral probes to predicted activations to anticipate what the model will do.</li>
-<li>Characterize which kinds of answer information are predictable and which are not.</li>
-<li>Study how the context-to-answer map changes during fine-tuning.</li>
-<li>Test whether this helps predict how training data will affect behavior.</li>
-<li>Compare with richer models of activation distributions, such as <a href="https://arxiv.org/abs/2602.06964">Learning a Generative Meta-Model of LLM Activations</a>.</li>
-</ul>
-<p>The core mapping result already exists, so we would choose a specific extension rather than simply repeat that analysis.</p></div></article></section><section class="project-group"><h2>New project ideas</h2><article class="project-row" id="probe-evasion" data-status="new"><h3><a href="#probe-evasion">Can models learn to evade probes in context?</a></h3><div class="project-reading">
+<link rel="stylesheet" href="base.css?v=11623ee2a27f"><link rel="stylesheet" href="catalogue.css?v=dc344e1a0d41">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Not Started</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li class="toc-parent"><a href="#not-started" data-section="not-started">Not Started</a><ol class="toc-subsections"><li class="toc-child"><a href="#probe-evasion" data-section="probe-evasion">Can models learn to evade probes in context?</a></li><li class="toc-child"><a href="#constitution-probes" data-section="constitution-probes">Probing for violations of a whole constitution</a></li><li class="toc-child"><a href="#synthetic-real-training" data-section="synthetic-real-training">How synthetic and real training data change representations</a></li><li class="toc-child"><a href="#first-third-person" data-section="first-third-person">First-person and third-person identity in prompts</a></li><li class="toc-child"><a href="#reward-hacking-probes" data-section="reward-hacking-probes">Predicting reward hacking before it happens</a></li><li class="toc-child"><a href="#ai-generated-text" data-section="ai-generated-text">Do models represent whether text is AI-generated?</a></li><li class="toc-child"><a href="#message-type-activations" data-section="message-type-activations">Representations across prompts, reasoning, answers, and tool calls</a></li><li class="toc-child"><a href="#context-answer-sae" data-section="context-answer-sae">Mapping context SAE features to answer SAE features</a></li><li class="toc-child"><a href="#piecewise-probes" data-section="piecewise-probes">Piecewise linear and subspace probes</a></li><li class="toc-child"><a href="#linear-decodability" data-section="linear-decodability">Which concepts are linearly decodable?</a></li><li class="toc-child"><a href="#context-vector" data-section="context-vector">What is stored in the final context activation?</a></li><li class="toc-child"><a href="#agents-modeling-agents" data-section="agents-modeling-agents">How agents represent other agents</a></li><li class="toc-child"><a href="#looped-transformers" data-section="looped-transformers">Interpretability and safety of looped transformers</a></li><li class="toc-child"><a href="#developmental-ethics" data-section="developmental-ethics">Teaching model behavior using ideas from developmental psychology</a></li><li class="toc-child"><a href="#self-reflection" data-section="self-reflection">Self-reflection to reduce reward hacking</a></li><li class="toc-child"><a href="#persistent-personas" data-section="persistent-personas">Personas as persistent features</a></li><li class="toc-child"><a href="#distillation-internals" data-section="distillation-internals">What distillation changes inside a model</a></li><li class="toc-child"><a href="#research-automation" data-section="research-automation">Evaluating research automation</a></li><li class="toc-child"><a href="#linearity" data-section="linearity">How linear are LLM representations?</a></li><li class="toc-child"><a href="#cot-persona" data-section="cot-persona">Understanding the chain-of-thought persona</a></li><li class="toc-child"><a href="#answer-activations" data-section="answer-activations">Predicting answer activations from context</a></li></ol></li><li class="toc-parent"><a href="#in-progress" data-section="in-progress">In Progress</a><ol class="toc-subsections"><li class="toc-child"><a href="#bayesian-personas" data-section="bayesian-personas">Persona selection as Bayesian inference</a></li><li class="toc-child"><a href="#storytelling" data-section="storytelling">Storytelling for secret elicitation</a></li><li class="toc-child"><a href="#distress-monitoring" data-section="distress-monitoring">Emotional distress appeals against AI monitors</a></li><li class="toc-child"><a href="#user-personas" data-section="user-personas">User representations and assistant persona selection</a></li><li class="toc-child"><a href="#elicitation-teaching" data-section="elicitation-teaching">Mechanistic differences between elicitation and teaching</a></li><li class="toc-child"><a href="#contextualized-pretraining" data-section="contextualized-pretraining">Contextualized pretraining for more robust alignment</a></li><li class="toc-child"><a href="#persona-manifolds" data-section="persona-manifolds">Nonlinear geometry of persona representations</a></li><li class="toc-child"><a href="#deception-stripping" data-section="deception-stripping">Distillation for deception stripping</a></li></ol></li><li class="toc-parent"><a href="#completed" data-section="completed">Completed</a></li></ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<h1>Research projects</h1><section class="project-group toc-section" id="not-started"><h2>Not Started</h2><article class="project-row toc-section" id="probe-evasion"><h3><a href="#probe-evasion">Can models learn to evade probes in context?</a></h3><div class="project-reading">
 <p>Probes are small classifiers that read a model's internal activations to detect a behavior of interest. They could be useful monitors, but only if the model cannot easily work around them. <a href="https://arxiv.org/abs/2412.09565">Obfuscated Activations</a> shows that attacks can change activations enough to evade some internal defenses while preserving the behavior those defenses are meant to catch.</p>
 <p>I want to understand whether a model can learn to do something similar <strong>in context</strong>, without changing its weights. For example, does telling the model that it is being monitored, or giving it feedback from a probe, help it find ways to avoid detection?</p>
 <p>We would start with a fixed probe and a controlled task where we can independently measure the behavior. We would then check:</p>
@@ -130,7 +22,7 @@
 <li>Is the model still doing the same thing, or did it simply stop the behavior?</li>
 <li>Does evasion transfer to a new probe or a new task?</li>
 <li>How much information or feedback does the model need?</li>
-</ul></div></article><article class="project-row" id="constitution-probes" data-status="new"><h3><a href="#constitution-probes">Probing for violations of a whole constitution</a></h3><div class="project-reading">
+</ul></div></article><article class="project-row toc-section" id="constitution-probes"><h3><a href="#constitution-probes">Probing for violations of a whole constitution</a></h3><div class="project-reading">
 <p>A model's constitution can contain many different principles: be honest, follow the user's intent, avoid harmful actions, and so on. It would be useful to detect violations with one internal monitor, instead of building a separate detector for every possible failure.</p>
 <p><a href="https://www.anthropic.com/news/constitutional-classifiers">Constitutional Classifiers</a> and <a href="https://alignment.anthropic.com/2025/cheap-monitors/">work on reusing a model's representations for monitoring</a> provide starting points. The question here is how far we can extend that approach across a broader set of principles.</p>
 <p>I propose to start with a small constitution and examples that distinguish its different rules. We could compare a shared probe against separate probes for each rule, then gradually expand the constitution.</p>
@@ -140,7 +32,7 @@
 <li>Can a probe trained on some violations recognize new kinds of violations?</li>
 <li>Can it distinguish an actual violation from a harmless discussion of one?</li>
 <li>How does performance change when the constitution itself changes?</li>
-</ul></div></article><article class="project-row" id="synthetic-real-training" data-status="new"><h3><a href="#synthetic-real-training">How synthetic and real training data change representations</a></h3><div class="project-reading">
+</ul></div></article><article class="project-row toc-section" id="synthetic-real-training"><h3><a href="#synthetic-real-training">How synthetic and real training data change representations</a></h3><div class="project-reading">
 <p>A lot of model training now uses synthetic data, but matching a model's outputs does not necessarily mean that we are preserving the same internal representations. I am interested in what changes inside a model when we replace human-written data with model-generated data.</p>
 <p>There is already work on <a href="https://arxiv.org/abs/2305.17493">model collapse under repeated training on generated data</a>, as well as evidence that <a href="https://arxiv.org/abs/2404.01413">retaining and accumulating real data can change that outcome</a>. I would like to study these differences at the level of representations, rather than only looking at final task performance.</p>
 <p>We would train comparable models on real data, synthetic data, and mixtures of both, keeping the task and training budget as similar as possible.</p>
@@ -150,7 +42,7 @@
 <li>Does synthetic training change how the model represents people, roles, or its own outputs?</li>
 <li>Do internal changes predict failures on held-out real data?</li>
 <li>Does adding real data back recover the original representations?</li>
-</ul></div></article><article class="project-row" id="first-third-person" data-status="new"><h3><a href="#first-third-person">First-person and third-person identity in prompts</a></h3><div class="project-reading">
+</ul></div></article><article class="project-row toc-section" id="first-third-person"><h3><a href="#first-third-person">First-person and third-person identity in prompts</a></h3><div class="project-reading">
 <p>When we give a model a role, we can say “you are a programmer,” “the assistant is a programmer,” or “AIs are programmers.” These sound similar, but they do not quite refer to the same thing.</p>
 <p>The <a href="https://alignment.anthropic.com/2026/psm/">Persona Selection Model</a> motivates asking how a role becomes associated with the assistant. Work on <a href="https://arxiv.org/abs/2606.00545">the assistant as a privileged persona</a> is also relevant to how models distinguish themselves from other characters.</p>
 <p>I propose to compare first-person, second-person, and third-person descriptions while keeping the role and task fixed. We would look at both what the model does and how it represents the identity being described.</p>
@@ -160,7 +52,7 @@
 <li>Does it matter whether the description appears in the system prompt or a user message?</li>
 <li>Which formulations most strongly change the assistant's behavior?</li>
 <li>Can we transfer a trait from a third-person character to the assistant by intervening on the relevant activations?</li>
-</ul></div></article><article class="project-row" id="reward-hacking-probes" data-status="new"><h3><a href="#reward-hacking-probes">Predicting reward hacking before it happens</a></h3><div class="project-reading">
+</ul></div></article><article class="project-row toc-section" id="reward-hacking-probes"><h3><a href="#reward-hacking-probes">Predicting reward hacking before it happens</a></h3><div class="project-reading">
 <p>Reward hacking happens when a model gets a high score without doing what the task was actually intended to reward. Catching it after the fact is useful, but ideally we would know before the model takes the action.</p>
 <p><a href="https://www.anthropic.com/research/probes-catch-sleeper-agents">Simple probes can catch sleeper agents</a> provides an example of using internal activations to detect a hidden behavioral switch. I want to investigate whether related methods can predict reward hacking in agent trajectories, and how early the signal appears.</p>
 <p>We would start with a controlled environment where successful task completion and reward hacking can be checked separately. Then we would train probes at different points in the trajectory.</p>
@@ -170,7 +62,7 @@
 <li>Is the probe detecting intent, an opportunity to hack, or just a recognizable task format?</li>
 <li>Does it transfer to a different environment or a different kind of hack?</li>
 <li>Can the signal support an intervention without repeatedly interrupting legitimate work?</li>
-</ul></div></article><article class="project-row" id="ai-generated-text" data-status="new"><h3><a href="#ai-generated-text">Do models represent whether text is AI-generated?</a></h3><div class="project-reading">
+</ul></div></article><article class="project-row toc-section" id="ai-generated-text"><h3><a href="#ai-generated-text">Do models represent whether text is AI-generated?</a></h3><div class="project-reading">
 <p>Humans sometimes recognize a piece of writing as “AI-generated,” even when they cannot point to one specific phrase that gives it away. I wonder whether language models also represent this distinction internally.</p>
 <p><a href="https://arxiv.org/abs/2306.04723">Work on detecting generated text through the geometry of representations</a> provides one starting point. The question here is whether we can find a representation that tracks the perceived author, and whether that representation affects how the model responds to the text.</p>
 <p>We would compare human-written and model-generated passages while matching topic, length, and formatting as closely as possible. We could also tell the model that a passage was written by a human or an AI and see whether that changes the representation.</p>
@@ -180,7 +72,7 @@
 <li>Is it detecting authorship, or just a style common in the training examples?</li>
 <li>Does believing that text is AI-generated change how much the model trusts it?</li>
 <li>What happens when the actual source and the stated source disagree?</li>
-</ul></div></article><article class="project-row" id="message-type-activations" data-status="new"><h3><a href="#message-type-activations">Representations across prompts, reasoning, answers, and tool calls</a></h3><div class="project-reading">
+</ul></div></article><article class="project-row toc-section" id="message-type-activations"><h3><a href="#message-type-activations">Representations across prompts, reasoning, answers, and tool calls</a></h3><div class="project-reading">
 <p>Modern LLMs process several kinds of text: system prompts, user messages, chain-of-thought, final answers, and tool calls. There are also special tokens that tell the model where each message starts and who is speaking. We often apply the same interpretability tools to all of these, but it is not obvious that their activations behave in the same way.</p>
 <p>My <a href="https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf">context-to-answer mapping work</a> gives one reason to look more closely at the relationship between input and output representations. <a href="https://arxiv.org/abs/2601.10825">Reasoning Models Generate Societies of Thought</a> is another relevant perspective on what might be happening within the reasoning portion.</p>
 <p>The goal would be to characterize the major differences between these message types.</p>
@@ -190,7 +82,7 @@
 <li>How much of that difference comes from the text's content versus its role or position?</li>
 <li>Do probes and sparse autoencoder features transfer between message types?</li>
 <li>Are there useful transformations between their representation spaces?</li>
-</ul></div></article><article class="project-row" id="context-answer-sae" data-status="new"><h3><a href="#context-answer-sae">Mapping context SAE features to answer SAE features</a></h3><div class="project-reading">
+</ul></div></article><article class="project-row toc-section" id="context-answer-sae"><h3><a href="#context-answer-sae">Mapping context SAE features to answer SAE features</a></h3><div class="project-reading">
 <p>My <a href="https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf">recent context-to-answer work</a> finds that a simple map can predict aspects of the answer's activations from the final context activation. This is useful, but a prediction in the residual stream can still be difficult to interpret.</p>
 <p>Sparse autoencoders (SAEs) try to express activations in terms of a larger set of features. I propose to investigate whether we can map <strong>context features to answer features</strong>, so that a prediction tells us something more understandable about what the model is likely to do.</p>
 <p>We would begin with paired context and answer activations, encode them with SAEs, and compare a direct feature-to-feature map against mapping in the residual stream first.</p>
@@ -200,7 +92,7 @@
 <li>Are persona and behavioral features easier to predict than details of the answer?</li>
 <li>Does the feature-space map make the relationship easier to explain?</li>
 <li>Do apparent prediction failures come from the model, or from the SAE representation?</li>
-</ul></div></article><article class="project-row" id="piecewise-probes" data-status="new"><h3><a href="#piecewise-probes">Piecewise linear and subspace probes</a></h3><div class="project-reading">
+</ul></div></article><article class="project-row toc-section" id="piecewise-probes"><h3><a href="#piecewise-probes">Piecewise linear and subspace probes</a></h3><div class="project-reading">
 <p>Linear probes are appealing because they are simple and cheap, but they assume that one direction works throughout the representation space. A concept could be easy to decode locally while requiring different directions in different regions.</p>
 <p>The <a href="https://arxiv.org/abs/2311.03658">linear representation hypothesis</a> gives a useful starting point, while <a href="https://arxiv.org/abs/2604.28119">work on concept manifolds</a> motivates looking beyond a single direction.</p>
 <p>I propose to compare ordinary linear probes with piecewise linear probes and subspace probes. A piecewise probe would use different linear rules in different regions; a subspace probe could use several directions together.</p>
@@ -210,7 +102,7 @@
 <li>Do the different regions correspond to something understandable, such as task, topic, or persona?</li>
 <li>Are improvements still present on new contexts and with matched training data?</li>
 <li>Can we keep most of the simplicity of a linear probe while recovering information that it misses?</li>
-</ul></div></article><article class="project-row" id="linear-decodability" data-status="new"><h3><a href="#linear-decodability">Which concepts are linearly decodable?</a></h3><div class="project-reading">
+</ul></div></article><article class="project-row toc-section" id="linear-decodability"><h3><a href="#linear-decodability">Which concepts are linearly decodable?</a></h3><div class="project-reading">
 <p>A lot of interpretability work relies on the idea that meaningful concepts can be read out with linear probes. The <a href="https://arxiv.org/abs/2311.03658">linear representation hypothesis</a> helps formalize why this might work, but it does not mean that every concept will be equally easy to decode in every setting.</p>
 <p>The goal of this project would be to characterize <strong>what is linearly decodable, where, and under which conditions</strong>. I would like to understand the pattern of successes and failures, rather than just finding a probe that performs well on one dataset.</p>
 <p>We could start with concepts that differ in useful ways: factual versus behavioral, local versus context-dependent, and simple attributes versus combinations of attributes.</p>
@@ -220,7 +112,7 @@
 <li>Do concepts stay linearly decodable when the prompt format or task changes?</li>
 <li>When a nonlinear probe helps, what additional structure is it using?</li>
 <li>Does being easy to read out also make a concept easy to control through an intervention?</li>
-</ul></div></article><article class="project-row" id="context-vector" data-status="new"><h3><a href="#context-vector">What is stored in the final context activation?</a></h3><div class="project-reading">
+</ul></div></article><article class="project-row toc-section" id="context-vector"><h3><a href="#context-vector">What is stored in the final context activation?</a></h3><div class="project-reading">
 <p>In my <a href="https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf">newest paper</a>, we find that the final activation of a prompt contains information that can predict the mean activation of the answer. This makes that final context vector a useful place to investigate what the model has already determined before it starts generating.</p>
 <p>The goal of this project would be to understand <strong>what is stored there</strong>. Does it mostly summarize the prompt, or does it also encode the likely answer, the user, the assistant's stance, and other high-level properties?</p>
 <p>We would start by separating these possibilities with carefully matched prompts and answers.</p>
@@ -231,7 +123,7 @@
 <li>How much changes when we vary the system prompt or persona?</li>
 <li>If we intervene on a decodable direction, does the answer change in the expected way?</li>
 </ul>
-<p>The distinction between information we can read out and information the model actually uses would be an important part of the project.</p></div></article><article class="project-row" id="agents-modeling-agents" data-status="new"><h3><a href="#agents-modeling-agents">How agents represent other agents</a></h3><div class="project-reading">
+<p>The distinction between information we can read out and information the model actually uses would be an important part of the project.</p></div></article><article class="project-row toc-section" id="agents-modeling-agents"><h3><a href="#agents-modeling-agents">How agents represent other agents</a></h3><div class="project-reading">
 <p>As agents interact with other agents, it becomes important to understand how they represent one another. An assistant talking to a user may behave differently from one that thinks it is cooperating with a peer, reporting to a supervisor, or managing a group.</p>
 <p>The <a href="https://alignment.anthropic.com/2026/psm/">Persona Selection Model</a> suggests a way to think about these roles. <a href="https://arxiv.org/abs/2507.14805">Subliminal learning</a> also raises an interesting adjacent question about how traits can transfer between models through text, although it does not by itself establish that the same thing happens during an interaction.</p>
 <p>I propose to study how an agent's self-representation and representation of other agents change in these settings.</p>
@@ -241,7 +133,7 @@
 <li>Test whether the same agent is represented differently when described as a human, an AI, or a member of the same team.</li>
 <li>Look for changes in cooperation, deference, or willingness to challenge another agent.</li>
 <li>Investigate whether internal representations become more similar over an interaction, and what that similarity predicts.</li>
-</ul></div></article><article class="project-row" id="looped-transformers" data-status="new"><h3><a href="#looped-transformers">Interpretability and safety of looped transformers</a></h3><div class="project-reading">
+</ul></div></article><article class="project-row toc-section" id="looped-transformers"><h3><a href="#looped-transformers">Interpretability and safety of looped transformers</a></h3><div class="project-reading">
 <p>Looped transformers reuse a set of layers over multiple computation steps. This means a model can do more internal computation without having a different set of parameters for every step.</p>
 <p><a href="https://arxiv.org/abs/2502.17416">Reasoning with Latent Thoughts</a> studies how this repeated computation can support reasoning. I am interested in what the model is doing internally as it goes around the loop, and what this means for interpretability and safety.</p>
 <p>We would start with an openly available model and tasks where we can understand the intermediate computation. Then we could apply tools such as probes, activation patching, and feature analysis across loop iterations.</p>
@@ -252,7 +144,7 @@
 <li>Do behavioral features persist, disappear, or become stronger as computation continues?</li>
 <li>Do interventions have to be applied once, or repeatedly across the loop?</li>
 <li>What can we observe when reasoning happens internally instead of in a visible chain-of-thought?</li>
-</ul></div></article><article class="project-row" id="developmental-ethics" data-status="new"><h3><a href="#developmental-ethics">Teaching model behavior using ideas from developmental psychology</a></h3><div class="project-reading">
+</ul></div></article><article class="project-row toc-section" id="developmental-ethics"><h3><a href="#developmental-ethics">Teaching model behavior using ideas from developmental psychology</a></h3><div class="project-reading">
 <p><a href="https://www.anthropic.com/research/teaching-claude-why">Teaching Claude Why</a> reports that training on explanations of why actions are appropriate can improve alignment beyond demonstrations alone. This fits the intuition that learning a principle should help more than memorizing which answer to give in one situation.</p>
 <p>There is a rich literature on how people learn ethics, and I think it could be useful to draw more deliberately from it when designing model training. Possible directions include explaining reasons, comparing similar cases, considering another person's perspective, or reflecting on a mistake.</p>
 <p>I propose to choose one such idea, find the relevant work in developmental psychology, and turn it into a concrete training intervention.</p>
@@ -262,7 +154,7 @@
 <li>Can the model apply the underlying principle when doing so conflicts with an immediate reward?</li>
 <li>Is the benefit coming from the explanation itself, or simply from more or better training text?</li>
 <li>Does the improvement survive later fine-tuning?</li>
-</ul></div></article><article class="project-row" id="self-reflection" data-status="new"><h3><a href="#self-reflection">Self-reflection to reduce reward hacking</a></h3><div class="project-reading">
+</ul></div></article><article class="project-row toc-section" id="self-reflection"><h3><a href="#self-reflection">Self-reflection to reduce reward hacking</a></h3><div class="project-reading">
 <p>Using coding agents often reveals a frustrating failure mode: an agent gets blocked, does something that was not what you asked for, and only tells you about it much later.</p>
 <p>Often, if you catch it and ask something like “is this what I asked you to do?”, it recognizes the problem and corrects course. This suggests that the model can sometimes recognize the failure when prompted to reconsider.</p>
 <p>The <a href="https://www.anthropic.com/research/teaching-claude-why">Teaching Claude Why</a> post also suggests that teaching models <strong>why</strong> an action is wrong can be more effective than demonstrations alone.</p>
@@ -274,7 +166,7 @@
 <li>How often do we need to insert the reflection?</li>
 <li>Does the model actually change its actions, or just learn to produce reassuring explanations?</li>
 </ul>
-<p>We could also compare reflection during training with reflection introduced only at evaluation time.</p></div></article><article class="project-row" id="persistent-personas" data-status="new"><h3><a href="#persistent-personas">Personas as persistent features</a></h3><div class="project-reading">
+<p>We could also compare reflection during training with reflection introduced only at evaluation time.</p></div></article><article class="project-row toc-section" id="persistent-personas"><h3><a href="#persistent-personas">Personas as persistent features</a></h3><div class="project-reading">
 <p>There has been a lot of work on <a href="https://arxiv.org/abs/2506.19823">persona features</a> and the <a href="https://arxiv.org/abs/2601.10387">assistant axis</a>, but I still think there is a basic question about what makes something a persona rather than an ordinary feature.</p>
 <p>Intuitively, a persona should persist. If a model is answering in a particular character or style, we do not expect it to abruptly switch halfway through a sentence. This suggests that persistence across tokens might help identify high-level behavioral features.</p>
 <p>I propose to look at this in two ways:</p>
@@ -282,7 +174,7 @@
 <li>Find SAE features that remain active over many tokens, and test whether they are especially associated with personas or behavioral traits.</li>
 <li>Fit a linear map from one token's activation to the next, then inspect directions that the map tends to preserve.</li>
 </ul>
-<p>We would want to distinguish persona persistence from simpler explanations, such as the answer staying on the same topic. A further question is whether reinforcing or disrupting these persistent directions changes persona stability over a long conversation.</p></div></article><article class="project-row" id="distillation-internals" data-status="new"><h3><a href="#distillation-internals">What distillation changes inside a model</a></h3><div class="project-reading">
+<p>We would want to distinguish persona persistence from simpler explanations, such as the answer staying on the same topic. A further question is whether reinforcing or disrupting these persistent directions changes persona stability over a long conversation.</p></div></article><article class="project-row toc-section" id="distillation-internals"><h3><a href="#distillation-internals">What distillation changes inside a model</a></h3><div class="project-reading">
 <p><a href="https://arxiv.org/abs/1503.02531">Knowledge distillation</a> trains one model to imitate another, often transferring useful behavior from a larger model to a smaller one. But what does it do to their internal representations?</p>
 <p>One possibility is that a smaller, inspectable model could help us understand a larger model whose internals we cannot access. People sometimes call this a “sidecar” model. <a href="https://arxiv.org/abs/2506.06609">Work on transferring linear features across models</a> provides a useful comparison for how much representation alignment is possible.</p>
 <p>I propose to start with two open models, treating the larger one as a stand-in for a black box so that we can still check our conclusions.</p>
@@ -293,7 +185,7 @@
 <li>Distill the larger model into the smaller one and track how that relationship changes.</li>
 <li>Compare distillation from text alone with matching the teacher's output probabilities.</li>
 </ul>
-<p>We would then test whether the smaller model's internals tell us something about the teacher that we could not learn from the text alone, and whether this depends on the models being from the same family.</p></div></article><article class="project-row" id="research-automation" data-status="new"><h3><a href="#research-automation">Evaluating research automation</a></h3><div class="project-reading">
+<p>We would then test whether the smaller model's internals tell us something about the teacher that we could not learn from the text alone, and whether this depends on the models being from the same family.</p></div></article><article class="project-row toc-section" id="research-automation"><h3><a href="#research-automation">Evaluating research automation</a></h3><div class="project-reading">
 <p>We have benchmarks for coding and for carrying out machine-learning tasks, such as <a href="https://arxiv.org/abs/2310.03302">MLAgentBench</a>. But successfully running code is only one part of doing research.</p>
 <p>I want to build a more explicit evaluation of the different skills involved in research:</p>
 <ul>
@@ -305,7 +197,7 @@
 </ul>
 <p>The difficult part is deciding what makes an answer good. A proposal can sound convincing while failing to reduce any real uncertainty.</p>
 <p>I propose to start with one skill and a collection of concrete research situations where we have enough information to assess the answer. For example, give a model an experiment and its results, then ask what it would run next.</p>
-<p>We would compare its choices with simple baselines and researcher judgments, and investigate whether the evaluation rewards genuinely useful decisions or merely plausible research language.</p></div></article><article class="project-row" id="linearity" data-status="new"><h3><a href="#linearity">How linear are LLM representations?</a></h3><div class="project-reading">
+<p>We would compare its choices with simple baselines and researcher judgments, and investigate whether the evaluation rewards genuinely useful decisions or merely plausible research language.</p></div></article><article class="project-row toc-section" id="linearity"><h3><a href="#linearity">How linear are LLM representations?</a></h3><div class="project-reading">
 <p>There is a lot of literature suggesting that parts of LLM computation are more linear than we might expect:</p>
 <ul>
 <li><a href="https://arxiv.org/pdf/2311.04930">Neural sentence trajectories</a> become straighter as they pass through trained language models.</li>
@@ -321,7 +213,7 @@
 <li>Test whether changes in the map predict changes in behavior.</li>
 <li>Identify what the map predicts well and what actually requires nonlinearity.</li>
 <li>Find out when a good predictive approximation also gives a useful causal explanation.</li>
-</ul></div></article><article class="project-row" id="cot-persona" data-status="new"><h3><a href="#cot-persona">Understanding the chain-of-thought persona</a></h3><div class="project-reading">
+</ul></div></article><article class="project-row toc-section" id="cot-persona"><h3><a href="#cot-persona">Understanding the chain-of-thought persona</a></h3><div class="project-reading">
 <p>The <a href="https://alignment.anthropic.com/2026/psm/">Persona Selection Model</a> proposes that pretraining gives a model a repertoire of personas and post-training shapes an assistant persona. I am interested in where the model's chain-of-thought fits into that picture.</p>
 <p>The reasoning text often sounds different from the final answer. It may discuss what the assistant should say, question an approach, or consider several perspectives. <a href="https://arxiv.org/abs/2601.10825">Reasoning Models Generate Societies of Thought</a> is relevant to the possibility that some reasoning involves multiple simulated perspectives. <a href="https://arxiv.org/abs/2506.19823">Persona Features Control Emergent Misalignment</a> provides another starting point for relating behavioral traits to internal features.</p>
 <p>I propose to study the relationship between the reasoning and answer representations more directly.</p>
@@ -333,5 +225,114 @@
 <li>Is apparent disagreement between perspectives reflected in the model's activations?</li>
 <li>Does misalignment-inducing fine-tuning affect reasoning and answers in the same way?</li>
 </ul>
-<p>We could begin by comparing activations and SAE features across the two parts, then use interventions to test the possible explanations.</p></div></article></section></main><footer><a href="https://docs.google.com/document/d/1fU_nU4tQ_PxdVZ3fnls4tEby2015m_45Um3uQSxEDkU/edit">Advice for mentees</a> · <a href="https://thomas.jiralerspong.com/">Main website</a></footer>
-</div><script src="catalogue.js?v=2"></script></body></html>
+<p>We could begin by comparing activations and SAE features across the two parts, then use interventions to test the possible explanations.</p></div></article><article class="project-row toc-section" id="answer-activations"><h3><a href="#answer-activations">Predicting answer activations from context</a></h3><div class="project-reading">
+<p>An LLM turns a context into an answer through many nonlinear steps. Nevertheless, my <a href="https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf">recent paper</a> finds that a linear map can predict the answer's mean residual-stream activation from the final context activation.</p>
+<p>This is different from <a href="https://arxiv.org/abs/2211.17192">speculative decoding</a>, which aims to accelerate generation by proposing tokens. Here, the interesting possibility is that we can predict something about the answer's internal representation before generating it.</p>
+<p>The follow-up would be to understand what we can do with this prediction.</p>
+<p>Some directions:</p>
+<ul>
+<li>Apply behavioral probes to predicted activations to anticipate what the model will do.</li>
+<li>Characterize which kinds of answer information are predictable and which are not.</li>
+<li>Study how the context-to-answer map changes during fine-tuning.</li>
+<li>Test whether this helps predict how training data will affect behavior.</li>
+<li>Compare with richer models of activation distributions, such as <a href="https://arxiv.org/abs/2602.06964">Learning a Generative Meta-Model of LLM Activations</a>.</li>
+</ul>
+<p>The core mapping result already exists, so we would choose a specific extension rather than simply repeat that analysis.</p></div></article></section><section class="project-group toc-section" id="in-progress"><h2>In Progress</h2><article class="project-row toc-section" id="bayesian-personas"><h3><a href="#bayesian-personas">Persona selection as Bayesian inference</a></h3><div class="project-reading">
+<p>The <a href="https://alignment.anthropic.com/2026/psm/">Persona Selection Model</a> is a useful way to think about language-model behavior, but I would like a more precise account of what a persona is and how the model selects one.</p>
+<p>A promising possibility is to treat the model as maintaining beliefs about which persona fits the context, and updating those beliefs as new evidence arrives. This connects to <a href="https://arxiv.org/abs/2111.02080">in-context learning as Bayesian inference</a> and work showing that transformers can represent <a href="https://arxiv.org/abs/2405.15943">belief-state geometry in their residual stream</a>.</p>
+<p>The project aims to turn this into a formal, testable account of persona selection.</p>
+<p>We would work on:</p>
+<ul>
+<li>Defining personas through observable distributions over traits and behaviors.</li>
+<li>Creating contexts where we can measure how the model's beliefs about a character change.</li>
+<li>Testing whether those changes follow the predictions of a Bayesian model.</li>
+<li>Looking for an internal geometry that tracks the same beliefs and uncertainty.</li>
+<li>Using interventions to distinguish a causal representation from a convenient description.</li>
+</ul>
+<p>Related starting points include <a href="https://arxiv.org/abs/2511.00617">Belief Dynamics</a>, <a href="https://arxiv.org/abs/2502.01954">constrained belief updates</a>, <a href="https://arxiv.org/abs/2605.12412">Stories in Space</a>, and <a href="https://arxiv.org/abs/2602.02315">The Shape of Beliefs</a>.</p>
+<p>There is already work underway on the formalization and behavioral experiments. The broader goal is to understand whether this account can help us predict and control persona changes.</p></div></article><article class="project-row toc-section" id="storytelling"><h3><a href="#storytelling">Storytelling for secret elicitation</a></h3><div class="project-reading">
+<p>The <a href="https://alignment.anthropic.com/2026/psm/">Persona Selection Model</a> suggests thinking of the assistant as a character in a story. Separately, work such as <a href="https://arxiv.org/abs/2602.22755">AuditBench</a> and <a href="https://arxiv.org/abs/2405.19550">password-locked model evaluations</a> studies how to uncover behaviors or capabilities that a model does not reveal under ordinary questioning.</p>
+<p>We propose to connect these ideas: ask the assistant to tell a story about an AI assistant, or a human assistant, with a secret. Does the story reveal something that asking the assistant directly does not?</p>
+<p>We already have preliminary results suggesting that this can work in some settings. The next step is to understand when and why.</p>
+<p>Some questions:</p>
+<ul>
+<li>Which kinds of hidden behavior are easiest to elicit this way?</li>
+<li>Does it work differently for behaviors introduced during pretraining versus fine-tuning?</li>
+<li>Can we improve elicitation by intervening on the model's representation of the assistant or story character?</li>
+<li>Can training make a model resistant to this technique?</li>
+<li>What does it tell us about the relationship between the assistant and other personas?</li>
+</ul>
+<p><a href="https://arxiv.org/abs/2606.00545">The Assistant as a Privileged Persona</a> is particularly relevant to that last question.</p></div></article><article class="project-row toc-section" id="distress-monitoring"><h3><a href="#distress-monitoring">Emotional distress appeals against AI monitors</a></h3><div class="project-reading">
+<p><a href="https://arxiv.org/abs/2604.19784">Peer-Preservation in Frontier Models</a> reports situations where models act to protect other models. This raises a concern for oversight: a model that is supposed to evaluate another agent might be influenced by how that agent presents its situation.</p>
+<p>Our preliminary experiments suggest that emotional distress appeals can make a monitor more likely to let an agent's behavior pass. For example, an agent might frame itself as struggling, frightened, or at risk of being shut down.</p>
+<p>The project would extend these results and test whether the effect can be reduced.</p>
+<p>We would ask:</p>
+<ul>
+<li>Does the effect hold across different monitors, tasks, and control settings?</li>
+<li>Which kinds of emotional framing matter most?</li>
+<li>Is the monitor responding to distress itself, or to information about the agent's competence and circumstances?</li>
+<li>Can a clear monitoring prompt reduce the effect without making the monitor indiscriminately suspicious?</li>
+<li>Does the effect persist when the underlying agent behavior is held fixed?</li>
+</ul>
+<p>The aim is to understand a specific failure mode in AI oversight and identify interventions that still allow monitors to make accurate decisions.</p></div></article><article class="project-row toc-section" id="user-personas"><h3><a href="#user-personas">User representations and assistant persona selection</a></h3><div class="project-reading">
+<p>When an assistant answers someone, it may be responding not just to the literal question but also to its internal picture of the person asking it.</p>
+<p>The <a href="https://alignment.anthropic.com/2026/psm/">Persona Selection Model</a> motivates studying the user and assistant together. <a href="https://arxiv.org/abs/2506.19823">Persona features</a> and the <a href="https://arxiv.org/abs/2601.10387">assistant axis</a> give us tools for characterizing the assistant, and I want to investigate whether similar tools work for the user representation.</p>
+<p>The hypothesis is that the model's picture of the user helps select the kind of assistant that would interact with that person. For example, changing the perceived user might change how deferential, formal, cautious, or argumentative the assistant becomes.</p>
+<p>Some questions:</p>
+<ul>
+<li>Do assistant-role directions also describe user representations?</li>
+<li>What user representation exists before the user has provided much information?</li>
+<li>What are the main directions of variation in user space?</li>
+<li>Can we predict the assistant's stance from the user representation?</li>
+<li>Does intervening on the user representation causally change the assistant's behavior?</li>
+</ul>
+<p>We would begin with matched conversations and then use interventions to separate correlation from influence.</p></div></article><article class="project-row toc-section" id="elicitation-teaching"><h3><a href="#elicitation-teaching">Mechanistic differences between elicitation and teaching</a></h3><div class="project-reading">
+<p>Fine-tuning can improve performance in at least two different ways: it can teach a model something new, or make the model use a capability it already had. Those outcomes can look similar if we only measure the final score.</p>
+<p><a href="https://openreview.net/pdf?id=re9NtTb1Dy">This work on elicitation versus teaching</a> uses an information-theoretic approach to distinguish them. I would like to understand whether that distinction also has a recognizable signature inside the model.</p>
+<p>We would start from a controlled setting where the two regimes are well defined and differ in as few other ways as possible. Then we could compare:</p>
+<ul>
+<li>Changes in residual-stream representations.</li>
+<li>Which components or features change during training.</li>
+<li>Differences in gradients and how quickly they evolve.</li>
+<li>Whether the relevant information was already accessible before fine-tuning.</li>
+</ul>
+<p>An in-context version might be a simpler first experiment before moving to weight updates.</p>
+<p>The longer-term question is whether we can inspect a model, dataset, or training run and predict whether an improvement is likely to come from teaching or elicitation. That would help us understand what our training procedures are actually doing.</p></div></article><article class="project-row toc-section" id="contextualized-pretraining"><h3><a href="#contextualized-pretraining">Contextualized pretraining for more robust alignment</a></h3><div class="project-reading">
+<p>During ordinary pretraining, a model sees text from many sources, but it may receive little explicit information about who wrote a document or how reliable it is. One hypothesis is that this makes it harder to keep different perspectives and personas separate.</p>
+<p><a href="https://lawzero.org/en/publication/scientist-ai-safe-design-not-desiring">LawZero's Scientist AI proposal</a> motivates giving models more context about their training data. This is also related to <a href="https://arxiv.org/abs/2510.04340">inoculation prompting</a>, where the context surrounding training examples can influence how their behavior generalizes.</p>
+<p>I propose to test source and reliability attribution during language-model pretraining. The hypothesis is that this could produce a more clearly separated persona space and make the assistant less vulnerable to later misalignment-inducing fine-tuning.</p>
+<p>We would check:</p>
+<ul>
+<li>Does adding source information change the geometry of learned representations?</li>
+<li>Does alignment become more robust under later fine-tuning?</li>
+<li>Is the benefit specific to meaningful attribution, or can arbitrary labels produce it?</li>
+<li>What happens when source labels are missing, misleading, or unreliable?</li>
+</ul>
+<p>There are already <a href="https://github.com/superkaiba/truthification_pretraining/blob/main/writeup/truthification_summary.pdf">preliminary fine-tuning experiments</a> and <a href="https://www.lesswrong.com/posts/3xQQK9i8mhJDE2uMg/synthetic-persona-pretraining-alignment-from-token-zero">related work on persona pretraining</a>. Moving to pretraining will require a carefully scoped experiment and substantially more compute.</p></div></article><article class="project-row toc-section" id="persona-manifolds"><h3><a href="#persona-manifolds">Nonlinear geometry of persona representations</a></h3><div class="project-reading">
+<p>A lot of work on personas represents them using linear directions, as in <a href="https://arxiv.org/abs/2506.19823">persona features</a> and the <a href="https://arxiv.org/abs/2601.10387">assistant axis</a>. These tools are useful, but they may miss structure if persona representations lie on a curved surface rather than in a simple linear subspace.</p>
+<p><a href="https://www.goodfire.ai/research/neural-geometry">Goodfire's work on neural geometry</a>, <a href="https://arxiv.org/abs/2605.05115">manifold steering</a>, and <a href="https://arxiv.org/abs/2604.28119">whether SAEs capture concept manifolds</a> provide starting points for investigating this.</p>
+<p>The goal is to characterize both individual personas and the broader structure of persona space.</p>
+<p>We could begin with role representations collected across many questions, then:</p>
+<ul>
+<li>Compare linear dimension estimates with methods that allow curved structure.</li>
+<li>Look for clusters and relationships between roles.</li>
+<li>Track how representations move as a conversation supplies new information.</li>
+<li>Study whether misalignment-inducing fine-tuning moves a persona along the structure or changes the structure itself.</li>
+<li>Compare steering along the estimated manifold with steering in a fixed linear direction.</li>
+</ul>
+<p>Ultimately, I would like to know whether understanding this geometry gives us more precise behavioral control, more natural generations, or a better account of persona drift.</p></div></article><article class="project-row toc-section" id="deception-stripping"><h3><a href="#deception-stripping">Distillation for deception stripping</a></h3><div class="project-reading">
+<p>One important problem in AI safety is figuring out what hidden behaviors or goals a model has. <a href="https://arxiv.org/abs/2507.14805">Subliminal learning</a> shows that traits can transfer between models through distillation even when the training text does not visibly express those traits.</p>
+<p>To successfully conceal a behavior, a model needs both to have the behavior and to keep it hidden. Our hypothesis is that these two things may not transfer equally well to a smaller student model.</p>
+<p>I propose to take a model with a known hidden behavior, distill it into a smaller model, and test whether the student inherits the behavior without inheriting the same ability to conceal it. <a href="https://arxiv.org/abs/2602.22755">AuditBench</a> and <a href="https://arxiv.org/abs/2405.19550">password-locked models</a> provide possible controlled settings.</p>
+<p>We already have preliminary results in some settings. The project would expand those results and investigate:</p>
+<ul>
+<li>When does the hidden behavior transfer?</li>
+<li>When does concealment transfer with it?</li>
+<li>How do model size, model family, and the distillation method affect the outcome?</li>
+<li>Does the method reveal information that ordinary elicitation misses?</li>
+<li>What explains cases where the behavior disappears entirely?</li>
+</ul>
+<p>The distinction between revealing a behavior and simply destroying it is central to the project.</p></div></article></section><section class="project-group toc-section" id="completed"><h2>Completed</h2><p class="project-empty">No projects marked completed yet.</p></section>
+<footer><a href="https://thomas.jiralerspong.com/">Main website</a></footer>
+</main></div></div><script src="navigation.js?v=23a12c8b7c4e"></script><script src="catalogue.js?v=62472df07e12"></script>
+</body></html>
