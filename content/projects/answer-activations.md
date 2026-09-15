@@ -2,7 +2,7 @@
 id: "P21"
 title: "Predicting answer activations from context"
 area: "Representations"
-status: "Follow-up scope to confirm"
+status: "In progress"
 intake: "To confirm"
 status_checked: "2026-09-14"
 source_title: "Predicting answer activations from context"

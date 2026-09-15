@@ -2,7 +2,7 @@
 id: "P20"
 title: "Understanding the chain-of-thought persona"
 area: "Personas"
-status: "Not started / proposal"
+status: "In progress"
 intake: "To confirm"
 status_checked: "2026-09-14"
 source_title: "Understanding the CoT persona"
