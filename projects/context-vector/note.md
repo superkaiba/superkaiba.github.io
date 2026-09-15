@@ -1,16 +1,10 @@
 # What is stored in the final context activation?
 
-In my [newest paper](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf), we find that the final activation of a prompt contains information that can predict the mean activation of the answer. This makes that final context vector a useful place to investigate what the model has already determined before it starts generating.
+[In-context task vectors](https://arxiv.org/abs/2310.15916) and [Affine Anticipation](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf) suggest that a context activation can contain information about both the requested task and the answer the model is about to give. This makes it a useful place to ask what has already been decided before generation begins.
 
-The goal of this project would be to understand **what is stored there**. Does it mostly summarize the prompt, or does it also encode the likely answer, the user, the assistant's stance, and other high-level properties?
+It would be useful to separate prompt information, task information and prospective answer information, and understand what additional computation creates each of them. Being able to read something out does not establish that the model uses it.
 
-[In-Context Learning Creates Task Vectors](https://arxiv.org/abs/2310.15916) finds compact representations of the task induced by demonstrations. [Emergent Response Planning in LLMs](https://arxiv.org/abs/2502.06258) and [ParaScopes](https://arxiv.org/abs/2511.00180) provide evidence about information concerning future responses in hidden states. Together, these suggest several kinds of information to separate with carefully matched prompts and answers.
-
-Some questions:
-
-- Can we recover facts from the prompt, the intended task, and the likely behavior of the answer separately?
-- Which information depends on the final user query versus earlier conversation?
-- How much changes when we vary the system prompt or persona?
-- If we intervene on a decodable direction, does the answer change in the expected way?
-
-The distinction between information we can read out and information the model actually uses would be an important part of the project.
+- Apply a logit lens to individual, mean-pooled and max-pooled activations, tracking how readouts change across layers.
+- Use matched prompts to separate facts, task identity, user information and intended behavior.
+- Measure what information each additional layer or token contributes, then test its role with interventions.
+- Track how the final context vector changes over a conversation, including changes that precede a shift in behavior.

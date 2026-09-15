@@ -1,9 +1,7 @@
 # Affine Anticipation
 
-How much of an LLM's answer representation can we predict before the model generates the answer? Although generating an answer involves many nonlinear steps, the context may already contain a surprisingly direct signal about the answer's internal representation.
+Generating an answer involves many nonlinear steps, but how much of its internal representation is already determined by the context? [Future Lens](https://arxiv.org/abs/2311.04897) studies anticipation of subsequent tokens; our work asks about a representation summarizing an entire answer.
 
-In [Affine Anticipation: LLM Answer Representations Are Largely Linearly Predictable from Context](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf), we study the relationship between the final context-token activation and the mean activation across the answer. We find that this relationship is largely linear, and that predicted activations can help forecast sycophancy, hallucination, and harmful compliance.
+In [Affine Anticipation: LLM Answer Representations Are Largely Linearly Predictable from Context](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf), we find that a linear map from the final context activation predicts much of the mean answer activation. These forecasts can support behavioral readouts before generation.
 
-This connects to [Future Lens](https://arxiv.org/abs/2311.04897), which anticipates subsequent tokens from a hidden state, and [ParaScopes](https://arxiv.org/abs/2511.00180), which studies information about future text in model activations. Our target is the model's own mean answer representation, allowing us to apply answer-space behavioral readouts before generating the answer.
-
-The paper is the starting point for [Predicting answer activations from context](#answer-activations) and the separate [Follow-ups to Affine Anticipation](#affine-anticipation-followups) project.
+The completed paper is the starting point for [predicting answer activations](#answer-activations), [studying fine-tuning changes](#affine-anticipation-followups) and [forecasting conversation dynamics](#conversation-dynamics).

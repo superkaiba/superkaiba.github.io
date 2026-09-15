@@ -1,27 +1,17 @@
 ---
-id: "P20"
-title: "Understanding the chain-of-thought persona"
-area: "Personas"
-status: "In progress"
-intake: "To confirm"
-status_checked: "2026-09-14"
-source_title: "Understanding the CoT persona"
+title: Understanding the chain-of-thought persona
+category: reasoning
+status: In progress
+order: 1
 ---
 
 # Understanding the chain-of-thought persona
 
-The [Persona Selection Model](https://alignment.anthropic.com/2026/psm/) proposes that pretraining gives a model a repertoire of personas and post-training shapes an assistant persona. I am interested in where the model's chain-of-thought fits into that picture.
+[Reasoning Models Generate Societies of Thought](https://arxiv.org/abs/2601.10825) and [Internal Polylogue](https://arxiv.org/abs/2605.09159) motivate treating reasoning as potentially involving several perspectives. [Persona Features Control Emergent Misalignment](https://arxiv.org/abs/2506.19823) provides tools for connecting those perspectives to behavioral traits.
 
-The reasoning text often sounds different from the final answer. It may discuss what the assistant should say, question an approach, or consider several perspectives. [Reasoning Models Generate Societies of Thought](https://arxiv.org/abs/2601.10825) is relevant to the possibility that some reasoning involves multiple simulated perspectives. [Persona Features Control Emergent Misalignment](https://arxiv.org/abs/2506.19823) provides another starting point for relating behavioral traits to internal features.
+It would be useful to understand whose perspective the model represents during reasoning, how it relates to the final-answer assistant, and whether discussing a persona differs mechanistically from adopting it. This project is in progress.
 
-[Do LLMs Experience an Internal Polylogue?](https://arxiv.org/abs/2605.09159) already tracks persona directions during reasoning and tests interventions at different stages. I propose to build on this by studying the relationship between the reasoning persona and the final-answer assistant more directly, especially which perspective is represented as the model's own.
-
-Some questions:
-
-- Are the same persona features active in the reasoning and the answer?
-- Does the reasoning represent the assistant as “me,” or as a character whose response it is predicting?
-- What happens to reasoning when we steer the assistant's persona?
-- Is apparent disagreement between perspectives reflected in the model's activations?
-- Does misalignment-inducing fine-tuning affect reasoning and answers in the same way?
-
-We could begin by comparing activations and SAE features across the two parts, then use interventions to test the possible explanations.
+- Compare persona features in chain-of-thought and final answers, including which entity is represented as “I.”
+- Contrast considering, rejecting and enacting the same persona under matched wording.
+- Detect where persona shifts occur during a reasoning trajectory and test whether they predict the answer.
+- Compare the effects of misalignment-inducing fine-tuning on reasoning and final responses, then use interventions to test the relationship.

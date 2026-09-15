@@ -1,27 +1,17 @@
 ---
-id: "P13"
-title: "Safety implications of looped transformers"
-area: "Architectures"
-status: "Not started / proposal"
-intake: "To confirm"
-status_checked: "2026-09-14"
-source_title: "Interp on looped transformers + looped transformers’ implications for safety"
+title: Safety implications of looped transformers
+category: reasoning
+status: Not started
+order: 3
 ---
 
 # Safety implications of looped transformers
 
-Looped transformers reuse a set of layers over multiple computation steps. [Reasoning with Latent Thoughts](https://arxiv.org/abs/2502.17416) shows how this can support reasoning with additional internal computation. As more reasoning happens in hidden states, we need to understand what this changes about monitoring and controlling a model.
+[Reasoning with Latent Thoughts](https://arxiv.org/abs/2502.17416) studies models that spend additional computation in hidden states. [A Mechanistic Analysis of Looped Reasoning Language Models](https://arxiv.org/abs/2604.11791) examines recurrent dynamics and stages of computation. These architectures make it possible to increase reasoning without producing an equally long textual trace.
 
-[A Mechanistic Analysis of Looped Reasoning Language Models](https://arxiv.org/abs/2604.11791) already studies recurrent dynamics, convergence, and stages of computation. [Latent Chain-of-Thought?](https://arxiv.org/abs/2507.02199) also investigates what can be decoded from intermediate states. I want to build on these results to study the **safety implications** of the architecture.
+It seems important to understand which monitoring and intervention assumptions survive this change. A monitor may stop generalizing when the loop budget changes, or a later iteration may undo an earlier safety intervention.
 
-For example, a safety intervention might work at one iteration and then be undone by later computation. A monitor trained at one loop depth might become unreliable when we give the model more compute. And if the reasoning is internal, a monitor that depends on a readable chain-of-thought may lose access to useful evidence.
-
-We would use open looped models and controlled tasks to ask:
-
-- Does increasing the loop budget change harmful behavior or the reliability of safety monitors?
-- Do later iterations preserve, weaken, or undo a safety intervention?
-- When is a one-time intervention sufficient, and when is repeated intervention needed?
-- Can an internal monitor transfer across loop counts, tasks, and stages of computation?
-- Can we recognize an unsafe trajectory early enough to stop or redirect it while preserving useful task performance?
-
-Interpretability tools would help explain these outcomes. The main goal is to identify which safety assumptions continue to hold when models reason through repeated internal computation.
+- Measure harmful behavior and monitor reliability across loop counts at matched tasks.
+- Test whether later computation preserves, weakens or reverses an intervention.
+- Compare one-time interventions with interventions repeated during the loop.
+- Test monitor transfer across tasks and computation stages, and whether unsafe trajectories can be recognized early enough to redirect them.

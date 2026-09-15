@@ -1,16 +1,10 @@
 # How synthetic and real training data change representations
 
-A lot of model training now uses synthetic data, but matching a model's outputs does not necessarily mean that we are preserving the same internal representations. I am interested in what changes inside a model when we replace human-written data with model-generated data.
+Work on [model collapse](https://arxiv.org/abs/2305.17493) and [retaining real data during repeated training](https://arxiv.org/abs/2404.01413) shows that the source and reuse of training data can affect performance. [Demystifying Synthetic Data in LLM Pre-training](https://aclanthology.org/2025.emnlp-main.544/) provides further baselines for comparing synthetic-data settings.
 
-There is already work on [model collapse under repeated training on generated data](https://arxiv.org/abs/2305.17493), as well as evidence that [retaining and accumulating real data can change that outcome](https://arxiv.org/abs/2404.01413). I would like to study these differences at the level of representations, rather than only looking at final task performance.
+It would be useful to understand these differences inside the model: which representations change when human-written data is replaced by generated text, and which of those changes matter for behavior?
 
-[Demystifying Synthetic Data in LLM Pre-training](https://aclanthology.org/2025.emnlp-main.544/) already compares benefits and pitfalls across synthetic-data training settings. [How to Synthesize Text Data without Model Collapse?](https://arxiv.org/abs/2412.14689) provides a further baseline for preserving useful information in generated data. These suggest studying how the data-generation method changes representations, alongside the proportion of synthetic text.
-
-We would train comparable models on real data, synthetic data, and mixtures of both, keeping the task and training budget as similar as possible.
-
-We would then look at:
-
-- Which concepts or behavioral directions become stronger, weaker, or less diverse?
-- Does synthetic training change how the model represents people, roles, or its own outputs?
-- Do internal changes predict failures on held-out real data?
-- Does adding real data back recover the original representations?
+- Train comparable models on real data, synthetic data and mixtures while matching task and training budget.
+- Compare feature diversity, behavioral directions and representations of people or conversational roles.
+- Test whether internal changes predict failures on held-out real data.
+- Add real data back and examine which representational and behavioral changes recover.

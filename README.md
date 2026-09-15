@@ -23,9 +23,11 @@ Use descriptive, visibly underlined links. Sidebar headings are stronger than na
 
 ### Project catalogue
 
-The permanent URL is https://thomas.jiralerspong.com/projects/. All proposals appear directly on that page, with a scrolling table of contents matching the main site's navigation. The sections are ordered Not Started, In Progress, Completed. Individual projects have stable links based on their filenames, such as https://thomas.jiralerspong.com/projects/#self-reflection.
+The permanent URL is https://thomas.jiralerspong.com/projects/. All proposals appear directly on that page, grouped by research topic, with a scrolling table of contents matching the main site's navigation. Each project displays its status; within each topic, Not started projects precede In progress projects. Completed work appears in the final section. Individual projects have stable links based on their filenames, such as https://thomas.jiralerspong.com/projects/#self-reflection.
 
-Edit the Markdown files in `content/projects/` to change proposals or statuses. Keep filenames stable to preserve shared links. Add a new Markdown file with `title` and `status` in its YAML frontmatter; the existing `id` field only controls ordering and is not displayed. Statuses beginning with `Not started` or `Follow-up` appear under Not Started; `In progress` appears under In Progress; `Completed` or `Done` appears under Completed. Unknown statuses fail the build rather than silently hiding a project.
+Edit the Markdown files in `content/projects/` to change proposals or statuses. Keep filenames stable to preserve shared links. New files need `title`, `category`, `status`, and `order` in their YAML frontmatter. Supported statuses are exactly `Not started`, `In progress`, and `Completed`. Categories are `context-prediction`, `representations`, `personas`, `reasoning`, `safety`, `training`, `agents`, and `completed`; their displayed labels and section order are defined in the builder. The numeric `order` controls ordering within a topic and status. Unknown statuses or categories fail the build rather than silently hiding a project.
+
+Proposals should briefly explain relevant prior work with inline links, explain what would be useful to investigate, and list initial directions as bullets. An optional `aliases` list preserves older project names as both hash anchors and redirect pages when proposals are combined. Completed papers can use a retrospective summary and link to their follow-ups.
 
 Rebuild locally with:
 

@@ -1,16 +1,10 @@
 # Mapping context SAE features to answer SAE features
 
-My [recent context-to-answer work](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf) finds that a simple map can predict aspects of the answer's activations from the final context activation. This is useful, but a prediction in the residual stream can still be difficult to interpret.
+Our [context-to-answer work](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf) predicts answer activations, but a residual-stream prediction can still be difficult to interpret. [Transcoders](https://arxiv.org/abs/2406.11944) offer a way to express relationships through sparse features, while work on [Turn-Averaged SAEs](https://arxiv.org/abs/2606.28548) motivates treating an entire response as a unit of analysis.
 
-Sparse autoencoders (SAEs) try to express activations in terms of a larger set of features. I propose to investigate whether we can map **context features to answer features**, so that a prediction tells us something more understandable about what the model is likely to do.
+It would be useful to predict understandable answer features directly from context features. We should also determine whether an apparent prediction failure belongs to the language model or to the feature representation used to describe it.
 
-[Transcoders](https://arxiv.org/abs/2406.11944) and [crosscoders](https://transformer-circuits.pub/2024/crosscoders/index.html) provide ways to learn relationships between sparse representations. Here, the target would be features of a future answer. [Turn-Averaged SAEs](https://arxiv.org/abs/2606.28548) is especially relevant because encoding an average activation can behave differently from averaging features encoded one token at a time.
-
-We would begin with paired context and answer activations and compare these choices of answer representation. Then we would compare a direct feature-to-feature map against mapping in the residual stream first, using only the context when making predictions.
-
-We would then check:
-
-- Which answer features are predictable before generation starts?
-- Are persona and behavioral features easier to predict than details of the answer?
-- Does the feature-space map make the relationship easier to explain?
-- Do apparent prediction failures come from the model, or from the SAE representation?
+- Compare averaging token-level SAE features with encoding the mean answer activation.
+- Fit linear maps, nonlinear maps and transcoder-style predictors from context features to answer features.
+- Compare direct feature prediction with predicting residual-stream activations first and then encoding them.
+- Identify which persistent behavioral features and rare answer features can be anticipated before generation.

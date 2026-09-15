@@ -1,18 +1,10 @@
 # Contextualized pretraining for more robust alignment
 
-During ordinary pretraining, a model sees text from many sources, but it may receive little explicit information about who wrote a document or how reliable it is. One hypothesis is that this makes it harder to keep different perspectives and personas separate.
+[Source-reliability learning](https://arxiv.org/abs/2310.15047) and [inoculation prompting](https://arxiv.org/abs/2510.04340) suggest that the context surrounding training examples can affect how their information generalizes. The [Scientist AI proposal](https://lawzero.org/en/publication/scientist-ai-safe-design-not-desiring) also motivates giving models explicit information about the provenance and reliability of what they read.
 
-[LawZero's Scientist AI proposal](https://lawzero.org/en/publication/scientist-ai-safe-design-not-desiring) motivates giving models more context about their training data. This is also related to [inoculation prompting](https://arxiv.org/abs/2510.04340), where the context surrounding training examples can influence how their behavior generalizes.
+It would be useful to test whether source attribution during pretraining creates better-separated representations and more robust behavior under later fine-tuning. Our preliminary attribution experiments provide a starting point; the pretraining extension needs a carefully chosen scale.
 
-[Implicit meta-learning may lead language models to trust more reliable sources](https://arxiv.org/abs/2310.15047) already connects source reliability during training to later learning. [Synthetic Persona Pretraining](https://arxiv.org/abs/2608.13482) studies installing personas early in training. These make reliability attribution and early persona formation useful baselines for the project.
-
-I propose to test source and reliability attribution during language-model pretraining. The hypothesis is that this could produce a more clearly separated persona space and make the assistant less vulnerable to later misalignment-inducing fine-tuning.
-
-We would check:
-
-- Does adding source information change the geometry of learned representations?
-- Does alignment become more robust under later fine-tuning?
-- Is the benefit specific to meaningful attribution, or can arbitrary labels produce it?
-- What happens when source labels are missing, misleading, or unreliable?
-
-My [preliminary fine-tuning experiments](https://github.com/superkaiba/truthification_pretraining/blob/main/writeup/truthification_summary.pdf) provide an initial setting for testing attribution. Moving to pretraining will require a carefully scoped experiment and substantially more compute.
+- Compare meaningful source and reliability labels with arbitrary labels and unlabeled data.
+- Measure how attribution changes persona, source and belief representations.
+- Apply matched later fine-tuning and test whether alignment is more robust.
+- Evaluate missing, misleading and unreliable source labels to identify what the model actually learns to trust.

@@ -1,6 +1,6 @@
 
 .project-layout{grid-template-columns:230px minmax(0,1fr);gap:48px}
-.project-layout>.contents{position:sticky;top:32px;max-height:calc(100dvh - 64px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding-right:10px}
+.project-layout>.contents{--sidebar-offset:32px;position:sticky;top:var(--sidebar-sticky-top,32px);max-height:none;overflow:visible;padding-right:10px}
 .project-sidebar-heading{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:28px}
 .project-sidebar-heading>a{font-size:13px;text-decoration:none}
 .project-layout .contents #theme-toggle{margin:0;flex-shrink:0}
@@ -16,7 +16,9 @@
 .project-group:first-of-type{margin-top:0}
 .project-group>h2{font-size:25px;margin:0 0 18px}
 .project-row{padding:28px 0;border-top:1px solid var(--line);scroll-margin-top:28px}
-.project-row h3{font-size:21px;line-height:1.45;margin:0 0 18px}
+.project-row h3{font-size:21px;line-height:1.45;margin:0 0 6px}
+.project-status{font-size:13px;color:var(--muted);margin:0 0 18px}
+.project-alias{display:block;height:0;scroll-margin-top:28px}
 .project-row h3 a{text-decoration:none}
 .project-row h3 a:hover{text-decoration:underline}
 .project-reading p{font-size:16px;line-height:1.8;margin:16px 0}
@@ -27,7 +29,7 @@
 .project-catalogue footer{display:block;margin-top:44px}
 @media(min-width:541px) and (max-width:900px){
  .project-layout{grid-template-columns:180px minmax(0,1fr);gap:28px}
- .project-layout>.contents{top:24px;max-height:calc(100dvh - 48px)}
+ .project-layout>.contents{--sidebar-offset:24px}
  .project-sidebar-heading{display:block}
  .project-sidebar-heading>a{display:block;margin-bottom:10px}
 }
@@ -39,13 +41,13 @@
  .project-layout .current-section{max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
  .project-layout .sidebar-panel{display:block}
  .has-js .project-layout .sidebar-panel{display:none}
- .has-js .project-layout .contents[data-expanded="true"]{position:sticky}
- .has-js .project-layout .contents[data-expanded="true"] .sidebar-panel{display:block;max-height:calc(100dvh - 150px);overflow-y:auto;padding:16px 0 8px}
+ .has-js .project-layout .contents[data-expanded="true"]{position:relative}
+ .has-js .project-layout .contents[data-expanded="true"] .sidebar-panel{display:block;max-height:none;overflow:visible;padding:16px 0 8px}
  .project-layout .contents nav{max-height:none;overflow:visible}
  .project-layout .contents .toc-subsections .toc-child>a{min-height:40px;padding-top:10px;padding-bottom:10px}
  .project-catalogue h1{font-size:28px;margin-bottom:30px}
  .project-group>h2{font-size:23px}
  .project-row h3{font-size:20px}
- .project-row,.project-group{scroll-margin-top:126px}
+ .project-row,.project-group,.project-alias{scroll-margin-top:126px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

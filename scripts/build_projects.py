@@ -14,11 +14,21 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "projects"
 DEST = ROOT / "projects"
 HOME_URL = "https://thomas.jiralerspong.com/"
-GROUPS = [("Not Started", "not-started"), ("In Progress", "in-progress"), ("Completed", "completed")]
+GROUPS = [
+    ("Context and prediction", "context-prediction"),
+    ("Representations and interpretability", "representations"),
+    ("Personas and cognition", "personas"),
+    ("Reasoning and architectures", "reasoning"),
+    ("Safety and evaluation", "safety"),
+    ("Training and adaptation", "training"),
+    ("Multi-agent systems", "agents"),
+    ("Completed", "completed"),
+]
+STATUSES = {"Not started": 0, "In progress": 1, "Completed": 2}
 
 CSS = """
 .project-layout{grid-template-columns:230px minmax(0,1fr);gap:48px}
-.project-layout>.contents{position:sticky;top:32px;max-height:calc(100dvh - 64px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding-right:10px}
+.project-layout>.contents{--sidebar-offset:32px;position:sticky;top:var(--sidebar-sticky-top,32px);max-height:none;overflow:visible;padding-right:10px}
 .project-sidebar-heading{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:28px}
 .project-sidebar-heading>a{font-size:13px;text-decoration:none}
 .project-layout .contents #theme-toggle{margin:0;flex-shrink:0}
@@ -34,7 +44,9 @@ CSS = """
 .project-group:first-of-type{margin-top:0}
 .project-group>h2{font-size:25px;margin:0 0 18px}
 .project-row{padding:28px 0;border-top:1px solid var(--line);scroll-margin-top:28px}
-.project-row h3{font-size:21px;line-height:1.45;margin:0 0 18px}
+.project-row h3{font-size:21px;line-height:1.45;margin:0 0 6px}
+.project-status{font-size:13px;color:var(--muted);margin:0 0 18px}
+.project-alias{display:block;height:0;scroll-margin-top:28px}
 .project-row h3 a{text-decoration:none}
 .project-row h3 a:hover{text-decoration:underline}
 .project-reading p{font-size:16px;line-height:1.8;margin:16px 0}
@@ -45,7 +57,7 @@ CSS = """
 .project-catalogue footer{display:block;margin-top:44px}
 @media(min-width:541px) and (max-width:900px){
  .project-layout{grid-template-columns:180px minmax(0,1fr);gap:28px}
- .project-layout>.contents{top:24px;max-height:calc(100dvh - 48px)}
+ .project-layout>.contents{--sidebar-offset:24px}
  .project-sidebar-heading{display:block}
  .project-sidebar-heading>a{display:block;margin-bottom:10px}
 }
@@ -57,45 +69,17 @@ CSS = """
  .project-layout .current-section{max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
  .project-layout .sidebar-panel{display:block}
  .has-js .project-layout .sidebar-panel{display:none}
- .has-js .project-layout .contents[data-expanded="true"]{position:sticky}
- .has-js .project-layout .contents[data-expanded="true"] .sidebar-panel{display:block;max-height:calc(100dvh - 150px);overflow-y:auto;padding:16px 0 8px}
+ .has-js .project-layout .contents[data-expanded="true"]{position:relative}
+ .has-js .project-layout .contents[data-expanded="true"] .sidebar-panel{display:block;max-height:none;overflow:visible;padding:16px 0 8px}
  .project-layout .contents nav{max-height:none;overflow:visible}
  .project-layout .contents .toc-subsections .toc-child>a{min-height:40px;padding-top:10px;padding-bottom:10px}
  .project-catalogue h1{font-size:28px;margin-bottom:30px}
  .project-group>h2{font-size:23px}
  .project-row h3{font-size:20px}
- .project-row,.project-group{scroll-margin-top:126px}
+ .project-row,.project-group,.project-alias{scroll-margin-top:126px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 """
-
-JS = """
-// Keep the active entry visible within the long desktop table of contents.
-const projectContents = document.querySelector('.project-layout > .contents');
-const projectNav = projectContents?.querySelector('nav');
-function keepCurrentProjectVisible(){
- if(!projectContents || innerWidth <= 540) return;
- const current = projectNav.querySelector('[aria-current="location"]');
- if(!current) return;
- const outer = projectContents.getBoundingClientRect();
- const entry = current.getBoundingClientRect();
- if(entry.top < outer.top + 20) projectContents.scrollTop += entry.top - outer.top - 20;
- else if(entry.bottom > outer.bottom - 20) projectContents.scrollTop += entry.bottom - outer.bottom + 20;
-}
-if(projectNav){
- new MutationObserver(keepCurrentProjectVisible).observe(projectNav,{subtree:true,attributes:true,attributeFilter:['aria-current']});
-}
-"""
-
-def group_for(status):
-    status = status.lower()
-    if status.startswith(("not started", "follow-up")):
-        return "not-started"
-    if status.startswith("in progress"):
-        return "in-progress"
-    if status.startswith(("completed", "done")):
-        return "completed"
-    raise ValueError(f"Unsupported project status: {status!r}")
 
 def theme_button():
     return '''<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button>'''
@@ -113,12 +97,12 @@ def render_page(body, toc, versions):
 <div class="page-layout project-layout">
 <aside class="contents">
 <div class="project-sidebar-heading"><a href="{HOME_URL}">Thomas Jiralerspong</a>{theme_button()}</div>
-<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Not Started</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Context and prediction</span><span class="contents-indicator" aria-hidden="true">+</span></button>
 <div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol>{toc}</ol></nav></div>
 </aside><div class="site-wrap"><main class="project-catalogue" id="main">
 <h1>Research projects</h1>{body}
 <footer><a href="{HOME_URL}">Main website</a></footer>
-</main></div></div><script src="navigation.js?v={versions['navigation.js']}"></script><script src="catalogue.js?v={versions['catalogue.js']}"></script>
+</main></div></div><script src="navigation.js?v={versions['navigation.js']}"></script>
 </body></html>'''
 
 def main():
@@ -128,23 +112,36 @@ def main():
         meta = yaml.safe_load(front)
         rendered = markdown.markdown(body, extensions=["sane_lists"])
         rendered = re.sub(r"<h1>.*?</h1>", "", rendered, count=1, flags=re.S)
-        meta.update(slug=path.stem, rendered=rendered, body=body, group=group_for(meta["status"]))
+        if meta["status"] not in STATUSES:
+            raise ValueError(f"Unsupported status in {path.name}: {meta['status']!r}")
+        if meta["category"] not in {key for _, key in GROUPS}:
+            raise ValueError(f"Unsupported category in {path.name}: {meta['category']!r}")
+        meta.update(slug=path.stem, rendered=rendered, body=body)
         projects.append(meta)
-    projects.sort(key=lambda p:(p.get("id", "zz"), p["title"].lower()))
+    projects.sort(key=lambda p:(STATUSES[p["status"]], p.get("order", 999), p["title"].lower()))
+    # Validate all public anchors before writing files, including historical names.
+    anchors = {key for _, key in GROUPS} | {"main", "not-started", "in-progress"}
+    for p in projects:
+        for slug in [p["slug"], *p.get("aliases", [])]:
+            if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug) or slug in anchors:
+                raise ValueError(f"Invalid or duplicate project anchor: {slug!r}")
+            anchors.add(slug)
     DEST.mkdir(parents=True, exist_ok=True)
     assets = {
         "base.css": (ROOT / "css/style.css").read_text(),
         "navigation.js": (ROOT / "js/script.js").read_text(),
         "catalogue.css": CSS,
-        "catalogue.js": JS,
     }
     versions = {}
     for name, content in assets.items():
         (DEST / name).write_text(content)
         versions[name] = sha256(content.encode()).hexdigest()[:12]
+    # Navigation now uses the same page-scrolling sidebar as the main website.
+    (DEST / "catalogue.js").unlink(missing_ok=True)
     body, toc = "", ""
+    legacy_statuses = {"Not started": "not-started", "In progress": "in-progress"}
     for title, key in GROUPS:
-        rows = [p for p in projects if p["group"] == key]
+        rows = [p for p in projects if p["category"] == key]
         body += f'<section class="project-group toc-section" id="{key}"><h2>{title}</h2>'
         toc += f'<li class="toc-parent"><a href="#{key}" data-section="{key}">{title}</a>'
         if rows:
@@ -154,11 +151,16 @@ def main():
         for p in rows:
             slug, name = p["slug"], escape(p["title"])
             toc += f'<li class="toc-child"><a href="#{slug}" data-section="{slug}">{name}</a></li>'
-            body += f'<article class="project-row toc-section" id="{slug}"><h3><a href="#{slug}">{name}</a></h3><div class="project-reading">{p["rendered"]}</div></article>'
-            target = DEST / slug
-            target.mkdir(exist_ok=True)
-            (target / "index.html").write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=../#{slug}"><title>{name} · Thomas Jiralerspong</title><link rel="canonical" href="{HOME_URL}projects/"></head><body><p><a href="../#{slug}">{name}</a></p></body></html>\n')
-            (target / "note.md").write_text(p["body"].strip() + "\n")
+            aliases = list(p.get("aliases", []))
+            if p["status"] in legacy_statuses:
+                aliases.append(legacy_statuses.pop(p["status"]))
+            alias_html = ''.join(f'<span class="project-alias" id="{alias}" aria-hidden="true"></span>' for alias in aliases)
+            body += f'<article class="project-row toc-section" id="{slug}">{alias_html}<h3><a href="#{slug}">{name}</a></h3><p class="project-status">{escape(p["status"])}</p><div class="project-reading">{p["rendered"]}</div></article>'
+            for path_slug in [slug, *p.get("aliases", [])]:
+                target = DEST / path_slug
+                target.mkdir(exist_ok=True)
+                (target / "index.html").write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=../#{slug}"><title>{name} · Thomas Jiralerspong</title><link rel="canonical" href="{HOME_URL}projects/"></head><body><p><a href="../#{slug}">{name}</a></p></body></html>\n')
+                (target / "note.md").write_text(p["body"].strip() + "\n")
         body += "</section>"
         if rows:
             toc += "</ol>"

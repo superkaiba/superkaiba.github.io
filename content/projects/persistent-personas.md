@@ -1,24 +1,17 @@
 ---
-id: "P16"
-title: "Personas as persistent features"
-area: "Personas"
-status: "Not started / proposal"
-intake: "To confirm"
-status_checked: "2026-09-14"
-source_title: "Personas/behavioral traits as persistent features"
+title: Personas as persistent features
+category: personas
+status: Not started
+order: 2
 ---
 
 # Personas as persistent features
 
-There has been a lot of work on [persona features](https://arxiv.org/abs/2506.19823) and the [assistant axis](https://arxiv.org/abs/2601.10387), but I still think there is a basic question about what makes something a persona rather than an ordinary feature.
+[Persona features](https://arxiv.org/abs/2506.19823) provide directions associated with broad behavioral traits. Work on [Persistent Sparse Autoencoders](https://arxiv.org/abs/2607.17117) explicitly learns feature timescales, making it possible to ask whether persistence distinguishes persona information from ordinary content.
 
-Intuitively, a persona should persist. If a model is answering in a particular character or style, we do not expect it to abruptly switch halfway through a sentence. This suggests that persistence across tokens might help identify high-level behavioral features.
+It seems important to understand why some behavioral traits remain stable across an answer or conversation while others change quickly. A persistent feature could reflect a persona, but it could also reflect an unchanged topic or repeated wording.
 
-[Persistent Sparse Autoencoders](https://arxiv.org/abs/2607.17117) already learns feature-specific timescales. This gives us a direct method to build on: are persona features unusually persistent, and does their persistence predict how long a behavioral change lasts? We would compare that method with simpler measures of how long ordinary SAE features stay active.
-
-I propose to look at this in two ways:
-
-- Find SAE features that remain active over many tokens, and test whether they are especially associated with personas or behavioral traits.
-- Fit a linear map from one token's activation to the next, then inspect directions that the map tends to preserve.
-
-We would want to distinguish persona persistence from simpler explanations, such as the answer staying on the same topic. A further question is whether reinforcing or disrupting these persistent directions changes persona stability over a long conversation.
+- Compare the persistence of persona, topic and local syntactic features on matched conversations.
+- Measure stability across prompt tokens, answer tokens and successive turns, including evidence that should change the persona.
+- Compare persistent SAE features with directions preserved by token-to-token activation maps.
+- Strengthen or disrupt candidate directions and test their effect on behavioral stability over a conversation.

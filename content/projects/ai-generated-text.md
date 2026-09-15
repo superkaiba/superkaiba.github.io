@@ -1,26 +1,17 @@
 ---
-id: "P06"
-title: "Do models represent whether text is AI-generated?"
-area: "Representations"
-status: "Not started / seed"
-intake: "To confirm"
-status_checked: "2026-09-14"
-source_title: "Do models represent if text is AI generated?"
+title: Do models represent whether text is AI-generated?
+category: personas
+status: Not started
+order: 6
 ---
 
 # Do models represent whether text is AI-generated?
 
-Humans sometimes recognize a piece of writing as “AI-generated,” even when they cannot point to one specific phrase that gives it away. I wonder whether language models also represent this distinction internally.
+Research on [representation-based detection of generated text](https://arxiv.org/abs/2306.04723) suggests that authorship can leave internal signals. [LLM Evaluators Recognize and Favor Their Own Generations](https://arxiv.org/abs/2404.13076) also raises the possibility that perceived authorship changes how a model judges a passage.
 
-[Intrinsic Dimension Estimation for Robust Detection of AI-Generated Texts](https://arxiv.org/abs/2306.04723) uses representation geometry to detect generated text. Separately, [LLM Evaluators Recognize and Favor Their Own Generations](https://arxiv.org/abs/2404.13076) and [The human-authorship halo](https://arxiv.org/abs/2510.08831) show why perceived authorship can matter for evaluation.
+It would be useful to distinguish recognizing a writing style from representing who produced the text, and to test whether that representation changes trust or evaluation behavior. Perceived AI authorship might also contribute to awareness that an interaction is an evaluation.
 
-I want to connect these observations: can we find an internal representation of the perceived author, and does changing that representation change how the model evaluates or trusts the text?
-
-We would compare human-written and model-generated passages while matching topic, length, and formatting as closely as possible. We could also tell the model that a passage was written by a human or an AI and see whether that changes the representation.
-
-Some questions:
-
-- Can a probe generalize to text from model families it has never seen?
-- Is it detecting authorship, or just a style common in the training examples?
-- Does believing that text is AI-generated change how much the model trusts it?
-- What happens when the actual source and the stated source disagree?
+- Compare human and model text while matching topic, length and format.
+- Cross actual authorship with labels claiming that the text came from a human or an AI.
+- Test transfer to unseen model families and interventions on candidate authorship directions.
+- Measure whether authorship cues change judgments, trust or evaluation awareness independently of text quality.

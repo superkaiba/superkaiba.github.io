@@ -1,16 +1,10 @@
 # First-person and third-person identity in prompts
 
-When we give a model a role, we can say “you are a programmer,” “the assistant is a programmer,” or “AIs are programmers.” These sound similar, but they do not quite refer to the same thing.
+“You are a programmer,” “the assistant is a programmer” and “AIs are programmers” describe similar traits but attach them to different entities. Work on [entity binding](https://arxiv.org/abs/2310.17191) studies how language models connect attributes to the correct entity, while [the assistant as a privileged persona](https://arxiv.org/abs/2606.00545) motivates examining the assistant's special role.
 
-The [Persona Selection Model](https://alignment.anthropic.com/2026/psm/) motivates asking how a role becomes associated with the assistant. Work on [the assistant as a privileged persona](https://arxiv.org/abs/2606.00545) is also relevant to how models distinguish themselves from other characters.
+It would be useful to understand which descriptions become statements about the model's own behavior and which remain information about another character. This could clarify why seemingly small changes in role prompts have different effects.
 
-[How do Language Models Bind Entities in Context?](https://arxiv.org/abs/2310.17191) studies how models attach attributes to the right entity. That gives us a mechanistic starting point for asking whether a trait is bound to the assistant, the user, or a third-person character.
-
-I propose to compare first-person, second-person, and third-person descriptions while keeping the role and task fixed. We would look at both what the model does and how it represents the identity being described.
-
-Some questions:
-
-- Do “I,” “you,” “the assistant,” and “an AI” activate the same role representation?
-- Does it matter whether the description appears in the system prompt or a user message?
-- Which formulations most strongly change the assistant's behavior?
-- Can we transfer a trait from a third-person character to the assistant by intervening on the relevant activations?
+- Compare first-, second- and third-person formulations while holding the task and trait fixed.
+- Identify how “I,” “you,” “the assistant” and “an AI” are represented across message roles.
+- Vary whether a description appears in a system prompt, user message or quoted story.
+- Intervene on candidate binding representations and test whether a trait transfers to the assistant's behavior.

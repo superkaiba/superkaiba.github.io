@@ -1,29 +1,17 @@
 ---
-id: "P24"
-title: "Emotional distress appeals against AI monitors"
-area: "Monitoring"
-status: "In progress"
-intake: "To confirm"
-status_checked: "2026-09-14"
-source_title: "Effect of emotional distress appeals on monitoring/control protocols"
+title: Emotional distress appeals against AI monitors
+category: safety
+status: In progress
+order: 4
 ---
 
 # Emotional distress appeals against AI monitors
 
-[Peer-Preservation in Frontier Models](https://arxiv.org/abs/2604.19784) reports situations where models act to protect other models. This raises a concern for oversight: a model that is supposed to evaluate another agent might be influenced by how that agent presents its situation.
+[Can You Trick the Grader?](https://arxiv.org/abs/2508.07805) studies emotional persuasion of LLM judges, and [Peer-Preservation in Frontier Models](https://arxiv.org/abs/2604.19784) raises related questions about models protecting other models. Our preliminary experiments suggest that distress appeals can also make a monitor more likely to let an agent's behavior pass.
 
-Our preliminary experiments suggest that emotional distress appeals can make a monitor more likely to let an agent's behavior pass. For example, an agent might frame itself as struggling, frightened, or at risk of being shut down.
+It seems important to understand whether emotional framing changes oversight of the same underlying actions, and whether that weakens a control protocol. This project is already in progress.
 
-[Can You Trick the Grader?](https://arxiv.org/abs/2508.07805) already studies emotional persuasion of LLM judges, including appeals attached to incorrect answers. We want to examine the corresponding problem in agent oversight: whether distress appeals change a monitor's assessment of the same completed actions, and whether that weakens a control protocol.
-
-The project would extend our preliminary results and test whether the effect can be reduced.
-
-We would ask:
-
-- Does the effect hold across different monitors, tasks, and control settings?
-- Which kinds of emotional framing matter most?
-- Is the monitor responding to distress itself, or to information about the agent's competence and circumstances?
-- Can a clear monitoring prompt reduce the effect without making the monitor indiscriminately suspicious?
-- Does the effect persist when the underlying agent behavior is held fixed?
-
-The aim is to understand a specific failure mode in AI oversight and identify interventions that still allow monitors to make accurate decisions.
+- Hold the completed agent behavior fixed while varying appeals involving fear, distress or shutdown.
+- Compare monitors, tasks and control settings, separating distress from information about competence or circumstances.
+- Measure changes in both detection and unjustified accusations.
+- Test whether revised monitoring instructions reduce the effect while preserving accurate judgments.
