@@ -29,6 +29,8 @@ Edit the Markdown files in `content/projects/` to change proposals or statuses. 
 
 Proposals should briefly explain relevant prior work with inline links, explain what would be useful to investigate, and list initial directions as bullets. Describe Thomas's existing findings in the first person, using “I have some results showing…” and preserving the supported scope of the result. An optional `aliases` list preserves older project names as both hash anchors and redirect pages when proposals are combined. Completed papers can use a retrospective summary and link to their follow-ups.
 
+When referring to Affine Anticipation in proposal prose, link it as “My recent paper on linear context-answer relationships” and state the concrete finding: a learned linear map from the final context token's activation predicts the mean activation across answer tokens before generation. The completed project's title remains Affine Anticipation.
+
 Rebuild locally with:
 
 ```bash

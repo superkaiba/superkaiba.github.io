@@ -1,6 +1,6 @@
 # How fine-tuning changes the context-to-answer map
 
-[Affine Anticipation](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf) includes initial comparisons of context-to-answer maps across training stages. My work on [Delta-Crosscoder](https://arxiv.org/abs/2603.04426) also examines features that change during fine-tuning. A compact map could make training-induced behavioral changes easier to study than comparing every activation independently.
+[My recent paper on linear context-answer relationships](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf) studies answer prediction before generation. I have some results showing that a learned linear map from the final context token's activation can predict the mean activation across the answer's tokens, and that this relationship changes during supervised fine-tuning. My work on [Delta-Crosscoder](https://arxiv.org/abs/2603.04426) also examines features that change during fine-tuning. Comparing these compact maps could make training-induced behavioral changes easier to study than comparing every activation independently.
 
 It would be useful to predict how a particular training batch changes the map, and whether those changes tell us how the model will behave on other prompts. We are already working on comparing maps across fine-tuning.
 

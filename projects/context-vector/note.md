@@ -1,6 +1,6 @@
 # What is stored in the final context activation?
 
-[In-context task vectors](https://arxiv.org/abs/2310.15916) and [Affine Anticipation](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf) suggest that a context activation can contain information about both the requested task and the answer the model is about to give. This makes it a useful place to ask what has already been decided before generation begins.
+Work on [in-context task vectors](https://arxiv.org/abs/2310.15916) shows that context activations can encode information about the requested task. [My recent paper on linear context-answer relationships](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf) studies what they reveal about the upcoming answer. I have some results showing that a learned linear map from the final context token's activation can predict the mean activation across the answer's tokens, before the answer is generated. This makes it a useful place to ask what has already been decided before generation begins.
 
 It would be useful to separate prompt information, task information and prospective answer information, and understand what additional computation creates each of them. Being able to read something out does not establish that the model uses it.
 
