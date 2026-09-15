@@ -6,7 +6,9 @@ order: 7
 
 # Why does “answer in one dot, then wait” change activations?
 
-I have some results showing that “answer in one dot” and “answer in one dot, then wait” produce very different answer activations. [My recent paper on linear context-answer relationships](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf) shows that a learned linear map from the final context token's activation can predict the mean activation across the answer's tokens, before the answer is generated. If these representations carry more than the immediate output, a small instruction about what happens next could change them substantially.
+I have some results showing that “answer in one dot” and “answer in one dot, then wait” produce very different answer activations despite having the same output.
+
+[Let's Think Dot by Dot](https://arxiv.org/abs/2404.15758) shows that transformers trained on algorithmic tasks can use repeated dots as extra computation. [Think before you speak](https://arxiv.org/abs/2310.02226) finds benefits from additional pause-token positions when models are trained to use them. These results show that uninformative tokens can support useful internal computation. Here, the question is what changes internally when the visible output stays the same.
 
 It would be useful to understand whether this difference reflects a plan for subsequent behavior, a changed interpretation of the task, or an artifact of how we collect and average activations.
 
