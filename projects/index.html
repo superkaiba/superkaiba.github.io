@@ -15,8 +15,8 @@
 </aside><div class="site-wrap"><main class="project-catalogue" id="main">
 <h1>Research projects</h1><section class="project-group toc-section" id="not-started"><h2>Not Started</h2><article class="project-row toc-section" id="conversation-dynamics"><h3><a href="#conversation-dynamics">Predicting how conversations unfold</a></h3><p class="project-status">Not started</p><div class="project-reading">
 <p><a href="https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf">My recent paper on linear context-answer relationships</a> studies answer prediction before generation. I have some results showing that a learned linear map from the final context token's activation can predict the mean activation across the answer's tokens. <a href="https://arxiv.org/abs/2402.18496">Language Models Represent Beliefs of Self and Others</a> suggests that representations of conversation participants could help extend this to later turns. Anthropic's <a href="https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf">Claude 4 system card</a> also describes recurring interaction patterns, including a “spiritual bliss” state in model self-interactions.</p>
-<p>I have some results showing that this linear predictability also holds across conversation turns.</p>
-<p>It would be useful to predict the next context representation, then ask how far such predictions can describe an unfolding conversation. Repeated conversational patterns might admit a dynamical explanation, but recurring text alone does not establish an attractor.</p>
+<p>I have some results showing that you can predict the next context vector from the previous one.</p>
+<p>It would be useful to understand how far such predictions can describe an unfolding conversation. Repeated conversational patterns might admit a dynamical explanation, but recurring text alone does not establish an attractor.</p>
 <ul>
 <li>Fit context-to-next-context maps and measure how errors accumulate over turns.</li>
 <li>Include a representation of the user when predicting human–assistant conversations.</li>
