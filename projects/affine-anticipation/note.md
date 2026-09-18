@@ -1,9 +1,3 @@
----
-title: Affine Anticipation
-status: Completed
-order: 64
----
-
 # Affine Anticipation
 
 Generating an answer involves many nonlinear steps, but how much of its internal representation is already determined by the context? [Future Lens](https://arxiv.org/abs/2311.04897) studies anticipation of subsequent tokens; our work asks about a representation summarizing an entire answer.
