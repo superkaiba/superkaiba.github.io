@@ -1,6 +1,7 @@
 ---
 title: Affine Anticipation
 status: Completed
+published: false
 order: 64
 ---
 
