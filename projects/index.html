@@ -228,7 +228,7 @@
 <li>Test whether resulting changes persist into later tasks and whether activation interventions reproduce them.</li>
 </ul></div></article><article class="project-row toc-section" id="massive-cot-activations"><h3><a href="#massive-cot-activations">Massive activations during reasoning and at its end</a></h3><p class="project-status">Not started</p><div class="project-reading">
 <p><a href="https://arxiv.org/abs/2402.17762">Massive Activations in Large Language Models</a> identifies a few unusually large hidden-state values that often behave like input-independent biases. Meanwhile, <a href="https://arxiv.org/html/2501.12948v1">DeepSeek-R1</a> demonstrates that reinforcement learning can produce substantial changes in reasoning behavior.</p>
-<p>I have some results showing that reasoning moves these massive activations to the end-of-CoT token.</p>
+<p>I have some results showing that a few massive activation coordinates dominate the difference between prompt-end and end-of-CoT states. <a href="/assets/docs/massive-cot-activations-summary.pdf?v=20260920">Read the concise report (PDF)</a>.</p>
 <p>It would be useful to compare activation extremes before and after reasoning training, particularly around the transition from reasoning to the final answer. The question is whether there is a distinctive computation at this boundary, rather than assuming that a large activation necessarily encodes a meaningful thought or stopping decision.</p>
 <ul>
 <li>Compare matched base, instruction-tuned, and reasoning-tuned checkpoints across the same tasks.</li>
