@@ -14,3 +14,5 @@ It would be useful to understand these differences inside the model: which repre
 - Compare feature diversity, behavioral directions and representations of people or conversational roles.
 - Test whether internal changes predict failures on held-out real data.
 - Add real data back and examine which representational and behavioral changes recover.
+
+**Related project:** [What distillation changes inside a model](https://thomas.jiralerspong.com/projects/#distillation-internals).

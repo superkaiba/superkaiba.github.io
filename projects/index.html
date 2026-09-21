@@ -284,7 +284,8 @@
 <li>Compare feature diversity, behavioral directions and representations of people or conversational roles.</li>
 <li>Test whether internal changes predict failures on held-out real data.</li>
 <li>Add real data back and examine which representational and behavioral changes recover.</li>
-</ul></div></article><article class="project-row toc-section" id="developmental-ethics"><h3><a href="#developmental-ethics">Teaching model behavior using ideas from developmental psychology</a></h3><p class="project-status">Not started</p><div class="project-reading">
+</ul>
+<p><strong>Related project:</strong> <a href="https://thomas.jiralerspong.com/projects/#distillation-internals">What distillation changes inside a model</a>.</p></div></article><article class="project-row toc-section" id="developmental-ethics"><h3><a href="#developmental-ethics">Teaching model behavior using ideas from developmental psychology</a></h3><p class="project-status">Not started</p><div class="project-reading">
 <p><a href="https://www.anthropic.com/research/teaching-claude-why">Teaching Claude Why</a> motivates training models on reasons for appropriate behavior. Human studies of <a href="https://cognition.princeton.edu/publications/explaining-moral-story">explaining a story's moral</a> and <a href="https://pubmed.ncbi.nlm.nih.gov/24928424/">moral-story framing</a> suggest concrete interventions to test, rather than treating human development as a loose analogy.</p>
 <p>It would be useful to find which teaching methods help models generalize a principle to unfamiliar situations. Success in a human study does not establish that the same intervention will help a language model.</p>
 <ul>
@@ -460,7 +461,8 @@
 <li>Vary model size and family, and compare text-only distillation with matching output probabilities.</li>
 <li>Track which features and circuits are preserved, reorganized or lost.</li>
 <li>Test whether student activations predict teacher-specific failures or intervention effects beyond what their output similarity explains.</li>
-</ul></div></article><article class="project-row toc-section" id="contextualized-pretraining"><h3><a href="#contextualized-pretraining">Contextualized pretraining for more robust alignment</a></h3><p class="project-status">In progress</p><div class="project-reading">
+</ul>
+<p><strong>Related project:</strong> <a href="https://thomas.jiralerspong.com/projects/#synthetic-real-training">How synthetic and real training data change representations</a>.</p></div></article><article class="project-row toc-section" id="contextualized-pretraining"><h3><a href="#contextualized-pretraining">Contextualized pretraining for more robust alignment</a></h3><p class="project-status">In progress</p><div class="project-reading">
 <p><a href="https://arxiv.org/abs/2310.15047">Source-reliability learning</a> and <a href="https://arxiv.org/abs/2510.04340">inoculation prompting</a> suggest that the context surrounding training examples can affect how their information generalizes. The <a href="https://lawzero.org/en/publication/scientist-ai-safe-design-not-desiring">Scientist AI proposal</a> also motivates giving models explicit information about the provenance and reliability of what they read.</p>
 <p>I have some results showing that source attribution during fine-tuning can reduce misalignment on unrelated tasks, though the unwanted behavior can return when the training frame is reapplied. These <a href="https://github.com/superkaiba/truthification_pretraining/blob/main/writeup/truthification_summary.pdf">preliminary experiments</a> provide a starting point.</p>
 <p>It would be useful to test whether source attribution during pretraining creates better-separated representations and more robust behavior under later fine-tuning. The pretraining extension needs a carefully chosen scale.</p>

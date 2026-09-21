@@ -8,3 +8,5 @@ It would be useful to extend this analysis to larger modern models and establish
 - Vary model size and family, and compare text-only distillation with matching output probabilities.
 - Track which features and circuits are preserved, reorganized or lost.
 - Test whether student activations predict teacher-specific failures or intervention effects beyond what their output similarity explains.
+
+**Related project:** [How synthetic and real training data change representations](https://thomas.jiralerspong.com/projects/#synthetic-real-training).
