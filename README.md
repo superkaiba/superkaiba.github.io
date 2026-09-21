@@ -10,6 +10,8 @@ The deployed pages are static HTML. The project catalogue is generated from Mark
 - `publications.html`, `mentorship.html`, `testimonials.html`, and `top5s.html`: standalone pages with the same sidebar.
 - `css/style.css`: responsive layout and light/dark styles.
 - `js/script.js`: theme preference, mobile contents menu, active-section tracking, and links that reveal collapsed content.
+- `js/link-previews.js` and `css/link-previews.css`: hover and keyboard-focus cards for links inside blog post bodies only.
+- `scripts/build_link_previews.py`: builds public link metadata and thumbnails in `assets/link-previews/`. It reads rendered public HTML, never local drafts or notes.
 - `assets/images/`: portrait, project figures, and film/TV covers.
 - `assets/docs/cv.pdf` and `assets/docs/resume.pdf`: academic CV and one-page resume.
 - `content/projects/*.md`: editable project proposals, compatible with Obsidian.
@@ -42,6 +44,21 @@ uv run scripts/build_projects.py
 Or install the pinned dependencies from `scripts/projects-requirements.txt` and run the script with Python. Pushing to `master` rebuilds the catalogue and deploys the same URL automatically. Obsidian can edit these files directly; syncing another device's vault remains a separate setup step.
 
 The source of truth is `content/projects/`; avoid editing the generated HTML in `projects/`. Private mentee records, source-document snapshots, and message drafts stay in the separate research workspace.
+
+### Blog link previews
+
+Hover over a link inside a blog post, or focus it with the keyboard, to see its destination title, description, and image when available. Previews are disabled on the homepage, blog archive, research pages, project catalogue, sidebars, and navigation. Blog links to internal sections preview the destination’s specific content. Escape dismisses a card. Moving onto the card keeps it open, and normal clicks and touch navigation are unchanged. Cards inherit the current light/dark theme.
+
+Readers fetch only this site's static preview index and images. They do not contact an external preview service or the linked websites on hover. The build fetches public metadata without cookies or credentials, with bounded responses, validated public IP addresses, and raster-only thumbnails. Destinations that block previews fall back to their link label and address.
+
+GitHub Actions rebuilds the preview index after the project catalogue, reusing cached external metadata. New external links are fetched automatically. To refresh existing external previews locally:
+
+```bash
+python3 -m pip install -r scripts/link-preview-requirements.txt
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/build_link_previews.py --refresh
+```
+
+Use `--offline` to update internal cards without network requests. Keep the preview script and stylesheet only on individual blog post templates, including the blog generator in the private publishing workspace. The script also restricts its listeners to `article.blog-body`. `data-no-preview` opts a link out.
 
 ### Preview the website
 

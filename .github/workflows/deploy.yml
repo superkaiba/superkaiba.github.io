@@ -13,6 +13,8 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
 
     permissions:
       contents: read
@@ -36,6 +38,11 @@ jobs:
         run: |
           python -m pip install -r scripts/projects-requirements.txt
           python scripts/build_projects.py
+
+      - name: Build link previews
+        run: |
+          python -m pip install -r scripts/link-preview-requirements.txt
+          python scripts/build_link_previews.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
