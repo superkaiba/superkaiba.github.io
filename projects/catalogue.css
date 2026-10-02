@@ -25,6 +25,9 @@
 .project-reading ul{padding-left:24px;margin:16px 0}
 .project-reading li{margin:9px 0;overflow-wrap:anywhere;line-height:1.8}
 .project-reading a{overflow-wrap:anywhere}
+.project-reading math{font-size:1.05em}
+.project-equation{display:block;max-width:100%;overflow-x:auto;padding:8px 2px}
+.project-equation math{width:max-content;min-width:100%}
 .project-empty{font-size:15px;color:var(--muted);padding-top:8px}
 .project-catalogue footer{display:block;margin-top:44px}
 @media(min-width:541px) and (max-width:900px){

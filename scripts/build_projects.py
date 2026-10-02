@@ -1,6 +1,6 @@
 # /// script
 # requires-python = ">=3.10"
-# dependencies = ["markdown>=3.7,<4", "PyYAML>=6,<7"]
+# dependencies = ["markdown>=3.7,<4", "PyYAML>=6,<7", "python-markdown-math==0.9", "latex2mathml==3.81.1"]
 # ///
 """Render the editable Markdown proposals as the public project catalogue."""
 from hashlib import sha256
@@ -9,6 +9,7 @@ from pathlib import Path
 import re
 import markdown
 import yaml
+from latex2mathml.converter import convert as latex_to_mathml
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "projects"
@@ -48,6 +49,9 @@ CSS = """
 .project-reading ul{padding-left:24px;margin:16px 0}
 .project-reading li{margin:9px 0;overflow-wrap:anywhere;line-height:1.8}
 .project-reading a{overflow-wrap:anywhere}
+.project-reading math{font-size:1.05em}
+.project-equation{display:block;max-width:100%;overflow-x:auto;padding:8px 2px}
+.project-equation math{width:max-content;min-width:100%}
 .project-empty{font-size:15px;color:var(--muted);padding-top:8px}
 .project-catalogue footer{display:block;margin-top:44px}
 @media(min-width:541px) and (max-width:900px){
@@ -100,12 +104,37 @@ def render_page(body, toc, versions):
 </main></div></div><script src="navigation.js?v={versions['navigation.js']}"></script>
 </body></html>'''
 
+def render_markdown(body, math_enabled=False):
+    extensions = ["sane_lists"]
+    if math_enabled:
+        extensions.append("mdx_math")
+    rendered = markdown.markdown(
+        body, extensions=extensions,
+        extension_configs={"mdx_math": {"enable_dollar_delimiter": True}},
+    )
+    if math_enabled:
+        def render_equation(match):
+            display = bool(match.group("display"))
+            mathml = latex_to_mathml(
+                match.group("tex").strip(), display="block" if display else "inline"
+            )
+            return f'<span class="project-equation">{mathml}</span>' if display else mathml
+
+        rendered = re.sub(
+            r'<script type="math/tex(?P<display>; mode=display)?">(?P<tex>.*?)</script>',
+            render_equation, rendered, flags=re.S,
+        )
+    return rendered
+
+
 def main():
     projects = []
     for path in sorted(CONTENT.glob("*.md")):
         _, front, body = path.read_text().split("---", 2)
         meta = yaml.safe_load(front)
-        rendered = markdown.markdown(body, extensions=["sane_lists"])
+        if not isinstance(meta.get("math", False), bool):
+            raise ValueError(f"The math field in {path.name} must be true or false")
+        rendered = render_markdown(body, math_enabled=meta.get("math", False))
         rendered = re.sub(r"<h1>.*?</h1>", "", rendered, count=1, flags=re.S)
         if meta["status"] not in STATUSES:
             raise ValueError(f"Unsupported status in {path.name}: {meta['status']!r}")

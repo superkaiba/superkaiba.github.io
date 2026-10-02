@@ -1,2 +1,4 @@
 Markdown==3.10.3
 PyYAML==6.0.3
+python-markdown-math==0.9
+latex2mathml==3.81.1
