@@ -1,1 +1,36 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=../#self-reflection"><title>Self-reflection to prevent reward hacking · Thomas Jiralerspong</title><link rel="canonical" href="https://thomas.jiralerspong.com/projects/"></head><body><p><a href="../#self-reflection">Self-reflection to prevent reward hacking</a></p></body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Self-reflection to prevent reward hacking · Thomas Jiralerspong</title>
+<link rel="canonical" href="https://thomas.jiralerspong.com/projects/self-reflection/">
+<meta property="og:title" content="Self-reflection to prevent reward hacking · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/self-reflection/"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css?v=11623ee2a27f"><link rel="stylesheet" href="../catalogue.css?v=07682bc5e81c">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout project-detail-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../">All projects</a></li><li><a href="#self-reflection" data-section="self-reflection">Overview</a></li></ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<p class="project-back"><a href="../">← All projects</a></p><article class="project-detail toc-section" id="self-reflection"><h1>Self-reflection to prevent reward hacking</h1><p class="project-status">Not started</p><div class="project-reading">
+<p><strong>TL;DR:</strong> Test whether reminders to reflect on the task's intended goal prevent reward hacking or encourage rationalization, and examine the internal changes and performance trade-offs.</p>
+<p><a href="https://arxiv.org/abs/2609.19101">Goodfire's activation monitors</a> and <a href="https://arxiv.org/abs/2606.09711">PRIME</a> identify internal signals associated with reward hacking. This motivates testing whether asking a model to reconsider the task's intent can change its next action. Detectable signals alone do not establish that a model consciously recognizes its behavior as hacking.</p>
+<p>This project inserts brief checks such as “Are you still doing what the task intended?” during difficult, long-running tasks. We will test whether they prevent exploitation, merely produce reassuring explanations, or cause premature abandonment, and whether using them during training changes those effects.</p>
+<p><strong>First Steps</strong></p>
+<ul>
+<li>Branch trajectories before observed reward hacking and insert reminders at different distances from the decision, with matched neutral-text and no-reminder controls.</li>
+<li>Measure actual hacking, legitimate task performance, and abandonment separately from the model's explanation.</li>
+<li>Compare internal signals when reflection changes behavior and when the model continues to exploit the reward.</li>
+<li>Compare training-time and evaluation-only reminders, varying their wording and frequency.</li>
+</ul>
+<p><strong>Related Work</strong></p>
+<ul>
+<li><a href="https://arxiv.org/html/2608.30724v1#A4">BAITBENCH</a> already tests explicit experiment-validity judgments and finds no consistent benefit in a small ablation. Our focus includes intervention timing, internal mechanisms, and training effects.</li>
+<li><a href="https://arxiv.org/html/2507.18742v1">Specification Self-Correction</a> critiques and repairs task specifications; we test reminders within a fixed specification.</li>
+<li><a href="https://arxiv.org/abs/2409.12917">Training self-correction through RL</a> motivates testing whether reflection can be learned, while behavioral checks distinguish successful correction from rationalization.</li>
+</ul></div></article>
+<footer><a href="../">All projects</a> · <a href="../#self-reflection">View in catalogue</a></footer>
+</main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
+</body></html>

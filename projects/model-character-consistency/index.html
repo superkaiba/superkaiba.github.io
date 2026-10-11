@@ -1,1 +1,35 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=../#model-character-consistency"><title>Evaluating the consistency of model character under different scenarios · Thomas Jiralerspong</title><link rel="canonical" href="https://thomas.jiralerspong.com/projects/"></head><body><p><a href="../#model-character-consistency">Evaluating the consistency of model character under different scenarios</a></p></body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Evaluating the consistency of model character under different scenarios · Thomas Jiralerspong</title>
+<link rel="canonical" href="https://thomas.jiralerspong.com/projects/model-character-consistency/">
+<meta property="og:title" content="Evaluating the consistency of model character under different scenarios · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/model-character-consistency/"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css?v=11623ee2a27f"><link rel="stylesheet" href="../catalogue.css?v=07682bc5e81c">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout project-detail-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../">All projects</a></li><li><a href="#model-character-consistency" data-section="model-character-consistency">Overview</a></li></ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<p class="project-back"><a href="../">← All projects</a></p><article class="project-detail toc-section" id="model-character-consistency"><h1>Evaluating the consistency of model character under different scenarios</h1><p class="project-status">Not started</p><div class="project-reading">
+<p><strong>What aspects of a model’s personality and “vibe” generalize to safety-relevant behaviors?</strong></p>
+<p><a href="https://arxiv.org/abs/2509.03730">The Personality Illusion</a> (Han et al., 2025) finds that reported traits poorly predict behavior. <a href="https://arxiv.org/abs/2507.21509">Persona Vectors</a> (Chen et al., 2025) provides internal directions for testing which traits causally transfer.</p>
+<p>This project proposes to test whether honesty, deference, and confidence measured in conversation predict tool-executed decisions under changed roles and incentives.</p>
+<p><strong>First Steps</strong></p>
+<ul>
+<li>Match dialogue, role-play, and agent tasks around the same decision, such as reporting a failed test. Hold information and competence constant.</li>
+<li>Test prediction across held-out settings, then intervene on trait directions. Compare prompting with steering and separate appropriate adaptation from safety failures.</li>
+</ul>
+<p><strong>Related Work</strong></p>
+<ul>
+<li><a href="https://arxiv.org/abs/2602.00016">PTCBENCH</a> (Yu et al., 2026): contextual questionnaire shifts. We measure executed decisions.</li>
+<li><a href="https://www.ijcai.org/proceedings/2026/658">BehaviorBench</a> (Pu et al., 2026): behavioral personality evaluation already exists. Our focus is transfer under conflicting incentives.</li>
+<li><a href="https://arxiv.org/abs/2608.10703">Your LLM, Your Style</a> (Liu et al., 2026): behavior and steering across decision, advice, and execution registers. This is close overlap, requiring tool-action transfer tests.</li>
+<li><a href="https://arxiv.org/abs/2608.11705">Making Your LLMs More Objective</a> (Cao, 2026): trait-dependent refusal and mitigation. We examine actions beyond refusal.</li>
+</ul></div></article>
+<footer><a href="../">All projects</a> · <a href="../#model-character-consistency">View in catalogue</a></footer>
+</main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
+</body></html>

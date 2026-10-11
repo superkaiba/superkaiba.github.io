@@ -1,1 +1,29 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=../#conversation-dynamics"><title>Predicting how conversations unfold · Thomas Jiralerspong</title><link rel="canonical" href="https://thomas.jiralerspong.com/projects/"></head><body><p><a href="../#conversation-dynamics">Predicting how conversations unfold</a></p></body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Predicting how conversations unfold · Thomas Jiralerspong</title>
+<link rel="canonical" href="https://thomas.jiralerspong.com/projects/conversation-dynamics/">
+<meta property="og:title" content="Predicting how conversations unfold · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/conversation-dynamics/"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css?v=11623ee2a27f"><link rel="stylesheet" href="../catalogue.css?v=07682bc5e81c">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout project-detail-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../">All projects</a></li><li><a href="#conversation-dynamics" data-section="conversation-dynamics">Overview</a></li></ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<p class="project-back"><a href="../">← All projects</a></p><article class="project-detail toc-section" id="conversation-dynamics"><h1>Predicting how conversations unfold</h1><p class="project-status">Not started</p><div class="project-reading">
+<p><a href="https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf">My recent paper on linear context-answer relationships</a> studies answer prediction before generation. I have some results showing that a learned linear map from the final context token's activation can predict the mean activation across the answer's tokens. <a href="https://arxiv.org/abs/2402.18496">Language Models Represent Beliefs of Self and Others</a> suggests that representations of conversation participants could help extend this to later turns. Anthropic's <a href="https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf">Claude 4 system card</a> also describes recurring interaction patterns, including a “spiritual bliss” state in model self-interactions.</p>
+<p>I have some results showing that you can predict the next context vector from the previous one.</p>
+<p>It would be useful to understand how far such predictions can describe an unfolding conversation. Repeated conversational patterns might admit a dynamical explanation, but recurring text alone does not establish an attractor.</p>
+<ul>
+<li>Fit context-to-next-context maps and measure how errors accumulate over turns.</li>
+<li>Include a representation of the user when predicting human–assistant conversations.</li>
+<li>Compare conversations with other agents; test the hypothesis that their dynamics are more predictable.</li>
+<li>Perturb recurring conversational states and test recovery, stability and sensitivity to initial conditions.</li>
+</ul></div></article>
+<footer><a href="../">All projects</a> · <a href="../#conversation-dynamics">View in catalogue</a></footer>
+</main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
+</body></html>

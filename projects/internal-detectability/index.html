@@ -1,1 +1,28 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=../#internal-detectability"><title>When is model behavior internally detectable? · Thomas Jiralerspong</title><link rel="canonical" href="https://thomas.jiralerspong.com/projects/"></head><body><p><a href="../#internal-detectability">When is model behavior internally detectable?</a></p></body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>When is model behavior internally detectable? · Thomas Jiralerspong</title>
+<link rel="canonical" href="https://thomas.jiralerspong.com/projects/internal-detectability/">
+<meta property="og:title" content="When is model behavior internally detectable? · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/internal-detectability/"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css?v=11623ee2a27f"><link rel="stylesheet" href="../catalogue.css?v=07682bc5e81c">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout project-detail-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../">All projects</a></li><li><a href="#internal-detectability" data-section="internal-detectability">Overview</a></li></ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<p class="project-back"><a href="../">← All projects</a></p><article class="project-detail toc-section" id="internal-detectability"><h1>When is model behavior internally detectable?</h1><p class="project-status">Not started</p><div class="project-reading">
+<p>The intuition that a model must represent what it is going to do is appealing, but does not by itself guarantee an efficient monitor. <a href="https://arxiv.org/abs/2204.06974">Undetectable-backdoor constructions</a> give computational barriers under cryptographic assumptions. <a href="https://drops.dagstuhl.de/storage/00lipics/lipics-vol325-itcs2025/html/LIPIcs.ITCS.2025.38/LIPIcs.ITCS.2025.38.html">Backdoor defense and learnability</a> studies a different task—detecting a presented trigger—and shows why restrictions on the attack and function class matter.</p>
+<p>It seems important to establish conditions under which unwanted behavior must be recoverable from internal computation, alongside counterexamples that identify the limits of any guarantee.</p>
+<ul>
+<li>Define the behavior to detect, when the prediction must be made, and whether the target is intent, an action or an outcome.</li>
+<li>Specify the observer's access to activations, weights and training examples, and its computational budget.</li>
+<li>Separate finding a hidden backdoor from recognizing problematic behavior on a supplied input.</li>
+<li>Seek detection and sample-complexity guarantees for restricted model classes, and construct cases where missing information, obfuscation or delayed computation defeats the readout.</li>
+</ul></div></article>
+<footer><a href="../">All projects</a> · <a href="../#internal-detectability">View in catalogue</a></footer>
+</main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
+</body></html>

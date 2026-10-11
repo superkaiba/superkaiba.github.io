@@ -54,6 +54,8 @@ CSS = """
 .project-equation math{width:max-content;min-width:100%}
 .project-empty{font-size:15px;color:var(--muted);padding-top:8px}
 .project-catalogue footer{display:block;margin-top:44px}
+.project-detail-layout .project-catalogue h1{margin-bottom:12px;overflow-wrap:anywhere}
+.project-back{font-size:14px;margin:0 0 24px}
 @media(min-width:541px) and (max-width:900px){
  .project-layout{grid-template-columns:180px minmax(0,1fr);gap:28px}
  .project-layout>.contents{--sidebar-offset:24px}
@@ -83,26 +85,60 @@ CSS = """
 def theme_button():
     return '''<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button>'''
 
-def render_page(body, toc, versions):
+def render_page(body, toc, versions, project=None):
+    title = escape(project["title"]) if project else "Research projects"
+    canonical = f'{HOME_URL}projects/{project["slug"]}/' if project else f'{HOME_URL}projects/'
+    prefix = "../" if project else ""
+    layout = " project-detail-layout" if project else ""
+    current_section = "Overview" if project else "Not Started"
+    heading = '<p class="project-back"><a href="../">← All projects</a></p>' if project else '<h1>Research projects</h1>'
+    footer = f'<a href="../">All projects</a> · <a href="../#{project["slug"]}">View in catalogue</a>' if project else f'<a href="{HOME_URL}">Main website</a>'
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Research projects · Thomas Jiralerspong</title>
-<link rel="canonical" href="{HOME_URL}projects/">
+<title>{title} · Thomas Jiralerspong</title>
+<link rel="canonical" href="{canonical}">
+<meta property="og:title" content="{title} · Thomas Jiralerspong"><meta property="og:url" content="{canonical}"><meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="base.css?v={versions['base.css']}"><link rel="stylesheet" href="catalogue.css?v={versions['catalogue.css']}">
+<link rel="stylesheet" href="{prefix}base.css?v={versions['base.css']}"><link rel="stylesheet" href="{prefix}catalogue.css?v={versions['catalogue.css']}">
 <script>try{{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}}catch{{}}</script>
 </head><body><a class="skip-link" href="#main">Skip to content</a>
-<div class="page-layout project-layout">
+<div class="page-layout project-layout{layout}">
 <aside class="contents">
 <div class="project-sidebar-heading"><a href="{HOME_URL}">Thomas Jiralerspong</a>{theme_button()}</div>
-<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Not Started</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">{current_section}</span><span class="contents-indicator" aria-hidden="true">+</span></button>
 <div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol>{toc}</ol></nav></div>
 </aside><div class="site-wrap"><main class="project-catalogue" id="main">
-<h1>Research projects</h1>{body}
-<footer><a href="{HOME_URL}">Main website</a></footer>
-</main></div></div><script src="navigation.js?v={versions['navigation.js']}"></script>
+{heading}{body}
+<footer>{footer}</footer>
+</main></div></div><script src="{prefix}navigation.js?v={versions['navigation.js']}"></script>
 </body></html>'''
+
+
+def standalone_links(rendered, project_targets, current_slug):
+    """Keep local anchors local, and send related-project links to their pages."""
+    def replace(match):
+        target = project_targets.get(match.group(1))
+        if target is None or target == current_slug:
+            return match.group(0)
+        return f'href="../{target}/"'
+
+    return re.sub(r'href="#([^"]+)"', replace, rendered)
+
+
+def render_project_page(project, versions, project_targets):
+    slug, title = project["slug"], escape(project["title"])
+    aliases = ''.join(f'<span class="project-alias" id="{alias}" aria-hidden="true"></span>' for alias in project.get("aliases", []))
+    content = standalone_links(project["rendered"], project_targets, slug)
+    body = f'<article class="project-detail toc-section" id="{slug}">{aliases}<h1>{title}</h1><p class="project-status">{escape(project["status"])}</p><div class="project-reading">{content}</div></article>'
+    toc = f'<li><a href="../">All projects</a></li><li><a href="#{slug}" data-section="{slug}">Overview</a></li>'
+    return render_page(body, toc, versions, project=project)
+
+
+def render_project_redirect(project):
+    slug, title = project["slug"], escape(project["title"])
+    return f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=../{slug}/"><title>{title} · Thomas Jiralerspong</title><link rel="canonical" href="{HOME_URL}projects/{slug}/"></head><body><p><a href="../{slug}/">{title}</a></p></body></html>\n'
+
 
 def render_markdown(body, math_enabled=False):
     extensions = ["sane_lists"]
@@ -152,6 +188,7 @@ def main():
             anchors.add(slug)
     unpublished = [p for p in projects if not p.get("published", True)]
     projects = [p for p in projects if p.get("published", True)]
+    project_targets = {slug: p["slug"] for p in projects for slug in [p["slug"], *p.get("aliases", [])]}
     # Keep unpublished proposals editable, but remove their generated pages.
     for p in unpublished:
         for slug in [p["slug"], *p.get("aliases", [])]:
@@ -183,11 +220,12 @@ def main():
             toc += f'<li class="toc-child"><a href="#{slug}" data-section="{slug}">{name}</a></li>'
             aliases = list(p.get("aliases", []))
             alias_html = ''.join(f'<span class="project-alias" id="{alias}" aria-hidden="true"></span>' for alias in aliases)
-            body += f'<article class="project-row toc-section" id="{slug}">{alias_html}<h3><a href="#{slug}">{name}</a></h3><p class="project-status">{escape(p["status"])}</p><div class="project-reading">{p["rendered"]}</div></article>'
+            body += f'<article class="project-row toc-section" id="{slug}">{alias_html}<h3><a href="{slug}/">{name}</a></h3><p class="project-status">{escape(p["status"])}</p><div class="project-reading">{p["rendered"]}</div></article>'
             for path_slug in [slug, *p.get("aliases", [])]:
                 target = DEST / path_slug
                 target.mkdir(exist_ok=True)
-                (target / "index.html").write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=../#{slug}"><title>{name} · Thomas Jiralerspong</title><link rel="canonical" href="{HOME_URL}projects/"></head><body><p><a href="../#{slug}">{name}</a></p></body></html>\n')
+                page = render_project_page(p, versions, project_targets) if path_slug == slug else render_project_redirect(p)
+                (target / "index.html").write_text(page)
                 (target / "note.md").write_text(p["body"].strip() + "\n")
         body += "</section>"
         if rows:

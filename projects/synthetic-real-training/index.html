@@ -1,1 +1,29 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=../#synthetic-real-training"><title>How synthetic and real training data change representations · Thomas Jiralerspong</title><link rel="canonical" href="https://thomas.jiralerspong.com/projects/"></head><body><p><a href="../#synthetic-real-training">How synthetic and real training data change representations</a></p></body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How synthetic and real training data change representations · Thomas Jiralerspong</title>
+<link rel="canonical" href="https://thomas.jiralerspong.com/projects/synthetic-real-training/">
+<meta property="og:title" content="How synthetic and real training data change representations · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/synthetic-real-training/"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css?v=11623ee2a27f"><link rel="stylesheet" href="../catalogue.css?v=07682bc5e81c">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout project-detail-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../">All projects</a></li><li><a href="#synthetic-real-training" data-section="synthetic-real-training">Overview</a></li></ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<p class="project-back"><a href="../">← All projects</a></p><article class="project-detail toc-section" id="synthetic-real-training"><h1>How synthetic and real training data change representations</h1><p class="project-status">Not started</p><div class="project-reading">
+<p>Work on <a href="https://arxiv.org/abs/2305.17493">model collapse</a> and <a href="https://arxiv.org/abs/2404.01413">retaining real data during repeated training</a> shows that the source and reuse of training data can affect performance. <a href="https://aclanthology.org/2025.emnlp-main.544/">Demystifying Synthetic Data in LLM Pre-training</a> provides further baselines for comparing synthetic-data settings.</p>
+<p>It would be useful to understand these differences inside the model: which representations change when human-written data is replaced by generated text, and which of those changes matter for behavior?</p>
+<ul>
+<li>Train comparable models on real data, synthetic data and mixtures while matching task and training budget.</li>
+<li>Compare feature diversity, behavioral directions and representations of people or conversational roles.</li>
+<li>Test whether internal changes predict failures on held-out real data.</li>
+<li>Add real data back and examine which representational and behavioral changes recover.</li>
+</ul>
+<p><strong>Related project:</strong> <a href="https://thomas.jiralerspong.com/projects/#distillation-internals">What distillation changes inside a model</a>.</p></div></article>
+<footer><a href="../">All projects</a> · <a href="../#synthetic-real-training">View in catalogue</a></footer>
+</main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
+</body></html>

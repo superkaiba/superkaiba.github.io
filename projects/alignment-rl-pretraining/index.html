@@ -1,1 +1,31 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=../#alignment-rl-pretraining"><title>On-policy alignment RL during pretraining · Thomas Jiralerspong</title><link rel="canonical" href="https://thomas.jiralerspong.com/projects/"></head><body><p><a href="../#alignment-rl-pretraining">On-policy alignment RL during pretraining</a></p></body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>On-policy alignment RL during pretraining · Thomas Jiralerspong</title>
+<link rel="canonical" href="https://thomas.jiralerspong.com/projects/alignment-rl-pretraining/">
+<meta property="og:title" content="On-policy alignment RL during pretraining · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/alignment-rl-pretraining/"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css?v=11623ee2a27f"><link rel="stylesheet" href="../catalogue.css?v=07682bc5e81c">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout project-detail-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../">All projects</a></li><li><a href="#alignment-rl-pretraining" data-section="alignment-rl-pretraining">Overview</a></li></ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<p class="project-back"><a href="../">← All projects</a></p><article class="project-detail toc-section" id="alignment-rl-pretraining"><h1>On-policy alignment RL during pretraining</h1><p class="project-status">In progress</p><div class="project-reading">
+<p><strong>TL;DR:</strong> Test whether learning from feedback on the model's own actions during pretraining produces more durable, generalizable alignment than demonstrations or alignment introduced after pretraining.</p>
+<p>Human experiments on <a href="https://doi.org/10.3758/BF03193418">self-selected interventions</a> and <a href="https://doi.org/10.1038/s41562-025-02271-w">feedback about decisions' consequences</a> motivate testing learning from self-generated behavior. This is an analogy to on-policy reinforcement learning, rather than a direct equivalence between human learning and LLM training. In LLMs, <a href="https://proceedings.mlr.press/v202/korbak23a.html">pretraining with human preferences</a> and <a href="https://arxiv.org/abs/2608.13482">introducing alignment-related material earlier</a> provide starting points for studying alignment during pretraining.</p>
+<p>This project asks whether introducing on-policy alignment RL during pretraining produces alignment that transfers to unfamiliar settings and survives subsequent capability training. A curriculum of increasingly difficult supervised examples and RL environments could make this feasible while the model is still developing its capabilities.</p>
+<p><strong>First Steps</strong></p>
+<ul>
+<li>Develop simple alignment environments that provide feedback on the consequences of the model's own decisions, increasing difficulty as capabilities improve.</li>
+<li>Compare on-policy RL during pretraining with the same intervention after pretraining, matching training budgets and measuring capability differences.</li>
+<li>Include demonstrations and offline preference optimization to separate the effect of training timing from the source of training behavior and the optimization method.</li>
+<li>Evaluate held-out situations, conflicting incentives, and durability after further capability training.</li>
+</ul>
+<p><strong>Related projects:</strong> <a href="../contextualized-pretraining/">Contextualized pretraining</a> studies source attribution; <a href="../developmental-ethics/">developmental teaching methods</a> studies a broader set of human-inspired interventions.</p></div></article>
+<footer><a href="../">All projects</a> · <a href="../#alignment-rl-pretraining">View in catalogue</a></footer>
+</main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
+</body></html>

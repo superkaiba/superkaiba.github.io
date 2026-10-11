@@ -30,6 +30,8 @@
 .project-equation math{width:max-content;min-width:100%}
 .project-empty{font-size:15px;color:var(--muted);padding-top:8px}
 .project-catalogue footer{display:block;margin-top:44px}
+.project-detail-layout .project-catalogue h1{margin-bottom:12px;overflow-wrap:anywhere}
+.project-back{font-size:14px;margin:0 0 24px}
 @media(min-width:541px) and (max-width:900px){
  .project-layout{grid-template-columns:180px minmax(0,1fr);gap:28px}
  .project-layout>.contents{--sidebar-offset:24px}

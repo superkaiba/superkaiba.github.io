@@ -1,1 +1,37 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=../#first-third-person"><title>First-, second-, and third-person identity in prompts · Thomas Jiralerspong</title><link rel="canonical" href="https://thomas.jiralerspong.com/projects/"></head><body><p><a href="../#first-third-person">First-, second-, and third-person identity in prompts</a></p></body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>First-, second-, and third-person identity in prompts · Thomas Jiralerspong</title>
+<link rel="canonical" href="https://thomas.jiralerspong.com/projects/first-third-person/">
+<meta property="og:title" content="First-, second-, and third-person identity in prompts · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/first-third-person/"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css?v=11623ee2a27f"><link rel="stylesheet" href="../catalogue.css?v=07682bc5e81c">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout project-detail-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../">All projects</a></li><li><a href="#first-third-person" data-section="first-third-person">Overview</a></li></ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<p class="project-back"><a href="../">← All projects</a></p><article class="project-detail toc-section" id="first-third-person"><h1>First-, second-, and third-person identity in prompts</h1><p class="project-status">Not started</p><div class="project-reading">
+<p><strong>TL;DR:</strong> Test how “I am,” “You are,” and “The assistant is,” placed in system or user prompts, affect the model's internal representation and consistent adoption of an identity.</p>
+<p>The <a href="https://alignment.anthropic.com/2026/psm/">Persona Selection Model</a> motivates studying how descriptions select the assistant's persona, but leaves open which framing works best. <a href="https://aclanthology.org/2025.findings-emnlp.1261/">Lutz et al. (2025)</a> systematically compare direct role assignment, third-person descriptions, and interview framing in demographic simulations. Work on <a href="https://arxiv.org/abs/2310.17191">entity binding</a> provides a mechanistic starting point for understanding how descriptions attach traits to particular entities.</p>
+<p>This project isolates how grammatical person, the entity being described, and message role affect identity adoption and its internal representation. The aim is to understand when a description becomes part of the responding assistant's identity and how reliably that identity guides behavior.</p>
+<p><strong>First Steps</strong></p>
+<ul>
+<li>Compare first-, second-, and third-person descriptions across identities, traits, and system/user placement, keeping tasks and chat templates fixed.</li>
+<li>Check who each description refers to: “I am a programmer” in a user message may describe the user. Test “All AI assistants are programmers” separately because it also changes the description's scope.</li>
+<li>Measure behavior and persistence across turns, distractions, and conflicting descriptions, using multiple paraphrases and a no-persona baseline.</li>
+<li>Probe and patch candidate representations across paraphrases to distinguish identity attribution from wording.</li>
+</ul>
+<p><strong>Related Work</strong></p>
+<ul>
+<li><a href="https://arxiv.org/html/2407.18008">GermanPartiesQA</a> compares “I am [politician]” with “You are [politician]”; the prompts also change whose identity is described.</li>
+<li><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0341558">Out-of-context and out-of-scope</a> compares assistant-perspective chat prompting with third-person raw completion after fine-tuning. We would hold the chat template fixed.</li>
+<li><a href="https://arxiv.org/html/2603.12277v6">Prompt Injection as Role Confusion</a> probes internal message-role attribution and includes a pronoun ablation in forged reasoning; our focus is adoption of persona traits.</li>
+<li><a href="https://arxiv.org/html/2605.02087v2">Model Spec Midtraining</a> varies identity framing in training documents; we study its effects at inference time.</li>
+</ul></div></article>
+<footer><a href="../">All projects</a> · <a href="../#first-third-person">View in catalogue</a></footer>
+</main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
+</body></html>

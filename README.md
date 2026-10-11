@@ -25,7 +25,9 @@ Use descriptive, visibly underlined links. Sidebar headings are stronger than na
 
 ### Project catalogue
 
-The permanent URL is https://thomas.jiralerspong.com/projects/. All proposals appear directly on that page, with a scrolling table of contents matching the main site's navigation. The three sections are Not Started, In Progress, and Completed, in that order. Individual projects have stable links based on their filenames, such as https://thomas.jiralerspong.com/projects/#self-reflection.
+The permanent URL is https://thomas.jiralerspong.com/projects/. All proposals appear directly on that page, with a scrolling table of contents matching the main site's navigation. The three sections are Not Started, In Progress, and Completed, in that order. Each project also has a standalone page based on its filename, such as https://thomas.jiralerspong.com/projects/self-reflection/. Catalogue titles open these pages. Existing section links such as https://thomas.jiralerspong.com/projects/#self-reflection still work.
+
+Standalone pages include the same Markdown content, a project-specific title and canonical URL, and navigation back to the catalogue. Links to related projects open their standalone pages. Both views are generated together from the same source, including native math and publication status.
 
 Edit the Markdown files in `content/projects/` to change proposals or statuses. Keep filenames stable to preserve shared links. New files need `title`, `status`, and `order` in their YAML frontmatter. Supported statuses are exactly `Not started`, `In progress`, and `Completed`. The numeric `order` controls ordering within a status section. Unknown statuses fail the build rather than silently hiding a project.
 
@@ -33,7 +35,7 @@ Set `published: false` to retain a project in this source list while removing it
 
 Set `math: true` to enable LaTeX equations in a proposal. Use `$...$` for inline math and `$$...$$` for display equations. The build converts these to native MathML, so readers do not need a JavaScript math renderer. Wide equations scroll within their container on phones. Math is opt-in so ordinary dollar signs in other proposals keep their meaning.
 
-Proposals should briefly explain relevant prior work with inline links, explain what would be useful to investigate, and list initial directions as bullets. Describe Thomas's existing findings in the first person, using “I have some results showing…” and preserving the supported scope of the result. An optional `aliases` list preserves older project names as both hash anchors and redirect pages when proposals are combined. Completed papers can use a retrospective summary and link to their follow-ups.
+Proposals should briefly explain relevant prior work with inline links, explain what would be useful to investigate, and list initial directions as bullets. Describe Thomas's existing findings in the first person, using “I have some results showing…” and preserving the supported scope of the result. An optional `aliases` list preserves older project names as catalogue hash anchors and redirects to the current standalone page when proposals are combined. Completed papers can use a retrospective summary and link to their follow-ups.
 
 When referring to Affine Anticipation in proposal prose, link it as “My recent paper on linear context-answer relationships” and state the concrete finding: a learned linear map from the final context token's activation predicts the mean activation across answer tokens before generation. The completed project's title remains Affine Anticipation.
 

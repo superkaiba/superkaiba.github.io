@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A survey of personas and character in language models · Thomas Jiralerspong</title>
+<link rel="canonical" href="https://thomas.jiralerspong.com/projects/personas-character-survey/">
+<meta property="og:title" content="A survey of personas and character in language models · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/personas-character-survey/"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css?v=11623ee2a27f"><link rel="stylesheet" href="../catalogue.css?v=07682bc5e81c">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout project-detail-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../">All projects</a></li><li><a href="#personas-character-survey" data-section="personas-character-survey">Overview</a></li></ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<p class="project-back"><a href="../">← All projects</a></p><article class="project-detail toc-section" id="personas-character-survey"><h1>A survey of personas and character in language models</h1><p class="project-status">Not started</p><div class="project-reading">
+<p><strong>TL;DR:</strong> Bring together research on personas and model character to clarify what these terms mean, how they are measured, how they form and change, and what they explain about model behavior and alignment.</p>
+<p>Existing surveys such as <a href="https://aclanthology.org/2024.findings-emnlp.969/">Two Tales of Persona in LLMs</a> organize work on role-playing and personalization. <a href="https://www.nature.com/articles/s41586-023-06647-8">Role play with large language models</a> and the <a href="https://alignment.anthropic.com/2026/psm/">Persona Selection Model</a> offer conceptual accounts of assistant behavior. Work on <a href="https://www.anthropic.com/research/claude-character">character training</a>, <a href="https://arxiv.org/abs/2507.21509">persona vectors</a>, the <a href="https://arxiv.org/abs/2601.10387">Assistant Axis</a>, and <a href="https://arxiv.org/abs/2609.10883">story imprinting</a> supplies different ways to shape, measure, or explain character.</p>
+<p>This survey would connect these literatures around a common question: when does a persona or character provide a useful, testable explanation of a model's behavior? The focus would include the default assistant's dispositions, values, and goals, alongside deliberately prompted roles and fictional characters. It would distinguish temporary changes in style from behavior that persists across tasks, conversations, or training.</p>
+<p><strong>Initial directions:</strong></p>
+<ul>
+<li>Define a shared vocabulary for persona, role, personality trait, character, identity, values, and goals. Record how each paper operationalizes these terms rather than assuming they refer to the same thing.</li>
+<li>Map proposed origins and mechanisms: pretraining, post-training, system prompts, conversation history, internal representations, and interactions between them.</li>
+<li>Compare measurement methods, including self-reports, behavioral evaluations, consistency tests, activation probes, and causal interventions. Track whether evidence generalizes across prompts, languages, models, and tasks.</li>
+<li>Review how character changes through steering and fine-tuning, how traits transfer between personas, and when assistant behavior drifts or remains stable. Connect this to alignment, inoculation, and emergent misalignment.</li>
+<li>Use a documented search and screening process, building on existing surveys and tracing citations. Separate conceptual proposals, correlations, and causal evidence, and include conflicting results and failed replications.</li>
+</ul>
+<p>The intended output is a survey paper with an annotated bibliography, a taxonomy of methods and findings, and a research agenda organized around unresolved questions. My <a href="../persona-leakage/">persona-leakage experiments</a> would provide one concrete example of how representational similarity might predict transfer, with the current limits of that evidence made explicit.</p></div></article>
+<footer><a href="../">All projects</a> · <a href="../#personas-character-survey">View in catalogue</a></footer>
+</main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
+</body></html>
