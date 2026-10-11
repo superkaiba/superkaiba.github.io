@@ -32,6 +32,10 @@
 .project-catalogue footer{display:block;margin-top:44px}
 .project-detail-layout .project-catalogue h1{margin-bottom:12px;overflow-wrap:anywhere}
 .project-back{font-size:14px;margin:0 0 24px}
+.project-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.project-list li{border-bottom:1px solid var(--line)}
+.project-list a{display:block;padding:12px 0;line-height:1.5;overflow-wrap:anywhere}
+.project-count{font-size:16px;font-weight:400;color:var(--muted)}
 @media(min-width:541px) and (max-width:900px){
  .project-layout{grid-template-columns:180px minmax(0,1fr);gap:28px}
  .project-layout>.contents{--sidebar-offset:24px}

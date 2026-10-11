@@ -5,16 +5,16 @@
 <meta property="og:title" content="What can prompting, steering, LoRA, and fine-tuning change? · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/adaptation-methods/"><meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../base.css?v=11623ee2a27f"><link rel="stylesheet" href="../catalogue.css?v=07682bc5e81c">
+<link rel="stylesheet" href="../base.css?v=11623ee2a27f"><link rel="stylesheet" href="../catalogue.css?v=ba852906d7b3">
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
 </head><body><a class="skip-link" href="#main">Skip to content</a>
 <div class="page-layout project-layout project-detail-layout">
 <aside class="contents">
 <div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
 <button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
-<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../">All projects</a></li><li><a href="#adaptation-methods" data-section="adaptation-methods">Overview</a></li></ol></nav></div>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../contents/">Project contents</a></li><li><a href="#adaptation-methods" data-section="adaptation-methods">Overview</a></li></ol></nav></div>
 </aside><div class="site-wrap"><main class="project-catalogue" id="main">
-<p class="project-back"><a href="../">← All projects</a></p><article class="project-detail toc-section" id="adaptation-methods"><h1>What can prompting, steering, LoRA, and fine-tuning change?</h1><p class="project-status">Not started</p><div class="project-reading">
+<p class="project-back"><a href="../contents/">← Project contents</a></p><article class="project-detail toc-section" id="adaptation-methods"><h1>What can prompting, steering, LoRA, and fine-tuning change?</h1><p class="project-status">Not started</p><div class="project-reading">
 <p><a href="https://arxiv.org/abs/2106.09685">LoRA</a> shows that low-rank weight updates can efficiently adapt large models. <a href="https://arxiv.org/html/2605.03907v1">Steer Like the LLM</a> connects prompting to activation interventions and learns token-dependent steering that imitates prompt effects. These connections suggest common structure, but do not establish that the methods can induce the same behaviors under comparable constraints.</p>
 <p>It would be useful to map which changes each method can achieve, when one can reproduce another, and where apparent equivalence breaks down. The comparison should include reliability and preservation of existing abilities, alongside success on the requested behavior.</p>
 <ul>
@@ -23,6 +23,6 @@
 <li>Test whether interventions transfer across contexts, tasks, and conversational roles.</li>
 <li>Compare internal representation changes, then use counterexamples to identify behavior that one method changes reliably and another cannot reproduce within its budget.</li>
 </ul></div></article>
-<footer><a href="../">All projects</a> · <a href="../#adaptation-methods">View in catalogue</a></footer>
+<footer><a href="../contents/">Project contents</a> · <a href="../#adaptation-methods">View in catalogue</a></footer>
 </main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
 </body></html>

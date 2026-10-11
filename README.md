@@ -25,6 +25,8 @@ Use descriptive, visibly underlined links. Sidebar headings are stronger than na
 
 ### Project catalogue
 
+The dedicated table of contents is https://thomas.jiralerspong.com/projects/contents/. It lists published project titles by status, with links to their standalone pages. Individual pages and the full catalogue link to it. The `contents` filename is reserved for this generated page.
+
 The permanent URL is https://thomas.jiralerspong.com/projects/. All proposals appear directly on that page, with a scrolling table of contents matching the main site's navigation. The three sections are Not Started, In Progress, and Completed, in that order. Each project also has a standalone page based on its filename, such as https://thomas.jiralerspong.com/projects/self-reflection/. Catalogue titles open these pages. Existing section links such as https://thomas.jiralerspong.com/projects/#self-reflection still work.
 
 Standalone pages include the same Markdown content, a project-specific title and canonical URL, and navigation back to the catalogue. Links to related projects open their standalone pages. Both views are generated together from the same source, including native math and publication status.

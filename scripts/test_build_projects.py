@@ -107,7 +107,7 @@ Unpublished content.
         for asset in ("base.css", "catalogue.css", "navigation.js"):
             self.assertIn(f'../{asset}?v=', html)
             self.assertTrue((self.dest / asset).exists())
-        self.assertIn('href="../">← All projects', html)
+        self.assertIn('href="../contents/">← Project contents', html)
         self.assertIn('href="../#alpha">View in catalogue', html)
         self.assertIn('href="../beta/">Related', html)
         self.assertIn('href="../beta/">Alias', html)
@@ -136,6 +136,21 @@ Unpublished content.
         for slug in ("hidden", "old-hidden"):
             for name in ("index.html", "note.md"):
                 self.assertFalse((self.dest / slug / name).exists())
+
+    def test_contents_lists_only_published_titles_grouped_by_status(self):
+        html = (self.dest / "contents/index.html").read_text()
+        self.assertIn('<h1>Project contents</h1>', html)
+        self.assertIn('rel="canonical" href="https://thomas.jiralerspong.com/projects/contents/"', html)
+        self.assertIn('href="../beta/">Beta</a>', html)
+        self.assertIn('href="../alpha/">Alpha &amp; one</a>', html)
+        self.assertLess(html.index('href="../beta/"'), html.index('href="../alpha/"'))
+        self.assertIn('Not Started <span class="project-count">(1)</span>', html)
+        self.assertIn('In Progress <span class="project-count">(1)</span>', html)
+        self.assertIn('Completed <span class="project-count">(0)</span>', html)
+        self.assertNotIn("distinctive content", html)
+        self.assertNotIn("Hidden proposal", html)
+        self.assertNotIn("old-alpha", html)
+        self.assertIn('href="contents/">Project contents', (self.dest / 'index.html').read_text())
 
 
 if __name__ == "__main__":

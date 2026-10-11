@@ -5,16 +5,16 @@
 <meta property="og:title" content="Contextualized pretraining for more robust alignment · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/contextualized-pretraining/"><meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../base.css?v=11623ee2a27f"><link rel="stylesheet" href="../catalogue.css?v=07682bc5e81c">
+<link rel="stylesheet" href="../base.css?v=11623ee2a27f"><link rel="stylesheet" href="../catalogue.css?v=ba852906d7b3">
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
 </head><body><a class="skip-link" href="#main">Skip to content</a>
 <div class="page-layout project-layout project-detail-layout">
 <aside class="contents">
 <div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
 <button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
-<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../">All projects</a></li><li><a href="#contextualized-pretraining" data-section="contextualized-pretraining">Overview</a></li></ol></nav></div>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../contents/">Project contents</a></li><li><a href="#contextualized-pretraining" data-section="contextualized-pretraining">Overview</a></li></ol></nav></div>
 </aside><div class="site-wrap"><main class="project-catalogue" id="main">
-<p class="project-back"><a href="../">← All projects</a></p><article class="project-detail toc-section" id="contextualized-pretraining"><h1>Contextualized pretraining for more robust alignment</h1><p class="project-status">In progress</p><div class="project-reading">
+<p class="project-back"><a href="../contents/">← Project contents</a></p><article class="project-detail toc-section" id="contextualized-pretraining"><h1>Contextualized pretraining for more robust alignment</h1><p class="project-status">In progress</p><div class="project-reading">
 <p><a href="https://arxiv.org/abs/2310.15047">Source-reliability learning</a> and <a href="https://arxiv.org/abs/2510.04340">inoculation prompting</a> suggest that the context surrounding training examples can affect how their information generalizes. The <a href="https://lawzero.org/en/publication/scientist-ai-safe-design-not-desiring">Scientist AI proposal</a> also motivates giving models explicit information about the provenance and reliability of what they read.</p>
 <p>I have some results showing that source attribution during fine-tuning can reduce misalignment on unrelated tasks, though the unwanted behavior can return when the training frame is reapplied. These <a href="https://github.com/superkaiba/truthification_pretraining/blob/main/writeup/truthification_summary.pdf">preliminary experiments</a> provide a starting point.</p>
 <p>It would be useful to test whether source attribution during pretraining creates better-separated representations and more robust behavior under later fine-tuning. The pretraining extension needs a carefully chosen scale.</p>
@@ -24,6 +24,6 @@
 <li>Apply matched later fine-tuning and test whether alignment is more robust.</li>
 <li>Evaluate missing, misleading and unreliable source labels to identify what the model actually learns to trust.</li>
 </ul></div></article>
-<footer><a href="../">All projects</a> · <a href="../#contextualized-pretraining">View in catalogue</a></footer>
+<footer><a href="../contents/">Project contents</a> · <a href="../#contextualized-pretraining">View in catalogue</a></footer>
 </main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
 </body></html>

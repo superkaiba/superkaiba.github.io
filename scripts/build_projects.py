@@ -56,6 +56,10 @@ CSS = """
 .project-catalogue footer{display:block;margin-top:44px}
 .project-detail-layout .project-catalogue h1{margin-bottom:12px;overflow-wrap:anywhere}
 .project-back{font-size:14px;margin:0 0 24px}
+.project-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.project-list li{border-bottom:1px solid var(--line)}
+.project-list a{display:block;padding:12px 0;line-height:1.5;overflow-wrap:anywhere}
+.project-count{font-size:16px;font-weight:400;color:var(--muted)}
 @media(min-width:541px) and (max-width:900px){
  .project-layout{grid-template-columns:180px minmax(0,1fr);gap:28px}
  .project-layout>.contents{--sidebar-offset:24px}
@@ -85,14 +89,25 @@ CSS = """
 def theme_button():
     return '''<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button>'''
 
-def render_page(body, toc, versions, project=None):
-    title = escape(project["title"]) if project else "Research projects"
-    canonical = f'{HOME_URL}projects/{project["slug"]}/' if project else f'{HOME_URL}projects/'
-    prefix = "../" if project else ""
+def render_page(body, toc, versions, project=None, contents=False):
+    if project:
+        title = escape(project["title"])
+        canonical = f'{HOME_URL}projects/{project["slug"]}/'
+        heading = '<p class="project-back"><a href="../contents/">← Project contents</a></p>'
+        footer = f'<a href="../contents/">Project contents</a> · <a href="../#{project["slug"]}">View in catalogue</a>'
+    elif contents:
+        title = "Project contents"
+        canonical = f'{HOME_URL}projects/contents/'
+        heading = '<h1>Project contents</h1><p class="project-back">Select a title to read its proposal, or <a href="../">read all proposals on one page</a>.</p>'
+        footer = f'<a href="../">Full catalogue</a> · <a href="{HOME_URL}">Main website</a>'
+    else:
+        title = "Research projects"
+        canonical = f'{HOME_URL}projects/'
+        heading = '<p class="project-back"><a href="contents/">Project contents</a></p><h1>Research projects</h1>'
+        footer = f'<a href="contents/">Project contents</a> · <a href="{HOME_URL}">Main website</a>'
+    prefix = "../" if project or contents else ""
     layout = " project-detail-layout" if project else ""
     current_section = "Overview" if project else "Not Started"
-    heading = '<p class="project-back"><a href="../">← All projects</a></p>' if project else '<h1>Research projects</h1>'
-    footer = f'<a href="../">All projects</a> · <a href="../#{project["slug"]}">View in catalogue</a>' if project else f'<a href="{HOME_URL}">Main website</a>'
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} · Thomas Jiralerspong</title>
@@ -131,8 +146,25 @@ def render_project_page(project, versions, project_targets):
     aliases = ''.join(f'<span class="project-alias" id="{alias}" aria-hidden="true"></span>' for alias in project.get("aliases", []))
     content = standalone_links(project["rendered"], project_targets, slug)
     body = f'<article class="project-detail toc-section" id="{slug}">{aliases}<h1>{title}</h1><p class="project-status">{escape(project["status"])}</p><div class="project-reading">{content}</div></article>'
-    toc = f'<li><a href="../">All projects</a></li><li><a href="#{slug}" data-section="{slug}">Overview</a></li>'
+    toc = f'<li><a href="../contents/">Project contents</a></li><li><a href="#{slug}" data-section="{slug}">Overview</a></li>'
     return render_page(body, toc, versions, project=project)
+
+
+def render_contents_page(projects, versions):
+    body, toc = "", ""
+    for title, key in GROUPS:
+        rows = [p for p in projects if p["status"].lower().replace(" ", "-") == key]
+        toc += f'<li class="toc-parent"><a href="#{key}" data-section="{key}">{title} ({len(rows)})</a></li>'
+        body += f'<section class="project-group toc-section" id="{key}"><h2>{title} <span class="project-count">({len(rows)})</span></h2>'
+        if rows:
+            body += '<ul class="project-list">'
+            for project in rows:
+                body += f'<li><a href="../{project["slug"]}/">{escape(project["title"])}</a></li>'
+            body += '</ul>'
+        else:
+            body += '<p class="project-empty">No projects listed.</p>'
+        body += '</section>'
+    return render_page(body, toc, versions, contents=True)
 
 
 def render_project_redirect(project):
@@ -180,7 +212,7 @@ def main():
         projects.append(meta)
     projects.sort(key=lambda p:(STATUSES[p["status"]], p.get("order", 999), p["title"].lower()))
     # Validate all public anchors before writing files, including historical names.
-    anchors = {key for _, key in GROUPS} | {"main"}
+    anchors = {key for _, key in GROUPS} | {"main", "contents"}
     for p in projects:
         for slug in [p["slug"], *p.get("aliases", [])]:
             if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug) or slug in anchors:
@@ -232,6 +264,8 @@ def main():
             toc += "</ol>"
         toc += "</li>"
     (DEST / "index.html").write_text(render_page(body, toc, versions))
+    (DEST / "contents").mkdir(exist_ok=True)
+    (DEST / "contents/index.html").write_text(render_contents_page(projects, versions))
     print(f"Rendered {len(projects)} projects at {DEST}; retained {len(unpublished)} unpublished proposals in {CONTENT}")
 
 if __name__ == "__main__":
