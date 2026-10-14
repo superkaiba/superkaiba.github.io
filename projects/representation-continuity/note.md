@@ -1,0 +1,15 @@
+# How smoothly does behavior change along natural activation paths?
+
+**TL;DR:** Test whether small changes to internal representations can cause large behavior changes even when interventions follow the model's natural activation geometry, and identify which features behave like gradual controls or sharp switches.
+
+Work on [activation plateaus](https://www.lesswrong.com/posts/WMfSbt7AAcJdHzysB/activation-plateaus-where-and-how-they-emerge) finds both gradual responses and flat regions separated by sharp transitions when interpolating between activations. [Feature-specific error correction](https://arxiv.org/abs/2606.24964) compares sensitivity along candidate feature directions and their mixtures. [Steering-strength analysis](https://arxiv.org/abs/2602.02712) studies how token probabilities and concept expression change as a fixed steering vector is scaled.
+
+These experiments use fixed directions or prescribed interpolation paths, including spherical paths that control activation magnitude. They do not establish that the intermediate states follow the model's natural activation geometry. A sharp response could therefore reflect a meaningful behavioral boundary, an excursion away from familiar activation regions, or both.
+
+It would be useful to test whether sharp transitions persist along learned curved paths that stay near natural activations. This connects to [characterizing activation geometry with nonlinear factors](#activation-manifold) and [nonlinear persona representations](#persona-manifolds), with a specific focus on how smoothly behavior changes. Here, continuity means practical sensitivity to finite changes, rather than a claim of mathematical discontinuity in a dense transformer's probability outputs.
+
+- Compare fixed-direction steering, spherical interpolation, and curved paths learned from naturally occurring activations. Match endpoints, report path length, and measure local response per unit distance so a longer path does not automatically appear smoother.
+- Check whether intermediate states resemble held-out natural activations using multiple measures of distribution fit and preserved task performance. Treat these checks as evidence about path quality, not proof that the learned path follows the true representation manifold.
+- Measure downstream activation changes, output-distribution changes, and behavioral outcomes separately. Use repeated generations and fixed-prefix evaluations to distinguish internal sensitivity from a small probability change that flips a decoded token.
+- Compare transition sharpness across semantic features, prompts, layers, and models. Test whether any gradual-versus-switching pattern generalizes, rather than assigning each concept a permanent label from one context.
+- Test whether following natural geometry makes steering more predictable and selective. If sharp transitions remain on well-supported paths, investigate the computations that create them and whether their locations predict behavioral changes on held-out prompts.
