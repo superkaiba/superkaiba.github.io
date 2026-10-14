@@ -8,6 +8,8 @@ It would be useful to understand when personas lie along approximately linear di
 
 The proposed control method is to choose traits such as persistence and agreeableness, estimate a one-dimensional manifold for different levels of each trait, and cap the model's position along those manifolds during inference. The aim is to keep each trait within a chosen range throughout a conversation. Whether these controls remain independent and stable as context grows is a question to test, rather than an assumed property of nonlinear steering.
 
+[Laziness and overclaiming axes](#laziness-overclaiming) is a focused subproject on two aspects of character: diligence in doing requested work and honesty in reporting what was done. It provides a concrete test of whether separate trait controls improve actual execution and reporting accuracy, and whether they remain independent over long contexts.
+
 **First Steps**
 
 - Compare principal components with independently measured persona and belief directions.

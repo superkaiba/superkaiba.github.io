@@ -19,6 +19,7 @@
 <p><a href="https://arxiv.org/abs/2506.19823">Persona features</a> and the <a href="https://arxiv.org/abs/2601.10387">assistant axis</a> describe useful linear directions. <a href="https://arxiv.org/abs/2602.06964">Generative modeling of LLM activations</a> supplies a way to investigate more complex geometry and interventions that stay closer to typical model states.</p>
 <p>It would be useful to understand when personas lie along approximately linear directions and when curved structure matters for predicting or controlling behavior. This project is already in progress.</p>
 <p>The proposed control method is to choose traits such as persistence and agreeableness, estimate a one-dimensional manifold for different levels of each trait, and cap the model's position along those manifolds during inference. The aim is to keep each trait within a chosen range throughout a conversation. Whether these controls remain independent and stable as context grows is a question to test, rather than an assumed property of nonlinear steering.</p>
+<p><a href="../laziness-overclaiming/">Laziness and overclaiming axes</a> is a focused subproject on two aspects of character: diligence in doing requested work and honesty in reporting what was done. It provides a concrete test of whether separate trait controls improve actual execution and reporting accuracy, and whether they remain independent over long contexts.</p>
 <p><strong>First Steps</strong></p>
 <ul>
 <li>Compare principal components with independently measured persona and belief directions.</li>
