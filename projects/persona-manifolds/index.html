@@ -15,14 +15,19 @@
 <div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../contents/">Project contents</a></li><li><a href="#persona-manifolds" data-section="persona-manifolds">Overview</a></li></ol></nav></div>
 </aside><div class="site-wrap"><main class="project-catalogue" id="main">
 <p class="project-back"><a href="../contents/">← Project contents</a></p><article class="project-detail toc-section" id="persona-manifolds"><h1>Nonlinear geometry of persona representations</h1><p class="project-status">In progress</p><div class="project-reading">
+<p><strong>TL;DR:</strong> Find one-dimensional manifolds for individual character traits, then test whether steering and capping several traits along these paths gives fine-grained control that stays stable over long contexts.</p>
 <p><a href="https://arxiv.org/abs/2506.19823">Persona features</a> and the <a href="https://arxiv.org/abs/2601.10387">assistant axis</a> describe useful linear directions. <a href="https://arxiv.org/abs/2602.06964">Generative modeling of LLM activations</a> supplies a way to investigate more complex geometry and interventions that stay closer to typical model states.</p>
 <p>It would be useful to understand when personas lie along approximately linear directions and when curved structure matters for predicting or controlling behavior. This project is already in progress.</p>
+<p>The proposed control method is to choose traits such as persistence and agreeableness, estimate a one-dimensional manifold for different levels of each trait, and cap the model's position along those manifolds during inference. The aim is to keep each trait within a chosen range throughout a conversation. Whether these controls remain independent and stable as context grows is a question to test, rather than an assumed property of nonlinear steering.</p>
+<p><strong>First Steps</strong></p>
 <ul>
 <li>Compare principal components with independently measured persona and belief directions.</li>
 <li>Diagnose negative assistant-axis scores before any conversation, separating coordinate conventions from behavioral differences.</li>
-<li>Track whether post-training moves representations along an existing manifold or changes its structure.</li>
-<li>Collect graded persona examples, fit spline-based steering paths and compare them with fixed linear interventions.</li>
-<li>Measure behavioral control and generation quality on prompts not used to estimate the geometry.</li>
+<li>Collect examples spanning graded levels of each selected trait across many prompts, fit one-dimensional manifolds or spline-based steering paths, and compare them with fixed linear directions.</li>
+<li>Steer and cap each trait along its manifold during inference. Test whether the requested level predicts expressed behavior on prompts not used to estimate the geometry.</li>
+<li>Apply several trait controls together and measure whether changing one also changes the others. Test their independence rather than assuming separate manifolds give separate controls.</li>
+<li>Test stability over progressively longer conversations, including distractions and conflicting persona cues. Compare with prompting, linear steering or capping, small LoRAs, and post-training while measuring generation quality and task performance.</li>
+<li>Repeat across stages of post-training to see whether training moves representations along existing manifolds, changes their geometry, or changes how well the controls work.</li>
 </ul></div></article>
 <footer><a href="../contents/">Project contents</a> · <a href="../#persona-manifolds">View in catalogue</a></footer>
 </main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>

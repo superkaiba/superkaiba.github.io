@@ -1,14 +1,20 @@
 # Are personas representations of document sources?
 
+**TL;DR:** Test whether pretraining teaches models to infer the hidden data-generating processes behind internet text, with personas representing the people or agents within those processes.
+
 Work on [persona features](https://arxiv.org/abs/2506.19823) and the [Persona Selection Model](https://alignment.anthropic.com/2026/psm/) makes personas useful objects of analysis, but leaves a basic question: what is the internal object we are calling a persona? A latent-variable reading of the [simulator view](https://www.lesswrong.com/posts/vJFdjigzmcXMhNTsx/simulators) suggests a compact representation that selects what process the model is simulating. What does that latent actually represent?
 
-My hypothesis is that, in pretrained models, it represents the source of the document being continued. Pretraining requires predicting text from many different sources, and inferring what produced a prefix could help coordinate predictions throughout the document. Here, source means the document-generating situation: the author's knowledge, beliefs and intentions, the audience, genre and setting, and the document's structure. A persona could be the agent-related part of this broader latent. I want to test whether source inference is a central organizing computation in base models.
+The connection is to the data-generating process of the internet. A document is produced by someone, or by an automated system, in a particular situation: an author with knowledge, beliefs and goals addresses an audience through a platform, genre and format. A forum reply, a scientific article and an advertisement can discuss the same topic while making very different continuations likely. These shared causes can shape the vocabulary, factual reliability, style and structure of an entire document. Crawling, filtering and sampling then determine which of those documents reach the training corpus.
 
-Let $x_{1:T}$ be a document and $z$ its source latent. A generative account is:
+My hypothesis is that predicting internet text encourages a pretrained model to infer this hidden generating situation from the prefix and use it to predict what comes next. A document-source representation would summarize that inference. Here, "source" means more than a URL or document identity: it includes who or what produced the text, for whom, for what purpose, and under which conventions. A persona could be the agent-related part of this broader latent. I want to test whether inferring the internet's data-generating processes is a central organizing computation in base models.
+
+Let $x_{1:T}$ be a document and $z$ its latent generating situation. As a simplified account of the internet text represented in a training corpus, first sample a situation, then generate a document conditioned on it:
 
 $$
 p(x_{1:T}, z) = p(z) \prod_{t=1}^{T} p(x_t \mid x_{<t}, z).
 $$
+
+Here, $p(z)$ describes the mixture of generating situations in the selected corpus, including the effects of collection and filtering. It need not match their prevalence on the internet as a whole. The hypothesis is that the model learns useful structure in this mixture and infers which process could have produced the text it is reading.
 
 After reading a prefix, uncertainty about its source is described by:
 
@@ -32,7 +38,8 @@ Here, $h_t^{(\ell)}$ is measured after the prefix and before predicting token $t
 
 [Implicit Bayesian inference](https://arxiv.org/abs/2111.02080) gives a theoretical precedent for latent document-level concepts, and [Language Models as Agent Models](https://aclanthology.org/2022.findings-emnlp.423/) demonstrates author-belief representations in a controlled synthetic setting. [Persistent](https://arxiv.org/abs/2607.17117) and [chunk-level sparse autoencoders](https://arxiv.org/abs/2609.35521) offer methods for finding information shared across tokens or passages. The proposed test is whether that information captures a source and jointly governs multiple properties of generation.
 
-- Start with controlled documents that independently vary author beliefs, audience, genre and topic. Compare known pretraining documents with unseen documents from similar sources to separate memorized document identity from source inference.
+- Start with a controlled document-generating process that independently varies author beliefs and goals, audience, platform conventions, genre and topic. Test whether the model recovers these factors and predicts held-out combinations.
+- Extend to internet documents with known provenance. Compare the same author across audiences or platforms and different authors in the same setting. Compare known pretraining documents with unseen documents from similar sources to separate memorized document identity from inference about the generating process.
 - Compare independently processed, nonoverlapping passages from the same document, different documents from the same source, and matched documents from different sources. Control lexical overlap, topic and style, and test on held-out combinations.
 - Estimate the dimensionality and persistence of candidate representations across layers. Compare linear subspaces, nonlinear readouts and SAE features at matched capacity, including how well they predict several held-out source attributes.
 - Track uncertainty and updates under ambiguous prefixes, revealing evidence, quotations and source switches. Distinguish the author, narrator and quoted speakers.
