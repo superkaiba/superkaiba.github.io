@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How features combine and separate across transformer layers · Thomas Jiralerspong</title>
+<link rel="canonical" href="https://thomas.jiralerspong.com/projects/hourglass-sae/">
+<meta property="og:title" content="How features combine and separate across transformer layers · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/hourglass-sae/"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css?v=11623ee2a27f"><link rel="stylesheet" href="../catalogue.css?v=ba852906d7b3">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout project-detail-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../contents/">Project contents</a></li><li><a href="#hourglass-sae" data-section="hourglass-sae">Overview</a></li></ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<p class="project-back"><a href="../contents/">← Project contents</a></p><article class="project-detail toc-section" id="hourglass-sae"><h1>How features combine and separate across transformer layers</h1><p class="project-status">Not started</p><div class="project-reading">
+<p><a href="https://proceedings.mlr.press/v267/bussmann25a.html">Matryoshka SAEs</a> learn features at several levels of abstraction within a chosen activation site. <a href="https://transformer-circuits.pub/2025/attribution-graphs/methods.html">Cross-layer transcoders</a> connect sparse features across transformer depth, but do not explicitly organize those features into a semantic hierarchy. Work on <a href="https://arxiv.org/html/2406.19384">stages of inference</a> suggests that intermediate layers build semantic representations while later layers increasingly turn them into token predictions.</p>
+<p>It would be useful to train sparse features jointly across layers with an explicit preference for an hourglass structure: earlier features combine into more abstract middle-layer features, which then branch into more concrete, output-specific features. The later stage need not recover the original inputs. The question is whether this structure makes the learned features and their interactions more faithful to the model. The location of the most abstract features should remain a hypothesis to test, rather than a conclusion guaranteed by the architecture.</p>
+<ul>
+<li>Keep the transformer frozen and learn sparse representations that reconstruct its activations at several depths, connected by sparse nonlinear mappings. Preserve attention-mediated interactions when connecting features across token positions.</li>
+<li>Encourage composition before a middle region and branching afterward, while allowing persistent features and paths that carry details past that region. Compare fixed and learned transition depths.</li>
+<li>Compare this preference with unconstrained cross-layer connections and a hierarchy that only builds toward greater abstraction, using comparable parameter and sparsity budgets.</li>
+<li>Measure abstraction through stability across changes in wording or other irrelevant details, rather than dictionary size alone. Test whether intervening on a middle feature produces the predicted changes in downstream features and outputs in the original model.</li>
+<li>Start with a small model whose intermediate computations are known, then test a pretrained language model. Check for <a href="https://www.lesswrong.com/posts/6CS2NDmoLCFcEJMor/cross-layer-transcoders-are-incentivized-to-learn-unfaithful">skipped intermediate computations</a>, since accurate reconstruction alone does not establish a faithful explanation.</li>
+</ul></div></article>
+<footer><a href="../contents/">Project contents</a> · <a href="../#hourglass-sae">View in catalogue</a></footer>
+</main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
+</body></html>
