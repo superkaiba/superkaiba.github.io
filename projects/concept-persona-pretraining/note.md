@@ -1,0 +1,22 @@
+# Tracking concept and persona interpretability through pretraining
+
+**TL;DR:** Track when concepts and personas become decodable across pretraining checkpoints, how their representations become easier or harder to interpret, and when they begin to influence behavior.
+
+A model checkpoint is a saved state of the model during training. Comparing successive checkpoints lets us study how representations develop, rather than only examining the finished model. [Pythia](https://arxiv.org/abs/2304.01373) provides intermediate checkpoints and a controlled training-data order across model sizes. Work on [probe control tasks](https://aclanthology.org/D19-1275/) also shows why successful decoding must be interpreted alongside what the probe itself can learn.
+
+Here, concepts are properties such as topic, sentiment or an entity's attributes. Personas are representations associated with a speaker's identity, beliefs, goals or behavioral traits. I want to track whether these become readable gradually or abruptly, whether their geometry stabilizes or reorganizes, and whether persona structure develops differently from simpler semantic concepts. Base-model evaluations should use natural document and dialogue continuations, without assuming that early checkpoints can follow assistant instructions.
+
+Decodability means that a readout can predict a property from activations on held-out examples. Interpretability requires additional evidence that the representation has a consistent semantic meaning across contexts. Whether the model uses it is a further question for causal interventions. These properties may develop at different points in training.
+
+**Initial directions:**
+
+- **Build comparable measurements across checkpoints.** Start with one model size and a fixed set of labeled concept and persona examples. Keep extraction positions, layer coverage, train/test splits and probe budgets consistent. Evaluate unseen topics, paraphrases and persona combinations, controlling explicit role words and other lexical shortcuts.
+- **Track the complexity of decoding.** Compare individual coordinates, linear probes and small nonlinear probes. Plot held-out accuracy and data efficiency against training tokens, with random-label and untrained-model controls. Test whether information becomes accessible to simpler readouts, rather than treating every accuracy gain as the appearance of a new concept.
+- **Measure semantic stability and representational change.** Compare probes refitted at each checkpoint with probes transferred between checkpoints, both directly and after alignment learned on separate data. Track dimensionality, directions and generalization across contexts. A transferred probe can fail because the representation moved, so that failure alone would not show that information was lost.
+- **Connect representations to behavior.** Measure concept-sensitive predictions and persona-consistent continuations alongside decoding. At selected checkpoints, patch, ablate or steer candidate representations with matched control interventions. Test whether behavioral effects emerge before, alongside or after reliable decoding, while checking generation quality.
+- **Check apparent emergence and loss.** Sample checkpoints more densely around transitions and report uncertainty across examples and probe fits. Control activation scale, probe optimization and changes in general language competence. Treat failed decoding as a limit of the tested readouts, not proof that the concept is absent.
+- **Compare concepts, personas and model sizes.** Ask whether persona properties appear later, require more complex readouts, or remain less stable across contexts. Replicate the main patterns at another model size and, where training records permit, relate changes to data exposure without treating correlation as a causal explanation.
+
+The intended output is a set of development curves showing when each property becomes readable, semantically stable and causally useful, including cases where these measures diverge.
+
+**Related projects:** [Semantic structure in native residual coordinates](#native-coordinates) focuses on the model's original coordinate system. [How linear are LLM representations?](#linearity) studies broader representation dynamics. [Are personas representations of document sources?](#document-source-representations) asks what persona representations encode. [What determines the right probe?](#probe-selection) studies which readout methods different representation geometries require.
