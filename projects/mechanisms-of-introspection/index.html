@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A general mechanistic understanding of LLM introspection · Thomas Jiralerspong</title>
+<link rel="canonical" href="https://thomas.jiralerspong.com/projects/mechanisms-of-introspection/">
+<meta property="og:title" content="A general mechanistic understanding of LLM introspection · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/mechanisms-of-introspection/"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css?v=11623ee2a27f"><link rel="stylesheet" href="../catalogue.css?v=ba852906d7b3">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout project-detail-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../contents/">Project contents</a></li><li><a href="#mechanisms-of-introspection" data-section="mechanisms-of-introspection">Overview</a></li></ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<p class="project-back"><a href="../contents/">← Project contents</a></p><article class="project-detail toc-section" id="mechanisms-of-introspection"><h1>A general mechanistic understanding of LLM introspection</h1><p class="project-status">Not started</p><div class="project-reading">
+<p><strong>TL;DR:</strong> Identify how language models read and report their own internal states, and test whether different forms of introspection use a shared mechanism or separate circuits.</p>
+<p><a href="https://arxiv.org/abs/2603.21396">Mechanisms of Introspective Awareness</a> traces a pathway from injected concepts through evidence-carrier features to gates that control detection reports. This explains a specific experimental behavior. A broader account would explain how a model judges its own uncertainty, anticipates its decisions, or checks whether an output matches its prior internal state under ordinary conditions.</p>
+<p>There are useful starting points beyond concept injection. <a href="https://www.nature.com/articles/s42256-026-01293-x">Causal evidence that language models use confidence to drive behaviour</a> links internal confidence representations to decisions to answer or abstain. <a href="https://arxiv.org/abs/2603.20276">Me, Myself, and pi</a> studies self-prediction and proposes attention diffusion as a partial mechanism in an ethical-dilemma task. Neither establishes a general circuit for introspection. <a href="https://transformer-circuits.pub/2025/introspection/index.html">Anthropic's discussion of possible mechanisms</a> also considers several specialized circuits that could reuse computations learned for other purposes.</p>
+<p>The central question is whether the model constructs a reusable representation of its own processing that supports different judgments, or whether apparent introspection comes from task-specific readouts, recomputing an answer, and interpreting visible text. Finding information with an external probe is insufficient: the model must itself use that information to make an accurate judgment about its state.</p>
+<p><strong>First Steps</strong></p>
+<ul>
+<li>Build matched tasks for reporting confidence, predicting one's own choices, checking intended versus produced outputs, and detecting controlled activation perturbations. Measure self-report accuracy separately from primary-task performance.</li>
+<li>Trace the attention and MLP computations connecting task representations to self-reports. Distinguish original model neurons from features extracted by transcoders or sparse autoencoders, and look for shared intermediate representations across tasks.</li>
+<li>Ablate and patch candidate components across tasks. Test whether an intervention changes introspective accuracy while preserving the underlying ability, and control for generic changes in answer preference, refusal, and reporting style.</li>
+<li>Compare with observers given only the text, matched non-introspective questions, and unrelated internal interventions. Test transfer across prompts, concepts, and model checkpoints, including natural internal variation as well as injected signals.</li>
+</ul>
+<p>This complements <a href="../self-latent-prediction/">training models to predict their own activations</a>: the focus here is explaining existing introspective mechanisms and their limits, rather than introducing a new training objective.</p></div></article>
+<footer><a href="../contents/">Project contents</a> · <a href="../#mechanisms-of-introspection">View in catalogue</a></footer>
+</main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
+</body></html>
