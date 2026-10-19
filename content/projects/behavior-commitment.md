@@ -1,0 +1,28 @@
+---
+title: How much of an LLM's behavior is decided in advance?
+status: Not started
+order: 5.1
+---
+
+# How much of an LLM's behavior is decided in advance?
+
+**TL;DR:** Measure when an LLM's answers, plans and behavioral choices become predictable, when early representations start to control them, and how long those choices remain open to revision.
+
+[My recent paper on linear context-answer relationships](https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf) studies answer prediction before generation. I have some results showing that a learned linear map from the final context token's activation can predict the mean activation across the answer's tokens. This raises a further question: how much of the upcoming behavior has the model already selected, and how much is still determined by computation during generation? Predicting the average answer representation does not by itself show that one particular answer is fixed.
+
+Prior work suggests several different kinds of advance commitment. [What's the plan?](https://proceedings.iclr.cc/paper_files/paper/2026/hash/9bc26f543c554fac50122b23563898f7-Abstract-Conference.html) tests whether future targets shape both the endpoint and the intervening text. The [Reasoning Theater preprint](https://arxiv.org/abs/2603.05488) finds that eventual answers can become decodable before they are expressed, with differences between easier and harder questions. [Thought Branches](https://proceedings.iclr.cc/paper_files/paper/2026/hash/954d303839bf7fc458acea7384322255-Abstract-Conference.html) shows why interpreting reasoning requires resampling and checking whether removed ideas are regenerated. Together, these motivate separating early information from causal control and robustness to revision.
+
+I want to measure the distribution of future outcomes at successive points in a response, rather than infer commitment from one completed trace. A model might settle on a tool before choosing its arguments, or select a candidate answer while still checking whether it is correct. The relevant timing may differ for answers, plans and behavioral choices such as refusal or honest reporting.
+
+**Initial directions:**
+
+- **Measure what is predictable before generation.** Compare context-to-answer metamodels, direct activation probes and prompt-only baselines on held-out tasks. Predict the model's eventual behavior separately from the correct answer, so a probe's task-solving ability is not mistaken for knowledge of the model's choice.
+- **Track the remaining alternatives.** Sample repeated continuations from the same prompt and reasoning prefix, holding the decoding policy fixed. Estimate how outcome probabilities change over time, with uncertainty intervals rather than treating agreement among a few samples as certainty.
+- **Test causal control.** Patch or ablate candidate representations at selected checkpoints, including relevant cached states when testing information carried from earlier tokens. Compare matched donor states and control interventions, check generation quality, and test whether a future target changes both the endpoint and the text leading toward it.
+- **Separate availability from commitment.** Compare internal readouts with answers elicited by stopping reasoning early. Treat forced answering as an intervention that can add computation. Test whether later reasoning remains useful even when the answer's identity stays unchanged.
+- **Measure revision and recovery.** Introduce valid new evidence or alter a reasoning step, then resample the continuation. Track whether the model changes course, reconstructs a removed idea, or returns to its earlier choice. Distinguish a stable preference from a choice that survives relevant causal interventions.
+- **Compare tasks and models.** Study factual answers, multistep reasoning, constrained planning and behavioral choices separately. Vary difficulty and model family, and distinguish layer depth, reasoning-token position and the first user-visible answer. Test any stopping rule prospectively on held-out traces rather than locating the last switch retrospectively.
+
+The intended output is a set of curves showing which outcomes remain possible, which early representations control them, and when additional reasoning can still change them.
+
+**Related projects:** This extends [Affine Anticipation](#affine-anticipation), connects to [predicting answer activations from context](#answer-activations), and builds on [what is stored in the final context activation](#context-vector).
