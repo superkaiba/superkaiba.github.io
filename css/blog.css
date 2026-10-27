@@ -71,3 +71,10 @@ ul.paper-summary{padding-left:19px;margin-bottom:0}ul.paper-summary li+li{margin
  .contents .sidebar-panel{margin-left:-44px}
  .blog-navigation{top:56px}
 }
+
+/* Blog pages: the sidebar holds only a way back home (plus the corner theme control). */
+.contents.blog-sidebar .back-home{display:inline-block;max-width:100%;padding:8px 13px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--text);font-size:14px;font-weight:600;line-height:1.35;text-decoration:none}
+.contents.blog-sidebar .back-home:hover{color:var(--strong);border-color:var(--muted)}
+@media(min-width:541px) and (max-width:1100px){.contents.blog-sidebar{padding-top:36px}}
+@media(min-width:541px) and (max-width:900px){.contents.blog-sidebar .back-home{padding:7px 10px;font-size:13px}}
+@media(max-width:540px){.contents.blog-sidebar{display:flex;align-items:center;min-height:52px}.contents.blog-sidebar .back-home{padding:6px 11px;font-size:13px}}
