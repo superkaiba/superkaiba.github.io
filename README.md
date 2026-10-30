@@ -6,7 +6,7 @@ Personal research website at https://thomas.jiralerspong.com/, hosted on GitHub 
 
 The deployed pages are static HTML. The project catalogue is generated from Markdown; the other pages can be edited directly.
 
-- `index.html`: introduction, news, research, mentored projects, mentees, and testimonials. Recent entries are visible; native `<details>` elements expand the rest.
+- `index.html`: introduction, news, research, mentored projects, mentees, and testimonials. The five newest papers in each project section are visible; native `<details>` elements expand any remaining papers.
 - `publications.html`, `mentorship.html`, `testimonials.html`, and `top5s.html`: standalone pages with the same sidebar.
 - `css/style.css`: responsive layout and light/dark styles.
 - `js/script.js`: theme preference, mobile contents menu, active-section tracking, and links that reveal collapsed content.
@@ -18,6 +18,8 @@ The deployed pages are static HTML. The project catalogue is generated from Mark
 - `scripts/build_projects.py`: generates the catalogue at `projects/`. GitHub Actions runs this automatically before every deployment.
 
 Edit the HTML directly and keep sidebar labels, shared profile links, and repeated content consistent across pages. The retained `data/cv-data.json`, `js/about-renderer.js`, and `js/cv-renderer.js` belong to the earlier dynamic layout; the current pages do not load them.
+
+Keep paper cards compact: two short summary bullets, usually 20–30 words total, covering the question and main finding with essential qualifications. Keep the summaries and image captions consistent across the homepage, publications, and mentorship pages.
 
 Use descriptive, visibly underlined links. Sidebar headings are stronger than navigation items, and mentorship subsections are indented under Mentorship. Keep CV and resume links identically styled.
 
