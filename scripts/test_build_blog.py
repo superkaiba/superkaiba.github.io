@@ -40,13 +40,23 @@ class BlogTests(unittest.TestCase):
             blog.post_path(blog.ORIGINAL + '/publish/post/123')
 
     def test_feed_outage_keeps_most_recent_cached_previews(self):
-        posts = blog.parse_feed(feed(item("cached")))
+        posts = blog.parse_feed(feed(item("cached", "Wed, 28 Oct 2026 22:16:45 GMT")))
         config = {"publication_url":blog.ORIGINAL, "recent_posts":blog.parse_feed(feed(item("older")))}
         with tempfile.TemporaryDirectory() as directory:
             cache = Path(directory) / "previews.json"
             cache.write_text(json.dumps(posts))
-            with patch.object(blog, 'CACHE', cache), patch.object(blog, 'fetch_feed', side_effect=URLError('unavailable')):
+            with patch.object(blog, 'CACHE', cache), patch.object(blog, 'urlopen', side_effect=URLError('unavailable')):
                 self.assertEqual(blog.refresh(config), posts)
+
+    def test_new_committed_previews_outrank_old_actions_cache(self):
+        older = blog.parse_feed(feed(item("cached")))
+        newer = blog.parse_feed(feed(item("new", "Wed, 28 Oct 2026 22:16:45 GMT")))
+        config = {"publication_url":blog.ORIGINAL, "recent_posts":newer}
+        with tempfile.TemporaryDirectory() as directory:
+            cache = Path(directory) / "previews.json"
+            cache.write_text(json.dumps(older))
+            with patch.object(blog, 'CACHE', cache), patch.object(blog, 'urlopen', side_effect=URLError('unavailable')):
+                self.assertEqual(blog.refresh(config), newer)
 
     def test_archive_body_and_original_rss_are_preserved(self):
         posts = blog.parse_feed(feed(item()))

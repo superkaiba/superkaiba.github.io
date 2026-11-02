@@ -8,8 +8,6 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
-import shutil
-import subprocess
 from urllib.parse import urlsplit
 from urllib.request import Request, urlopen
 import xml.etree.ElementTree as ET
@@ -20,7 +18,6 @@ CUSTOM = "https://blog.thomas.jiralerspong.com"
 ALLOWED_HOSTS = {urlsplit(ORIGINAL).hostname, urlsplit(CUSTOM).hostname}
 CACHE = ROOT / ".cache/substack/previews.json"
 MARKER = r"<!-- LATEST POSTS START -->.*?<!-- LATEST POSTS END -->"
-FEED_USER_AGENT = "Mozilla/5.0 (compatible; ThomasWebsiteFeed/1.0; +https://thomas.jiralerspong.com/)"
 
 
 class PlainText(HTMLParser):
@@ -75,37 +72,6 @@ def parse_feed(data):
     return sorted(posts.values(), key=lambda p: p["published"], reverse=True)[:10]
 
 
-def fetch_feed(url):
-    # curl is available on GitHub's hosted runners and handles their TLS stack
-    # more consistently. Both clients read only the public RSS endpoint.
-    if shutil.which("curl"):
-        result = subprocess.run([
-            "curl", "--fail", "--silent", "--show-error", "--location",
-            "--max-redirs", "3", "--proto", "=https", "--proto-redir", "=https",
-            "--max-time", "25", "--max-filesize", "8000000",
-            "--user-agent", FEED_USER_AGENT,
-            "--header", "Accept: application/rss+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.1",
-            "--write-out", "\n%{url_effective}", url,
-        ], capture_output=True, timeout=30)
-        if result.returncode:
-            raise OSError(f"RSS request failed (curl exit {result.returncode})")
-        data, final_url = result.stdout.rsplit(b"\n", 1)
-        final_url = final_url.decode()
-    else:
-        request = Request(url, headers={
-            "User-Agent": FEED_USER_AGENT,
-            "Accept": "application/rss+xml, application/xml",
-        })
-        with urlopen(request, timeout=25) as response:
-            final_url = response.url
-            data = response.read(8_000_001)
-    if urlsplit(final_url).hostname not in ALLOWED_HOSTS:
-        raise ValueError("Feed redirected outside the publication")
-    if len(data) > 8_000_000:
-        raise ValueError("Feed exceeds size limit")
-    return data
-
-
 def refresh(config, offline=False):
     fallback = config["recent_posts"]
     if CACHE.is_file():
@@ -115,19 +81,32 @@ def refresh(config, offline=False):
                 for p in cached:
                     post_path(ORIGINAL + p["path"])
                     datetime.fromisoformat(p["published"])
-                fallback = cached
+                # A manual refresh committed with a new post must outrank an
+                # older Actions cache when the public feed is unavailable.
+                if max(p["published"] for p in cached) > max(p["published"] for p in fallback):
+                    fallback = cached
         except (ValueError, KeyError, TypeError):
             pass
     if offline:
         return fallback
     try:
-        data = fetch_feed(config["publication_url"] + "/feed")
+        request = Request(config["publication_url"] + "/feed", headers={
+            "User-Agent": "Mozilla/5.0 (compatible; ThomasWebsiteFeed/1.0; +https://thomas.jiralerspong.com/)",
+            "Accept": "application/rss+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.1",
+            "Accept-Language": "en",
+        })
+        with urlopen(request, timeout=25) as response:
+            if urlsplit(response.url).hostname not in ALLOWED_HOSTS:
+                raise ValueError("Feed redirected outside the publication")
+            data = response.read(8_000_001)
+        if len(data) > 8_000_000:
+            raise ValueError("Feed exceeds size limit")
         posts = parse_feed(data)
         CACHE.parent.mkdir(parents=True, exist_ok=True)
         CACHE.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n")
         print(f"Loaded {len(posts)} public newsletter previews")
         return posts
-    except (OSError, ValueError, ET.ParseError, subprocess.TimeoutExpired) as error:
+    except (OSError, ValueError, ET.ParseError) as error:
         status = f" HTTP {error.code}" if hasattr(error, "code") else ""
         print(f"::warning::Newsletter feed unavailable ({type(error).__name__}{status}). Keeping saved previews.")
         return fallback
@@ -203,8 +182,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--offline", action="store_true", help="Use saved previews")
     args = parser.parse_args()
-    config = json.loads((ROOT / "data/blog-publication.json").read_text())
-    update_pages(ROOT, config, refresh(config, args.offline))
+    config_path = ROOT / "data/blog-publication.json"
+    config = json.loads(config_path.read_text())
+    posts = refresh(config, args.offline)
+    update_pages(ROOT, config, posts)
+    config["recent_posts"] = posts
+    config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + "\n")
 
 
 if __name__ == "__main__":

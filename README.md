@@ -15,15 +15,26 @@ new full-text website copies as part of this integration.
 `python3 scripts/build_blog.py` reads the public newsletter RSS feed and updates
 the two latest homepage previews, subscription links, and archive notices.
 It never publishes posts or sends email. Use `--offline` for a local preview.
-The feed supplies titles, descriptions, dates, and cover URLs only. Article
-bodies remain on Substack. If the feed is unavailable, the build uses the last
-successful cache, falling back to the checked-in public previews.
+Only titles, descriptions, dates, and cover URLs are retained from the feed.
+If the feed is unavailable, the build uses the newer of its successful cache
+and the checked-in public previews. The builder saves current previews in
+`data/blog-publication.json`; commit that file with the generated HTML when
+refreshing locally.
 
-GitHub Pages refreshes these previews on each deployment and every six hours.
+GitHub Pages attempts to refresh these previews on each deployment and every six hours.
 The deployment workflow can also be run manually. Its cache retains successful
 previews across builds. Change `publication_url` to the custom domain only once
 Substack verifies the domain and HTTPS works. `planned_custom_domain` is a setup
 note and is never used as a live link.
+
+As of November 1, 2026, Substack returns HTTP 403 for feed requests from GitHub
+hosted runners, while local requests succeed. Automatic freshness is not yet
+verified. Until this is resolved, run the builder locally after publishing a
+new essay and commit the updated HTML and preview metadata. The six-hour job
+keeps trying and preserves the saved previews on failure. Retest the feed once
+the custom domain is active, and check the workflow log for `Loaded ... public
+newsletter previews` rather than treating a successful deployment as proof of
+a successful feed fetch.
 
 Check feed handling and archive preservation with:
 
