@@ -45,7 +45,7 @@ class BlogTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             cache = Path(directory) / "previews.json"
             cache.write_text(json.dumps(posts))
-            with patch.object(blog, 'CACHE', cache), patch.object(blog, 'urlopen', side_effect=URLError('unavailable')):
+            with patch.object(blog, 'CACHE', cache), patch.object(blog, 'fetch_feed', side_effect=URLError('unavailable')):
                 self.assertEqual(blog.refresh(config), posts)
 
     def test_archive_body_and_original_rss_are_preserved(self):
