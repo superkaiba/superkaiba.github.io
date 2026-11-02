@@ -88,8 +88,9 @@ def refresh(config, offline=False):
         return fallback
     try:
         request = Request(config["publication_url"] + "/feed", headers={
-            "User-Agent": "ThomasWebsiteFeed/1.0 (+https://thomas.jiralerspong.com/)",
-            "Accept": "application/rss+xml, application/xml",
+            "User-Agent": "Mozilla/5.0 (compatible; ThomasWebsiteFeed/1.0; +https://thomas.jiralerspong.com/)",
+            "Accept": "application/rss+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.1",
+            "Accept-Language": "en",
         })
         with urlopen(request, timeout=25) as response:
             if urlsplit(response.url).hostname not in ALLOWED_HOSTS:
@@ -103,7 +104,8 @@ def refresh(config, offline=False):
         print(f"Loaded {len(posts)} public newsletter previews")
         return posts
     except (OSError, ValueError, ET.ParseError) as error:
-        print(f"::warning::Newsletter feed unavailable ({type(error).__name__}). Keeping saved previews.")
+        status = f" HTTP {error.code}" if hasattr(error, "code") else ""
+        print(f"::warning::Newsletter feed unavailable ({type(error).__name__}{status}). Keeping saved previews.")
         return fallback
 
 
