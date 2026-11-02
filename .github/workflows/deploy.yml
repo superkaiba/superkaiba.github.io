@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
 
 # Allow one concurrent deployment
 concurrency:
@@ -43,6 +46,16 @@ jobs:
         run: |
           python -m pip install -r scripts/link-preview-requirements.txt
           python scripts/build_link_previews.py
+
+      - name: Restore newsletter previews
+        uses: actions/cache@v4
+        with:
+          path: .cache/substack
+          key: substack-previews-${{ github.run_id }}
+          restore-keys: substack-previews-
+
+      - name: Refresh newsletter previews
+        run: python scripts/build_blog.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

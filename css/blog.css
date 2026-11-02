@@ -1,6 +1,11 @@
 .blog-main{max-width:800px;margin:0 auto;padding:12px 0 30px}
 .blog-kicker,.blog-meta{font-size:13px;color:var(--muted)}
 .blog-kicker{margin-bottom:18px}.blog-header h1{font-size:clamp(29px,3.4vw,42px);line-height:1.16;letter-spacing:-1.1px;overflow-wrap:break-word}
+.newsletter-notice{margin:0 0 28px;padding:18px 20px;border:1px solid var(--line);border-radius:6px;background:var(--surface);font-size:14px;line-height:1.6}
+.newsletter-notice p{margin:0}.newsletter-notice p+p{margin-top:12px;display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px}
+.newsletter-button{display:inline-block;padding:9px 13px;border:1px solid var(--muted);border-radius:5px;color:var(--text);font-size:13px;font-weight:600;text-align:center;text-decoration:none}
+.newsletter-button:hover,.newsletter-button:focus-visible{background:var(--text);color:var(--bg)}
+.latest-posts .newsletter-action{margin:0 0 24px}.latest-posts .no-cover{display:block}
 .blog-deck{margin-top:20px;font-size:18px;line-height:1.6;color:var(--muted)}
 .blog-meta{margin-top:20px;margin-bottom:34px}.blog-meta span+span:before{content:' · ';white-space:pre}
 .blog-origin{margin:0 0 28px;font-size:14px;color:var(--muted)}

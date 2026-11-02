@@ -1,0 +1,27 @@
+{
+  "publication_url": "https://thomasjiralerspong.substack.com",
+  "planned_custom_domain": "https://blog.thomas.jiralerspong.com",
+  "recent_posts": [
+    {
+      "path": "/p/chasing-the-karpathy-peak",
+      "title": "Chasing the Karpathy Peak (and Falling Off Slop Cliff): Confessions from Slopaholics Anonymous",
+      "description": "How I became a slopaholic, who’s most at risk, and how to avoid it (or recover)",
+      "published": "2026-10-27T22:16:45+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/2b5e8966-3802-4f6f-9c60-1432ac7c9299_1200x630.png"
+    },
+    {
+      "path": "/p/persona-vectors-dont-work-on-real",
+      "title": "Persona Vectors don’t work on real data",
+      "description": "Or: Why you should stop overusing synthetic data for your research.",
+      "published": "2026-10-27T17:39:00+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!dcJq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1697bbe4-0e57-4e7e-9e4d-4ac29391181c_1372x564.png"
+    },
+    {
+      "path": "/p/the-art-of-ai-art",
+      "title": "The Art of AI Art",
+      "description": "On creative vision, creative execution, and the art I haven’t made yet.",
+      "published": "2026-09-29T02:12:13+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!KIh_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b60ff62-429b-41c3-9de6-d6d88dba1d44_1672x941.png"
+    }
+  ]
+}

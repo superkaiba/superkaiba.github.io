@@ -4,6 +4,33 @@ Personal research website at https://thomas.jiralerspong.com/, hosted on GitHub 
 
 ## Editing
 
+### Blog and newsletter
+
+New essays are published on Thomas's existing Substack publication. The active
+publication URL is in `data/blog-publication.json`. The website's Blog link and
+Latest posts cards lead there. `/blog/` preserves the older website archive,
+and existing article URLs and `/blog/feed.xml` stay available. Do not generate
+new full-text website copies as part of this integration.
+
+`python3 scripts/build_blog.py` reads the public newsletter RSS feed and updates
+the two latest homepage previews, subscription links, and archive notices.
+It never publishes posts or sends email. Use `--offline` for a local preview.
+The feed supplies titles, descriptions, dates, and cover URLs only. Article
+bodies remain on Substack. If the feed is unavailable, the build uses the last
+successful cache, falling back to the checked-in public previews.
+
+GitHub Pages refreshes these previews on each deployment and every six hours.
+The deployment workflow can also be run manually. Its cache retains successful
+previews across builds. Change `publication_url` to the custom domain only once
+Substack verifies the domain and HTTPS works. `planned_custom_domain` is a setup
+note and is never used as a live link.
+
+Check feed handling and archive preservation with:
+
+```sh
+python3 -m unittest discover -s scripts -p test_build_blog.py
+```
+
 The deployed pages are static HTML. The project catalogue is generated from Markdown; the other pages can be edited directly.
 
 - `index.html`: introduction, news, research, mentored projects, mentees, and testimonials. The five newest papers in each project section are visible; native `<details>` elements expand any remaining papers.
