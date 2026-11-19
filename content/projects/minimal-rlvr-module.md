@@ -1,6 +1,6 @@
 ---
 title: How few parameters does RLVR need when reusing a pretrained module?
-status: Fleshed out
+status: Draft (slop)
 order: 54.5
 ---
 

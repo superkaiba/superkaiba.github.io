@@ -1,6 +1,6 @@
 ---
 title: How smoothly does behavior change along natural activation paths?
-status: Fleshed out
+status: Draft (slop)
 order: 16.5
 ---
 

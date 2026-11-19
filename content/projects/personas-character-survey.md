@@ -1,6 +1,6 @@
 ---
 title: A survey of personas and character in language models
-status: Fleshed out
+status: Draft (slop)
 order: 19.5
 ---
 

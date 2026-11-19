@@ -1,0 +1,9 @@
+---
+title: Agency in base models, "contaminated" base models, and post-trained models without a chat template
+status: Fleshed out
+order: 28.1
+---
+
+# Agency in base models, "contaminated" base models, and post-trained models without a chat template
+
+The goal of this project would be to evaluate the level of agency that can be ascribed to a base model (this probably needs some input from the agent foundations people as to how to define "agency", e.g. agents as systems that would adapt their policy if their actions influenced the world in a different way: [Kenton et al., 2022](https://arxiv.org/abs/2208.08345)) as well as how this changes when we add chat template data to pretraining/midtraining (base models already refuse harmful requests through the same refusal direction as chat models: [Kissane et al., 2024](https://www.lesswrong.com/posts/YWo2cKJgL7Lg8xWjj/base-llms-refuse-too); the Assistant Axis is already present in base models: [Lu et al., 2026](https://arxiv.org/abs/2601.10387)).

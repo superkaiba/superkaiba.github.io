@@ -1,6 +1,6 @@
 ---
 title: Continued third-person training to separate capability gains from misalignment
-status: Fleshed out
+status: Draft (slop)
 order: 59.6
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Laziness and overclaiming axes
-status: Fleshed out
+status: Draft (slop)
 order: 21.1
 ---
 

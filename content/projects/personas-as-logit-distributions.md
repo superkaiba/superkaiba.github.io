@@ -1,6 +1,6 @@
 ---
 title: Defining and characterizing personas as distributions over logits
-status: Fleshed out
+status: Draft (slop)
 order: 20.5
 math: true
 ---

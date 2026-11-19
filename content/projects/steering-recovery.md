@@ -1,6 +1,6 @@
 ---
 title: What restores model behavior after activation steering?
-status: Fleshed out
+status: Draft (slop)
 order: 20.25
 ---
 

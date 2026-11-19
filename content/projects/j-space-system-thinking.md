@@ -1,6 +1,6 @@
 ---
 title: "Inside and outside J-space: System 1 and System 2 thinking"
-status: Fleshed out
+status: Draft (slop)
 order: 32.25
 ---
 

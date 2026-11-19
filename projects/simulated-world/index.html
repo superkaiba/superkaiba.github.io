@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A simulated world (and internet) as a testbed for alignment research · Thomas Jiralerspong</title>
+<link rel="canonical" href="https://thomas.jiralerspong.com/projects/simulated-world/">
+<meta property="og:title" content="A simulated world (and internet) as a testbed for alignment research · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/simulated-world/"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css?v=0d2aad781fe6"><link rel="stylesheet" href="../catalogue.css?v=8439386487b1">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout project-detail-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../contents/">Project contents</a></li><li><a href="#simulated-world" data-section="simulated-world">Overview</a></li></ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<p class="project-back"><a href="../contents/">← Project contents</a></p><article class="project-detail toc-section" id="simulated-world"><h1>A simulated world (and internet) as a testbed for alignment research</h1><p class="project-status">Fleshed out</p><div class="project-reading">
+<p>The problem with much of the research trying to understand the effect of the pretraining prior/pretraining interventions on the post-trained model is that our current pretraining process is so large and complex that it is hard to run principled experiments on it.</p>
+<p>Some existing solutions are things like TinyStories (<a href="https://arxiv.org/abs/2305.07759">Eldan &amp; Li, 2023</a>) and SimpleStories (<a href="https://arxiv.org/abs/2504.09184">Finke et al., 2025</a>), datasets of simple children stories on which small-ish models can be trained while remaining coherent (within that distribution) and able to do simple reasoning. This demonstrates that small models <strong>can learn to be coherent and reason at a fraction of current pretraining scales, as long as the distribution they are trained on is relatively narrow compared to the entire internet.</strong></p>
+<p>With LLMs currently being much better at emulating different personalities/styles/documents, I think there is a very interesting opportunity to build <strong>a simulated simplified version of our world with a known data generating process.</strong> We can then <strong>sample documents from this simplified world as a pretraining corpus and train relatively small models on this simulated internet.</strong> (The inspiration for this is JRR Tolkien who built an entire world and history, and the Lord of the Rings was just one document/story told within this world). <strong>We can also precisely change the parameters of the simulation to see how they affect the final model's behavior.</strong></p>
+<p>This would allow us to answer questions like:</p>
+<ul>
+<li>How exactly do the personalities represented in the pretraining corpus affect the final model behavior? (documents that only describe an AI that reward hacks make the model reward hack more after post-training: <a href="https://alignment.anthropic.com/2025/reward-hacking-ooc/">Hu et al., 2025</a>)</li>
+<li>How does information about human history affect the final model's behavior (e.g. if the model believes that in this world most humans are evil vs. most humans are good, does that change its alignment properties?)</li>
+<li>How does discourse around AI affect the final model's behavior? (upsampling documents about misaligned AI in pretraining increases misalignment, and documents about aligned AI reduce it: <a href="https://arxiv.org/abs/2601.10160">Tice et al., 2026</a>)</li>
+<li>Can the model "predict the future" of this simulated world?</li>
+<li>Does the model really learn to represent the underlying data generating process? How exactly? (e.g. Simplex's research: <a href="https://arxiv.org/abs/2405.15943">Shai et al., 2024</a>)</li>
+</ul>
+<p>The difficulty here will be in trying to make the simulated world realistic enough to be interesting but not too complex for our small model to train on effectively. I think probably the thing to do here would be to release a simulated internet dataset and a simulation framework which allows people to change the simulation parameters as they see fit. I think this would be helpful to many people in the community working on developmental interpretability and pretraining safety/alignment.</p></div></article>
+<footer><a href="../contents/">Project contents</a> · <a href="../#simulated-world">View in catalogue</a></footer>
+</main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
+</body></html>

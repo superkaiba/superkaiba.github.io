@@ -1,6 +1,6 @@
 ---
 title: How much of an LLM's behavior is decided in advance?
-status: Fleshed out
+status: Draft (slop)
 order: 5.1
 ---
 

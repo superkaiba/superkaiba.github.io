@@ -1,6 +1,6 @@
 ---
 title: Base-model preferences
-status: Fleshed out
+status: Draft (slop)
 order: 28
 ---
 

@@ -1,0 +1,22 @@
+---
+title: Exploring System 2 and System 1 thinking as a model of LLM behavior
+status: Fleshed out
+order: 32.3
+---
+
+# Exploring System 2 and System 1 thinking as a model of LLM behavior
+
+People often seem to be surprised when models take actions or have thoughts which are not aligned or even contradictory with how they talk to us or represent themselves ([Turpin et al., 2023](https://arxiv.org/abs/2305.04388); [Chen et al., 2025](https://arxiv.org/abs/2505.05410); [Arcuschin et al., 2025](https://arxiv.org/abs/2503.08679)). I think we can map this to system 2 vs system 1 thinking in humans (Kahneman, 2011; [Evans & Stanovich, 2013](https://doi.org/10.1177/1745691612460685)).
+
+Although we try to train the models to reason about each action they take (i.e. system 2 thinking) and then follow their reasoning, it seems clear that a lot of their behavior can be seen as more "reflexive"/system 1, especially when reward is involved ([Baker et al., 2025](https://arxiv.org/abs/2503.11926); [Mirtaheri & Belkin, 2026](https://arxiv.org/abs/2603.17199)).
+
+In psychology/cognitive science, system 2 is often viewed as an "endorser" of system 1's conclusions rather than a critic (Kahneman, 2011; [Haidt, 2001](https://doi.org/10.1037/0033-295X.108.4.814); [Mercier & Sperber, 2011](https://pubmed.ncbi.nlm.nih.gov/21447233/)), which would explain the motivated reasoning seen in modern LLMs ([Lindsey et al., 2025](https://transformer-circuits.pub/2025/attribution-graphs/biology.html)).
+
+The goal of this project would first be to see if this system 1 vs system 2 account holds for LLMs.
+
+- I think system 1 can be seen as the "autocomplete"/"in-context learning" learned in pretraining ([Olsson et al., 2022](https://arxiv.org/abs/2209.11895); [Venhoff et al., 2025](https://arxiv.org/abs/2510.07364); [Marks et al., 2026](https://alignment.anthropic.com/2026/psm)).
+- System 2 is mostly present in the CoT, but can be seen as mostly switching between different autocomplete modes/personas ([Kim et al., 2026](https://arxiv.org/abs/2601.10825)) using certain key "switch words" (wait! actually!) ([Qian et al., 2025](https://arxiv.org/abs/2506.02867); [Tsui, 2025](https://arxiv.org/abs/2507.02778)).
+- I think this can be linked to entropy neurons ([Stolfo et al., 2024](https://arxiv.org/abs/2406.16254)).
+    - If the model is "certain" about the continuation then it will continue to use system 1. If it is highly uncertain then it will activate system 2, which will cause a "switch word" and force it to take a different perspective ([Wang et al., 2025](https://arxiv.org/abs/2506.01939)). This matches models of when humans switch to system 2 ([Thompson et al., 2011](https://doi.org/10.1016/j.cogpsych.2011.06.001); [De Neys, 2023](https://doi.org/10.1017/S0140525X2200142X)).
+
+If this picture holds, I think it already gives an interesting and illuminating perspective on LLM behavior, but one potential followup would be to explore directly externalizing the system 2 to a different model (probably with different post training) which can allow it to critique the model's reasoning in a more unbiased way ([Huang et al., 2023](https://arxiv.org/abs/2310.01798); [Tsui, 2025](https://arxiv.org/abs/2507.02778); [Panickssery et al., 2024](https://arxiv.org/abs/2404.13076)). This is similar to proposals around debate ([Irving et al., 2018](https://arxiv.org/abs/1805.00899); [Khan et al., 2024](https://proceedings.mlr.press/v235/khan24a.html)).

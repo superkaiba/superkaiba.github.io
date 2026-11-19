@@ -1,6 +1,6 @@
 ---
 title: What latent does the assistant chat template select?
-status: Fleshed out
+status: Draft (slop)
 order: 57
 math: true
 ---

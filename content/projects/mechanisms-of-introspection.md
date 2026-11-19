@@ -1,6 +1,6 @@
 ---
 title: A general mechanistic understanding of LLM introspection
-status: Fleshed out
+status: Draft (slop)
 order: 34.5
 ---
 

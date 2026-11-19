@@ -1,6 +1,6 @@
 ---
 title: Principal geodesic analysis of the residual stream
-status: Fleshed out
+status: Draft (slop)
 order: 16.6
 ---
 
