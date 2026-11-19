@@ -163,6 +163,7 @@ Unpublished content.
             self.assertIn('<details class="project-group toc-section" id="in-progress" open><summary>', html)
             self.assertIn('<details class="project-group toc-section" id="archived"><summary>', html)
             self.assertIn("data-toggle-groups", html)
+            self.assertIn("localStorage.setItem(storageKey", html)
 
     def test_retired_not_started_anchor_lands_on_drafts(self):
         catalogue = (self.dest / "index.html").read_text()

@@ -1456,19 +1456,34 @@ For a random direction the entries are roughly Gaussian, so <math xmlns="http://
 <footer><a href="contents/">Project contents</a> · <a href="https://thomas.jiralerspong.com/">Main website</a></footer>
 </main></div></div><script src="navigation.js?v=23a12c8b7c4e"></script><script>
 (() => {
-  const button = document.querySelector('[data-toggle-groups]');
   const groups = [...document.querySelectorAll('details.project-group')];
-  if (!button || !groups.length) return;
-  const sync = () => {
-    button.textContent = groups.some(group => group.open) ? 'Collapse all' : 'Expand all';
-  };
-  button.hidden = false;
-  button.addEventListener('click', () => {
-    const open = !groups.some(group => group.open);
-    groups.forEach(group => { group.open = open; });
-    sync();
+  if (!groups.length) return;
+  // Remember which sections are open on this page, per viewer, so they stay that way on return.
+  const storageKey = 'project-groups:' + location.pathname.replace(/index\.html$/, '');
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(storageKey)) || {}; } catch (_) {}
+  groups.forEach(group => {
+    if (typeof saved[group.id] === 'boolean') group.open = saved[group.id];
   });
-  groups.forEach(group => group.addEventListener('toggle', sync));
+  const save = () => {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(Object.fromEntries(groups.map(group => [group.id, group.open]))));
+    } catch (_) {}
+  };
+  const button = document.querySelector('[data-toggle-groups]');
+  const sync = () => {
+    if (button) button.textContent = groups.some(group => group.open) ? 'Collapse all' : 'Expand all';
+  };
+  if (button) {
+    button.hidden = false;
+    button.addEventListener('click', () => {
+      const open = !groups.some(group => group.open);
+      groups.forEach(group => { group.open = open; });
+      sync();
+      save();
+    });
+  }
+  groups.forEach(group => group.addEventListener('toggle', () => { sync(); save(); }));
   sync();
 })();
 </script>
