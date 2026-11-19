@@ -1,6 +1,6 @@
 ---
 title: How features combine and separate across transformer layers
-status: Draft (slop)
+status: Archived
 order: 17.5
 ---
 

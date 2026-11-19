@@ -1,6 +1,6 @@
 ---
 title: Red-teaming through predicted answer representations
-status: Draft (slop)
+status: Archived
 order: 4
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Why do probes do badly at the last layer?
-status: Draft (slop)
+status: Archived
 order: 15.5
 math: true
 ---

@@ -1,6 +1,6 @@
 ---
 title: Transferring capabilities and alignment through crosscoders
-status: Draft (slop)
+status: Archived
 order: 11
 ---
 

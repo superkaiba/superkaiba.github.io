@@ -1,6 +1,6 @@
 ---
 title: Applying SharedSAE to model diffing
-status: Draft (slop)
+status: Archived
 order: 17
 ---
 
