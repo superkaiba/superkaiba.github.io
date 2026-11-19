@@ -154,6 +154,16 @@ Unpublished content.
         self.assertNotIn("old-alpha", html)
         self.assertIn('href="contents/">Project contents', (self.dest / 'index.html').read_text())
 
+    def test_groups_are_collapsible_with_a_jump_bar(self):
+        for page in (self.dest / "index.html", self.dest / "contents/index.html"):
+            html = page.read_text()
+            self.assertIn('<nav class="group-jump" aria-label="Project groups">', html)
+            for key in ("in-progress", "fleshed-out", "draft", "completed", "archived"):
+                self.assertIn(f'<a href="#{key}">', html)
+            self.assertIn('<details class="project-group toc-section" id="in-progress" open><summary>', html)
+            self.assertIn('<details class="project-group toc-section" id="archived"><summary>', html)
+            self.assertIn("data-toggle-groups", html)
+
     def test_retired_not_started_anchor_lands_on_drafts(self):
         catalogue = (self.dest / "index.html").read_text()
         draft = catalogue.index('id="draft"')

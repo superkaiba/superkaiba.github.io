@@ -12,13 +12,24 @@
 .project-layout .contents .toc-parent>a{font-size:14px;padding:8px 0 8px 14px}
 .project-catalogue{min-width:0}
 .project-catalogue h1{font-size:32px;margin:0 0 36px;line-height:1.25}
-.project-group{margin-top:44px;scroll-margin-top:28px}
+.project-group{margin-top:44px;scroll-margin-top:72px}
 .project-group:first-of-type{margin-top:0}
-.project-group>h2{font-size:25px;margin:0 0 18px}
-.project-row{padding:28px 0;border-top:1px solid var(--line);scroll-margin-top:28px}
+.project-group>summary{display:flex;align-items:center;gap:12px;cursor:pointer;list-style:none;margin:0 0 18px;width:fit-content}
+.project-group>summary::-webkit-details-marker{display:none}
+.project-group>summary::before{content:"";flex-shrink:0;width:7px;height:7px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(-45deg);transition:transform .15s ease}
+.project-group[open]>summary::before{transform:rotate(45deg) translate(-2px,-2px)}
+.project-group:not([open])>summary{margin-bottom:0}
+.project-group>summary>h2{font-size:25px;margin:0}
+.project-group>summary:hover>h2{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.group-jump{position:sticky;top:0;z-index:3;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px;margin:0 0 36px;padding:14px 0 12px;border-bottom:1px solid var(--line);background:var(--bg);font-size:14px}
+.group-jump a{color:var(--strong);white-space:nowrap}
+.group-jump a span{color:var(--muted)}
+.group-jump button{margin-left:auto;border:0;background:none;padding:0;font-size:13px;color:var(--muted);white-space:nowrap}
+.group-jump button:hover{color:var(--strong)}
+.project-row{padding:28px 0;border-top:1px solid var(--line);scroll-margin-top:72px}
 .project-row h3{font-size:21px;line-height:1.45;margin:0 0 6px}
 .project-status{font-size:13px;color:var(--muted);margin:0 0 18px}
-.project-alias{display:block;height:0;scroll-margin-top:28px}
+.project-alias{display:block;height:0;scroll-margin-top:72px}
 .project-row h3 a{text-decoration:none}
 .project-row h3 a:hover{text-decoration:underline}
 .project-reading p{font-size:16px;line-height:1.8;margin:16px 0}
@@ -55,8 +66,10 @@
  .project-layout .contents nav{max-height:none;overflow:visible}
  .project-layout .contents .toc-subsections .toc-child>a{min-height:40px;padding-top:10px;padding-bottom:10px}
  .project-catalogue h1{font-size:28px;margin-bottom:30px}
- .project-group>h2{font-size:23px}
+ .project-group>summary>h2{font-size:23px}
+ .group-jump{position:static;gap:8px 16px;margin-bottom:30px}
+ .group-jump a,.group-jump button{padding:6px 0;min-height:36px}
  .project-row h3{font-size:20px}
  .project-row,.project-group,.project-alias{scroll-margin-top:126px}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project-group>summary::before{transition:none}}

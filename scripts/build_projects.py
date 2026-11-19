@@ -26,6 +26,8 @@ GROUPS = [
 STATUSES = {status: i for i, (_, _, status) in enumerate(GROUPS)}
 # Older links to retired sections land on the section that replaced them.
 GROUP_ALIASES = {"draft": ["not-started"]}
+# Groups that start collapsed; a link into one still opens it.
+COLLAPSED_GROUPS = {"archived"}
 
 CSS = """
 .project-layout{grid-template-columns:230px minmax(0,1fr);gap:48px}
@@ -41,13 +43,24 @@ CSS = """
 .project-layout .contents .toc-parent>a{font-size:14px;padding:8px 0 8px 14px}
 .project-catalogue{min-width:0}
 .project-catalogue h1{font-size:32px;margin:0 0 36px;line-height:1.25}
-.project-group{margin-top:44px;scroll-margin-top:28px}
+.project-group{margin-top:44px;scroll-margin-top:72px}
 .project-group:first-of-type{margin-top:0}
-.project-group>h2{font-size:25px;margin:0 0 18px}
-.project-row{padding:28px 0;border-top:1px solid var(--line);scroll-margin-top:28px}
+.project-group>summary{display:flex;align-items:center;gap:12px;cursor:pointer;list-style:none;margin:0 0 18px;width:fit-content}
+.project-group>summary::-webkit-details-marker{display:none}
+.project-group>summary::before{content:"";flex-shrink:0;width:7px;height:7px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(-45deg);transition:transform .15s ease}
+.project-group[open]>summary::before{transform:rotate(45deg) translate(-2px,-2px)}
+.project-group:not([open])>summary{margin-bottom:0}
+.project-group>summary>h2{font-size:25px;margin:0}
+.project-group>summary:hover>h2{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.group-jump{position:sticky;top:0;z-index:3;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px;margin:0 0 36px;padding:14px 0 12px;border-bottom:1px solid var(--line);background:var(--bg);font-size:14px}
+.group-jump a{color:var(--strong);white-space:nowrap}
+.group-jump a span{color:var(--muted)}
+.group-jump button{margin-left:auto;border:0;background:none;padding:0;font-size:13px;color:var(--muted);white-space:nowrap}
+.group-jump button:hover{color:var(--strong)}
+.project-row{padding:28px 0;border-top:1px solid var(--line);scroll-margin-top:72px}
 .project-row h3{font-size:21px;line-height:1.45;margin:0 0 6px}
 .project-status{font-size:13px;color:var(--muted);margin:0 0 18px}
-.project-alias{display:block;height:0;scroll-margin-top:28px}
+.project-alias{display:block;height:0;scroll-margin-top:72px}
 .project-row h3 a{text-decoration:none}
 .project-row h3 a:hover{text-decoration:underline}
 .project-reading p{font-size:16px;line-height:1.8;margin:16px 0}
@@ -84,15 +97,47 @@ CSS = """
  .project-layout .contents nav{max-height:none;overflow:visible}
  .project-layout .contents .toc-subsections .toc-child>a{min-height:40px;padding-top:10px;padding-bottom:10px}
  .project-catalogue h1{font-size:28px;margin-bottom:30px}
- .project-group>h2{font-size:23px}
+ .project-group>summary>h2{font-size:23px}
+ .group-jump{position:static;gap:8px 16px;margin-bottom:30px}
+ .group-jump a,.group-jump button{padding:6px 0;min-height:36px}
  .project-row h3{font-size:20px}
  .project-row,.project-group,.project-alias{scroll-margin-top:126px}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project-group>summary::before{transition:none}}
 """
 
 def theme_button():
     return '''<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button>'''
+
+def group_jump(counts):
+    """Top-of-page links to each group, plus a collapse/expand-all control."""
+    links = "".join(f'<a href="#{key}">{title} <span>{counts[key]}</span></a>' for title, key, _ in GROUPS)
+    return f'<nav class="group-jump" aria-label="Project groups">{links}<button type="button" data-toggle-groups hidden>Collapse all</button></nav>'
+
+
+GROUP_TOGGLE_SCRIPT = """<script>
+(() => {
+  const button = document.querySelector('[data-toggle-groups]');
+  const groups = [...document.querySelectorAll('details.project-group')];
+  if (!button || !groups.length) return;
+  const sync = () => {
+    button.textContent = groups.some(group => group.open) ? 'Collapse all' : 'Expand all';
+  };
+  button.hidden = false;
+  button.addEventListener('click', () => {
+    const open = !groups.some(group => group.open);
+    groups.forEach(group => { group.open = open; });
+    sync();
+  });
+  groups.forEach(group => group.addEventListener('toggle', sync));
+  sync();
+})();
+</script>"""
+
+
+def group_open(key):
+    return "" if key in COLLAPSED_GROUPS else " open"
+
 
 def render_page(body, toc, versions, project=None, contents=False):
     if project:
@@ -131,7 +176,7 @@ def render_page(body, toc, versions, project=None, contents=False):
 </aside><div class="site-wrap"><main class="project-catalogue" id="main">
 {heading}{body}
 <footer>{footer}</footer>
-</main></div></div><script src="{prefix}navigation.js?v={versions['navigation.js']}"></script>
+</main></div></div><script src="{prefix}navigation.js?v={versions['navigation.js']}"></script>{"" if project else GROUP_TOGGLE_SCRIPT}
 </body></html>'''
 
 
@@ -156,11 +201,12 @@ def render_project_page(project, versions, project_targets):
 
 
 def render_contents_page(projects, versions):
-    body, toc = "", ""
+    counts = {key: sum(p["status"] == status for p in projects) for _, key, status in GROUPS}
+    body, toc = group_jump(counts), ""
     for title, key, status in GROUPS:
         rows = [p for p in projects if p["status"] == status]
         toc += f'<li class="toc-parent"><a href="#{key}" data-section="{key}">{title} ({len(rows)})</a></li>'
-        body += f'<section class="project-group toc-section" id="{key}"><h2>{title} <span class="project-count">({len(rows)})</span></h2>'
+        body += f'<details class="project-group toc-section" id="{key}"{group_open(key)}><summary><h2>{title} <span class="project-count">({len(rows)})</span></h2></summary>'
         if rows:
             body += '<ul class="project-list">'
             for project in rows:
@@ -168,7 +214,7 @@ def render_contents_page(projects, versions):
             body += '</ul>'
         else:
             body += '<p class="project-empty">No projects listed.</p>'
-        body += '</section>'
+        body += '</details>'
     return render_page(body, toc, versions, contents=True)
 
 
@@ -243,11 +289,12 @@ def main():
         versions[name] = sha256(content.encode()).hexdigest()[:12]
     # Navigation now uses the same page-scrolling sidebar as the main website.
     (DEST / "catalogue.js").unlink(missing_ok=True)
-    body, toc = "", ""
+    counts = {key: sum(p["status"] == status for p in projects) for _, key, status in GROUPS}
+    body, toc = group_jump(counts), ""
     for title, key, status in GROUPS:
         rows = [p for p in projects if p["status"] == status]
         group_aliases = ''.join(f'<span class="project-alias" id="{a}" aria-hidden="true"></span>' for a in GROUP_ALIASES.get(key, []))
-        body += f'<section class="project-group toc-section" id="{key}">{group_aliases}<h2>{title}</h2>'
+        body += f'<details class="project-group toc-section" id="{key}"{group_open(key)}><summary><h2>{title} <span class="project-count">({len(rows)})</span></h2></summary>{group_aliases}'
         toc += f'<li class="toc-parent"><a href="#{key}" data-section="{key}">{title}</a>'
         if rows:
             toc += '<ol class="toc-subsections">'
@@ -265,7 +312,7 @@ def main():
                 page = render_project_page(p, versions, project_targets) if path_slug == slug else render_project_redirect(p)
                 (target / "index.html").write_text(page)
                 (target / "note.md").write_text(p["body"].strip() + "\n")
-        body += "</section>"
+        body += "</details>"
         if rows:
             toc += "</ol>"
         toc += "</li>"
