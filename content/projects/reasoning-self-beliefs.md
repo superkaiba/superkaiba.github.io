@@ -1,6 +1,6 @@
 ---
 title: Does reasoning change what a model believes about itself?
-status: Draft (slop)
+status: In progress
 order: 36
 ---
 

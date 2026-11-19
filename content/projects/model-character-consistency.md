@@ -1,6 +1,6 @@
 ---
 title: Evaluating the consistency of model character under different scenarios
-status: Draft (slop)
+status: Archived
 order: 20.5
 ---
 

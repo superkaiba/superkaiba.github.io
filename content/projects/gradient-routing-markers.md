@@ -1,6 +1,6 @@
 ---
 title: Localizing unwanted behavior and making it signal itself
-status: Draft (slop)
+status: Archived
 order: 59
 ---
 

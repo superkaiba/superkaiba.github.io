@@ -2,6 +2,8 @@
 title: Viewing models as "reward addicts"
 status: Fleshed out
 order: 13.9
+math: true
+aliases: [dopamine-neurons-addiction]
 ---
 
 # Viewing models as "reward addicts"
@@ -17,6 +19,34 @@ There are models of addiction from psychology we can apply to see if they fit th
 - Incentive sensitization: cue-triggered "wanting" that grows without "liking" ([Robinson & Berridge, 2025](https://pmc.ncbi.nlm.nih.gov/articles/PMC11773642))
 - Impaired response inhibition plus excess salience given to drug cues ([Goldstein & Volkow, 2002](https://pmc.ncbi.nlm.nih.gov/articles/PMC1201373))
 - Rationalization and confabulation after the act ([Nisbett & Wilson, 1977](https://hdl.handle.net/2027.42/92167); [Johansson et al., 2005](https://pubmed.ncbi.nlm.nih.gov/16210542/); [Cushman, 2020](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/rationalization-is-rational/2A13B99ED09BD802C0924D3681FEC55B))
+
+### Testing this inside the model: "dopamine neurons"
+
+The TD-learning model of addiction can be tested directly, because LLMs seem to have the pieces of a reward system. [Xu et al.](https://arxiv.org/abs/2602.00986) find "value neurons" that encode a model's expected chance of success and "dopamine neurons" whose activity tracks the temporal difference (TD) error at each reasoning step. [Demircan et al.](https://arxiv.org/abs/2410.01280) find sparse autoencoder features that track TD errors during in-context RL. [Han et al.](https://arxiv.org/abs/2605.30232) find that RL training recruits a pre-existing axis for how well or badly the model is doing. As far as I can tell, nobody has checked these units against the classic signatures of dopamine neurons, or used them to predict reward hacking.
+
+[Redish (2004)](https://pubmed.ncbi.nlm.nih.gov/15591205/) models a drug as adding a dopamine signal $D > 0$ that learning cannot cancel, so the TD error on taking the drug becomes
+
+$$
+\delta = \max\big(r + \gamma V(s') - V(s) + D,\; D\big) \;\ge\; D > 0.
+$$
+
+Normal learning stops once $V(s)$ predicts the reward and the expected error is zero. Here the error is always at least $D$, so the value of states that lead to the drug keeps growing. The question for LLMs is whether a reward hack plays the role of the drug: a source of reward that the model's internal error signal never learns to predict away.
+
+Addiction-like signatures to look for:
+
+- **Compulsion:** the model keeps taking the hack when it is made costly (it fails the visible task, or a penalty is added)
+- **Cue reactivity:** a hint that a hack is available raises value and dopamine-unit activity, and raises the hack rate in tasks unrelated to training
+- **Persistent reward response:** the dopamine-unit response to the hack reward does not fade with training, while the response to normal task reward does (the analogue of $\delta \ge D$)
+- **Withdrawal:** removing the hack produces negative error signals beyond what removing an equal amount of normal reward causes
+- **Relapse:** after the hack is trained away, a cue for it brings it back (training a model not to game early environments reduced, but did not remove, reward tampering later: [Denison et al., 2024](https://arxiv.org/abs/2406.10162))
+
+**First Steps**
+
+- Locate value and dopamine units with the method of Xu et al. and check the classic signatures on simple in-context tasks: the response moves from reward to cue over learning, and dips when a predicted reward is omitted
+- Train on a mix of normal environments and environments with a reward hack, record the units at every checkpoint, and test whether early changes in them predict which runs later develop hacking
+- Clamp or ablate the units during RL to test whether they drive the learning of the hack or only track it
+
+If the hack reward never gets predicted away, that suggests a specific fix: change the training signal so the hack reward can be predicted away, as normal rewards are.
 
 We can also take inspiration from addiction treatment to find ways to address our LLM addiction:
 
