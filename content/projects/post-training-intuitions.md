@@ -1,6 +1,6 @@
 ---
 title: Do intuitions about pretraining priors and personas hold up under heavy post-training?
-status: Fleshed out
+status: Draft (slop)
 order: 19.1
 ---
 
