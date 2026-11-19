@@ -27,14 +27,12 @@ previews across builds. Change `publication_url` to the custom domain only once
 Substack verifies the domain and HTTPS works. `planned_custom_domain` is a setup
 note and is never used as a live link.
 
-As of November 1, 2026, Substack returns HTTP 403 for feed requests from GitHub
-hosted runners, while local requests succeed. Automatic freshness is not yet
-verified. Until this is resolved, run the builder locally after publishing a
-new essay and commit the updated HTML and preview metadata. The six-hour job
-keeps trying and preserves the saved previews on failure. Retest the feed once
-the custom domain is active, and check the workflow log for `Loaded ... public
-newsletter previews` rather than treating a successful deployment as proof of
-a successful feed fetch.
+The custom domain `https://blog.thomas.jiralerspong.com` is active. On
+November 19, 2026, the GitHub-hosted deployment successfully fetched all three
+public newsletter previews through it. This resolved the HTTP 403 seen with
+the original Substack feed on November 1. Scheduled refreshes now work, and
+the saved previews remain the fallback for feed outages. Verify future refreshes
+by checking for `Loaded ... public newsletter previews` in the workflow log.
 
 Check feed handling and archive preservation with:
 
