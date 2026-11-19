@@ -1,6 +1,6 @@
 ---
 title: Probing for violations of a whole constitution
-status: Not started
+status: Draft (slop)
 order: 40
 ---
 

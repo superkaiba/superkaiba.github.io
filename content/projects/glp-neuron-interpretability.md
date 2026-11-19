@@ -1,6 +1,6 @@
 ---
 title: Are GLP neurons broadly interpretable?
-status: Not started
+status: Fleshed out
 order: 10.2
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Does predicting internal activations improve introspection?
-status: Not started
+status: Draft (slop)
 order: 34
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: A SimpleStories successor with forum threads and dense checkpoints
-status: Not started
+status: Draft (slop)
 order: 19.65
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: How synthetic and real training data change representations
-status: Not started
+status: Draft (slop)
 order: 48
 ---
 

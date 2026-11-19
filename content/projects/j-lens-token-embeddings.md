@@ -1,6 +1,6 @@
 ---
 title: How do J-lens token directions relate to token embeddings across layers?
-status: Not started
+status: Draft (slop)
 order: 32.37
 math: true
 ---

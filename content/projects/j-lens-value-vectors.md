@@ -1,6 +1,6 @@
 ---
 title: Reading attention value vectors with the J-lens
-status: Not started
+status: Draft (slop)
 order: 32.35
 math: true
 ---

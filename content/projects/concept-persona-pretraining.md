@@ -1,6 +1,6 @@
 ---
 title: Tracking concept and persona interpretability through pretraining
-status: Not started
+status: Fleshed out
 order: 19.6
 ---
 

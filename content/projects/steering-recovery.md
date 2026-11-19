@@ -1,6 +1,6 @@
 ---
 title: What restores model behavior after activation steering?
-status: Not started
+status: Fleshed out
 order: 20.25
 ---
 

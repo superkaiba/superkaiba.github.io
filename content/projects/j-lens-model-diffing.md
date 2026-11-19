@@ -1,6 +1,6 @@
 ---
 title: The J-lens as a model diffing tool in activation space
-status: Not started
+status: Draft (slop)
 order: 17.5
 math: true
 ---

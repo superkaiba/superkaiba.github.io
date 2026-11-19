@@ -1,6 +1,6 @@
 ---
 title: Which judge scores are linearly readable from activations?
-status: Not started
+status: Draft (slop)
 order: 44
 ---
 

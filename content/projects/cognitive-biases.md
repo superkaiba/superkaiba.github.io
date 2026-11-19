@@ -1,6 +1,6 @@
 ---
 title: Which cognitive biases do language models exhibit?
-status: Not started
+status: Draft (slop)
 published: false
 order: 30
 ---

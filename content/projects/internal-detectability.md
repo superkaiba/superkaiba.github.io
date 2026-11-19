@@ -1,6 +1,6 @@
 ---
 title: When is model behavior internally detectable?
-status: Not started
+status: Draft (slop)
 order: 14
 ---
 

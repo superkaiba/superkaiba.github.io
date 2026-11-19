@@ -1,6 +1,6 @@
 ---
 title: Can models learn to evade probes in context?
-status: Not started
+status: Draft (slop)
 order: 39
 ---
 

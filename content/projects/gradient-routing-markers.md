@@ -1,6 +1,6 @@
 ---
 title: Localizing unwanted behavior and making it signal itself
-status: Not started
+status: Draft (slop)
 order: 59
 ---
 

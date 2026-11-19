@@ -15,12 +15,16 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "projects"
 DEST = ROOT / "projects"
 HOME_URL = "https://thomas.jiralerspong.com/"
+# (section heading, anchor, status value used in the Markdown frontmatter)
 GROUPS = [
-    ("Not Started", "not-started"),
-    ("In Progress", "in-progress"),
-    ("Completed", "completed"),
+    ("In Progress", "in-progress", "In progress"),
+    ("Fleshed Out", "fleshed-out", "Fleshed out"),
+    ("Draft (slop)", "draft", "Draft (slop)"),
+    ("Completed", "completed", "Completed"),
 ]
-STATUSES = {"Not started": 0, "In progress": 1, "Completed": 2}
+STATUSES = {status: i for i, (_, _, status) in enumerate(GROUPS)}
+# Older links to retired sections land on the section that replaced them.
+GROUP_ALIASES = {"draft": ["not-started"]}
 
 CSS = """
 .project-layout{grid-template-columns:230px minmax(0,1fr);gap:48px}
@@ -107,7 +111,7 @@ def render_page(body, toc, versions, project=None, contents=False):
         footer = f'<a href="contents/">Project contents</a> · <a href="{HOME_URL}">Main website</a>'
     prefix = "../" if project or contents else ""
     layout = " project-detail-layout" if project else ""
-    current_section = "Overview" if project else "Not Started"
+    current_section = "Overview" if project else GROUPS[0][0]
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} · Thomas Jiralerspong</title>
@@ -152,8 +156,8 @@ def render_project_page(project, versions, project_targets):
 
 def render_contents_page(projects, versions):
     body, toc = "", ""
-    for title, key in GROUPS:
-        rows = [p for p in projects if p["status"].lower().replace(" ", "-") == key]
+    for title, key, status in GROUPS:
+        rows = [p for p in projects if p["status"] == status]
         toc += f'<li class="toc-parent"><a href="#{key}" data-section="{key}">{title} ({len(rows)})</a></li>'
         body += f'<section class="project-group toc-section" id="{key}"><h2>{title} <span class="project-count">({len(rows)})</span></h2>'
         if rows:
@@ -212,7 +216,7 @@ def main():
         projects.append(meta)
     projects.sort(key=lambda p:(STATUSES[p["status"]], p.get("order", 999), p["title"].lower()))
     # Validate all public anchors before writing files, including historical names.
-    anchors = {key for _, key in GROUPS} | {"main", "contents"}
+    anchors = {key for _, key, _ in GROUPS} | {a for v in GROUP_ALIASES.values() for a in v} | {"main", "contents"}
     for p in projects:
         for slug in [p["slug"], *p.get("aliases", [])]:
             if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug) or slug in anchors:
@@ -239,9 +243,10 @@ def main():
     # Navigation now uses the same page-scrolling sidebar as the main website.
     (DEST / "catalogue.js").unlink(missing_ok=True)
     body, toc = "", ""
-    for title, key in GROUPS:
-        rows = [p for p in projects if p["status"].lower().replace(" ", "-") == key]
-        body += f'<section class="project-group toc-section" id="{key}"><h2>{title}</h2>'
+    for title, key, status in GROUPS:
+        rows = [p for p in projects if p["status"] == status]
+        group_aliases = ''.join(f'<span class="project-alias" id="{a}" aria-hidden="true"></span>' for a in GROUP_ALIASES.get(key, []))
+        body += f'<section class="project-group toc-section" id="{key}">{group_aliases}<h2>{title}</h2>'
         toc += f'<li class="toc-parent"><a href="#{key}" data-section="{key}">{title}</a>'
         if rows:
             toc += '<ol class="toc-subsections">'

@@ -1,6 +1,6 @@
 ---
 title: Do LLM neurons grow by recursive generalization during training?
-status: Not started
+status: Draft (slop)
 order: 10.3
 math: true
 ---

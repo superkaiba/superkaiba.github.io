@@ -1,6 +1,6 @@
 ---
 title: Defining and characterizing personas as distributions over logits
-status: Not started
+status: Fleshed out
 order: 20.5
 math: true
 ---

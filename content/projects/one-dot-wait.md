@@ -1,6 +1,6 @@
 ---
 title: Why does “answer in one dot, then wait” change activations?
-status: Not started
+status: Draft (slop)
 order: 7
 ---
 

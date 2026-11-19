@@ -1,6 +1,6 @@
 ---
 title: Evaluating the consistency of model character under different scenarios
-status: Not started
+status: Fleshed out
 order: 20.5
 ---
 

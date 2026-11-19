@@ -1,6 +1,6 @@
 ---
 title: How much of an LLM's behavior is decided in advance?
-status: Not started
+status: Fleshed out
 order: 5.1
 ---
 

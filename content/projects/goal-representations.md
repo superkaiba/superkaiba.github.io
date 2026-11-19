@@ -1,6 +1,6 @@
 ---
 title: How do LLMs represent goals?
-status: Not started
+status: Draft (slop)
 order: 13.75
 math: true
 ---

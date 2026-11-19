@@ -1,6 +1,6 @@
 ---
 title: Can personas be defined by goals?
-status: Not started
+status: Draft (slop)
 order: 25
 ---
 

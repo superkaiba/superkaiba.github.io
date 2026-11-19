@@ -1,6 +1,6 @@
 ---
 title: Self-reflection to prevent reward hacking
-status: Not started
+status: Fleshed out
 order: 53
 ---
 

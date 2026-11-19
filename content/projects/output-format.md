@@ -1,6 +1,6 @@
 ---
 title: How output format changes model behavior
-status: Not started
+status: Draft (slop)
 order: 27
 ---
 

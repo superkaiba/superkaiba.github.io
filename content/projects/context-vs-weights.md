@@ -1,6 +1,6 @@
 ---
 title: How much of an LLM's output comes from the context and how much from the weights?
-status: Not started
+status: Draft (slop)
 order: 5.5
 math: true
 ---

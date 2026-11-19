@@ -1,6 +1,6 @@
 ---
 title: What changes when post-training uses evolution strategies instead of RL?
-status: Not started
+status: In progress
 order: 54.8
 math: true
 ---

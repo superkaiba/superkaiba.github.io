@@ -1,6 +1,6 @@
 ---
 title: What can prompting, steering, LoRA, and fine-tuning change?
-status: Not started
+status: Draft (slop)
 order: 54
 ---
 

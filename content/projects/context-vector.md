@@ -1,6 +1,6 @@
 ---
 title: What is stored in the final context activation?
-status: Not started
+status: Draft (slop)
 order: 5
 ---
 

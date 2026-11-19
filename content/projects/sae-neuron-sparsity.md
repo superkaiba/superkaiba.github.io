@@ -1,6 +1,6 @@
 ---
 title: Are SAE features sparse in the neuron basis?
-status: Not started
+status: Draft (slop)
 order: 10.25
 math: true
 ---

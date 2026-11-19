@@ -1,6 +1,6 @@
 ---
 title: What determines the right probe?
-status: Not started
+status: Draft (slop)
 order: 15
 aliases:
 - linear-decodability

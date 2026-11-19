@@ -1,6 +1,6 @@
 ---
 title: Does learning to cooperate improve broader alignment?
-status: Not started
+status: Draft (slop)
 order: 58.5
 ---
 

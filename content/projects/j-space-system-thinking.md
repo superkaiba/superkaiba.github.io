@@ -1,6 +1,6 @@
 ---
 title: "Inside and outside J-space: System 1 and System 2 thinking"
-status: Not started
+status: Fleshed out
 order: 32.25
 ---
 

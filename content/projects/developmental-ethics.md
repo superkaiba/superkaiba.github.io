@@ -1,6 +1,6 @@
 ---
 title: Teaching model behavior using ideas from developmental psychology
-status: Not started
+status: Draft (slop)
 order: 51
 ---
 

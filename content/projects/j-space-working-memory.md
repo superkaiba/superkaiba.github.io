@@ -1,6 +1,6 @@
 ---
 title: Stress-testing J-space as working memory with conflicting items
-status: Not started
+status: Draft (slop)
 order: 32.3
 math: true
 ---

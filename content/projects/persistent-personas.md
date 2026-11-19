@@ -1,6 +1,6 @@
 ---
 title: Personas as persistent features
-status: Not started
+status: In progress
 order: 20
 ---
 

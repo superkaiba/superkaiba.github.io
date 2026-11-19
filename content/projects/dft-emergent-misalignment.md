@@ -1,6 +1,6 @@
 ---
 title: Does Dynamic Fine-Tuning reduce emergent misalignment?
-status: Not started
+status: Draft (slop)
 order: 59.7
 math: true
 ---

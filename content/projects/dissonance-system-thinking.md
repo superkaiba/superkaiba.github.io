@@ -1,6 +1,6 @@
 ---
 title: Is cognitive dissonance in LLMs System 1 or System 2?
-status: Not started
+status: Draft (slop)
 order: 31.75
 math: true
 ---

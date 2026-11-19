@@ -1,6 +1,6 @@
 ---
 title: Principal geodesic analysis of the residual stream
-status: Not started
+status: Fleshed out
 order: 16.6
 ---
 

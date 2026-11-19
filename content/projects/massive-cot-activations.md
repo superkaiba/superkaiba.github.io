@@ -1,6 +1,6 @@
 ---
 title: Massive activations during reasoning and at its end
-status: Not started
+status: Draft (slop)
 order: 37
 ---
 

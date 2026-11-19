@@ -1,6 +1,6 @@
 ---
 title: Semantic structure in native residual coordinates
-status: Not started
+status: Draft (slop)
 order: 10
 ---
 

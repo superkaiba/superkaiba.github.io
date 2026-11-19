@@ -1,6 +1,6 @@
 ---
 title: Transferring capabilities and alignment through crosscoders
-status: Not started
+status: Draft (slop)
 order: 11
 ---
 

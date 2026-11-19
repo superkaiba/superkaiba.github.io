@@ -1,6 +1,6 @@
 ---
 title: Model organisms of RL from pretraining
-status: Not started
+status: Draft (slop)
 order: 50.6
 math: true
 ---

@@ -1,6 +1,6 @@
 ---
 title: Continued third-person training to separate capability gains from misalignment
-status: Not started
+status: Fleshed out
 order: 59.6
 ---
 

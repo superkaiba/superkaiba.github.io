@@ -1,6 +1,6 @@
 ---
 title: Characterizing activation geometry with nonlinear factors
-status: Not started
+status: In progress
 order: 16
 ---
 

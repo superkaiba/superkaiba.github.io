@@ -1,6 +1,6 @@
 ---
 title: Measuring AI progress through the difficulty of verification
-status: Not started
+status: Draft (slop)
 published: false
 order: 45
 ---

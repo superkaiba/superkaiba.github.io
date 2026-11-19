@@ -1,6 +1,6 @@
 ---
 title: Base-model preferences
-status: Not started
+status: Fleshed out
 order: 28
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: How features combine and separate across transformer layers
-status: Not started
+status: Fleshed out
 order: 17.5
 ---
 

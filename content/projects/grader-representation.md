@@ -1,6 +1,6 @@
 ---
 title: Does the model simulate a grader persona?
-status: Not started
+status: Draft (slop)
 order: 41
 ---
 

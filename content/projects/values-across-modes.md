@@ -1,6 +1,6 @@
 ---
 title: Shared representations across talking, thinking, and acting on values
-status: Not started
+status: Fleshed out
 order: 32.5
 ---
 

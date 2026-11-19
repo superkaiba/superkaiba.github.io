@@ -1,6 +1,6 @@
 ---
 title: Do LLMs do distributional RL?
-status: Not started
+status: Draft (slop)
 order: 13.8
 math: true
 ---

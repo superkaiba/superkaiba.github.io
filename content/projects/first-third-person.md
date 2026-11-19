@@ -1,6 +1,6 @@
 ---
 title: First-, second-, and third-person identity in prompts
-status: Not started
+status: Fleshed out
 order: 23
 ---
 

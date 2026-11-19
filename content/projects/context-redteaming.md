@@ -1,6 +1,6 @@
 ---
 title: Red-teaming through predicted answer representations
-status: Not started
+status: Draft (slop)
 order: 4
 ---
 

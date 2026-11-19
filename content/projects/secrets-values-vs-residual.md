@@ -1,6 +1,6 @@
 ---
 title: Are secrets stored in attention values or the residual stream?
-status: Not started
+status: Draft (slop)
 order: 32.45
 math: true
 ---

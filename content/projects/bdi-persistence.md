@@ -1,6 +1,6 @@
 ---
 title: How long do an LLM's beliefs, goals and intentions persist?
-status: Not started
+status: Draft (slop)
 order: 13.7
 math: true
 ---

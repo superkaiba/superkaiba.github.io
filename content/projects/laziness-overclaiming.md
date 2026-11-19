@@ -1,6 +1,6 @@
 ---
 title: Laziness and overclaiming axes
-status: Not started
+status: Fleshed out
 order: 21.1
 ---
 

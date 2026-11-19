@@ -1,6 +1,6 @@
 ---
 title: Do models update beliefs from internal states or their earlier answers?
-status: Not started
+status: Fleshed out
 order: 13.5
 ---
 

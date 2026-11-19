@@ -1,6 +1,6 @@
 ---
 title: Do models represent whether text is AI-generated?
-status: Not started
+status: Draft (slop)
 order: 24
 ---
 

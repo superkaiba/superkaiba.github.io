@@ -1,6 +1,6 @@
 ---
 title: A survey of personas and character in language models
-status: Not started
+status: Fleshed out
 order: 19.5
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Applying SharedSAE to model diffing
-status: Not started
+status: Draft (slop)
 order: 17
 ---
 

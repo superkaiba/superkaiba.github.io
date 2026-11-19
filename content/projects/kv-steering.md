@@ -1,6 +1,6 @@
 ---
 title: Steering and patching the KV cache instead of the residual stream
-status: Not started
+status: Draft (slop)
 order: 32.4
 math: true
 ---

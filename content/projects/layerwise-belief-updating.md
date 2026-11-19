@@ -1,6 +1,6 @@
 ---
 title: Do different layers perform different stages of belief updating?
-status: Not started
+status: Draft (slop)
 order: 13
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Structure in attention keys and values
-status: Not started
+status: Draft (slop)
 order: 32.33
 math: true
 ---

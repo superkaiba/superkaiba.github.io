@@ -1,6 +1,6 @@
 ---
 title: Are personas representations of document sources?
-status: Not started
+status: Fleshed out
 order: 19.5
 math: true
 ---

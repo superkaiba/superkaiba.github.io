@@ -68,7 +68,7 @@ Alpha's distinctive content with $z_t$.
 ''')
         (self.content / "beta.md").write_text('''---
 title: Beta
-status: Not started
+status: Draft (slop)
 order: 2
 aliases:
 - old-beta
@@ -79,7 +79,7 @@ Beta's distinctive content.
 ''')
         (self.content / "hidden.md").write_text('''---
 title: Hidden proposal
-status: Not started
+status: Fleshed out
 order: 3
 published: false
 aliases:
@@ -143,14 +143,21 @@ Unpublished content.
         self.assertIn('rel="canonical" href="https://thomas.jiralerspong.com/projects/contents/"', html)
         self.assertIn('href="../beta/">Beta</a>', html)
         self.assertIn('href="../alpha/">Alpha &amp; one</a>', html)
-        self.assertLess(html.index('href="../beta/"'), html.index('href="../alpha/"'))
-        self.assertIn('Not Started <span class="project-count">(1)</span>', html)
+        self.assertLess(html.index('href="../alpha/"'), html.index('href="../beta/"'))
         self.assertIn('In Progress <span class="project-count">(1)</span>', html)
+        self.assertIn('Fleshed Out <span class="project-count">(0)</span>', html)
+        self.assertIn('Draft (slop) <span class="project-count">(1)</span>', html)
         self.assertIn('Completed <span class="project-count">(0)</span>', html)
         self.assertNotIn("distinctive content", html)
         self.assertNotIn("Hidden proposal", html)
         self.assertNotIn("old-alpha", html)
         self.assertIn('href="contents/">Project contents', (self.dest / 'index.html').read_text())
+
+    def test_retired_not_started_anchor_lands_on_drafts(self):
+        catalogue = (self.dest / "index.html").read_text()
+        draft = catalogue.index('id="draft"')
+        self.assertLess(draft, catalogue.index('id="not-started"'))
+        self.assertLess(catalogue.index('id="not-started"'), catalogue.index("Beta's distinctive content"))
 
 
 if __name__ == "__main__":

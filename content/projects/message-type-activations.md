@@ -1,6 +1,6 @@
 ---
 title: Representations across prompts, reasoning, answers and tool calls
-status: Not started
+status: Draft (slop)
 order: 32
 ---
 

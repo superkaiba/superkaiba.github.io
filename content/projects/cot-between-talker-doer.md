@@ -1,6 +1,6 @@
 ---
 title: Is the chain of thought caught between two reward-seekers, the talker and the doer?
-status: Not started
+status: Draft (slop)
 order: 31.5
 math: true
 ---

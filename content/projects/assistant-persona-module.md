@@ -1,6 +1,6 @@
 ---
 title: Localizing the assistant persona to an external module
-status: Not started
+status: In progress
 order: 59.5
 ---
 

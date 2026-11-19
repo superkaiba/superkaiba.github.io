@@ -1,6 +1,6 @@
 ---
 title: What do agents communicate beyond the apparent meaning of their messages?
-status: Not started
+status: Draft (slop)
 order: 63
 ---
 

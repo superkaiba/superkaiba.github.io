@@ -1,6 +1,6 @@
 ---
 title: Representational Space Alignment in Agent Swarms
-status: Not started
+status: Fleshed out
 order: 62
 ---
 

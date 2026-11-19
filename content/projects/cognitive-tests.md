@@ -1,6 +1,6 @@
 ---
 title: Revisiting cognitive tests of System 1 and System 2
-status: Not started
+status: Draft (slop)
 published: false
 order: 26
 ---

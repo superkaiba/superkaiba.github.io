@@ -1,6 +1,6 @@
 ---
 title: How few parameters does RLVR need when reusing a pretrained module?
-status: Not started
+status: Fleshed out
 order: 54.5
 ---
 

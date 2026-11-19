@@ -1,6 +1,6 @@
 ---
 title: Connecting trajectory straightening with belief-state geometry
-status: Not started
+status: Draft (slop)
 order: 18
 ---
 

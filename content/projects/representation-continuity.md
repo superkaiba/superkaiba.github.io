@@ -1,6 +1,6 @@
 ---
 title: How smoothly does behavior change along natural activation paths?
-status: Not started
+status: Fleshed out
 order: 16.5
 ---
 

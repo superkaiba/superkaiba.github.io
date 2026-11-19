@@ -1,6 +1,6 @@
 ---
 title: An environment for honesty, calibration, and reporting failures
-status: Not started
+status: Draft (slop)
 order: 47
 ---
 
