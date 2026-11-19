@@ -1,6 +1,6 @@
 ---
 title: Evaluating the consistency of model character under different scenarios
-status: Fleshed out
+status: Draft (slop)
 order: 20.5
 ---
 

@@ -1,0 +1,11 @@
+---
+title: How well does the model's persona hold up across thinking, doing, and talking?
+status: Fleshed out
+order: 20.5
+---
+
+# How well does the model's persona hold up across thinking, doing, and talking?
+
+We are seeing a remarkable degree of "split-brainedness" in modern LLMs, with the model saying, thinking, and doing contradictory things (stated values often diverge from value-informed actions: [Shen et al., 2025](https://arxiv.org/abs/2501.15463); CoTs often leave out what actually drives the answer: [Chen et al., 2025](https://arxiv.org/abs/2505.05410)), as well as acting differently in different contexts. This is not surprising given the different rewards used to train different parts of the model (RLHF for the talker, RLVR for the thinker/doer), and the fact that modern SOTA models are probably trained by distilling many specialized teachers into one model (e.g. multi-teacher on-policy distillation, used to train MiMo-V2-Flash: [Ma et al., 2026](https://arxiv.org/abs/2606.30406)) (we are literally distilling different brains into one).
+
+The goal of this project would be to evaluate to what degree a model's character/persona is consistent across these different modes, and potentially develop methods to make it more consistent.
