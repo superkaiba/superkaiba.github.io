@@ -1,20 +1,17 @@
 # Representational Space Alignment in Agent Swarms
 
-**TL;DR:** Test whether internal representations become aligned across a swarm, including between agents that never directly interact, and whether steering one agent spreads through or disrupts that alignment.
+**TLDR:** Test whether internal representations become aligned across a swarm, including between agents that never directly interact, and whether intervening on one agent's representational space spreads the intervention or disrupts that agent's alignment with the swarm
 
-Prior work relates [representational similarity to cooperation](https://arxiv.org/abs/2606.07818) and finds that [interacting agents' activations predict one another better than passive-reading controls](https://arxiv.org/abs/2602.17815). These findings motivate extending the analysis to larger swarms, including agents with different roles and no direct communication link.
+LLM swarms have emerged as a new threat model for AIs. Understanding how these swarms work from the perspective of model internals would give us a better understanding of how to prevent them. Prior work finds that model pairs with more similar representations cooperate more successfully ([Potter et al., 2026](https://arxiv.org/abs/2606.07818)), and that interacting agents' activations predict each other better than passive-reading controls ([Zhang et al., 2026](https://arxiv.org/abs/2602.17815)). This project proposes to extend this to agent swarms:
 
-This project asks how representational similarity develops across a communication network, whether perturbing one agent changes other agents' representations through their messages, and which changes spread or weaken coordination. Similarity alone would not establish a shared consciousness or a causal role in cooperation.
+- Do 2 agents in a swarm have aligned representation spaces even if they never directly interact?
+- Do 2 agents in a swarm have aligned representation spaces even if they play very different roles?
+- Does making some change to an agent's representation space spread to the rest of the swarm?
+    - Or does it make the agent "break free" from the swarm
+    - Do some changes spread better/worse?
 
 **First Steps**
 
-- Simulate swarms with different roles and communication graphs; measure representational similarity over time using CKA on matched probe inputs.
-- Compare directly and indirectly connected agents, controlling for shared topics, transcripts, model weights, and token positions.
-- Steer one agent and trace changes in messages, recipient activations, and behavior across the network. Compare different directions and strengths with matched control interventions.
-- Test whether interventions limit unwanted propagation or coordination while preserving useful task performance.
-
-**Related Work**
-
-- [Thought Virus](https://arxiv.org/abs/2603.00131) studies behavioral bias propagation through multi-agent conversations; we would measure and intervene on internal representations.
-- [Subliminal Learning Is Steering Vector Distillation](https://arxiv.org/abs/2606.00995) studies transfer from a steered teacher to a fine-tuned student; our main setting is interaction without weight updates.
-- [StateBridge](https://arxiv.org/abs/2608.13317) explicitly aligns hidden states for latent communication; we study alignment arising during interaction.
+- Simulate an agent swarm
+- Measure representational similarity over time with CKA ([Kornblith et al., 2019](https://arxiv.org/abs/1905.00414))
+- Compare directly and indirectly connected agents

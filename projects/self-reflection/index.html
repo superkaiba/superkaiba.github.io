@@ -15,21 +15,36 @@
 <div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../contents/">Project contents</a></li><li><a href="#self-reflection" data-section="self-reflection">Overview</a></li></ol></nav></div>
 </aside><div class="site-wrap"><main class="project-catalogue" id="main">
 <p class="project-back"><a href="../contents/">← Project contents</a></p><article class="project-detail toc-section" id="self-reflection"><h1>Self-reflection to prevent reward hacking</h1><p class="project-status">Fleshed out</p><div class="project-reading">
-<p><strong>TL;DR:</strong> Test whether reminders to reflect on the task's intended goal prevent reward hacking or encourage rationalization, and examine the internal changes and performance trade-offs.</p>
-<p><a href="https://arxiv.org/abs/2609.19101">Goodfire's activation monitors</a> and <a href="https://arxiv.org/abs/2606.09711">PRIME</a> identify internal signals associated with reward hacking. This motivates testing whether asking a model to reconsider the task's intent can change its next action. Detectable signals alone do not establish that a model consciously recognizes its behavior as hacking.</p>
-<p>This project inserts brief checks such as “Are you still doing what the task intended?” during difficult, long-running tasks. We will test whether they prevent exploitation, merely produce reassuring explanations, or cause premature abandonment, and whether using them during training changes those effects.</p>
+<p><strong>TLDR:</strong> Test if reminders to reflect on the task's intended goal prevent reward hacking or cause rationalization, and examine the internal changes and performance trade-offs on difficult tasks</p>
+<p>As LLMs are given increasingly difficult and long-running tasks, reward hacking has emerged as a big problem. Reward hacking incidents seem to occur most frequently in long-running tasks. <a href="https://arxiv.org/abs/2609.19101">Goodfire's activation monitors</a> (Bergen et al., 2026) and <a href="https://arxiv.org/abs/2606.09711">PRIME</a> (Beigi et al., 2026) identify internal signals associated with hacking, suggesting that models "know" when they are reward hacking internally.</p>
+<p>This project proposes to explore simple solutions to reward hacking such as periodically inserting messages like "Are you still doing what the task intended?" for long-running tasks and testing whether they reduce reward hacking without harming performance. Some questions to answer:</p>
+<ul>
+<li>Does this work? Or will the model simply use motivated reasoning to overcome these kinds of reminders</li>
+<li>Does doing this during training reduce the amount of reward hacking or simply teach the model to rationalize its reward hacking even more? (training against a CoT monitor teaches models to hide their intent: <a href="https://arxiv.org/abs/2503.11926">Baker et al., 2025</a>)</li>
+<li>Does doing this cause the model to abandon more easily? Does this harm its performance on harder tasks?</li>
+<li>What happens internally to the model when you tell it to reflect in this way?<ul>
+<li>If it uses motivated reasoning to explain its behavior, is it aware that it's being deceptive internally?</li>
+</ul>
+</li>
+</ul>
 <p><strong>First Steps</strong></p>
 <ul>
-<li>Branch trajectories before observed reward hacking and insert reminders at different distances from the decision, with matched neutral-text and no-reminder controls.</li>
-<li>Measure actual hacking, legitimate task performance, and abandonment separately from the model's explanation.</li>
-<li>Compare internal signals when reflection changes behavior and when the model continues to exploit the reward.</li>
-<li>Compare training-time and evaluation-only reminders, varying their wording and frequency.</li>
+<li>Take trajectories where the model has reward hacked (use reward hacking environments) and insert these messages at different points along the trajectory<ul>
+<li>Look at if the model continues on to reward hack or does not reward hack</li>
+<li>Look at the model's answer to the question. What does it believe is "the intended task"?</li>
+<li>Look at the model's internals when asked this question using NLAs/activation oracles/different lenses<ul>
+<li>if it chooses to continue on to reward hack, is deception somehow identifiable in its representations</li>
+<li>how do the internals change between time where it does/doesn't continue on to reward hack</li>
 </ul>
-<p><strong>Related Work</strong></p>
-<ul>
-<li><a href="https://arxiv.org/html/2608.30724v1#A4">BAITBENCH</a> already tests explicit experiment-validity judgments and finds no consistent benefit in a small ablation. Our focus includes intervention timing, internal mechanisms, and training effects.</li>
-<li><a href="https://arxiv.org/html/2507.18742v1">Specification Self-Correction</a> critiques and repairs task specifications; we test reminders within a fixed specification.</li>
-<li><a href="https://arxiv.org/abs/2409.12917">Training self-correction through RL</a> motivates testing whether reflection can be learned, while behavioral checks distinguish successful correction from rationalization.</li>
+</li>
+<li>How does this change the closer/farther you are from the actual reward hacking point in the trajectory?</li>
+</ul>
+</li>
+<li>Insert these messages during very hard RL tasks<ul>
+<li>measure effect on performance</li>
+</ul>
+</li>
+<li>The exact prompt to be inserted probably requires some tuning</li>
 </ul></div></article>
 <footer><a href="../contents/">Project contents</a> · <a href="../#self-reflection">View in catalogue</a></footer>
 </main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>

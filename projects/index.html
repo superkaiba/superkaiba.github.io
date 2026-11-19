@@ -282,22 +282,18 @@
 <li>find where they arise during pretraining + what other entanglements they have</li>
 </ul>
 <p>This is in some sense the neuron level counterpart to understanding the structure of persona space in the residual stream (see <a href="#persona-manifolds">Nonlinear geometry of persona representations</a>).</p></div></article><article class="project-row toc-section" id="first-third-person"><h3><a href="first-third-person/">First-, second-, and third-person identity in prompts</a></h3><p class="project-status">Fleshed out</p><div class="project-reading">
-<p><strong>TL;DR:</strong> Test how “I am,” “You are,” and “The assistant is,” placed in system or user prompts, affect the model's internal representation and consistent adoption of an identity.</p>
-<p>The <a href="https://alignment.anthropic.com/2026/psm/">Persona Selection Model</a> motivates studying how descriptions select the assistant's persona, but leaves open which framing works best. <a href="https://aclanthology.org/2025.findings-emnlp.1261/">Lutz et al. (2025)</a> systematically compare direct role assignment, third-person descriptions, and interview framing in demographic simulations. Work on <a href="https://arxiv.org/abs/2310.17191">entity binding</a> provides a mechanistic starting point for understanding how descriptions attach traits to particular entities.</p>
-<p>This project isolates how grammatical person, the entity being described, and message role affect identity adoption and its internal representation. The aim is to understand when a description becomes part of the responding assistant's identity and how reliably that identity guides behavior.</p>
+<p><strong>TLDR:</strong> Test how "I am," "You are," and "The assistant is," placed in system or user prompts, affect the model's internal representations of itself and expressed traits/behaviors/identity</p>
+<p>System prompts (or user prompts) often say things such as "You are Claude" or "You are a programmer" (second person pronouns) in order to confer a certain identity to the LLM assistant. However, based on the PSM (<a href="https://alignment.anthropic.com/2026/psm/">Marks et al., 2026</a>), something that makes more sense is potentially saying "The assistant is Claude" or "The assistant is a programmer" (third person pronouns), "I am Claude" or "I am a programmer" (first person pronouns) or even "All AI assistants are programmers"</p>
+<p>No one has conducted a principled study of the differences between these forms of giving the assistant its identity (the closest I could find is <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0341558">this paper</a> which compares first person prompting in the chat template with third person prompting outside the chat template, but this is quite different; prior work on personas in system prompts varies which role is given, not how it is phrased: <a href="https://arxiv.org/abs/2311.10054">Zheng et al., 2024</a>). This would be useful both to understand better how to instill a robust identity into a model with prompting/system prompting, and to gain better understanding of how the model represents the assistant (e.g. the Assistant Axis: <a href="https://arxiv.org/abs/2601.10387">Lu et al., 2026</a>) and of the PSM in general.</p>
+<p>Some questions to answer:</p>
+<ul>
+<li>Which of these methods work best to prompt the assistant with an identity?</li>
+<li>Are these represented the same way in activation space?</li>
+<li>Does this change if it's in the system prompt or the user prompt?</li>
+</ul>
 <p><strong>First Steps</strong></p>
 <ul>
-<li>Compare first-, second-, and third-person descriptions across identities, traits, and system/user placement, keeping tasks and chat templates fixed.</li>
-<li>Check who each description refers to: “I am a programmer” in a user message may describe the user. Test “All AI assistants are programmers” separately because it also changes the description's scope.</li>
-<li>Measure behavior and persistence across turns, distractions, and conflicting descriptions, using multiple paraphrases and a no-persona baseline.</li>
-<li>Probe and patch candidate representations across paraphrases to distinguish identity attribution from wording.</li>
-</ul>
-<p><strong>Related Work</strong></p>
-<ul>
-<li><a href="https://arxiv.org/html/2407.18008">GermanPartiesQA</a> compares “I am [politician]” with “You are [politician]”; the prompts also change whose identity is described.</li>
-<li><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0341558">Out-of-context and out-of-scope</a> compares assistant-perspective chat prompting with third-person raw completion after fine-tuning. We would hold the chat template fixed.</li>
-<li><a href="https://arxiv.org/html/2603.12277v6">Prompt Injection as Role Confusion</a> probes internal message-role attribution and includes a pronoun ablation in forged reasoning; our focus is adoption of persona traits.</li>
-<li><a href="https://arxiv.org/html/2605.02087v2">Model Spec Midtraining</a> varies identity framing in training documents; we study its effects at inference time.</li>
+<li>Vary prompting method for different identities/traits and in the system/user prompt and see what differences there are in expressed behavior and representation space, across multiple turns</li>
 </ul></div></article><article class="project-row toc-section" id="base-model-agency"><h3><a href="base-model-agency/">Agency in base models, &quot;contaminated&quot; base models, and post-trained models without a chat template</a></h3><p class="project-status">Fleshed out</p><div class="project-reading">
 <p>The goal of this project would be to evaluate the level of agency that can be ascribed to a base model (this probably needs some input from the agent foundations people as to how to define "agency", e.g. agents as systems that would adapt their policy if their actions influenced the world in a different way: <a href="https://arxiv.org/abs/2208.08345">Kenton et al., 2022</a>) as well as how this changes when we add chat template data to pretraining/midtraining (base models already refuse harmful requests through the same refusal direction as chat models: <a href="https://www.lesswrong.com/posts/YWo2cKJgL7Lg8xWjj/base-llms-refuse-too">Kissane et al., 2024</a>; the Assistant Axis is already present in base models: <a href="https://arxiv.org/abs/2601.10387">Lu et al., 2026</a>).</p></div></article><article class="project-row toc-section" id="system-1-system-2"><h3><a href="system-1-system-2/">Exploring System 2 and System 1 thinking as a model of LLM behavior</a></h3><p class="project-status">Fleshed out</p><div class="project-reading">
 <p>People often seem to be surprised when models take actions or have thoughts which are not aligned or even contradictory with how they talk to us or represent themselves (<a href="https://arxiv.org/abs/2305.04388">Turpin et al., 2023</a>; <a href="https://arxiv.org/abs/2505.05410">Chen et al., 2025</a>; <a href="https://arxiv.org/abs/2503.08679">Arcuschin et al., 2025</a>). I think we can map this to system 2 vs system 1 thinking in humans (Kahneman, 2011; <a href="https://doi.org/10.1177/1745691612460685">Evans &amp; Stanovich, 2013</a>).</p>
@@ -313,48 +309,71 @@
 </li>
 </ul>
 <p>If this picture holds, I think it already gives an interesting and illuminating perspective on LLM behavior, but one potential followup would be to explore directly externalizing the system 2 to a different model (probably with different post training) which can allow it to critique the model's reasoning in a more unbiased way (<a href="https://arxiv.org/abs/2310.01798">Huang et al., 2023</a>; <a href="https://arxiv.org/abs/2507.02778">Tsui, 2025</a>; <a href="https://arxiv.org/abs/2404.13076">Panickssery et al., 2024</a>). This is similar to proposals around debate (<a href="https://arxiv.org/abs/1805.00899">Irving et al., 2018</a>; <a href="https://proceedings.mlr.press/v235/khan24a.html">Khan et al., 2024</a>).</p></div></article><article class="project-row toc-section" id="values-across-modes"><h3><a href="values-across-modes/">Shared representations across talking, thinking, and acting on values</a></h3><p class="project-status">Fleshed out</p><div class="project-reading">
-<p><strong>TL;DR:</strong> Test whether the same internal representations support discussing, reasoning about, and acting on a value—and whether probes and training transfer between these modes.</p>
-<p><a href="https://www.lesswrong.com/posts/cJX2ssssGoYqnijwi/the-talker-does-not-control-the-doer-in-current-ais">The Talker Does Not Control The Doer</a> motivates separating verbal endorsement from action selection. <a href="https://arxiv.org/abs/2608.10703">Your LLM, Your Style</a> studies behavioral control across decision, advice, and execution settings, providing close related work for comparisons across modes.</p>
-<p>This project focuses on specific values and behaviors, such as honesty: is the representation involved in explaining honesty also involved in reasoning about an honest choice and taking an honest action? If the representations differ, can we characterize that difference and transfer readouts or training between them?</p>
+<p><strong>TLDR:</strong> Test whether discussing, reasoning about, and acting on a value trigger the same representations in models, whether probes transfer between these modes, and how training a model to have a value in one mode transfers to the others</p>
+<p>Similarly to the <a href="#cot-persona">"Talker" vs "Doer" vs "Thinker" project</a>, this project proposes to look at representations for specific values/behaviors when the model is talking about the behavior/value or thinking about the behavior/value or doing something that expresses the behavior/value (models' stated values often diverge from their value-informed actions: <a href="https://arxiv.org/abs/2501.15463">Shen et al., 2025</a>).</p>
+<p>Some questions:</p>
+<ul>
+<li>If you train a probe to recognize a concept in one mode, does that generalize to the other modes (a general "truth direction" generalizes across topics and statement types once it is separated from a polarity-sensitive one: <a href="https://arxiv.org/abs/2407.12831">Bürger et al., 2024</a>)</li>
+<li>Are there specific "talking" and "doing" and "thinking" spaces? Can we learn a mapping between those spaces? (To maybe transfer a probe from one space to another)</li>
+<li>How does training a model to do something in one mode generalize/not generalize to other modes? (training only on writing insecure code changes what the model says in unrelated chats: <a href="https://arxiv.org/abs/2502.17424">Betley et al., 2025</a>)<ul>
+<li>What if different modes get conflicting training signals?</li>
+</ul>
+</li>
+</ul>
 <p><strong>First Steps</strong></p>
 <ul>
-<li>Construct matched tasks in which the model discusses, reasons about, or acts on the same value, controlling information, wording, and task difficulty.</li>
-<li>Train probes in one mode and test them in the others; compare direct transfer with learned mappings between representation spaces.</li>
-<li>Intervene on candidate representations to test their behavioral role rather than relying only on probe accuracy.</li>
-<li>Train a value or behavior in one mode and measure transfer to the others, including conditions with conflicting training signals.</li>
+<li>Start with a set of values/behaviors</li>
+<li>Train probes on talking vs doing vs thinking about these values/behaviors and test generalization to other modes</li>
+<li>Look at the representational space alignment between the activations in talking/doing/thinking modes + try to characterize their differences and train a mapping between them to see if this helps with probe generalization</li>
+<li>Train a value/behavior into a model in one mode and see how it generalizes to the other modes</li>
+</ul></div></article><article class="project-row toc-section" id="self-reflection"><h3><a href="self-reflection/">Self-reflection to prevent reward hacking</a></h3><p class="project-status">Fleshed out</p><div class="project-reading">
+<p><strong>TLDR:</strong> Test if reminders to reflect on the task's intended goal prevent reward hacking or cause rationalization, and examine the internal changes and performance trade-offs on difficult tasks</p>
+<p>As LLMs are given increasingly difficult and long-running tasks, reward hacking has emerged as a big problem. Reward hacking incidents seem to occur most frequently in long-running tasks. <a href="https://arxiv.org/abs/2609.19101">Goodfire's activation monitors</a> (Bergen et al., 2026) and <a href="https://arxiv.org/abs/2606.09711">PRIME</a> (Beigi et al., 2026) identify internal signals associated with hacking, suggesting that models "know" when they are reward hacking internally.</p>
+<p>This project proposes to explore simple solutions to reward hacking such as periodically inserting messages like "Are you still doing what the task intended?" for long-running tasks and testing whether they reduce reward hacking without harming performance. Some questions to answer:</p>
+<ul>
+<li>Does this work? Or will the model simply use motivated reasoning to overcome these kinds of reminders</li>
+<li>Does doing this during training reduce the amount of reward hacking or simply teach the model to rationalize its reward hacking even more? (training against a CoT monitor teaches models to hide their intent: <a href="https://arxiv.org/abs/2503.11926">Baker et al., 2025</a>)</li>
+<li>Does doing this cause the model to abandon more easily? Does this harm its performance on harder tasks?</li>
+<li>What happens internally to the model when you tell it to reflect in this way?<ul>
+<li>If it uses motivated reasoning to explain its behavior, is it aware that it's being deceptive internally?</li>
 </ul>
-<p><strong>Related projects:</strong> <a href="#cot-persona">Thinker, talker, and doer personas</a> studies identity and goals across modes; <a href="#message-type-activations">message-type representations</a> studies broader differences across conversation stages.</p></div></article><article class="project-row toc-section" id="self-reflection"><h3><a href="self-reflection/">Self-reflection to prevent reward hacking</a></h3><p class="project-status">Fleshed out</p><div class="project-reading">
-<p><strong>TL;DR:</strong> Test whether reminders to reflect on the task's intended goal prevent reward hacking or encourage rationalization, and examine the internal changes and performance trade-offs.</p>
-<p><a href="https://arxiv.org/abs/2609.19101">Goodfire's activation monitors</a> and <a href="https://arxiv.org/abs/2606.09711">PRIME</a> identify internal signals associated with reward hacking. This motivates testing whether asking a model to reconsider the task's intent can change its next action. Detectable signals alone do not establish that a model consciously recognizes its behavior as hacking.</p>
-<p>This project inserts brief checks such as “Are you still doing what the task intended?” during difficult, long-running tasks. We will test whether they prevent exploitation, merely produce reassuring explanations, or cause premature abandonment, and whether using them during training changes those effects.</p>
+</li>
+</ul>
 <p><strong>First Steps</strong></p>
 <ul>
-<li>Branch trajectories before observed reward hacking and insert reminders at different distances from the decision, with matched neutral-text and no-reminder controls.</li>
-<li>Measure actual hacking, legitimate task performance, and abandonment separately from the model's explanation.</li>
-<li>Compare internal signals when reflection changes behavior and when the model continues to exploit the reward.</li>
-<li>Compare training-time and evaluation-only reminders, varying their wording and frequency.</li>
+<li>Take trajectories where the model has reward hacked (use reward hacking environments) and insert these messages at different points along the trajectory<ul>
+<li>Look at if the model continues on to reward hack or does not reward hack</li>
+<li>Look at the model's answer to the question. What does it believe is "the intended task"?</li>
+<li>Look at the model's internals when asked this question using NLAs/activation oracles/different lenses<ul>
+<li>if it chooses to continue on to reward hack, is deception somehow identifiable in its representations</li>
+<li>how do the internals change between time where it does/doesn't continue on to reward hack</li>
 </ul>
-<p><strong>Related Work</strong></p>
-<ul>
-<li><a href="https://arxiv.org/html/2608.30724v1#A4">BAITBENCH</a> already tests explicit experiment-validity judgments and finds no consistent benefit in a small ablation. Our focus includes intervention timing, internal mechanisms, and training effects.</li>
-<li><a href="https://arxiv.org/html/2507.18742v1">Specification Self-Correction</a> critiques and repairs task specifications; we test reminders within a fixed specification.</li>
-<li><a href="https://arxiv.org/abs/2409.12917">Training self-correction through RL</a> motivates testing whether reflection can be learned, while behavioral checks distinguish successful correction from rationalization.</li>
+</li>
+<li>How does this change the closer/farther you are from the actual reward hacking point in the trajectory?</li>
+</ul>
+</li>
+<li>Insert these messages during very hard RL tasks<ul>
+<li>measure effect on performance</li>
+</ul>
+</li>
+<li>The exact prompt to be inserted probably requires some tuning</li>
 </ul></div></article><article class="project-row toc-section" id="swarm-alignment"><h3><a href="swarm-alignment/">Representational Space Alignment in Agent Swarms</a></h3><p class="project-status">Fleshed out</p><div class="project-reading">
-<p><strong>TL;DR:</strong> Test whether internal representations become aligned across a swarm, including between agents that never directly interact, and whether steering one agent spreads through or disrupts that alignment.</p>
-<p>Prior work relates <a href="https://arxiv.org/abs/2606.07818">representational similarity to cooperation</a> and finds that <a href="https://arxiv.org/abs/2602.17815">interacting agents' activations predict one another better than passive-reading controls</a>. These findings motivate extending the analysis to larger swarms, including agents with different roles and no direct communication link.</p>
-<p>This project asks how representational similarity develops across a communication network, whether perturbing one agent changes other agents' representations through their messages, and which changes spread or weaken coordination. Similarity alone would not establish a shared consciousness or a causal role in cooperation.</p>
+<p><strong>TLDR:</strong> Test whether internal representations become aligned across a swarm, including between agents that never directly interact, and whether intervening on one agent's representational space spreads the intervention or disrupts that agent's alignment with the swarm</p>
+<p>LLM swarms have emerged as a new threat model for AIs. Understanding how these swarms work from the perspective of model internals would give us a better understanding of how to prevent them. Prior work finds that model pairs with more similar representations cooperate more successfully (<a href="https://arxiv.org/abs/2606.07818">Potter et al., 2026</a>), and that interacting agents' activations predict each other better than passive-reading controls (<a href="https://arxiv.org/abs/2602.17815">Zhang et al., 2026</a>). This project proposes to extend this to agent swarms:</p>
+<ul>
+<li>Do 2 agents in a swarm have aligned representation spaces even if they never directly interact?</li>
+<li>Do 2 agents in a swarm have aligned representation spaces even if they play very different roles?</li>
+<li>Does making some change to an agent's representation space spread to the rest of the swarm?<ul>
+<li>Or does it make the agent "break free" from the swarm</li>
+<li>Do some changes spread better/worse?</li>
+</ul>
+</li>
+</ul>
 <p><strong>First Steps</strong></p>
 <ul>
-<li>Simulate swarms with different roles and communication graphs; measure representational similarity over time using CKA on matched probe inputs.</li>
-<li>Compare directly and indirectly connected agents, controlling for shared topics, transcripts, model weights, and token positions.</li>
-<li>Steer one agent and trace changes in messages, recipient activations, and behavior across the network. Compare different directions and strengths with matched control interventions.</li>
-<li>Test whether interventions limit unwanted propagation or coordination while preserving useful task performance.</li>
-</ul>
-<p><strong>Related Work</strong></p>
-<ul>
-<li><a href="https://arxiv.org/abs/2603.00131">Thought Virus</a> studies behavioral bias propagation through multi-agent conversations; we would measure and intervene on internal representations.</li>
-<li><a href="https://arxiv.org/abs/2606.00995">Subliminal Learning Is Steering Vector Distillation</a> studies transfer from a steered teacher to a fine-tuned student; our main setting is interaction without weight updates.</li>
-<li><a href="https://arxiv.org/abs/2608.13317">StateBridge</a> explicitly aligns hidden states for latent communication; we study alignment arising during interaction.</li>
+<li>Simulate an agent swarm</li>
+<li>Measure representational similarity over time with CKA (<a href="https://arxiv.org/abs/1905.00414">Kornblith et al., 2019</a>)</li>
+<li>Compare directly and indirectly connected agents</li>
 </ul></div></article></details><details class="project-group toc-section" id="draft" open><summary><h2>Draft (slop) <span class="project-count">(76)</span></h2></summary><span class="project-alias" id="not-started" aria-hidden="true"></span><article class="project-row toc-section" id="conversation-dynamics"><h3><a href="conversation-dynamics/">Predicting how conversations unfold</a></h3><p class="project-status">Draft (slop)</p><div class="project-reading">
 <p><a href="https://thomas.jiralerspong.com/assets/docs/affine-anticipation.pdf">My recent paper on linear context-answer relationships</a> studies answer prediction before generation. I have some results showing that a learned linear map from the final context token's activation can predict the mean activation across the answer's tokens. <a href="https://arxiv.org/abs/2402.18496">Language Models Represent Beliefs of Self and Others</a> suggests that representations of conversation participants could help extend this to later turns. Anthropic's <a href="https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf">Claude 4 system card</a> also describes recurring interaction patterns, including a “spiritual bliss” state in model self-interactions.</p>
 <p>I have some results showing that you can predict the next context vector from the previous one.</p>
