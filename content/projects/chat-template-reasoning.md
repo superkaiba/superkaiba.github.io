@@ -1,6 +1,6 @@
 ---
 title: Do chat-template tokens provide space for latent reasoning?
-status: Fleshed out
+status: Archived
 order: 7.5
 ---
 

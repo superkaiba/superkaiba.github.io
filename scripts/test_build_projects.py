@@ -148,6 +148,7 @@ Unpublished content.
         self.assertIn('Fleshed Out <span class="project-count">(0)</span>', html)
         self.assertIn('Draft (slop) <span class="project-count">(1)</span>', html)
         self.assertIn('Completed <span class="project-count">(0)</span>', html)
+        self.assertIn('Archived <span class="project-count">(0)</span>', html)
         self.assertNotIn("distinctive content", html)
         self.assertNotIn("Hidden proposal", html)
         self.assertNotIn("old-alpha", html)

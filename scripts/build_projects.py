@@ -21,6 +21,7 @@ GROUPS = [
     ("Fleshed Out", "fleshed-out", "Fleshed out"),
     ("Draft (slop)", "draft", "Draft (slop)"),
     ("Completed", "completed", "Completed"),
+    ("Archived", "archived", "Archived"),
 ]
 STATUSES = {status: i for i, (_, _, status) in enumerate(GROUPS)}
 # Older links to retired sections land on the section that replaced them.
