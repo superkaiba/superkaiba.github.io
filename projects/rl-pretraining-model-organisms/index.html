@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Model organisms of RL from pretraining · Thomas Jiralerspong</title>
+<link rel="canonical" href="https://thomas.jiralerspong.com/projects/rl-pretraining-model-organisms/">
+<meta property="og:title" content="Model organisms of RL from pretraining · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/rl-pretraining-model-organisms/"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css?v=0d2aad781fe6"><link rel="stylesheet" href="../catalogue.css?v=ba852906d7b3">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout project-detail-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../contents/">Project contents</a></li><li><a href="#rl-pretraining-model-organisms" data-section="rl-pretraining-model-organisms">Overview</a></li></ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<p class="project-back"><a href="../contents/">← Project contents</a></p><article class="project-detail toc-section" id="rl-pretraining-model-organisms"><h1>Model organisms of RL from pretraining</h1><p class="project-status">Not started</p><div class="project-reading">
+<p><strong>TL;DR:</strong> Labs are starting to move reinforcement learning (RL) earlier, into pretraining. Train a suite of small open models that receive RL from early in pretraining, with matched controls that receive only next-token training or RL only at the end. Release all checkpoints, so safety and interpretability researchers can study what changes when a model is an RL agent for most of its training.</p>
+<p>Two recent methods make RL part of pretraining on ordinary text. <a href="https://arxiv.org/abs/2506.08007">Reinforcement Pre-Training</a> (RPT) rewards the model for reasoning and then predicting the next token correctly. <a href="https://arxiv.org/abs/2510.01265">RLP</a> samples a chain of thought <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>c</mi><mi>t</mi></msub></mrow></math> before each prediction and rewards it by how much it helps:</p>
+<p>
+<span class="project-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><msub><mi>r</mi><mi>t</mi></msub><mo>&#x0003D;</mo><mi>log</mi><msub><mi>p</mi><mi>&#x003B8;</mi></msub><mo stretchy="false">&#x00028;</mo><msub><mi>x</mi><mi>t</mi></msub><mo>&#x02223;</mo><msub><mi>x</mi><mrow><mo>&#x0003C;</mo><mi>t</mi></mrow></msub><mo>&#x0002C;</mo><msub><mi>c</mi><mi>t</mi></msub><mo stretchy="false">&#x00029;</mo><mo>&#x02212;</mo><mi>log</mi><mover><mrow><mi>p</mi></mrow><mo stretchy="true">&#x000AF;</mo></mover><mo stretchy="false">&#x00028;</mo><msub><mi>x</mi><mi>t</mi></msub><mo>&#x02223;</mo><msub><mi>x</mi><mrow><mo>&#x0003C;</mo><mi>t</mi></mrow></msub><mo stretchy="false">&#x00029;</mo><mo>&#x0002C;</mo></mrow></math></span>
+</p>
+<p>where <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mover><mrow><mi>p</mi></mrow><mo stretchy="true">&#x000AF;</mo></mover></mrow></math> is an EMA copy of the model predicting without the thought. This reward is dense, needs no verifier, and works on any text. On Qwen3-1.7B, RLP improved a math and science benchmark average by about 19% over the base model. Both methods so far are applied near the end of pretraining and are evaluated on capabilities.</p>
+<p>Many safety arguments assume that a pretrained model is mostly a <em>simulator</em> of many characters, and that goal-directed behavior is added by a short phase of post-training on top. If RL starts early, that assumption may fail: the model may spend most of its training as a single agent optimizing a reward. We have no public models to test what this does. My guess is that the effects are easiest to study in small models where the whole training run can be repeated with controls.</p>
+<p><strong>The suite.</strong> Train small models (around 10M to 300M parameters, on a corpus like <a href="../simplestories-forums/">SimpleStories</a> or a filtered web subset) under compute-matched regimes:</p>
+<ol>
+<li><strong>Next-token only</strong>, as the baseline.</li>
+<li><strong>Next-token, then RL at the end</strong>, matching the current standard pipeline.</li>
+<li><strong>RLP-style reward from early in pretraining</strong>, mixed with next-token loss at several ratios and start points.</li>
+<li><strong>Task RL from early in pretraining</strong>, with verifiable rewards on simple tasks, including one environment with a known reward hack.</li>
+</ol>
+<p>Keep dense checkpoints for every run, so properties can be tracked as they emerge.</p>
+<p><strong>Initial directions:</strong></p>
+<ul>
+<li><strong>Simulator or agent.</strong> Measure how well each model continues text in many different voices and personas. Check whether early RL narrows the range of characters the model can simulate, and whether it develops one dominant character.</li>
+<li><strong>Goals and values inside.</strong> Run the probes from the <a href="../goal-representations/">goal representation</a> and <a href="../distributional-rl/">distributional RL</a> projects on each model. Check whether value and goal representations appear earlier, are more consistent across tasks, or are more steerable after early RL.</li>
+<li><strong>Reward hacking.</strong> In the regime with a hackable environment, check whether a hack learned early is harder to remove later than the same hack learned at the end, and whether it generalizes to other environments.</li>
+<li><strong>Legibility of thoughts.</strong> RLP rewards thoughts only for helping prediction. Check whether the thoughts stay readable over training, or drift toward compressed or unreadable text that still helps.</li>
+<li><strong>Interaction with later alignment training.</strong> Apply the same short alignment fine-tune to every model and compare how well it works and how long it lasts.</li>
+</ul>
+<p>The main output is the model suite itself. A small set of open, well-controlled organisms would let many projects test claims about RL in pretraining without each team paying for its own training runs.</p>
+<p><strong>Related projects:</strong> <a href="../alignment-rl-pretraining/">on-policy alignment RL during pretraining</a>, <a href="../simplestories-forums/">a SimpleStories successor with forum threads and dense checkpoints</a>, <a href="../concept-persona-pretraining/">tracking concept and persona interpretability through pretraining</a>, and <a href="../rl-compositional-learning/">how RL teaches a model to compose skills it already has</a>.</p></div></article>
+<footer><a href="../contents/">Project contents</a> · <a href="../#rl-pretraining-model-organisms">View in catalogue</a></footer>
+</main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
+</body></html>
