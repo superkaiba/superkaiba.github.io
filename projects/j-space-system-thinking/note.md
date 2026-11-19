@@ -1,16 +1,25 @@
-# Inside and outside J-space: System 1 and System 2 thinking
+# Exploring System 2 and System 1 thinking as a model of LLM behavior
 
-**TL;DR:** Study what is represented and computed inside and outside J-space, and test how this distinction relates to automatic System 1 thinking, deliberate System 2 thinking, and action selection.
+People often seem to be surprised when models take actions or have thoughts which are not aligned or even contradictory with how they talk to us or represent themselves ([Turpin et al., 2023](https://arxiv.org/abs/2305.04388); [Chen et al., 2025](https://arxiv.org/abs/2505.05410); [Arcuschin et al., 2025](https://arxiv.org/abs/2503.08679)). I think we can map this to system 2 vs system 1 thinking in humans (Kahneman, 2011; [Evans & Stanovich, 2013](https://doi.org/10.1177/1745691612460685)).
 
-[Verbalizable Representations Form a Global Workspace in Language Models](https://www.transformer-circuits.pub/2026/workspace/index.html) identifies J-space representations that support verbal report and flexible internal reasoning, while some routine processing can proceed without them. Its analysis of features outside J-space finds examples involving syntax and formatting.
+Although we try to train the models to reason about each action they take (i.e. system 2 thinking) and then follow their reasoning, it seems clear that a lot of their behavior can be seen as more "reflexive"/system 1, especially when reward is involved ([Baker et al., 2025](https://arxiv.org/abs/2503.11926); [Mirtaheri & Belkin, 2026](https://arxiv.org/abs/2603.17199)).
 
-The question is whether this distinction helps explain System 1 and System 2 thinking. Does processing outside J-space support an automatic “doer,” and when does deliberate reasoning change what it does? These are hypotheses to test. J-space is a sparse set of representations, so its remainder is not a fixed orthogonal subspace; answering without written reasoning also need not mean bypassing J-space.
+In psychology/cognitive science, system 2 is often viewed as an "endorser" of system 1's conclusions rather than a critic (Kahneman, 2011; [Haidt, 2001](https://doi.org/10.1037/0033-295X.108.4.814); [Mercier & Sperber, 2011](https://pubmed.ncbi.nlm.nih.gov/21447233/)), which would explain the motivated reasoning seen in modern LLMs ([Lindsey et al., 2025](https://transformer-circuits.pub/2025/attribution-graphs/biology.html)).
 
-**First Steps**
+The goal of this project would first be to see if this system 1 vs system 2 account holds for LLMs.
 
-- Characterize features inside J-space and in the remaining activations across layers, tasks, and models.
-- Compare routine tasks with matched tasks that require reporting or flexibly using the same information. Ablate or patch each component to test its causal role.
+- I think system 1 can be seen as the "autocomplete"/"in-context learning" learned in pretraining ([Olsson et al., 2022](https://arxiv.org/abs/2209.11895); [Venhoff et al., 2025](https://arxiv.org/abs/2510.07364); [Marks et al., 2026](https://alignment.anthropic.com/2026/psm)).
+- System 2 is mostly present in the CoT, but can be seen as mostly switching between different autocomplete modes/personas ([Kim et al., 2026](https://arxiv.org/abs/2601.10825)) using certain key "switch words" (wait! actually!) ([Qian et al., 2025](https://arxiv.org/abs/2506.02867); [Tsui, 2025](https://arxiv.org/abs/2507.02778)).
+- I think this can be linked to entropy neurons ([Stolfo et al., 2024](https://arxiv.org/abs/2406.16254)).
+    - If the model is "certain" about the continuation then it will continue to use system 1. If it is highly uncertain then it will activate system 2, which will cause a "switch word" and force it to take a different perspective ([Wang et al., 2025](https://arxiv.org/abs/2506.01939)). This matches models of when humans switch to system 2 ([Thompson et al., 2011](https://doi.org/10.1016/j.cogpsych.2011.06.001); [De Neys, 2023](https://doi.org/10.1017/S0140525X2200142X)).
+
+If this picture holds, I think it already gives an interesting and illuminating perspective on LLM behavior, but one potential followup would be to explore directly externalizing the system 2 to a different model (probably with different post training) which can allow it to critique the model's reasoning in a more unbiased way ([Huang et al., 2023](https://arxiv.org/abs/2310.01798); [Tsui, 2025](https://arxiv.org/abs/2507.02778); [Panickssery et al., 2024](https://arxiv.org/abs/2404.13076)). This is similar to proposals around debate ([Irving et al., 2018](https://arxiv.org/abs/1805.00899); [Khan et al., 2024](https://proceedings.mlr.press/v235/khan24a.html)).
+
+### Inside and outside J-space
+
+[Verbalizable Representations Form a Global Workspace in Language Models](https://www.transformer-circuits.pub/2026/workspace/index.html) identifies J-space representations that support verbal report and flexible internal reasoning, while some routine processing can proceed without them (its analysis of features outside J-space finds examples involving syntax and formatting). One way to test the system 1 vs system 2 picture is to ask whether processing outside J-space supports an automatic "doer", and when deliberate reasoning changes what it does. J-space is a sparse set of representations, so its remainder is not a fixed orthogonal subspace, and answering without written reasoning need not mean bypassing J-space.
+
+- Characterize features inside J-space and in the remaining activations across layers, tasks and models.
+- Compare routine tasks with matched tasks that require reporting or flexibly using the same information, and ablate or patch each component to test its causal role.
 - Study action selection when a model's stated intention conflicts with its behavior, testing which representations influence the final action.
 - Use [System 2-to-System 1 distillation](https://arxiv.org/abs/2407.06023) to test whether learned skills become less dependent on J-space as they become more automatic.
-
-**Related project:** [Understanding the thinker, talker, and doer personas](#cot-persona).

@@ -1,6 +1,6 @@
 ---
 title: What changes when models learn to predict user turns?
-status: Draft (slop)
+status: Archived
 order: 60
 ---
 

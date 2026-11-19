@@ -1,21 +1,31 @@
 ---
-title: How smoothly does behavior change along natural activation paths?
+title: 'Curved activation geometry: principal geodesics and how smoothly behavior changes along natural paths'
 status: Draft (slop)
 order: 16.5
+aliases: [principal-geodesic-analysis]
 ---
 
-# How smoothly does behavior change along natural activation paths?
+# Curved activation geometry: principal geodesics and how smoothly behavior changes along natural paths
 
-**TL;DR:** Test whether small changes to internal representations can cause large behavior changes even when interventions follow the model's natural activation geometry, and identify which features behave like gradual controls or sharp switches.
+**TL;DR:** Find curved, behaviorally meaningful structure in residual-stream activations with principal geodesic analysis (PGA), then use paths that follow this natural geometry to test whether small changes to internal representations can still cause large behavior changes, and which features act as gradual controls or sharp switches.
 
-Work on [activation plateaus](https://www.lesswrong.com/posts/WMfSbt7AAcJdHzysB/activation-plateaus-where-and-how-they-emerge) finds both gradual responses and flat regions separated by sharp transitions when interpolating between activations. [Feature-specific error correction](https://arxiv.org/abs/2606.24964) compares sensitivity along candidate feature directions and their mixtures. [Steering-strength analysis](https://arxiv.org/abs/2602.02712) studies how token probabilities and concept expression change as a fixed steering vector is scaled.
+[Circular representations of weekdays and months](https://arxiv.org/abs/2405.14860) show that some language-model features have multidimensional, curved structure, and [manifold steering](https://arxiv.org/abs/2605.05115) fits curved activation manifolds and tests their connection to behavior through interventions. Work on [activation plateaus](https://www.lesswrong.com/posts/WMfSbt7AAcJdHzysB/activation-plateaus-where-and-how-they-emerge) finds both gradual responses and flat regions separated by sharp transitions when interpolating between activations, and [steering-strength analysis](https://arxiv.org/abs/2602.02712) studies how concept expression changes as a fixed steering vector is scaled. These experiments use fixed directions or prescribed interpolation paths, so a sharp response could reflect a meaningful behavioral boundary, an excursion away from familiar activation regions, or both.
 
-These experiments use fixed directions or prescribed interpolation paths, including spherical paths that control activation magnitude. They do not establish that the intermediate states follow the model's natural activation geometry. A sharp response could therefore reflect a meaningful behavioral boundary, an excursion away from familiar activation regions, or both.
+### Finding the curved directions with principal geodesic analysis
 
-It would be useful to test whether sharp transitions persist along learned curved paths that stay near natural activations. This connects to [characterizing activation geometry with nonlinear factors](#activation-manifold) and [nonlinear persona representations](#persona-manifolds), with a specific focus on how smoothly behavior changes. Here, continuity means practical sensitivity to finite changes, rather than a claim of mathematical discontinuity in a dense transformer's probability outputs.
+[Component analysis on CLIP's spherical embedding space](https://arxiv.org/abs/2305.14053) provides precedent for applying PGA to model representations. The central question is which geometry to use. PGA on the full residual space with ordinary Euclidean distance reduces to PCA. Normalizing activations gives a sphere but discards magnitude, while learning a manifold introduces assumptions about its shape and metric. A useful result would show that a justified geometry captures a causal feature and improves interventions under matched controls.
 
-- Compare fixed-direction steering, spherical interpolation, and curved paths learned from naturally occurring activations. Match endpoints, report path length, and measure local response per unit distance so a longer path does not automatically appear smoother.
-- Check whether intermediate states resemble held-out natural activations using multiple measures of distribution fit and preserved task performance. Treat these checks as evidence about path quality, not proof that the learned path follows the true representation manifold.
-- Measure downstream activation changes, output-distribution changes, and behavioral outcomes separately. Use repeated generations and fixed-prefix evaluations to distinguish internal sensitivity from a small probability change that flips a decoded token.
-- Compare transition sharpness across semantic features, prompts, layers, and models. Test whether any gradual-versus-switching pattern generalizes, rather than assigning each concept a permanent label from one context.
-- Test whether following natural geometry makes steering more predictable and selective. If sharp transitions remain on well-supported paths, investigate the computations that create them and whether their locations predict behavioral changes on held-out prompts.
+- Collect activations at a fixed layer and token position for a controlled task with suspected curvature, starting with cyclic concepts such as weekdays, and evaluate on held-out prompt templates.
+- Compare ordinary PCA, PCA on normalized activations, local PCA, and PGA with matched dimensions and data. Separate improvements from normalization from those due to curved geometry, and distinguish tangent-space PGA from exact PGA.
+- Check where PGA fails: broad or multimodal data, unstable means, poor tangent-space approximations, and semantic curves that are not geodesics of the chosen manifold. High explained variance alone would not establish a mechanism.
+
+### How smoothly does behavior change along natural paths?
+
+The recovered geodesics give curved paths that stay near natural activations. Continuity here means practical sensitivity to finite changes, rather than a claim of mathematical discontinuity in a dense transformer's outputs.
+
+- Compare fixed-direction steering, spherical interpolation, PGA geodesics and curved paths learned from naturally occurring activations. Match endpoints, report path length, and measure local response per unit distance so a longer path does not automatically appear smoother.
+- Check whether intermediate states resemble held-out natural activations and preserve task performance, treating this as evidence about path quality rather than proof of the true manifold.
+- Measure downstream activation changes, output-distribution changes and behavioral outcomes separately, using repeated generations to distinguish internal sensitivity from a small probability change that flips a decoded token.
+- Compare transition sharpness across features, prompts, layers and models, and test whether following natural geometry makes steering more predictable and selective.
+
+**Related projects:** [characterizing activation geometry with nonlinear factors](#activation-manifold) and [nonlinear geometry of persona representations](#persona-manifolds).
