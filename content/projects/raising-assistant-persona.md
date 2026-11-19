@@ -1,5 +1,5 @@
 ---
-title: "Raising" the assistant persona throughout pretraining
+title: '"Raising" the assistant persona throughout pretraining'
 status: Fleshed out
 order: 19.7
 ---
