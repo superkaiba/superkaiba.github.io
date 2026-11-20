@@ -1,6 +1,6 @@
 ---
 title: Is there a scaling law for transfer between RL environments?
-status: Draft (slop)
+status: Archived
 order: 54.7
 math: true
 ---

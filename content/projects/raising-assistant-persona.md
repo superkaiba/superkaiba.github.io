@@ -2,6 +2,7 @@
 title: '"Raising" the assistant persona throughout pretraining'
 status: Fleshed out
 order: 19.7
+aliases: [developmental-ethics]
 ---
 
 # "Raising" the assistant persona throughout pretraining
@@ -13,5 +14,14 @@ This is similar to how humans lose plasticity throughout their lives, and how th
 Though there has been prior work on introducing alignment data in the chat template throughout pretraining ([Korbak et al., 2023](https://proceedings.mlr.press/v202/korbak23a.html); [Maini et al., 2025](https://arxiv.org/abs/2504.16980); [Minder et al., 2026](https://arxiv.org/abs/2608.13482)), I think this prior work fails to take into account that at the point in pretraining where they introduce the data, the model probably is "too stupid" to really understand what it means and therefore probably doesn't really learn what we want to learn.
 
 Instead, I think that something that makes more sense is to introduce the assistant persona (and chat template) gradually throughout pretraining (potentially with a curriculum starting with simple knowledge about the world and moving to more complex), with data adapted to its current level of capabilities, and potentially also try to do only on-policy training (which has been shown to generalize better and forget less: [Chu et al., 2025](https://arxiv.org/abs/2501.17161); [Shenfeld et al., 2026](https://arxiv.org/abs/2509.04259)). Thus we would "raise" the model similarly to how we raise a baby, teaching it about itself, morals, and the world at the same time, and hope that alignment taught in such a way would be much deeper than alignment only provided in post-training.
+
+### Teaching methods from developmental psychology
+
+If we raise the model like a child, developmental psychology can suggest what to teach and how. [Teaching Claude Why](https://www.anthropic.com/research/teaching-claude-why) motivates training models on the reasons for appropriate behavior. Human studies of [explaining a story's moral](https://cognition.princeton.edu/publications/explaining-moral-story) and [moral-story framing](https://pubmed.ncbi.nlm.nih.gov/24928424/) suggest concrete interventions to test. Success in a human study does not show that the same intervention will help a language model, so each one needs its own test.
+
+- Choose a specific finding about explanations, analogous cases or perspective-taking, and translate it into matched training conditions.
+- Control the amount and quality of training text, so extra supervision is not mistaken for a benefit of the method.
+- Test behavior in unfamiliar situations, including conflicts between a principle and immediate reward.
+- Check whether improvements survive later fine-tuning.
 
 Related: [On-policy alignment RL during pretraining](#alignment-rl-pretraining).

@@ -1,6 +1,6 @@
 ---
 title: How does RL teach a model to compose skills it already has?
-status: Draft (slop)
+status: Archived
 order: 54.75
 math: true
 ---

@@ -1,6 +1,6 @@
 ---
 title: An environment for honesty, calibration, and reporting failures
-status: Draft (slop)
+status: Archived
 order: 47
 ---
 

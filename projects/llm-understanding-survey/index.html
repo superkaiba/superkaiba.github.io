@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A survey of what we understand about how LLMs work · Thomas Jiralerspong</title>
+<link rel="canonical" href="https://thomas.jiralerspong.com/projects/llm-understanding-survey/">
+<meta property="og:title" content="A survey of what we understand about how LLMs work · Thomas Jiralerspong"><meta property="og:url" content="https://thomas.jiralerspong.com/projects/llm-understanding-survey/"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css?v=0d2aad781fe6"><link rel="stylesheet" href="../catalogue.css?v=8439386487b1">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<div class="page-layout project-layout project-detail-layout">
+<aside class="contents">
+<div class="project-sidebar-heading"><a href="https://thomas.jiralerspong.com/">Thomas Jiralerspong</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg><svg class="theme-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button></div>
+<button type="button" class="contents-toggle" aria-expanded="false" aria-controls="project-sidebar-panel">Contents <span class="current-section">Overview</span><span class="contents-indicator" aria-hidden="true">+</span></button>
+<div class="sidebar-panel" id="project-sidebar-panel"><nav aria-labelledby="contents-heading"><h2 class="sidebar-label" id="contents-heading">Projects</h2><ol><li><a href="../contents/">Project contents</a></li><li><a href="#llm-understanding-survey" data-section="llm-understanding-survey">Overview</a></li></ol></nav></div>
+</aside><div class="site-wrap"><main class="project-catalogue" id="main">
+<p class="project-back"><a href="../contents/">← Project contents</a></p><article class="project-detail toc-section" id="llm-understanding-survey"><h1>A survey of what we understand about how LLMs work</h1><p class="project-status">Draft (slop)</p><div class="project-reading">
+<p><strong>TL;DR:</strong> Collect what is known about how LLMs work, organized by level of analysis. The human sciences split this way: neuroscience, psychology and sociology study the same species at different levels. For each level, record the main findings, how strong the evidence is, and what is still open.</p>
+<p>Existing surveys each pick one axis. <a href="https://arxiv.org/abs/2601.02907">Beyond the Black Box</a> sorts LLM theory by lifecycle stage, from data and training to inference and evaluation. <a href="https://arxiv.org/abs/2501.16496">Open Problems in Mechanistic Interpretability</a> is an agenda for one family of methods. <a href="https://arxiv.org/abs/2503.13401">Ku et al.</a> use Marr's levels to bring cognitive science methods to LLMs, but they focus on methods more than findings. As far as I can tell, no survey collects the findings from every level and checks how they fit together.</p>
+<p>LLMs should be easier to study than people. <a href="https://colah.github.io/notes/interp-v-neuro/">Olah's note on interpretability and neuroscience</a> lists the advantages: every neuron can be recorded, every weight is visible, and everyone can study the exact same model. Not everyone agrees that all levels will pay off. <a href="https://www.ai-frontiers.org/articles/the-misguided-quest-for-mechanistic-ai-interpretability">Hendrycks and Hiscott</a> argue that bottom-up mechanistic work will not scale and that top-down study is the better bet. A survey that lays out what each level has actually found would give that debate some evidence.</p>
+<p><strong>Proposed structure.</strong> Two axes, kept separate:</p>
+<ul>
+<li><strong>Levels</strong> say what is being studied: the training objective, architecture and weights, activations, training dynamics, behavior, characters and personas, and models in society.</li>
+<li><strong>Tools</strong> say what math is used: probability and Bayesian inference, information theory, dynamical systems, computation theory and causal inference. A tool can be used at any level.</li>
+</ul>
+<p>Each cell of the level by tool table gets its main findings. Some cells are full. <a href="https://arxiv.org/abs/2111.02080">In-context learning as implicit Bayesian inference</a> sits at the objective level with probability tools, and <a href="https://arxiv.org/abs/2309.10668">language modeling as compression</a> sits there with information theory. <a href="https://arxiv.org/abs/2311.00208">Expressivity bounds</a> apply computation theory to the architecture. <a href="https://arxiv.org/abs/2309.13638">Embers of autoregression</a> explains behavior from the training objective. Empty cells are places where nobody (that I know of) has applied a tool to a level, so they become open problems.</p>
+<p><strong>Initial directions:</strong></p>
+<ul>
+<li>Test the two axes on a sample of about 100 papers. Revise the levels where many papers do not fit.</li>
+<li>For each cell, record the main claim, the type of evidence (derivation, correlation or intervention), and whether it held across models.</li>
+<li>Separate tool claims from stance claims. "We can analyze LLMs with Bayesian tools" is a tool claim. "LLMs are Bayesian inference machines" is a stance claim, and it makes predictions that can fail.</li>
+<li>Track where findings at two levels connect, for example a mechanism that explains a behavioral result. Also track where they conflict.</li>
+<li>Use a documented search and screening process, starting from the existing surveys and following citations.</li>
+</ul>
+<p>The intended output is a survey paper with the level by tool table, an annotated bibliography, and a list of open problems taken from the empty cells.</p>
+<p><strong>Related projects:</strong> <a href="../personas-character-survey/">a survey of personas and character in language models</a> covers one level in depth. <a href="../llm-neuroanatomy/">LLM neuroanatomy</a> and <a href="../activation-self-correction/">activation self-correction</a> are examples of open questions at the weights and activations levels.</p></div></article>
+<footer><a href="../contents/">Project contents</a> · <a href="../#llm-understanding-survey">View in catalogue</a></footer>
+</main></div></div><script src="../navigation.js?v=23a12c8b7c4e"></script>
+</body></html>

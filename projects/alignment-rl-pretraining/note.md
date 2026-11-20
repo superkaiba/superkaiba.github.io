@@ -13,4 +13,4 @@ This project asks whether introducing on-policy alignment RL during pretraining 
 - Include demonstrations and offline preference optimization to separate the effect of training timing from the source of training behavior and the optimization method.
 - Evaluate held-out situations, conflicting incentives, and durability after further capability training.
 
-**Related projects:** [Contextualized pretraining](#contextualized-pretraining) studies source attribution; [developmental teaching methods](#developmental-ethics) studies a broader set of human-inspired interventions.
+**Related projects:** [Contextualized pretraining](#contextualized-pretraining) studies source attribution; [developmental teaching methods](#raising-assistant-persona) studies a broader set of human-inspired interventions.
