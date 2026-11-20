@@ -1,39 +1,11 @@
 ---
-title: What changes when post-training uses evolution strategies instead of RL?
-status: In progress
+title: Evolutionary Algorithms as a Safer Alternative to Reinforcement Learning
+status: Fleshed out
 order: 54.8
-math: true
 ---
 
-# What changes when post-training uses evolution strategies instead of RL?
+# Evolutionary Algorithms as a Safer Alternative to Reinforcement Learning
 
-**TL;DR:** Evolution strategies (ES), a zeroth-order method that perturbs the weights and keeps the perturbations that score well, now work for full-parameter LLM fine-tuning. Compare models post-trained with ES and with RL on the same rewards. Check how their weight updates, internal features, generalization, reward hacking and chain of thought differ.
+Heavy reinforcement learning seems to be the cause of most misalignment seen in current models ([Denison et al., 2024](https://arxiv.org/abs/2406.10162); [MacDiarmid et al., 2025](https://arxiv.org/abs/2511.18397); [Qi et al., 2026](https://alignment.anthropic.com/2026/reward-seeker/)). The alignment provided by reinforcement learning also seems to be quite shallow and easily removable (safety alignment mostly changes the first few output tokens: [Qi et al., 2025](https://arxiv.org/abs/2406.05946); fine-tuning on 10 examples for under $0.20 removed GPT-3.5 Turbo's guardrails: [Qi et al., 2024](https://arxiv.org/abs/2310.03693); DPO bypasses toxic capabilities without removing them: [Lee et al., 2024](https://arxiv.org/abs/2401.01967); RL updates only 5% to 30% of parameters: [Mukherjee et al., 2025](https://arxiv.org/abs/2505.11711)). The capabilities community has developed evolutionary algorithms as an alternative to reinforcement learning ([Salimans et al., 2017](https://arxiv.org/abs/1703.03864); [Qiu et al., 2025](https://arxiv.org/abs/2509.24372); [Sarkar et al., 2025](https://arxiv.org/abs/2511.16652)), achieving competitive performance on capabilities benchmarks ([Qiu et al., 2025](https://arxiv.org/abs/2509.24372); though GRPO stays marginally ahead on most tasks in [Abdi et al., 2026](https://arxiv.org/abs/2601.20861)) while being almost as efficient (evolutionary algorithms can be proven to be equivalent to RL with gaussian noise on the weights, i.e. a policy gradient over a distribution of parameters: [Lehman et al., 2018](https://arxiv.org/abs/1712.06568)).
 
-[Qiu et al.](https://arxiv.org/abs/2509.24372) fine-tune all parameters of billion-parameter LLMs with ES and report that it beats RL baselines on several axes: tolerance to long-horizon rewards, robustness across base models, stability across runs, and less reward hacking. With a population of about 30 perturbed models per step, ES worked on Countdown and on a conciseness task where GRPO sometimes collapsed to nonsense short answers when the KL penalty was low. Earlier, [MeZO](https://arxiv.org/abs/2305.17333) showed that zeroth-order fine-tuning with only forward passes can work for large models. These papers focus on task performance. As far as I can tell, nobody has compared what ES and RL do inside the model, or what they do to alignment-relevant behavior.
-
-**How the two methods explore.** RL with a policy gradient explores in *output* space. It samples outputs $y \sim \pi_\theta(\cdot \mid x)$ and updates by
-
-$$
-\nabla_\theta J(\theta) = \mathbb{E}_{y \sim \pi_\theta}\big[R(y)\, \nabla_\theta \log \pi_\theta(y \mid x)\big],
-$$
-
-so each token gets credit for the reward of its whole output. ES explores in *parameter* space. It samples noise $\epsilon \sim \mathcal{N}(0, I)$ and evaluates the perturbed model $\theta + \sigma\epsilon$:
-
-$$
-\nabla_\theta J_\sigma(\theta) = \frac{1}{\sigma}\,\mathbb{E}_{\epsilon}\big[R(\theta + \sigma\epsilon)\,\epsilon\big],
-\qquad J_\sigma(\theta) = \mathbb{E}_\epsilon\big[R(\theta + \sigma\epsilon)\big].
-$$
-
-Two consequences follow. First, ES optimizes the reward averaged over a Gaussian ball of weights, so it prefers regions where the reward is high for many nearby weights (flat regions). Second, one perturbation acts on the whole episode, and there is no per-token credit. In particular, ES puts no direct pressure on individual chain-of-thought tokens. It can only select whole models whose reasoning tends to lead to reward.
-
-**Initial directions:**
-
-- **Matched comparison.** Post-train the same base model with ES, GRPO and SFT on the same tasks, matched at equal reward or equal KL divergence from the base. Most comparisons below are only fair at matched reward.
-- **Weight updates.** RL updates are [sparse and avoid the principal directions of the weights](https://arxiv.org/abs/2511.08567). Check whether ES updates have the same structure, given that its raw noise is dense and isotropic.
-- **Internal features.** Use model diffing (crosscoders or activation differences) to compare which features each method adds or changes.
-- **Reward hacking.** Use environments with a known hack. Check whether ES hacks less at matched reward, or only because it moves less far from the base model.
-- **Side effects of narrow training.** Train on narrow data known to cause emergent misalignment and compare how much each method generalizes it.
-- **Chain of thought.** Add a CoT monitor to the reward and check whether ES also learns obfuscated reasoning, given that it has no per-token credit on the CoT.
-- **Composition.** Repeat the $f(g(x))$ experiment from the [RL composition project](#rl-compositional-learning) with ES. Check whether ES also learns to compose skills, and through the same mechanism.
-
-**Related projects:** [how RL teaches a model to compose skills it already has](#rl-compositional-learning), [is the chain of thought caught between the talker and the doer](#cot-between-talker-doer), [does Dynamic Fine-Tuning reduce emergent misalignment](#dft-emergent-misalignment), and [how few parameters RLVR needs when reusing a pretrained module](#minimal-rlvr-module).
+These papers often present/discuss this robustness as an afterthought, because their goal is to improve capabilities and it doesn't really help with that (e.g. [Qiu et al., 2025](https://arxiv.org/abs/2509.24372) list "less tendency to reward hacking" among their results: GRPO sometimes hacked a conciseness reward with short nonsense outputs, while ES never did; [Lehman et al., 2018](https://arxiv.org/abs/1712.06568) show ES seeks parameters robust to perturbation, but leave the implications open), but I think it provides a solution to a lot of the problems the alignment community has been struggling with (shallow alignment, ruthless reward seeking, etc.), and merits further exploration from that perspective.
