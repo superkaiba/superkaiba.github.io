@@ -65,15 +65,40 @@ jobs:
   # deploy step ran right after the upload in the same job, GitHub sometimes
   # had not registered the artifact yet ("Found 0 artifact(s)"). A separate
   # job also lets a failed deploy be re-run without uploading a duplicate.
+  #
+  # The separate job gives GitHub about 10 seconds. If that is not enough,
+  # the deploy is tried again after 30 seconds and then after 90 more
+  # seconds. The job fails only if all three attempts fail. The "Found 0"
+  # error happens before any deployment is created, so a retry is safe.
   deploy:
     needs: build
     runs-on: ubuntu-latest
 
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy1.outputs.page_url || steps.deploy2.outputs.page_url || steps.deploy3.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
+        id: deploy1
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: Wait before second deploy attempt
+        if: steps.deploy1.outcome == 'failure'
+        run: sleep 30
+
+      - name: Deploy to GitHub Pages (attempt 2)
+        id: deploy2
+        if: steps.deploy1.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: Wait before third deploy attempt
+        if: steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure'
+        run: sleep 90
+
+      - name: Deploy to GitHub Pages (attempt 3)
+        id: deploy3
+        if: steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure'
         uses: actions/deploy-pages@v4
